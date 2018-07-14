@@ -1,0 +1,32 @@
+%!TEX root = ../root.tex
+
+\setcounter{page}{1337} % watermark workaround
+\thispagestyle{empty}
+
+\begin{center}
+\vspace*{3cm} \ \\
+{\huge\bfseries \mytitleontitlepage}
+\vspace{1.5cm}
+\mytexttype \\
+Studienjahrgang \myyearofstudy \\
+Kurs \mycourse \\
+\vspace{1.5cm}
+Fakultät \myfaculty \\
+Studiengang \mycourseofstudy \\
+DUALE HOCHSCHULE BADEN-WÜRTTEMBERG\\
+VILLINGEN-SCHWENNINGEN\\
+\end{center}
+\begin{table}[b]
+\begin{tabular}{ll}
+Bearbeiter: 		&	\myauthor \\
+Ausbildungsbetrieb:	&	\mycompany \\
+Betreuender Dozent:	&	\mylecturer \\
+\end{tabular}\\
+\\
+\\
+\begin{tabularx}{\textwidth}{lXl}
+\includegraphics[width=.3\linewidth]{../assets/dhbw-vs-logo} &
+&
+\raisebox{\height}{\includegraphics[width=.3\linewidth]{../assets/company-logo} }
+\end{tabularx}
+\end{table}

@@ -1,0 +1,36 @@
+%!TEX root = ../root.tex
+
+%**************************************************************
+% Custom cite style
+%
+% Note: You have to use the field "shorttitle" in your .bib file. This implementation is very unstable.
+
+% o.J. if no date is given
+\newcommand{\noyearcite}{\addcomma \space o\adddot J\adddot}
+
+% Custom cite bibmacro
+\newbibmacro*{mycite}{%
+  \printtext[bibhyperref]{%
+    \printfield[citetitle]{labeltitle}
+    \setunit{\addcomma\space}
+    \iffieldundef{year}
+     {\noyearcite}
+    {\printfield{year}}}}
+
+% Custom footcite command
+\DeclareCiteCommand{\myfootcite}[\mkbibfootnote]
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \usebibmacro{author}
+   \usebibmacro{mycite}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+% Custom cite command
+\DeclareCiteCommand{\mycite}
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+  \usebibmacro{author}
+  \usebibmacro{mycite}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
