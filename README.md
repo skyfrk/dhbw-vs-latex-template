@@ -178,7 +178,7 @@ Feel free to fork this repository and submit a pull request!
 * `\usepackage[parfill]{parskip}` throws a warning.
   * Ignore.
 * `Underfull \hbox` or `Overfull \hbox` messages.
-  * LaTeX can't finf a way to properly print a long string. For example a long URL. You only have to take action if it looks ugly. Try to add `\sloppy` and see if it helps.
+  * LaTeX can't find a way to properly print a long string. For example a long URL. You only have to take action if it looks ugly. Try to add `\sloppy` and see if it helps.
 
 ### Resources
 
