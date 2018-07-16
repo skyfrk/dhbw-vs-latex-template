@@ -191,6 +191,7 @@ Feel free to fork this repository and submit a pull request!
 
 * [@moewe](https://tex.stackexchange.com/users/35864/moewe) contributed a lot to the bibliography style. Thank you!
 * [@Audrey](https://tex.stackexchange.com/users/4483/audrey) provided a custom nymdt sorting style. Thank you!
+* #MWIGA
 
 ## License
 
