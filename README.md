@@ -49,6 +49,8 @@ Obviously you have to install LaTeX itself. For example [TeX Live](https://tug.o
     * The bibliography. List all of your sources in here. Note: only the cited sources get printed to the document.
   * misc/**properties.tex**
     * Setup the properties of your scientific text. E.g.: Your name or your companies name.
+  * misc/**specs.md**
+    * All specifications from Mrs. Heinrich's script (2017 edition).
 * **pages/**
   * All pages imported by **root.tex**.
   * pages/**acronym.tex**
