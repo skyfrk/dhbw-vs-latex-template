@@ -1,0 +1,86 @@
+%    ____  _   _ ______        __ __     ______  
+%   |  _ \| | | | __ \ \      / / \ \   / / ___| 
+%   | | | | |_| |  _ \\ \ /\ / ____\ \ / /\___ \ 
+%   | |_| |  _  | |_) |\ V  V |_____\ V /  ___) |
+%   |____/|_| |_|____/  \_/\_/       \_/  |____/ 
+%
+%  _____ _____ __  __ ____  _        _  _____ _____ 
+% |_   _| ____|  \/  |  _ \| |      / \|_   _| ____|
+%   | | |  _| | |\/| | |_) | |     / _ \ | | |  _|  
+%   | | | |___| |  | |  __/| |___ / ___ \| | | |___ 
+%   |_| |_____|_|  |_|_|   |_____/_/   \_|_| |_____|
+
+%**************************************************************
+% Header
+\input{misc/header}
+
+%**************************************************************
+% Properties
+\input{misc/properties}
+\begin{document}\selectlanguage{ngerman}
+
+%**************************************************************
+% Title
+\input{pages/title}
+
+%**************************************************************
+% Non-disclosure notice
+\input{pages/non-disclosure-notice}
+
+%**************************************************************
+% Table of contents
+\newpage
+\pagenumbering{Roman}
+\setcounter{page}{2}
+\tableofcontents
+\thispagestyle{empty}
+
+%**************************************************************
+% List of acronyms
+\newpage
+\input{pages/acronym}
+\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
+
+%**************************************************************
+% List of figures
+\newpage
+\listoffigures
+\addcontentsline{toc}{section}{\listfigurename}
+
+%**************************************************************
+% List of tables
+\newpage
+\listoftables
+\addcontentsline{toc}{section}{\listtablename}
+
+%**************************************************************
+% Text
+\newpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\input{pages/text}
+
+%**************************************************************
+% Appendix
+% -
+
+%**************************************************************
+% Literature
+\newpage
+%\printbibliography[heading=lit]
+\printbibtabular[title=Literaturverzeichnis]
+\addcontentsline{toc}{section}{Literaturverzeichnis}
+
+%**************************************************************
+% Utilities used
+\newpage
+\input{pages/utilities-used}
+\addcontentsline{toc}{section}{Verwendete Hilfsmittel}
+
+%**************************************************************
+% Independence notice
+\input{pages/independence-notice}
+
+%**************************************************************
+% The end of the document
+\end{document}
