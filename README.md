@@ -135,7 +135,7 @@ Lorem ipsum dolor sit amet, \ac{NiP} consetetur sadipscing elitr, sed diam nonum
 \end{figure}
 
 % refer to a figure
-Lorem ipsum dolor sit amet \autoref{goodreference} consetetur sadipscing elitr.
+Lorem ipsum dolor sit amet \autoref{fig:goodreference} consetetur sadipscing elitr.
 % will resolve to:
 % Lorem ipsum dolor sit amet figure 1 consetetur sadipscing elitr.
 ```
