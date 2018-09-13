@@ -1,10 +1,10 @@
 {
     "latex-workshop.latex.recipes": [
         {
-            "name": "pdflatex -> bibtex -> pdflatex*2",
+            "name": "pdflatex -> biber -> pdflatex*2",
             "tools": [
                 "pdflatex",
-                "bibtex",
+                "biber",
                 "pdflatex",
                 "pdflatex"
             ]
@@ -33,7 +33,7 @@
             ]
         },
         {
-            "name": "bibtex",
+            "name": "biber",
             "command": "biber",
             "args": [
                 "%DOCFILE%"
@@ -51,5 +51,5 @@
     "editor.minimap.enabled": false,
     "editor.wordWrap": "on",
     "cSpell.language": "de,en",
-    "cSpell.enabled": false,
+    "cSpell.enabled": true,
 }
