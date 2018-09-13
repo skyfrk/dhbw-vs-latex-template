@@ -6,19 +6,23 @@ This is a LaTeX template for academic text assignments at the [DBHW-VS](https://
 
 ### Prerequisites
 
-#### LaTeX
+#### Install LaTeX
 
 Obviously you have to install LaTeX itself. There are multiple distributions, I recommend using [TeX Live](https://tug.org/texlive/).
 
 > If you run into trouble with the TeX Live installer, download the [ISO](https://tug.org/texlive/acquire-iso.html) instead.
 
-#### LaTeX editor
+#### Install Biber
+
+[Biber](https://github.com/plk/biber) is the backend processor for BibLaTeX (which replaces BibTeX). You have to install it in order to use this template.
+
+#### Install a LaTeX editor
 
 * Recommended: [Visual Studio](https://visualstudio.microsoft.com/) with the [Visual Studio Code LaTeX Workshop Extension](https://github.com/James-Yu/LaTeX-Workshop) and a [spelling checker](https://github.com/Jason-Rev/vscode-spell-checker).
 * [Texmaker](http://www.xm1math.net/texmaker/)
 * [MikTeX](https://miktex.org/)
 
-#### Optional: git (works great with [Visual Studio](https://visualstudio.microsoft.com/))
+#### Optional: Install git (works great with [Visual Studio](https://visualstudio.microsoft.com/))
 
 [Git](https://git-scm.com/) is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
 
