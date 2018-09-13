@@ -8,7 +8,9 @@ This is a LaTeX template for academic text assignments at the [DBHW-VS](https://
 
 #### LaTeX
 
-Obviously you have to install LaTeX itself. For example [TeX Live](https://tug.org/texlive/).
+Obviously you have to install LaTeX itself. There are multiple distributions, I recommend using [TeX Live](https://tug.org/texlive/).
+
+> If you run into trouble with the TeX Live installer, download the [ISO](https://tug.org/texlive/acquire-iso.html) instead.
 
 #### LaTeX editor
 
