@@ -1,6 +1,6 @@
 # DHBW-VS academic text LaTeX template
 
-This is a LaTeX template for academic text assignments at the [DBHW-VS](https://www.dhbw-vs.de/), especially for Business Informatics students. Created along the specifications written by Mrs. Heinrich. It is intended to save time by using this template because you can focus on the content of the text instead of worrying about the formatting in WYSIWYG (**W**hat **y**ou **s**ee **i**s **w**hat **y**ou **g**et) text editors like [LibreOffice Writer](https://www.libreoffice.org/) or [Microsoft Word](https://products.office.com/word). Look at the example [here](https://github.com/Skyfr3ak/dhbw-vs-latex-template/blob/master/root.pdf).
+This is a LaTeX template for academic text assignments at the [DBHW-VS](https://www.dhbw-vs.de/), especially for Business Informatics students. Created along [the specifications](misc/specs.md) written by Mrs. Heinrich. It is intended to save time by using this template because you can focus on the content of the text instead of worrying about the formatting in WYSIWYG (**W**hat **y**ou **s**ee **i**s **w**hat **y**ou **g**et) text editors like [LibreOffice Writer](https://www.libreoffice.org/) or [Microsoft Word](https://products.office.com/word). Look at the example [here](https://github.com/Skyfr3ak/dhbw-vs-latex-template/blob/master/root.pdf).
 
 ## Usage
 
