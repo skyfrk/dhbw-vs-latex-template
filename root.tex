@@ -55,6 +55,10 @@
 
 %**************************************************************
 % Text
+
+% Fixes pagination if the table of contents is longer than one page.
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+
 \newpage
 \pagenumbering{arabic}
 \setcounter{page}{1}
