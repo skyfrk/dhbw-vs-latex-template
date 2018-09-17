@@ -73,11 +73,10 @@ Footnote:
 On first use:
 
 ```text
-blablabla... hypertext transfer protocl (http) blablabla...
+blablabla... hypertext transfer protocol (http) blablabla...
 ```
 
-* Acronyms are only printed into the table of aronyms if they are not listed in the Duden.
-
+* Acronyms are only printed into the table of acronyms if they are not listed in the Duden.
 
 ## Order of parts
 
@@ -152,25 +151,25 @@ Recommended:
 * More than one title per author: Order entries by year starting with the oldest
 * Do not print "first edition"
 
-Entry structue for books:
+Entry structure for books:
 
 ```text
 Lastname, Firstname: (Shorttitle) Title, Subtitle,  Volume, Edition, Location: Publisher, Year
 ```
 
-Entry structue for journal articles:
+Entry structure for journal articles:
 
 ```text
 Lastname, Firstname: (Shorttitle) Title in: Name of the journal, Year, first-last page
 ```
 
-Entry structue for electronic sources:
+Entry structure for electronic sources:
 
 ```text
 Lastname, Firstname: (Shorttitle) Title, Subtitle, Date, URL (Version number, Last accessed)
 ```
 
-Entry structue for laws:
+Entry structure for laws:
 
 ```text
 Name of the law, Full name of the law, Date of release, Place where the law was found, Year, Volume, first page
