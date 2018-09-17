@@ -184,6 +184,11 @@ Add your entries to `/misc/literature.bib`. You always have to provide a `shortt
 
 Feel free to [open an issue](https://github.com/Skyfr3ak/dhbw-vs-latex-template/issues) if you discovered a bug or want to submit a feature request. If you have questions about LaTeX in general have a look at the [resources section](#Resources).
 
+### Tasks to work on
+
+* Improve the documentation on how to use this template.
+* Find a way to improve build times.
+
 ### Unresolved issues
 
 * `\usepackage[parfill]{parskip}` throws a warning.
