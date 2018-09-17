@@ -1,24 +1,26 @@
 # DHBW-VS academic text LaTeX template
 
-This is a LaTeX template for academic text assignments at the [DBHW-VS](https://www.dhbw-vs.de/), especially for Business Informatics students. Created along the specifications written by Mrs. Heinrich. It is intended to save time by using this template because you can focus on the content of the text instead of worrying about the formatting in WYSIWYG (**W**hat **y**ou **s**ee **i**s **w**hat **y**ou **g**et) text editors like [LibreOffice Writer](https://www.libreoffice.org/). Look at the example [here](https://github.com/Skyfr3ak/dhbw-vs-latex-template/blob/master/root.pdf).
+This is a LaTeX template for academic text assignments at the [DBHW-VS](https://www.dhbw-vs.de/), especially for Business Informatics students. Created along the specifications written by Mrs. Heinrich. It is intended to save time by using this template because you can focus on the content of the text instead of worrying about the formatting in WYSIWYG (**W**hat **y**ou **s**ee **i**s **w**hat **y**ou **g**et) text editors like [LibreOffice Writer](https://www.libreoffice.org/) or [Microsoft Word](https://products.office.com/word). Look at the example [here](https://github.com/Skyfr3ak/dhbw-vs-latex-template/blob/master/root.pdf).
 
 ## Usage
 
 ### Prerequisites
 
+> These setup instructions apply to **Windows** only. You should however be able to use my template on Linux and MacOS as well.
+
 #### Install LaTeX
 
 Obviously you have to install LaTeX itself. There are multiple distributions, I recommend using [TeX Live](https://tug.org/texlive/).
 
-> If you run into trouble with the TeX Live installer, download the [ISO](https://tug.org/texlive/acquire-iso.html) instead.
+> If you run into trouble with the TeX Live installer, download the [ISO](https://tug.org/texlive/acquire-iso.html) instead and extract it to `C:\texlive`.
 
 #### Install Biber
 
-[Biber](https://github.com/plk/biber) is the backend processor for BibLaTeX (which replaces BibTeX). You have to install it in order to use this template.
+[Biber](https://github.com/plk/biber) is the backend processor for BibLaTeX (which replaces BibTeX). You have to install it in order to use this template. [Download](https://sourceforge.net/projects/biblatex-biber/files/latest/download) the latest executable and save it to `C:\texlive`.
 
-#### Install a LaTeX editor
+#### Install the LaTeX editor of your choice
 
-* Recommended: [Visual Studio](https://visualstudio.microsoft.com/) with the [Visual Studio Code LaTeX Workshop Extension](https://github.com/James-Yu/LaTeX-Workshop) and a [spelling checker](https://github.com/Jason-Rev/vscode-spell-checker).
+* **[Visual Studio](https://visualstudio.microsoft.com/) with the [LaTeX Workshop extension](https://github.com/James-Yu/LaTeX-Workshop) and a [spelling checker](https://github.com/Jason-Rev/vscode-spell-checker)**.
 * [Texmaker](http://www.xm1math.net/texmaker/)
 * [MikTeX](https://miktex.org/)
 
@@ -26,14 +28,16 @@ Obviously you have to install LaTeX itself. There are multiple distributions, I 
 
 [Git](https://git-scm.com/) is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
 
-[Reasons](https://stackoverflow.com/a/6190412) for using [git](https://git-scm.com/).
+> [How to use git with LaTeX](https://stackoverflow.com/a/6190412).
 
 ### Setup
 
-1. Download this template. If you are using git you can use `git clone`.
-2. Open `root.tex` with your editor of choice.
-3. Customize `misc/properties.tex` to your needs.
-4. Start writing in `pages/text.tex`. Easy as that!
+1. [Setup](#Prerequisites) your writing environment.
+1. [Download](https://github.com/Skyfr3ak/dhbw-vs-latex-template/releases) and extract this template. If you are using git you can use `git clone` instead.
+1. Open `root.tex` with your editor of choice.
+1. Customize `misc/properties.tex` to your needs.
+1. Start writing your text in `pages/text.tex`. Easy as that!
+1. Compile your work. The final pdf file will be in the same directory as the `root.tex` file.
 
 ### Project structure
 
@@ -179,7 +183,7 @@ Add your entries to `/misc/literature.bib`. You always have to provide a `shortt
 
 ## Contribute
 
-Feel free to fork this repository and submit a pull request!
+Feel free to [open an issue](https://github.com/Skyfr3ak/dhbw-vs-latex-template/issues) if you discovered a bug or want to submit a feature request. If you have questions about LaTeX in general have a look at the [resources section](#Resources).
 
 ### Unresolved issues
 
