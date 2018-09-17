@@ -20,15 +20,14 @@ Obviously you have to install LaTeX itself. There are multiple distributions, I 
 
 #### Install the LaTeX editor of your choice
 
-* **[Visual Studio](https://visualstudio.microsoft.com/) with the [LaTeX Workshop extension](https://github.com/James-Yu/LaTeX-Workshop) and a [spelling checker](https://github.com/Jason-Rev/vscode-spell-checker)**.
-* [Texmaker](http://www.xm1math.net/texmaker/)
-* [MikTeX](https://miktex.org/)
+* Recommended: **[Visual Studio](https://visualstudio.microsoft.com/) with the [LaTeX Workshop extension](https://github.com/James-Yu/LaTeX-Workshop) and a [spelling checker](https://github.com/Jason-Rev/vscode-spell-checker)**.
+* Legacy alternatives: [Texmaker](http://www.xm1math.net/texmaker/) or [MikTeX](https://miktex.org/)
 
 #### Optional: Install git (works great with [Visual Studio](https://visualstudio.microsoft.com/))
 
 [Git](https://git-scm.com/) is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
 
-> [How to use git with LaTeX](https://stackoverflow.com/a/6190412).
+> Some ideas on how to [use LaTeX with git](https://stackoverflow.com/a/6190412) as source control.
 
 ### Setup
 
@@ -41,13 +40,13 @@ Obviously you have to install LaTeX itself. There are multiple distributions, I 
 
 ### Project structure
 
-* **assets/**
+* **./assets**
   * Files that are used for the design. E.g.: The logo of the DHBW.
   * assets/**company-logo.png**
     * Place the logo of your company as a picture here with this name.
-* **figures/**
+* **./figures**
   * Figures used in the text.
-* **misc/**
+* **./misc**
   * Files used for configuration and other purposes.
   * misc/**header.tex**
     * Loading packages and configuring basic properties of the document.
@@ -60,8 +59,8 @@ Obviously you have to install LaTeX itself. There are multiple distributions, I 
   * misc/**properties.tex**
     * Setup the properties of your scientific text. E.g.: Your name or your companies name.
   * misc/**specs.md**
-    * All specifications from Mrs. Heinrich's script (2017 edition).
-* **pages/**
+    * All specifications academic text assignments from Mrs. Heinrich's script (2017 edition).
+* **./pages**
   * All pages imported by **root.tex**.
   * pages/**acronym.tex**
     * List all of your acronyms here. Note: You have to sort them manually by the alphabet!
