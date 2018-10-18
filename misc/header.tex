@@ -11,8 +11,10 @@
   %**************************************************************
   % Text
   %
-  % Required font (Times New Roman or Arial)
-  \usepackage{times}
+  % Required font (Times New Roman or Arial). Arial is proprietary. The helvet package replaces Arial.
+  \usepackage{helvet} % \usepackage{times}
+  \renewcommand{\familydefault}{\sfdefault}
+  \usepackage[T1]{fontenc}
   % Required page margins (4cm 1.5cm 2.5cm 2cm)
   \usepackage[a4paper,lmargin={4cm},rmargin={1.5cm},tmargin={2.5cm},bmargin={2cm}]{geometry}
   % Required line spacing (1.5)
@@ -50,6 +52,7 @@
   % Directories 
   %
   % Bibliography
+  \usepackage{hyperref} \urlstyle{same}
   \usepackage[backend=biber,style=authortitle,citestyle=authortitle,hyperref=true,autocite=footnote,sortlocale=de_DE,dashed=false,maxnames=3,sorting=nymdt,sortlocale=de_DE]{biblatex}
   
   % Required changes
@@ -129,7 +132,7 @@
   \usepackage{rotating}
   \usepackage{xcolor}
   \usepackage[printwatermark]{xwatermark}
-  \newwatermark[pagex={1337},color=red,angle=55,scale=1.5,xpos=-50,ypos=-5]{Sperrvermerk}
+  \newwatermark[pagex={1337},color=red,fontfamily=phv,angle=55,scale=1.5,xpos=-50,ypos=-5]{Sperrvermerk}
   
   %**************************************************************
   % Fix: New paragraph is not indent
