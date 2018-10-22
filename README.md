@@ -143,6 +143,12 @@ Lorem ipsum dolor sit amet \autoref{fig:goodreference} consetetur sadipscing eli
 % Lorem ipsum dolor sit amet figure 1 consetetur sadipscing elitr.
 ```
 
+#### Reference to a figure or a section
+
+```tex
+As you can see in \autoref{fig:twosweetcats} there are cute cats in the world.
+```
+
 #### Let text wrap around a figure
 
 ```tex
