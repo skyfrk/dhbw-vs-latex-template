@@ -18,6 +18,10 @@
 % Shorttitle in parens
 \DeclareFieldFormat*{shorttitle}{\mkbibparens{#1}}
 
+% No italics in title and subtitle
+\DeclareFieldFormat{title}{\normalfont{#1}}
+\DeclareFieldFormat{subtitle}{\normalfont{#1}}
+
 % Removes url prefix
 \DeclareFieldFormat{url}{\url{#1}}
 
