@@ -8,6 +8,9 @@
 % o.J. if no date is given
 \newcommand{\noyearcite}{\addcomma \space o\adddot J\adddot}
 
+% No italics
+\DeclareFieldFormat{citetitle}{\normalfont{#1}}
+
 % Custom cite bibmacro
 \newbibmacro*{mycite}{%
   \printtext[bibhyperref]{%
