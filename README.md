@@ -32,7 +32,7 @@ Obviously you have to install LaTeX itself. There are multiple distributions, I 
 ### Setup
 
 1. [Setup](#Prerequisites) your writing environment.
-1. [Download](https://github.com/Skyfr3ak/dhbw-vs-latex-template/releases) and extract this template. If you are using git you can use `git clone` instead.
+1. [Download](https://github.com/skyfrk/dhbw-vs-latex-template/releases) and extract this template. If you are using git you can use `git clone` instead.
 1. Open `root.tex` with your editor of choice.
 1. Customize `misc/properties.tex` to your needs.
 1. Start writing your text in `pages/text.tex`. Easy as that!
@@ -188,7 +188,7 @@ Add your entries to `/misc/literature.bib`. You always have to provide a `shortt
 
 ## Contribute
 
-Feel free to open an [issue](https://github.com/Skyfr3ak/dhbw-vs-latex-template/issues) if you discovered a bug or want to submit a feature request. If you have questions about LaTeX in general have a look at the [resources section](#Resources).
+Feel free to open an [issue](https://github.com/skyfrk/dhbw-vs-latex-template/issues) if you discovered a bug or want to submit a feature request. If you have questions about LaTeX in general have a look at the [resources section](#Resources).
 
 ### Resources
 
