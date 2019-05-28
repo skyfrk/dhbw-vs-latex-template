@@ -2,6 +2,8 @@
 
 This is a LaTeX template for academic text assignments at the [DBHW-VS](https://www.dhbw-vs.de/), especially for business computer science students. Created along [the specifications](misc/specs.md) written by Mrs. Heinrich. It is intended to save time by using this template because you can focus on the content of the text instead of worrying about the formatting in WYSIWYG (**W**hat **y**ou **s**ee **i**s **w**hat **y**ou **g**et) text editors like [LibreOffice Writer](https://www.libreoffice.org/) or [Microsoft Word](https://products.office.com/word).
 
+>If you're looking for a Microsoft Word template [click here](https://github.com/stabiloBOSS96/ZitationsstilDHBW-VS-WI).
+
 ## Usage
 
 ### Prerequisites
@@ -20,10 +22,10 @@ Obviously you have to install LaTeX itself. There are multiple distributions, I 
 
 #### Install the LaTeX editor of your choice
 
-* Recommended: **[Visual Studio](https://visualstudio.microsoft.com/) with the [LaTeX Workshop extension](https://github.com/James-Yu/LaTeX-Workshop) and a [spelling checker](https://github.com/Jason-Rev/vscode-spell-checker)**.
+* Recommended: **[Visual Studio Code](https://code.visualstudio.com/) with the [LaTeX Workshop extension](https://github.com/James-Yu/LaTeX-Workshop) and a [spelling checker](https://github.com/Jason-Rev/vscode-spell-checker)**.
 * Legacy alternatives: [Texmaker](http://www.xm1math.net/texmaker/) or [MikTeX](https://miktex.org/)
 
-#### Optional: Install git (works great with [Visual Studio](https://visualstudio.microsoft.com/))
+#### Optional: Install git (works great with [Visual Studio Code](https://code.visualstudio.com/))
 
 [Git](https://git-scm.com/) is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
 
