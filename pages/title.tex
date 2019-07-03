@@ -3,6 +3,13 @@
 \setcounter{page}{1337} % watermark workaround
 \thispagestyle{empty}
 
+\newgeometry{
+left=3cm,
+right=3cm,
+top=2cm,
+bottom=4cm
+}
+
 \begin{center}
 \vspace*{1cm} \ \\
 {\fontsize{40}{48}\selectfont \bfseries \mytitlewithlinebreaks \\}
@@ -32,3 +39,5 @@ Betreuender Dozent:	&	\mylecturer \\
 \raisebox{\height}{\includegraphics[width=.3\linewidth]{../assets/company-logo} }
 \end{tabularx}
 \end{table}
+
+\restoregeometry
