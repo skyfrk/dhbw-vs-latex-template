@@ -12,7 +12,7 @@ This is a LaTeX template for academic text assignments at the [DBHW-VS](https://
 
 #### Install LaTeX
 
-Obviously you have to install LaTeX itself. There are multiple distributions, I recommend using [TeX Live](https://tug.org/texlive/).
+Obviously you have to install LaTeX itself. There are multiple distributions, I recommend using [TeX Live](https://tug.org/texlive/). You can also use [MiKTeX](https://miktex.org/download) though.
 
 > If you run into trouble with the TeX Live installer, download the [ISO](https://tug.org/texlive/acquire-iso.html) instead and extract it to `C:\texlive`.
 
@@ -34,11 +34,11 @@ Obviously you have to install LaTeX itself. There are multiple distributions, I 
 ### Setup
 
 1. [Setup](#Prerequisites) your writing environment.
-1. [Download](https://github.com/skyfrk/dhbw-vs-latex-template/releases) and extract this template. If you are using git you can use `git clone` instead.
-1. Open `root.tex` with your editor of choice.
-1. Customize `misc/properties.tex` to your needs.
-1. Start writing your text in `pages/text.tex`. Easy as that!
-1. Compile your work. The final pdf file will be in the same directory as the `root.tex` file.
+2. [Download](https://github.com/skyfrk/dhbw-vs-latex-template/releases) and extract this template. If you are using git you can use `git clone` instead.
+3. Open `root.tex` with your editor of choice.
+4. Customize `misc/properties.tex` to your needs.
+5. Start writing your text in `pages/text.tex`. Easy as that!
+6. Compile your work. The final pdf file will be in the same directory as the `root.tex` file.
 
 ### Project structure
 
