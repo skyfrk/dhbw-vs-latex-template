@@ -69,11 +69,21 @@
   % Other directories
   % Required directory adjustments
   \usepackage[subfigure]{tocloft}
-  \renewcommand{\cftfigfont}{Abbildung }
-  \renewcommand{\cfttabfont}{Tabelle }
+  \renewcommand{\cftfigpresnum}{Abbildung }
+  \renewcommand{\cfttabpresnum}{Tabelle }  
   \renewcommand{\cftfigaftersnum}{:}
   \renewcommand{\cfttabaftersnum}{:}
-  
+  \newlength{\ctmfignumwidth}
+  \newlength{\ctmtabnumwidth}
+  \settowidth{\ctmfignumwidth}{\cftfigpresnum}
+  \settowidth{\ctmtabnumwidth}{\cfttabpresnum}
+  \setlength{\cftfignumwidth}{\dimexpr\ctmfignumwidth+1.5em}
+  \setlength{\cfttabnumwidth}{\dimexpr\ctmtabnumwidth+1.5em}
+  % remove indentation from figures in lof
+  \setlength{\cftfigindent}{0pt}
+  % remove indentation from tables in lot
+  \setlength{\cfttabindent}{0pt}
+
   %**************************************************************
   % Graphics
   %
