@@ -12,20 +12,20 @@
 
 %**************************************************************
 % Header
-\input{misc/header}
+\input{template/header}
 
 %**************************************************************
 % Properties
-\input{misc/properties}
+\input{content/misc/config}
 \begin{document}\selectlanguage{ngerman}
 
 %**************************************************************
 % Title
-\input{pages/title}
+\input{template/title}
 
 %**************************************************************
 % Non-disclosure notice
-\input{pages/non-disclosure-notice}
+\input{template/non-disclosure-notice}
 
 %**************************************************************
 % Table of contents
@@ -38,7 +38,7 @@
 %**************************************************************
 % List of acronyms
 \newpage
-\input{pages/acronym}
+\input{content/misc/acronyms}
 \addcontentsline{toc}{section}{Abkürzungsverzeichnis}
 
 %**************************************************************
@@ -62,7 +62,7 @@
 \newpage
 \pagenumbering{arabic}
 \setcounter{page}{1}
-\input{pages/text}
+\input{content/text}
 
 %**************************************************************
 % Appendix
@@ -77,7 +77,7 @@
 %**************************************************************
 % Independence notice
 \newpage
-\input{pages/independence-notice}
+\input{template/independence-notice}
 
 %**************************************************************
 % The end of the document
