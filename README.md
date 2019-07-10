@@ -10,6 +10,8 @@ Example academic text assignment using this template: [skyfrk/dhbw-vs-smart-home
 
 ### Prerequisites
 
+>You can skip installing LaTeX if you want to use a Visual Studio Code [development container](https://code.visualstudio.com/docs/remote/containers).
+
 #### Install a LaTeX distribution
 
 Using [MiKTeX](https://miktex.org/download) is recommended because it is more lightweight. You can also use [TeX Live](https://tug.org/texlive/) though.
@@ -50,6 +52,7 @@ Alternatives:
 
 ```text
 .
+├── .devcontainer                   | Contains the Visual Studio Code development container definition
 ├── .vscode                         | Visual Studio Code settings
 ├── LICENSE                         | License
 ├── README.md                       | Documentation
