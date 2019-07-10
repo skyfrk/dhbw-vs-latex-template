@@ -1,87 +1,79 @@
 # DHBW-VS academic text LaTeX template
 
-This is a LaTeX template for academic text assignments at the [DBHW-VS](https://www.dhbw-vs.de/), especially for business computer science students. Created along [the specifications](misc/specs.md) written by Mrs. Heinrich. It is intended to save time by using this template because you can focus on the content of the text instead of worrying about the formatting in WYSIWYG (**W**hat **y**ou **s**ee **i**s **w**hat **y**ou **g**et) text editors like [LibreOffice Writer](https://www.libreoffice.org/) or [Microsoft Word](https://products.office.com/word).
+This is a LaTeX template for academic text assignments at the [DBHW-VS](https://www.dhbw-vs.de/), especially for business computer science students created along [the specifications](template/dhbw-text-requirements.md) written by Mrs. Heinrich. Using this template helps to focus on writing actual content instead of worrying about formatting.
 
->If you're looking for a Microsoft Word template [click here](https://github.com/stabiloBOSS96/ZitationsstilDHBW-VS-WI).
+>If you're looking for a [Citavi](https://www.citavi.com/) template checkout [stabiloBOSS96/ZitationsstilDHBW-VS-WI](https://github.com/stabiloBOSS96/ZitationsstilDHBW-VS-WI).
+
+Example academic text assignment using this template: [skyfrk/dhbw-vs-smart-home-report](https://github.com/skyfrk/dhbw-vs-smart-home-report)
 
 ## Usage
 
 ### Prerequisites
 
-> These setup instructions apply to **Windows** only. You should however be able to use my template on Linux and MacOS as well.
+#### Install a LaTeX distribution
 
-#### Install LaTeX
+Using [MiKTeX](https://miktex.org/download) is recommended because it is more lightweight. You can also use [TeX Live](https://tug.org/texlive/) though.
 
-Obviously you have to install LaTeX itself. There are multiple distributions, I recommend using [TeX Live](https://tug.org/texlive/). You can also use [MiKTeX](https://miktex.org/download) though.
+> If you're installing TeX Live downloading the [ISO](https://tug.org/texlive/acquire-iso.html) is faster than using the installer.
 
-> If you run into trouble with the TeX Live installer, download the [ISO](https://tug.org/texlive/acquire-iso.html) instead and extract it to `C:\texlive`.
+#### Make sure pdflatex and biber are in your path
 
-#### Install Biber
+Check if you can run `pdflatex` and `biber` in your command line environment. Add them to your path if they cannot be found.
 
-[Biber](https://github.com/plk/biber) is the backend processor for BibLaTeX (which replaces BibTeX). You have to install it in order to use this template. [Download](https://sourceforge.net/projects/biblatex-biber/files/latest/download) the latest executable and save it to `C:\texlive`.
+> [Biber](https://github.com/plk/biber) is the backend processor for BibLaTeX (which replaces BibTeX). If Biber wasn't installed with your LaTeX distribution you have to install it [manually](https://sourceforge.net/projects/biblatex-biber/files/latest/download) in order to use this template.
 
-#### Install the LaTeX editor of your choice
+#### Install a LaTeX editor
 
-* Recommended: **[Visual Studio Code](https://code.visualstudio.com/) with the [LaTeX Workshop extension](https://github.com/James-Yu/LaTeX-Workshop) and a [spelling checker](https://github.com/Jason-Rev/vscode-spell-checker)**.
-* Legacy alternatives: [Texmaker](http://www.xm1math.net/texmaker/) or [MikTeX](https://miktex.org/)
+Recommended: Visual Studio Code with extensions
 
-#### Optional: Install git (works great with [Visual Studio Code](https://code.visualstudio.com/))
+1. Install [Visual Studio Code](https://code.visualstudio.com/).
+2. Install the [LaTeX Workshop](https://github.com/James-Yu/LaTeX-Workshop) Visual Studio Code extension.
+3. Install a [spelling checker](https://github.com/Jason-Rev/vscode-spell-checker) Visual Studio Code extension.
+4. (Optional) Install [git](https://git-scm.com/).
 
-[Git](https://git-scm.com/) is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
+> Some ideas on how to use [LaTeX with git](https://stackoverflow.com/a/6190412).
 
-> Some ideas on how to [use LaTeX with git](https://stackoverflow.com/a/6190412) as source control.
+Alternatives:
 
-### Setup
+* [Texmaker](http://www.xm1math.net/texmaker/)
+* [TeXworks](http://www.tug.org/texworks/)
 
-1. [Setup](#Prerequisites) your writing environment.
-2. [Download](https://github.com/skyfrk/dhbw-vs-latex-template/releases) and extract this template. If you are using git you can use `git clone` instead.
-3. Open `root.tex` with your editor of choice.
-4. Customize `misc/properties.tex` to your needs.
-5. Start writing your text in `pages/text.tex`. Easy as that!
-6. Compile your work. The final pdf file will be in the same directory as the `root.tex` file.
+### Initial setup
 
-### Project structure
+1. Make sure your system meets all [prerequisites](#Prerequisites).
+2. Download the [latest release](https://github.com/skyfrk/dhbw-vs-latex-template/releases) of this template.
+3. Customize `content/misc/config.tex` to your needs.
 
-* **./assets**
-  * Files that are used for the design. E.g.: The logo of the DHBW.
-  * assets/**company-logo.png**
-    * Place the logo of your company as a picture here with this name.
-* **./figures**
-  * Figures used in the text.
-* **./misc**
-  * Files used for configuration and other purposes.
-  * misc/**header.tex**
-    * Loading packages and configuring basic properties of the document.
-  * misc/**dhbw-bibstyle.tex**
-    * Loads custom DHBW bibliography style. Imported in misc/**header.tex**
-  * misc/**dhbw-citestyle.tex**
-    * Loads custom DHBW citing style. Imported in misc/**header.tex**
-  * misc/**literature.bib**
-    * The bibliography. List all of your sources in here. Note: only the cited sources get printed to the document.
-  * misc/**properties.tex**
-    * Setup the properties of your scientific text. E.g.: Your name or your companies name.
-  * misc/**specs.md**
-    * All specifications academic text assignments from Mrs. Heinrich's script (2017 edition).
-* **./pages**
-  * All pages imported by **root.tex**.
-  * pages/**acronym.tex**
-    * List all of your acronyms here. Note: You have to sort them manually by the alphabet!
-  * pages/**independence-notice.tex**
-    * This is the independence notice which has to be included.
-  * pages/**non-disclosure-notice.tex**
-    * This is the non-disclosure notice which has to be included if your company wants you to do so, which is normally the case.
-  * pages/**text.tex**
-    * This is the file where your actual work goes into.
-  * pages/**title.tex**
-    * This is the title page. It gets it's data from the misc/**properties.tex** file.
-  * pages/**utilities-used.tex**
-    * In this file you have to list all the tools you used for your work.
-* **root.pdf**
-  * This is the final output file.
-* **root.tex**
-  * This is the main .tex file which glues all parts together.
+### Documentation
 
-### Examples
+#### Project structure
+
+```text
+.
+├── .vscode                         | Visual Studio Code settings
+├── LICENSE                         | License
+├── README.md                       | Documentation
+├── content                         | Content folder
+│   ├── assets                      | Folder for binary assets like images
+│   │   └── title                   | Folder for binary assets for the title page
+│   │       ├── company-logo.png    | Logo of your company
+│   │       └── dhbw-vs-logo.png    | DHBW-VS logo
+│   ├── misc                        | Misc folder
+│   │   ├── acronyms.tex            | List of acronyms
+│   │   ├── config.tex              | Project configuration
+│   │   └── literature.bib          | Bibliography file
+│   └── text.tex                    | Actual text
+├── root.pdf                        | Output PDF file
+├── root.tex                        | Root file which ties everything together
+└── template                        | Folder for template-related files
+    ├── dhbw-bibstyle.tex           | DHBW-VS bibliography style
+    ├── dhbw-citestyle.tex          | DHBW-VS cite style
+    ├── dhbw-text-requirements.md   | DHBW-VS requirements for academic texts
+    ├── header.tex                  | Load packages and basic configuration
+    ├── independence-notice.tex     | DHBW-VS independence notice
+    ├── non-disclosure-notice.tex   | DHBW-VS non-disclosure notice
+    └── title.tex                   | Title page
+```
 
 #### Create sections
 
@@ -112,10 +104,10 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 % 'Vgl.' is the prefix of the short reference in the footnote.
 ```
 
-#### Acronym
+#### Acronyms
 
 ```tex
-% in the file pages/acronym.tex
+% in the file content/misc/acronym.tex
 \acro{NiP}{Ninjas in Pyjamas}
 
 % in the text
@@ -134,7 +126,7 @@ Lorem ipsum dolor sit amet, \ac{NiP} consetetur sadipscing elitr, sed diam nonum
 \begin{figure}[ht] % ht means that the figure should appear at this exact position
 \centering
 \caption{Interesting caption}
-\includegraphics[width=\textwidth]{file-name} % put your pictures into ./figures/
+\includegraphics[width=\textwidth]{file-name} % put your pictures into content/assets
 \caption*{\footnotesize{Source: Some website}}
 \label{fig:goodreference} % add a reference label
 \end{figure}
@@ -165,7 +157,9 @@ As you can see in \autoref{fig:twosweetcats} there are cute cats in the world.
 
 #### Add a source to the bibliography
 
-Add your entries to `/misc/literature.bib`. You always have to provide a `shorttitle`. If `edition=1` delete the edition key.
+Entries in `/content/misc/literature.bib` should always have a `shorttitle`.
+
+>If want to add the first edition of a source do **not** add an edition key to the entry.
 
 ```tex
 @book{key,
@@ -190,18 +184,20 @@ Add your entries to `/misc/literature.bib`. You always have to provide a `shortt
 
 ## Contribute
 
-Feel free to open an [issue](https://github.com/skyfrk/dhbw-vs-latex-template/issues) if you discovered a bug or want to submit a feature request. If you have questions about LaTeX in general have a look at the [resources section](#Resources).
+Feel free to open an [issue](https://github.com/skyfrk/dhbw-vs-latex-template/issues) or submit a pull request if you discovered a bug or want to submit a feature request! If you have questions about LaTeX in general have a look at the [resources section](#Resources).
 
 ### Resources
 
-* [BibLaTeX manual](https://www.ctan.org/pkg/biblatex)
-* [tex.stackexchange.com](https://tex.stackexchange.com/) is a awesome community for questions about LaTeX.
+* General documentation: [CTAN (The Comprehensive TeX Archive Network)](https://www.ctan.org/)
+* BibLaTeX documentation: [BibLaTeX manual](https://www.ctan.org/pkg/biblatex)
+* Q&A community: [tex.stackexchange.com](https://tex.stackexchange.com/)
 
 ## Credits
 
-* [@moewe](https://tex.stackexchange.com/users/35864/moewe) contributed a lot to the bibliography style. Thank you!
-* [@Audrey](https://tex.stackexchange.com/users/4483/audrey) provided a custom nymdt sorting style. Thank you!
-* #MWIGA
+* [moewe](https://tex.stackexchange.com/users/35864/moewe) for the bibliography style.
+* [Audrey](https://tex.stackexchange.com/users/4483/audrey) for the custom nymdt sorting style.
+* [robingenz](https://github.com/robingenz) for general improvements.
+* [MrcoSchrnr](https://github.com/MrcoSchrnr) for useful hints.
 
 ## License
 
