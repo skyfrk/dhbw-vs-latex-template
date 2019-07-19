@@ -32,6 +32,10 @@
   \usepackage{csquotes}
   % Generate random text
   \usepackage{blindtext}
+  % Fixes indentation issue #21 for long author names in footnotes
+  \makeatletter
+  \renewcommand\@makefntext[1]{\leftskip=1em\hskip-0em\@makefnmark#1}
+  \makeatother 
   
   %**************************************************************
   % Page number
