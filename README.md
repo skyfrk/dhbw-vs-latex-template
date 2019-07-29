@@ -185,6 +185,24 @@ Entries in `/content/misc/literature.bib` should always have a `shorttitle`.
 }
 ```
 
+#### Add a code listing
+
+Have a look at the [docs](https://ctan.org/pkg/listings) for a detailed guide how to use the `listings`-package.
+
+> In addition to the natively supported languages this template defines styles for `csharp` and `javascript`.
+
+```tex
+\begin{lstlisting}[caption={Express Example}, language=javascript]
+const express = require('express')
+const app = express()
+const port = 3000
+
+app.get('/', (req, res) => res.send('Hello World!'))
+
+app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+\end{lstlisting}
+```
+
 ## Contribute
 
 Feel free to open an [issue](https://github.com/skyfrk/dhbw-vs-latex-template/issues) or submit a pull request if you discovered a bug or want to submit a feature request! If you have questions about LaTeX in general have a look at the [resources section](#Resources).
