@@ -187,12 +187,13 @@ Entries in `/content/misc/literature.bib` should always have a `shorttitle`.
 
 #### Add a code listing
 
-Have a look at the [docs](https://ctan.org/pkg/listings) for a detailed guide how to use the `listings`-package.
+Have a look at the [docs](https://ctan.org/pkg/listings) for a detailed guide how to use the `listings`-package. The custom `subcaptionenv` macro automatically adds a subcaption to the listing.
 
 > In addition to the natively supported languages this template defines styles for `csharp` and `javascript`.
 
 ```tex
-\begin{lstlisting}[caption={Express Example}, language=javascript]
+\begin{subcaptionenv}{Source: \mycite[Vgl.][2]{example}}
+    \begin{lstlisting}[caption={Express Example}, language=javascript]
 const express = require('express')
 const app = express()
 const port = 3000
@@ -200,7 +201,8 @@ const port = 3000
 app.get('/', (req, res) => res.send('Hello World!'))
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
-\end{lstlisting}
+        \end{lstlisting}
+\end{subcaptionenv}
 ```
 
 ## Contribute
