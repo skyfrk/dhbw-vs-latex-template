@@ -90,11 +90,11 @@ Alternatives:
 #### Cite direct
 
 ```tex
-\glqq Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.\grqq{}\myfootcite[42]{hitchhiker}
+\enquote{Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.}\myfootcite[42]{hitchhiker}
 
 % '42' is the number of the page in the source you are citing from.
 % 'hitchhiker' is the name of your source in your .bib literature file.
-% '\glqq' and '\grqq{}' generate the german quotes.
+% '\enquote{}' is from the 'csquotes' package.
 ```
 
 #### Cite indirect
@@ -127,11 +127,11 @@ Lorem ipsum dolor sit amet, \ac{NiP} consetetur sadipscing elitr, sed diam nonum
 ```tex
 % include image
 \begin{figure}[ht] % ht means that the figure should appear at this exact position
-\centering
-\caption{Interesting caption}
-\includegraphics[width=\textwidth]{file-name} % put your pictures into content/assets
-\caption*{\footnotesize{Source: Some website}}
-\label{fig:goodreference} % add a reference label
+    \centering
+    \caption{Interesting caption}
+    \includegraphics[width=\textwidth]{file-name} % put your pictures into content/assets
+    \caption*{\footnotesize{Source: Some website}}
+    \label{fig:goodreference} % add a reference label
 \end{figure}
 
 % refer to a figure
@@ -150,11 +150,11 @@ As you can see in \autoref{fig:twosweetcats} there are cute cats in the world.
 
 ```tex
 \begin{wrapfigure}{r}{0.5\textwidth} % use wrapfigure instead of figure
-\centering
-\caption{Interesting caption}
-\includegraphics[scale=.6]{file-name}
-\caption*{\footnotesize{Source: Some website}}
-\label{fig:goodreference} % add a reference label
+    \centering
+    \caption{Interesting caption}
+    \includegraphics[scale=.6]{file-name}
+    \caption*{\footnotesize{Source: Some website}}
+    \label{fig:goodreference} % add a reference label
 \end{wrapfigure}
 ```
 
