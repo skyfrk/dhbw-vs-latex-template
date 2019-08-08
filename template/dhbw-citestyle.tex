@@ -37,3 +37,6 @@
   \usebibmacro{mycite}}
   {\multicitedelim}
   {\usebibmacro{postnote}}
+
+% Custom direct cite command
+\newcommand{\mydirectfootcite}[3]{\enquote{#1}{\myfootcite[#3]{#2}}}

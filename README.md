@@ -90,11 +90,11 @@ Alternatives:
 #### Cite direct
 
 ```tex
-\enquote{Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.}\myfootcite[42]{hitchhiker}
+\mydirectfootcite{Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.}{hitchhiker}{42}
 
 % '42' is the number of the page in the source you are citing from.
 % 'hitchhiker' is the name of your source in your .bib literature file.
-% '\enquote{}' is from the 'csquotes' package.
+% '\mydirectfootcite{}' is a wrapper around '\myfootcite' and '\enquote' from the 'csquotes' package.
 ```
 
 #### Cite indirect
