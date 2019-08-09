@@ -18,8 +18,6 @@ Documentation and general tips and tricks on how to wirte an academic text assig
   - [Wrap figures](#wrap-figures)
 - [Tables](#tables)
 - [Labels and referencing](#labels-and-referencing)
-- [Bibliography](#bibliography)
-- [Code listing](#code-listing)
 
 ## Sectioning
 
@@ -267,15 +265,39 @@ The `\label{tab:marker}` command tags the table with a marker. So that you can l
 
 ## Labels and referencing
 
-TODO
+When you want to refer to a section, figure, table or code listing you have to use a reference command like `\autoref{marker}` from the [hyperref](https://ctan.org/pkg/hyperref) CTAN package to do so because the number of a section for example is only determined at build time.
 
-https://en.wikibooks.org/wiki/LaTeX/Labels_and_Cross-referencing
+Using `\autoref{}` presupposes that you are using following tags in your labels so that it can produce the correct output:
+
+| Tag     | Type         | Output (German; first appearance) |
+| ------- | ------------ | --------------------------------- |
+| sec:    | Section      | Abschnitt 1                       |
+| subsec: | Subsection   | Unterabschnitt 1.1                |
+| tab:    | Table        | Tabelle 1                         |
+| fig:    | Figure       | Abbildung 1                       |
+| lst:    | Code listing | Quellcode 1                       |
+
+Take a look at the german example below:
 
 ```tex
-As you can see in \autoref{fig:twosweetcats} there are cute cats in the world.
+\section{Dieser Abschnitt ist wahr}\label{sec:widerspruch_beispiel}
+Dieser Abschnitt ist nicht wahr
+
+\section{Anderer Abschnitt}\label{sec:andere}
+Beim Lesen des \autoref{sec:widerspruch_beispiel} konnten Sie einen Widerspruch feststellen.
+In \autoref{sec:andere} findet sich kein Widerspruch.
 ```
 
-## Bibliography
+The text in the second section translates to:
+
+```text
+Beim Lesen des Abschnitt 1 konnten Sie einen Widerspruch feststellen.
+In Abschnitt 2 findet sich kein Widerspruch.
+```
+
+[Click here](https://en.wikibooks.org/wiki/LaTeX/Labels_and_Cross-referencing) or read the [documenation of the hyperref package](https://ctan.org/pkg/hyperref) for details on advanced usage.
+
+<!-- ## Bibliography
 
 TODO
 
@@ -324,4 +346,4 @@ app.get('/', (req, res) => res.send('Hello World!'))
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
         \end{lstlisting}
 \end{subcaptionenv}
-```
+``` -->
