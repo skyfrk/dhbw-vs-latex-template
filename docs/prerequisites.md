@@ -1,18 +1,16 @@
-TODO rework
-
 # Prerequisites <!-- omit in toc -->
 
 - [Install a LaTeX distribution](#install-a-latex-distribution)
 - [Make sure pdflatex and biber are in your path](#make-sure-pdflatex-and-biber-are-in-your-path)
 - [Install a text editor](#install-a-text-editor)
 
-> You can skip installing LaTeX if you want to use a Visual Studio Code [development container](https://code.visualstudio.com/docs/remote/containers).
-
 ## Install a LaTeX distribution
 
-Using [MiKTeX](https://miktex.org/download) is recommended because it is more lightweight. You can also use [TeX Live](https://tug.org/texlive/) though.
+Using [TeX Live](https://tug.org/texlive/) is recommended. You can also use [MiKTeX](https://miktex.org/download) though.
 
 > If you're installing TeX Live downloading the [ISO](https://tug.org/texlive/acquire-iso.html) is faster than using the installer.
+
+> You can skip installing LaTeX if you want to use a Visual Studio Code [development container](https://code.visualstudio.com/docs/remote/containers).
 
 ## Make sure pdflatex and biber are in your path
 
