@@ -13,7 +13,7 @@ Example academic text assignment using this template: [skyfrk/dhbw-vs-smart-home
 3. Customize `content/misc/config.tex` to your needs.
 4. Start writing your text in `content/text.tex` guided by the [documentation](./docs/writing.md) of this template!
 
-### [:open_book: Documentation]((./docs/writing.md))
+### [:open_book: Documentation](./docs/writing.md)
 
 ### :file_folder: Important files and folders
 
