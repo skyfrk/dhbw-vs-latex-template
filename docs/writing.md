@@ -191,7 +191,7 @@ All figures will be automatically numbered and added to the list of figures.
 
 ### Normal figure
 
-Adding a figure required a few commands explained below the example:
+Adding a figure requires a few commands explained below the example:
 
 ```tex
 \begin{figure}[h]
@@ -234,6 +234,36 @@ In the example below the `wrapfigure` environment takes two arguments. The first
 ```
 
 ## Tables
+
+Adding a table requires a few commands explained below the example:
+
+```tex
+\begin{table}[h]
+    \caption{Evil plan}
+    \centering
+    \begin{tabular}{ | c | l |}
+        \hline
+        \textbf{Phase}  & \textbf{Action}       \\ \hline
+        1               & Use a latex template  \\ \hline
+        2               & ???                   \\ \hline
+        3               & Profit!               \\ \hline
+    \end{tabular}
+    \caption*{\footnotesize{Source: Own imagination}}
+    \label{tab:evil_plan}
+\end{table}
+```
+
+The `table` environment takes a [placement specifier](https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions#Figures) as argument. You're most likely to use `h` which LaTeX interprets as `place the table here`.
+
+The `\centering` command centers everything inside the `table` environment.
+
+The `\caption{caption}` command defines the title of the table which will be placed above the table and also be used in the list of tables.
+
+Inside the `tabular` environment the actual table is created. [Click here](https://en.wikibooks.org/wiki/LaTeX/Tables#The_tabular_environment) for a detailed guide on how to use the `tabular` environment.
+
+The `\caption*{\footnotesize{short reference}}` command combination adds a text below the table to be used as short reference for the source of the data in the table.
+
+The `\label{tab:marker}` command tags the table with a marker. So that you can later refer to the image. Make sure to always write `tab:` in front of your marker so that [automatic referencing](#labels-and-referencing) works. This marker has to be unique.
 
 ## Labels and referencing
 
