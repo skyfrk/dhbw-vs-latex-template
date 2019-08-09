@@ -31,7 +31,9 @@ Documentation and general tips and tricks on how to wirte an academic text assig
 
 Sections and subsections are automatically numbered and added to the table of contents in order of appearance. Use `\section*{title}`, `\subsection*{title}` and `\subsubsection*{title}` to add unnumbered sections which don't appear in the table of contents.
 
->You can manually add unnumbered sections to the table of contents [using the \addcontentsline command](http://kb.mit.edu/confluence/pages/viewpage.action?pageId=3907522).
+> You can add a marker to a section using `\label{sec:marker}` to be able to [refer](#labels-and-referencing) to it later.
+
+> You can manually add unnumbered sections to the table of contents [using the \addcontentsline command](http://kb.mit.edu/confluence/pages/viewpage.action?pageId=3907522).
 
 ### Sections
 
