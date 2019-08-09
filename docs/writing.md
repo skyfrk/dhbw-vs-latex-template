@@ -17,6 +17,7 @@ Documentation and general tips and tricks on how to wirte an academic text assig
   - [Normal figure](#normal-figure)
   - [Wrap figures](#wrap-figures)
 - [Tables](#tables)
+- [Code listing](#code-listing)
 - [Labels and referencing](#labels-and-referencing)
 
 ## Sectioning
@@ -207,7 +208,7 @@ The `\centering` command centers everything inside the `figure` environment.
 
 The `\caption{caption}` command defines the title of the figure which will be placed above the figure and also be used in the list of figures.
 
-The `\includegraphics[options]{pathToFigure}` command from the [graphicx](https://ctan.org/pkg/graphicx) CTAN package actually imports the figure to the pdf. You can specify many `options` like `width` or `scale` as key-value-pairs separated by a `,`. Have a look at [the documentation of the graphicx package](https://ctan.org/pkg/graphicx) for advanced options.
+The `\includegraphics[options]{pathToFigure}` command from the [graphicx](https://ctan.org/pkg/graphicx) CTAN package actually imports the figure to the pdf. You can specify many `options` like `width` or `scale` as key-value pairs separated by a `,`. Have a look at [the documentation of the graphicx package](https://ctan.org/pkg/graphicx) for advanced options.
 
 :warning: When `pathToFigure` is a relative path have in mind that the base directory for including graphics is `content/assets/`.
 
@@ -262,6 +263,34 @@ Inside the `tabular` environment the actual table is created. [Click here](https
 The `\caption*{\footnotesize{short reference}}` command combination adds a text below the table to be used as short reference for the source of the data in the table.
 
 The `\label{tab:marker}` command tags the table with a marker. So that you can later refer to the image. Make sure to always write `tab:` in front of your marker so that [automatic referencing](#labels-and-referencing) works. This marker has to be unique.
+
+## Code listing
+
+Adding a code listing requires a few commands explained below the example:
+
+```tex
+\begin{subcaptionenv}{Source: \mycite[Vgl.][2]{example}}
+    \begin{lstlisting}[caption={Express Example},language=javascript,label=lst:express]
+const express = require('express')
+const app = express()
+const port = 3000
+
+app.get('/', (req, res) => res.send('Hello World!'))
+
+app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+    \end{lstlisting}
+\end{subcaptionenv}
+```
+
+The `subcaptionenv` environment takes a text as argument which will be placed in the center below the content of the environment formatted as a unnumbered subcaption to be used for short references.
+
+The `lstlisting` environment takes a few `options` as key-value pairs listed below and formats code inside the environment accordingly.
+
+| Option     | Description                                                                                                                                                                                                |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `caption`  | The caption to appear above the code listing and in the list of code listings.                                                                                                                             |
+| `language` | The language of the source code used for syntax highlighting. In addition to the languages [supported by default](https://ctan.org/pkg/listings) this template adds support for `csharp` and `javascript`. |
+| `label`    | The marker used for [referencing](#labels-and-referencing). Has to begin with `lst:`.                                                                                                                      |
 
 ## Labels and referencing
 
@@ -324,26 +353,4 @@ Entries in `/content/misc/literature.bib` should always have a `shorttitle`.
     url = {https://somedomain.com},
     urldate = {2015-10-21}
 }
-```
-
-## Code listing
-
-TODO
-
-Have a look at the [docs](https://ctan.org/pkg/listings) for a detailed guide how to use the `listings`-package. The custom `subcaptionenv` macro automatically adds a subcaption to the listing.
-
-> In addition to the natively supported languages this template defines styles for `csharp` and `javascript`.
-
-```tex
-\begin{subcaptionenv}{Source: \mycite[Vgl.][2]{example}}
-    \begin{lstlisting}[caption={Express Example}, language=javascript]
-const express = require('express')
-const app = express()
-const port = 3000
-
-app.get('/', (req, res) => res.send('Hello World!'))
-
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
-        \end{lstlisting}
-\end{subcaptionenv}
 ``` -->
