@@ -17,7 +17,7 @@ Documentation and general tips and tricks on how to wirte an academic text assig
   - [Normal figure](#normal-figure)
   - [Wrap figures](#wrap-figures)
 - [Tables](#tables)
-- [Labels](#labels)
+- [Labels and referencing](#labels-and-referencing)
 - [Bibliography](#bibliography)
 - [Code listing](#code-listing)
 
@@ -187,47 +187,59 @@ to this, NiP is also an active shareholder in the clothing company DRKN.
 
 ## Figures
 
-TODO
+All figures will be automatically numbered and added to the list of figures.
 
 ### Normal figure
 
-TODO
+Adding a figure required a few commands explained below the example:
 
 ```tex
-% include image
-\begin{figure}[ht] % ht means that the figure should appear at this exact position
+\begin{figure}[h]
     \centering
-    \caption{Interesting caption}
-    \includegraphics[width=\textwidth]{file-name} % put your pictures into content/assets
-    \caption*{\footnotesize{Source: Some website}}
-    \label{fig:goodreference} % add a reference label
+    \caption{Quality Meme}
+    \includegraphics[width=\textwidth]{surprised_pikachu.png}
+    \caption*{\footnotesize{Source: \mycite{pikachu_website}}}
+    \label{fig:pikachu}
 \end{figure}
-
-% refer to a figure
-Lorem ipsum dolor sit amet \autoref{fig:goodreference} consetetur sadipscing elitr.
-% will resolve to:
-% Lorem ipsum dolor sit amet figure 1 consetetur sadipscing elitr.
 ```
+
+The `figure` environment takes a [placement specifier](https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions#Figures) as argument. You're most likely to use `h` which LaTeX interprets as `place the figure here`.
+
+The `\centering` command centers everything inside the `figure` environment.
+
+The `\caption{caption}` command defines the title of the figure which will be placed above the figure and also be used in the list of figures.
+
+The `\includegraphics[options]{pathToFigure}` command from the [graphicx](https://ctan.org/pkg/graphicx) CTAN package actually imports the figure to the pdf. You can specify many `options` like `width` or `scale` as key-value-pairs separated by a `,`. Have a look at [the documentation of the graphicx package](https://ctan.org/pkg/graphicx) for advanced options.
+
+:warning: When `pathToFigure` is a relative path have in mind that the base directory for including graphics is `content/assets/`.
+
+The `\caption*{\footnotesize{short reference}}` command combination adds a text below the figure to be used as short reference for the source of the figure.
+
+The `\label{fig:marker}` command tags the figure with a marker. So that you can later refer to the image. Make sure to always write `fig:` in front of your marker so that [automatic referencing](#labels-and-referencing) works. This marker has to be unique.
 
 ### Wrap figures
 
-TODO
+When you have a small graphic you can use the `wrapfigure` environment from the [wrapfig](https://ctan.org/pkg/wrapfig) CTAN package instead of the `figure` environment to let your text wrap around the graphic.
+
+In the example below the `wrapfigure` environment takes two arguments. The first argument specifies the postion (normally `r` or `l` for right and left) and the second argument specifies the width of the graphic. Have a look at the [documentation of the wrapfig package](https://ctan.org/pkg/wrapfig) for details on advanced usage.
 
 ```tex
-\begin{wrapfigure}{r}{0.5\textwidth} % use wrapfigure instead of figure
+\begin{wrapfigure}{r}{0.5\textwidth}
     \centering
-    \caption{Interesting caption}
-    \includegraphics[scale=.6]{file-name}
-    \caption*{\footnotesize{Source: Some website}}
-    \label{fig:goodreference} % add a reference label
+    \caption{Quality Meme}
+    \includegraphics[width=\textwidth]{surprised_pikachu.png}
+    \caption*{\footnotesize{Source: \mycite{pikachu_website}}}
+    \label{fig:pikachu}
 \end{wrapfigure}
 ```
 
 ## Tables
 
-## Labels
+## Labels and referencing
 
 TODO
+
+https://en.wikibooks.org/wiki/LaTeX/Labels_and_Cross-referencing
 
 ```tex
 As you can see in \autoref{fig:twosweetcats} there are cute cats in the world.
