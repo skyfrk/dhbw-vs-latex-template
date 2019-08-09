@@ -10,6 +10,9 @@ Documentation and general tips and tricks on how to wirte an academic text assig
   - [Cite indirect with footnote](#cite-indirect-with-footnote)
   - [Cite without footnote](#cite-without-footnote)
 - [Acronyms](#acronyms)
+  - [Add a new acronym](#add-a-new-acronym)
+    - [Define a custom plural](#define-a-custom-plural)
+  - [Using acronyms in text](#using-acronyms-in-text)
 - [Figures](#figures)
   - [Normal figure](#normal-figure)
   - [Wrap figures](#wrap-figures)
@@ -123,20 +126,64 @@ Here is a short reference: \mycite[Vgl.][42]{hitchhiker78}
 
 ## Acronyms
 
-TODO
+This template uses the `acronym` CTAN package. Have a look at it's [documentation](https://ctan.org/pkg/acronym) for details on advanced usage.
+
+### Add a new acronym
+
+Before you can use an acronym in your text you have to add it inside the `acronym` environment in `content/misc/acronyms.tex`. The `acronym` environment takes one argument which will dictate how much space between the acronym and the long version of the acronym there will be. The `acronym` environment will just count the length of given parameter. According to the DHBW-VS you should always use the longest acronym twice here. Example below:
 
 ```tex
-% in the file content/misc/acronym.tex
+\begin{acronym}[NiPNiP]
+
+\acro{C9}{Cloud 9}
 \acro{NiP}{Ninjas in Pyjamas}
+\acro{VP}{Virtus Pro}
 
-% in the text
-Lorem ipsum dolor sit amet, \ac{NiP} consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-
-% If the acronym was used for the first time \ac{} will genrate:
-% [...] sit amet, Ninjas in Pyjamas (NiP) consetetur sadipscing [...]
-% If the acronym was not used for the first time \ac{} will genrate:
-% [...] sit amet, NiP consetetur sadipscing [...]
+\end{acronym}
 ```
+
+:warning: You must manually sort the acronyms by alphabet. As of august 2019 the `acronym` package doesn't support automatic sorting.
+
+#### Define a custom plural
+
+Command: `\acroplural{acronym}[shortPlural]{longPlural}`
+
+The `acronym` package adds an `s` to the short and long version of an acronym if no custom plural is defined. There are many cases when adding an `s` doesn't work. See the german example below:
+
+```tex
+\begin{acronym}[NiPNiP]
+
+\acro{GF}{Globale Firma}
+\acroplural{GF}[GF]{Globale Firmen}
+
+\end{acronym}
+```
+
+### Using acronyms in text
+
+Commands: `\ac{acronym}` (singular) and `\acp{acronym}` (plural)
+
+The `acronym` package will make sure that first time an acronym is used it will be defined with the long version inline!
+
+The `\acp{acronym}` command will add an `s` to the acronym if no [custom plural](#define-a-custom-plural) was defined.
+
+```tex
+\ac{NiP} was the first professional esports team to launch our own gaming peripheral
+company, Xtrfy. \ac{NiP} is also active in the space of education within the esports
+industry through several initiatives. In addition to this, \ac{NiP} is also an active
+shareholder in the clothing company DRKN.
+```
+
+The example above will translate to:
+
+```text
+NiP (Ninjas in Pyjamas) was the first professional esports team to launch our
+own gaming peripheral company, Xtrfy. NiP is also active in the space of
+education within the esports industry through several initiatives. In addition
+to this, NiP is also an active shareholder in the clothing company DRKN.
+```
+
+:warning: You always have wrap your acronyms in one of the commands above in order for the `acronym` package to work correctly.
 
 ## Figures
 
