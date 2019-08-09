@@ -82,7 +82,7 @@ Wraps given text in `„` and `"` and adds a footnote with given `bibEntryId` an
 
 ```tex
 ...so thats why a \mydirectfootcite{towel is the most
-important item a Hitchhiker can carry}{hitchhiker}{42}.
+important item a Hitchhiker can carry}{hitchhiker78}{42}.
 ```
 
 > This is just a wrapper using [\myfootcite](#cite-indirect) and `\enquote` from the CTAN package [csquotes](https://www.ctan.org/pkg/csquotes).
@@ -100,12 +100,26 @@ Command: `\myfootcite[prenote][page]{bibEntryId}`
 Adds a footnote with given `bibEntryId`, `prenote` and `page`. Example below:
 
 ```tex
-TODO
+A Hitchhiker’s Guide To The Galaxy PDF by Adam Douglas
+is a timeless science fiction masterpiece.\myfootcite[Vgl.][42]{hitchhiker78}
+This is the next sentence...
 ```
 
 ### Cite without footnote
 
-TODO
+Command: `\mycite[prenote][page]{bibEntryId}`
+
+| Parameter    | Description                                                                  |
+| ------------ | ---------------------------------------------------------------------------- |
+| `prenote`    | A prenote that will appear in front of the short reference (Usually `Vgl.`). |
+| `page`       | The number of the page you are citing from. Can be empty.                    |
+| `bibEntryId` | The identifier of the entry in the [bibliography](#bibliography).            |
+
+Creates a short reference with given `bibEntryId`, `prenote` and `page` where the command is called. Example below:
+
+```tex
+Here is a short reference: \mycite[Vgl.][42]{hitchhiker78}
+```
 
 ## Acronyms
 
