@@ -354,6 +354,7 @@ In order to satisfy the DHBW-VS requirements an bibliography entry of type `book
 | `edition`    | The edition of the book. :warning: Do not add an edition field when you're refering to the first edition of a book. |
 | `publisher`  | The publisher of the book.                                                                                          |
 | `location`   | The city or place where to book was published.                                                                      |
+
 Take a look at the [documentation of the biblatex package](https://www.ctan.org/pkg/biblatex) for optional entry fields. Example below:
 
 ```tex
