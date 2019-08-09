@@ -19,6 +19,13 @@ Documentation and general tips and tricks on how to wirte an academic text assig
 - [Tables](#tables)
 - [Code listing](#code-listing)
 - [Labels and referencing](#labels-and-referencing)
+- [Bibliography](#bibliography)
+  - [Add entry of type book](#add-entry-of-type-book)
+  - [Add entry of type online](#add-entry-of-type-online)
+  - [Author field format](#author-field-format)
+    - [Firstname lastname combinations](#firstname-lastname-combinations)
+    - [Author is just one word](#author-is-just-one-word)
+    - [More than one author](#more-than-one-author)
 
 ## Sectioning
 
@@ -326,31 +333,115 @@ In Abschnitt 2 findet sich kein Widerspruch.
 
 [Click here](https://en.wikibooks.org/wiki/LaTeX/Labels_and_Cross-referencing) or read the [documenation of the hyperref package](https://ctan.org/pkg/hyperref) for details on advanced usage.
 
-<!-- ## Bibliography
+## Bibliography
 
-TODO
+When you're researching it is advised to store every source of information as an entry in your bibliography file located at `/content/misc/literature.bib`. Biblatex will make sure to only print references you actually refered to in your bibliography at the end of the text. Biblatex will also sort entries by author, then by year, then by month, then by day and finally by title.
 
-Entries in `/content/misc/literature.bib` should always have a `shorttitle`.
+:warning: The DHBW-VS bibliography style was only tested with the entires of type [book](#add-entry-of-type-book) and [online](#add-entry-of-type-online). However [other types of entries](https://www.ctan.org/pkg/biblatex) should also work as long as they provide a `shorttitle` field!
 
->If want to add the first edition of a source do **not** add an edition key to the entry.
+### Add entry of type book
+
+In order to satisfy the DHBW-VS requirements an bibliography entry of type `book` has to provide following fields:
+
+| Field        | Description                                                                                                         |
+| ------------ | ------------------------------------------------------------------------------------------------------------------- |
+| `author`     | Author or authors of the book. See [author field format](#author-field-format).                                     |
+| `title`      | Title of the book.                                                                                                  |
+| `shorttitle` | Shorttitle for the reference.  Has to be unique.                                                                    |
+| `year`       | Year of the publication of the book. :warning: Do not add a year field when the year is unknown.                    |
+| `edition`    | The edition of the book. :warning: Do not add an edition field when you're refering to the first edition of a book. |
+| `publisher`  | The publisher of the book.                                                                                          |
+| `location`   | The city or place where to book was published.                                                                      |
+Take a look at the [documentation of the biblatex package](https://www.ctan.org/pkg/biblatex) for optional entry fields. Example below:
 
 ```tex
-@book{key,
-    author = {Firstname Lastname and Otherfirstname Otherlastname},
-    title = {Title},
-    shorttitle = {Shorttitle},
-    year = {1996},
-    edition = {2},
-    publisher = {Some company},
-    location = {Berlin}
+@book{adams79,
+    author      = {Douglas Adams},
+    title       = {The Hitchhiker's Guide to the Galaxy},
+    shorttitle  = {Hitchhiker},
+    year        = {1979},
+    publisher   = {Pan Books},
+    location    = {Somecity}
 }
+```
 
-@online{anotherkey,
-    author = {Lastname, Firstname},
-    title = {Title},
-    shorttitle = {Shorttitle},
-    date = {2016-06-20},
-    url = {https://somedomain.com},
-    urldate = {2015-10-21}
+### Add entry of type online
+
+In order to satisfy the DHBW-VS requirements an bibliography entry of type `online` has to provide following fields:
+
+| Field        | Description                                                                                                    |
+| ------------ | -------------------------------------------------------------------------------------------------------------- |
+| `author`     | Author or authors of the online entry. See [author field format](#author-field-format).                        |
+| `title`      | The title of the online entry                                                                                  |
+| `shorttitle` | The shorttitle of the online entry. Has to be unique.                                                          |
+| `date`       | The date of the publication of the online entry. :warning: Do not add a `date` field when the date is unknown. |
+| `url`        | The URL pointing to the online entry.                                                                          |
+| `urldate`    | The date when the URL was visited the last time in `yyyy-mm-dd` format.                                        |
+
+Valid example:
+
+```tex
+@online{hackthewood_first_article,
+    author      = {Christian Neumann},
+    title       = {HACK THE WOOD 2019},
+    shorttitle  = {Hackathon},
+    date        = {2019-03-14},
+    urldate     = {2019-08-08},
+    url         = {https://www.tapio.one/de/blog/hack-the-wood-2019}
 }
-``` -->
+```
+
+### Author field format
+
+There are many ways to use the `author` field. The most common ways are shown below. For advanced usage of the `author` field take a look at the [documentation of the biblatex package](https://www.ctan.org/pkg/biblatex).
+
+#### Firstname lastname combinations
+
+Both examples listed below are valid:
+
+```tex
+@online{tesla,
+    author = {Elon Musk},
+    ...
+}
+```
+
+```tex
+@online{tesla,
+    author = {Musk, Elon},
+    ...
+}
+```
+
+#### Author is just one word
+
+When the Author ist just one word for example the name of a company you have to define the `author` field this way:
+
+```tex
+@online{hackthewood,
+    author = "{tapio}",
+    ...
+}
+```
+
+#### More than one author
+
+You can add more than one author to an author field. Use the `and` keyword to seperate the names of the authors.
+
+```tex
+@online{programming,
+    author = {Martin Fowler and Hanselman, Scott},
+    ...
+}
+```
+
+> You can different [firstname lastname combination](#firstname-lastname-combinations) in the same `author` field.
+
+You can use the keyword `and others` if there are to many authors:
+
+```tex
+@online{paypalmafia,
+    author = {Jawed Karin and Stoppelman, Jeremy and Peter Thiel and others},
+    ...
+}
+```
