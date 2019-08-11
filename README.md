@@ -18,7 +18,7 @@ Example academic text assignment using this template: [skyfrk/dhbw-vs-smart-home
 ### :file_folder: Important files and folders
 
 ```text
-├── content                             | Content related files. To be edited.
+├── content                             | All content related to text assignment.
 │   ├── assets                          | Folder for binary assets.
 │   ├── misc                            | Folder for miscellaneous files.
 │   │   ├── acronyms.tex                | List of acronyms.
@@ -39,7 +39,7 @@ Example academic text assignment using this template: [skyfrk/dhbw-vs-smart-home
 
 Feel free to open an [issue](https://github.com/skyfrk/dhbw-vs-latex-template/issues) or submit a pull request if you discovered a bug or if there are new specifications! :books:
 
-> Everything except the output of this template should be written in the english language for better accessibility!
+> Everything except the output of this template should be written in english for better accessibility!
 
 ### :mag: Resources
 
