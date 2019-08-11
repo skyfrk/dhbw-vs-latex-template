@@ -4,7 +4,7 @@ This is a LaTeX template for academic text assignments at the [DBHW-VS](https://
 
 >If you're looking for a [Citavi](https://www.citavi.com/) template checkout [stabiloBOSS96/ZitationsstilDHBW-VS-WI](https://github.com/stabiloBOSS96/ZitationsstilDHBW-VS-WI).
 
-Example academic text assignment using this template: [skyfrk/dhbw-vs-smart-home-report](https://github.com/skyfrk/dhbw-vs-smart-home-report)
+Academic text assignment built using this template: [skyfrk/dhbw-vs-smart-home-report](https://github.com/skyfrk/dhbw-vs-smart-home-report)
 
 ## :fire: Get started
 
@@ -18,7 +18,7 @@ Example academic text assignment using this template: [skyfrk/dhbw-vs-smart-home
 ### :file_folder: Important files and folders
 
 ```text
-├── content                             | All content related to text assignment.
+├── content                             | All content related to your text assignment.
 │   ├── assets                          | Folder for binary assets.
 │   ├── misc                            | Folder for miscellaneous files.
 │   │   ├── acronyms.tex                | List of acronyms.
