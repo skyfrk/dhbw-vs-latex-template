@@ -1,6 +1,10 @@
-# DHBW-VS academic text LaTeX template
+<div align=center>
+<h1>DHBW-VS academic text LaTeX template</h1>
 
 ![Travis (.org)](https://img.shields.io/travis/skyfrk/dhbw-vs-latex-template?style=flat&color=brightgreen) ![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/skyfrk/dhbw-vs-latex-template?color=brightgreen&label=version) ![GitHub top language](https://img.shields.io/github/languages/top/skyfrk/dhbw-vs-latex-template?style=flat&color=brightgreen) ![GitHub](https://img.shields.io/github/license/skyfrk/dhbw-vs-latex-template?color=brightgreen) ![GitHub last commit](https://img.shields.io/github/last-commit/skyfrk/dhbw-vs-latex-template) ![GitHub All Releases](https://img.shields.io/github/downloads/skyfrk/dhbw-vs-latex-template/total?style=flat&color=brightgreen)
+</div>
+
+---
 
 This is a LaTeX template for academic text assignments at the [DBHW-VS](https://www.dhbw-vs.de/), especially for business computer science students created along [the specifications](template/dhbw-text-requirements.md) written by Mrs. Heinrich. Using this template **speeds up the writing process** as you only have to **focus on writing actual content**. All weird formatting requirements are met automatically! :beer::sunglasses::v:
 
