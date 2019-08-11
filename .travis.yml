@@ -1,0 +1,14 @@
+env:
+- REPO_NAME="dhbw-vs-latex-template"
+language: generic
+script:
+- zip -r ${REPO_NAME}_${TRAVIS_TAG}-${TRAVIS_BUILD_NUMBER}.zip content template .devcontainer
+  .vscode .gitignore root.tex
+deploy:
+  provider: releases
+  api_key:
+    secure: jPoN6oP7p+u1u82rF+KyNa77i4Har2+8Bh9CJsK3/1lq2F36y3GnrA1eYLaBcY+ZUdvqYaf2TpVuJx/G6O1F4MgZwNTlSJPF4Ar+mKkcKL58nJpjhdgyGpC2mhzZ9rs34u6zyZ/pndC4aJx6yrRA1kWpFQYx/GDP21poNcdnSRIrMA2smcelakAAoV/LpQgKB4QRrLVfbirZxM4jk0xf5v0Z/2jIObMPXvS7aBCyUbrxp1iKaFNuu19JbMJHjKfLSt6CAaqCPqwl/WA7Qy2bhz6DGFnAaxcFXwcIfY7iSp4+yeV0wP/gfgrYQ8e1TgFFEq38sRPmK8qPzyLXRUvVuVJdNEuGQqWAPhgnmqR7JRMTpqUAPRbWLX0yrHEBpURF67dLP27aWmTAcFYqYhRZgwpQ+YjSIwMpyYY5q5VStNqv277roFUpfKvW15VJ3bSeLqU2wBcrnssLWPof0QkLhnjU7brr/E7NBmY0lMf0VHsnnkkYnqlRZIMDmXDnQukOsmV7a88VkBtIiGNHI5s+GaxSJrHUelqF/U/hIDbRoqaX6Tj+onym6luXr5yjd3hewKm3VsVKcJZtbsEYArEXDj/PYgZhpwGR485ItFgm2Y3zK0qFqFi4WYE+KzNIVEqc9oNtsPZnBkcbbaCRkjiQcFs8v84TkjIfphwZy29dw9k=
+  file: ${REPO_NAME}_${TRAVIS_TAG}-${TRAVIS_BUILD_NUMBER}.zip
+  on:
+    repo: skyfrk/dhbw-vs-latex-template
+    tags: true
