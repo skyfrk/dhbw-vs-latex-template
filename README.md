@@ -1,5 +1,7 @@
 # DHBW-VS academic text LaTeX template
 
+![Travis (.org)](https://img.shields.io/travis/skyfrk/dhbw-vs-latex-template?style=flat&color=brightgreen) ![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/skyfrk/dhbw-vs-latex-template?color=brightgreen&label=version) ![GitHub top language](https://img.shields.io/github/languages/top/skyfrk/dhbw-vs-latex-template?style=flat&color=brightgreen) ![GitHub](https://img.shields.io/github/license/skyfrk/dhbw-vs-latex-template?color=brightgreen) ![GitHub last commit](https://img.shields.io/github/last-commit/skyfrk/dhbw-vs-latex-template) ![GitHub All Releases](https://img.shields.io/github/downloads/skyfrk/dhbw-vs-latex-template/total?style=flat&color=brightgreen)
+
 This is a LaTeX template for academic text assignments at the [DBHW-VS](https://www.dhbw-vs.de/), especially for business computer science students created along [the specifications](template/dhbw-text-requirements.md) written by Mrs. Heinrich. Using this template **speeds up the writing process** as you only have to **focus on writing actual content**. All weird formatting requirements are met automatically! :beer::sunglasses::v:
 
 >If you're looking for a [Citavi](https://www.citavi.com/) template checkout [stabiloBOSS96/ZitationsstilDHBW-VS-WI](https://github.com/stabiloBOSS96/ZitationsstilDHBW-VS-WI).
@@ -9,7 +11,7 @@ Academic text assignment built using this template: [skyfrk/dhbw-vs-smart-home-r
 ## :fire: Get started
 
 1. Make sure your system meets all [prerequisites](./docs/prerequisites.md).
-2. Download the [latest release](https://github.com/skyfrk/dhbw-vs-latex-template/releases) of the template.
+2. Download the [latest release](https://github.com/skyfrk/dhbw-vs-latex-template/releases/latest) of the template.
 3. Customize `content/misc/config.tex` to your needs.
 4. Start writing your text in `content/text.tex` guided by the [documentation](./docs/writing.md) of this template!
 
