@@ -2,6 +2,8 @@ env:
 - REPO_NAME="dhbw-vs-latex-template"
 language: generic
 script:
+ - cd . # nothing to do here
+before_deploy:
 - zip -r ${REPO_NAME}_${TRAVIS_TAG}-${TRAVIS_BUILD_NUMBER}.zip content template .devcontainer
   .vscode .gitignore root.tex
 deploy:
