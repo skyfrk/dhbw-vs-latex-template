@@ -32,6 +32,8 @@
   \usepackage[autostyle=true,german=quotes]{csquotes}
   % Generate random text
   \usepackage{blindtext}
+  % Fixes footnotes sometime not being at the bottom of the page (issue #14)
+  \usepackage[bottom]{footmisc}
   % Fixes indentation issue #21 for long author names in footnotes
   \makeatletter
   \renewcommand\@makefntext[1]{\leftskip=1em\hskip-0em\@makefnmark#1}
