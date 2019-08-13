@@ -438,7 +438,7 @@ You can add more than one author to an author field. Use the `and` keyword to se
 }
 ```
 
-> You can different [firstname lastname combination](#firstname-lastname-combinations) in the same `author` field.
+> You can use different [firstname-lastname-combinations](#firstname-lastname-combinations) in the same `author` field.
 
 You can use the keyword `and others` if there are to many authors:
 
