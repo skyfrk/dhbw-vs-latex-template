@@ -93,8 +93,10 @@
   %**************************************************************
   % Graphics
   %
-  \usepackage{graphicx}
+  \usepackage[dvipdfmx]{graphicx} % Option dvipdfmx fixes latexmk build
   \graphicspath{ {content/assets/} }
+  % Fixes latexmk build
+  \usepackage{bmpsize}
   % Wrap text around figures
   \usepackage{wrapfig}
   % To place two images beside each other
