@@ -14,10 +14,10 @@ Academic text assignment built using this template: [skyfrk/dhbw-vs-smart-home-r
 
 ## :fire: Get started
 
-1. Make sure your system meets all [prerequisites](./docs/prerequisites.md).
-2. Download the [latest release](https://github.com/skyfrk/dhbw-vs-latex-template/releases/latest) of the template.
+1. Download the [latest release](https://github.com/skyfrk/dhbw-vs-latex-template/releases/latest).
+2. Run through the [setup instructions](./docs/setup.md).
 3. Customize `content/misc/config.tex` to your needs.
-4. Start writing your text in `content/text.tex` guided by the [documentation](./docs/writing.md) of this template!
+4. Start writing your text in `content/text.tex` guided by the [documentation](./docs/writing.md)!
 
 ### [:open_book: Documentation](./docs/writing.md)
 
