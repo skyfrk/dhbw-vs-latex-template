@@ -1,7 +1,17 @@
 {
+    "editor.minimap.enabled": false,
+    "editor.wordWrap": "on",
+    "cSpell.language": "de,en",
+    "cSpell.enabled": true,
     "latex-workshop.latex.recipes": [
         {
-            "name": "pdflatex -> biber -> pdflatex*2",
+            "name": "latexmk 🔃",
+            "tools": [
+              "latexmk"
+            ]
+        },
+        {
+            "name": "pdflatex ➞ biber ➞ pdflatex*2",
             "tools": [
                 "pdflatex",
                 "biber",
@@ -27,11 +37,20 @@
             "args": [
                 "%DOCFILE%"
             ]
+        },
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+              "-synctex=1",
+              "-interaction=nonstopmode",
+              "-file-line-error",
+              "-pdf",
+              "-outdir=%OUTDIR%",
+              "%DOC%"
+            ],
+            "env": {}
         }
     ],
-    "latex-workshop.synctex.afterBuild.enabled": true,
-    "editor.minimap.enabled": false,
-    "editor.wordWrap": "on",
-    "cSpell.language": "de,en",
-    "cSpell.enabled": true,
+    "latex-workshop.synctex.afterBuild.enabled": true
 }
