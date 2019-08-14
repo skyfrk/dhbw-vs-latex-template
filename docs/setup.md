@@ -1,4 +1,4 @@
-# Prerequisites <!-- omit in toc -->
+# Setup <!-- omit in toc -->
 
 - [Install a LaTeX distribution](#install-a-latex-distribution)
 - [Install a text editor](#install-a-text-editor)
