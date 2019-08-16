@@ -1,5 +1,3 @@
-%!TEX root = ../root.tex
-
 \thispagestyle{empty}
 
 \newgeometry{
@@ -11,36 +9,36 @@ bottom=4cm
 
 \begin{center}
 \vspace*{1cm} \ \\
-{\fontsize{40}{48}\selectfont \bfseries \mytitlewithlinebreaks \\}
+{\fontsize{40}{48}\selectfont \bfseries \dhbwGetTitle \\}
 \vspace{0.75cm}
-{\Large\bfseries \mysubtitlewithlinebreaks \\}
+{\Large\bfseries \dhbwGetSubtitle \\}
 \vspace{1.5cm}
-\mytexttype \\
-Studienjahrgang \myyearofstudy \\
-Kurs \mycourse \\
+\dhbwGetTextType \\
+Studienjahrgang \dhbwGetAcademicYear \\
+Kurs \dhbwGetCourse \\
 \vspace{1.5cm}
-Fakultät \myfaculty \\
-Studiengang \mycourseofstudy \\
+Fakultät \dhbwGetFaculty \\
+Studiengang \dhbwGetFieldOfStudy \\
 DUALE HOCHSCHULE BADEN-WÜRTTEMBERG\\
 VILLINGEN-SCHWENNINGEN\\
 \end{center}
-\begin{textblock*}{50mm}(40mm,180mm)
+\begin{textblock*}{50mm}(30mm,160mm)
     \begin{rotate}{50}
         \fontsize{34}{40}\bfseries\textcolor{red}{Sperrvermerk}
     \end{rotate}
 \end{textblock*}
 \begin{table}[b]
 \begin{tabular}{ll}
-Bearbeiter: 		&	\myauthor \\
-Ausbildungsbetrieb:	&	\mycompany \\
-Betreuender Dozent:	&	\mylecturer \\
+Bearbeiter: 		&	\dhbwGetAuthor \\
+Ausbildungsbetrieb:	&	\dhbwGetCompanyName \\
+Betreuender Dozent:	&	\dhbwGetLecturer \\
 \end{tabular}\\
 \\
 \\
 \begin{tabularx}{\textwidth}{lXl}
 \includegraphics[width=.3\linewidth]{title/dhbw-vs-logo.png} &
 &
-\raisebox{\height}{\includegraphics[width=.3\linewidth]{title/company-logo.png} }
+\raisebox{\height}{\includegraphics[width=.3\linewidth]{\dhbwGetCompanyLogo} }
 \end{tabularx}
 \end{table}
 

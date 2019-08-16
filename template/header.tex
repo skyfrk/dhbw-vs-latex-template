@@ -207,7 +207,8 @@
     title/.store in             = \dhbwGetTitle,
     subtitle/.store in          = \dhbwGetSubtitle,
     text type/.store in         = \dhbwGetTextType,
-    company/.store in           = \dhbwGetCompany,
+    company name/.store in      = \dhbwGetCompanyName,
+    company logo/.store in      = \dhbwGetCompanyLogo,
     lecturer/.store in          = \dhbwGetLecturer,
     location/.store in          = \dhbwGetLocation,
     date/.store in              = \dhbwGetDate,
@@ -225,7 +226,8 @@
     title           = Eine Arbeit,
     subtitle        = Ein Untertitel,
     text type       = Projektarbeit 2,
-    company         = GitHub,
+    company name    = GitHub,
+    company logo    = {title/company-logo.png},
     lecturer        = Prof. Dr. Peter Lustig,
     location        = Villingen-Schwenningen,
     date            = \today,
@@ -234,3 +236,4 @@
 
   \newcommand{\dhbwPrintIndependenceNotice}{\input{template/independence-notice.tex}}
   \newcommand{\dhbwPrintNonDisclosureNotice}{\input{template/non-disclosure-notice.tex}}
+  \newcommand{\dhbwPrintTitle}{\input{template/title.tex}}
