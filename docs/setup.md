@@ -1,16 +1,19 @@
 # Setup <!-- omit in toc -->
 
 - [Install a LaTeX distribution](#install-a-latex-distribution)
+  - [Optional: Install PlantUML](#optional-install-plantuml)
 - [Install a text editor](#install-a-text-editor)
 - [Compiling to PDF](#compiling-to-pdf)
 
 ## Install a LaTeX distribution
 
-This template was only tested using [TeX Live](https://tug.org/texlive/). You should however be able to use [MiKTeX](https://miktex.org/download) as well.
+This template was only tested using [TeX Live](https://tug.org/texlive/). You should however be able to use [MiKTeX](https://miktex.org/download) as well. You can skip installing a LaTeX distribution if you want to use the Visual Studio Code [remote development container](https://code.visualstudio.com/docs/remote/containers) provided for this template.
 
-> If you're installing TeX Live downloading the [ISO](https://tug.org/texlive/acquire-iso.html) is faster than using the installer.
+> If you're installing TeX Live downloading the [ISO](https://tug.org/texlive/acquire-iso.html) can be faster than using the installer on Windows.
 
-> You can skip installing LaTeX if you want to use a Visual Studio Code [development container](https://code.visualstudio.com/docs/remote/containers).
+### Optional: Install PlantUML
+
+If you want to render [PlantUML](http://plantuml.com/)-diagrams embedded in your LaTeX code you have to install `PlantUML` and `Graphviz` and setup the environment variables `PLANTUML_JAR` and `GRAPHVIZ_DOT` according to the [setup instructions](https://github.com/koppor/plantuml#preconditions) of the `plantuml` LuaLaTeX package.
 
 ## Install a text editor
 

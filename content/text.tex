@@ -7,13 +7,15 @@
 \subsubsection{This is a subsubsection}
 \blindtext \ac{API}
 \section*{This is a unnumbered section}
+
 \begin{figure}[ht] 
     \centering
     \caption{Example caption}
     \includegraphics[width=\textwidth]{figure.png} 
     \subcaption{Source: \mycite[69]{example}}
     \label{fig:goodreference}
-    \end{figure}
+\end{figure}
+
 \blindtext
 
 \begin{subcaptionenv}{Source: \mycite[Vgl.][2]{example}}
@@ -27,3 +29,26 @@ app.get('/', (req, res) => res.send('Hello World!'))
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
     \end{lstlisting}
 \end{subcaptionenv}
+
+\blindtext
+
+\begin{figure}[h]
+    \centering
+    \caption{Plantuml test}
+    \begin{plantuml}
+        @startuml
+
+        box "Machine"
+            participant "Sensors" as sensors
+            participant "OPC UA Server" as opc
+        end box
+        participant "Cloud" as cloud
+
+        sensors <-> opc
+        opc <-> cloud
+
+        @enduml    
+    \end{plantuml}
+    \caption*{\footnotesize{Quelle: \mycite[69]{example}}}
+    \label{fig:plantuml_test}
+\end{figure}

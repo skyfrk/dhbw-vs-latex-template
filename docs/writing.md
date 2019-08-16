@@ -16,6 +16,7 @@ Documentation and general tips and tricks on how to wirte an academic text assig
 - [Figures](#figures)
   - [Normal figure](#normal-figure)
   - [Wrap figures](#wrap-figures)
+  - [PlantUML figure](#plantuml-figure)
 - [Tables](#tables)
 - [Code listing](#code-listing)
 - [Labels and referencing](#labels-and-referencing)
@@ -240,6 +241,35 @@ In the example below the `wrapfigure` environment takes two arguments. The first
     \label{fig:pikachu}
 \end{wrapfigure}
 ```
+
+### PlantUML figure
+
+If you have [set up](./setup.md#optional-install-plantuml) PlantUML as described you can embed [PlantUML-diagrams](http://www.plantuml.com/) in your LaTeX code. Just surround you PlantUML notation with the `plantuml` environment:
+
+```tex
+\begin{figure}[h]
+    \centering
+    \caption{Informative sequence diagram}
+    \begin{plantuml}
+        @startuml
+
+        box "Machine"
+            participant "Sensors" as sensors
+            participant "OPC UA Server" as opc
+        end box
+        participant "Cloud" as cloud
+
+        sensors <-> opc
+        opc <-> cloud
+
+        @enduml    
+    \end{plantuml}
+    \caption*{\footnotesize{Source: Own creation.}}
+    \label{fig:plantuml_test}
+\end{figure}
+```
+
+:warning: As of version `0.2.3` of the `plantuml` LuaLaTeX package [UTF8 isn't supported](https://github.com/koppor/plantuml/issues/10). You can use any unicode character though (see [special characters](http://plantuml.com/creole)). For example `<U+00D6>` can be used to express `Ö`. Use a [unicode character table](https://unicode-table.com/en/) until UTF8 is supported.
 
 ## Tables
 
