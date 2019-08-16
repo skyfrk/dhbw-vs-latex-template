@@ -192,3 +192,8 @@
   %
   \usepackage[parfill]{parskip}
   \usepackage{plantuml} % has to be loaded here. why? idk -.-
+
+  \usepackage{etoolbox}
+  \providetoggle{dhbw@include@nondisclosurenotice}
+  \newcommand{\dhbwProvideNonDisclosureNotice}{\settoggle{dhbw@include@nondisclosurenotice}{true}}
+  
