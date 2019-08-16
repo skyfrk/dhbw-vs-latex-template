@@ -193,10 +193,6 @@
   \usepackage[parfill]{parskip}
   \usepackage{plantuml} % has to be loaded here. why? idk -.-
 
-  \usepackage{etoolbox}
-  \providetoggle{dhbw@include@nondisclosurenotice}
-  \newcommand{\dhbwProvideNonDisclosureNotice}{\settoggle{dhbw@include@nondisclosurenotice}{true}}
-  
   \usepackage{pgfkeys}
 
   \newif\ifdebug
@@ -237,3 +233,4 @@
   }
 
   \newcommand{\dhbwPrintIndependenceNotice}{\input{template/independence-notice.tex}}
+  \newcommand{\dhbwPrintNonDisclosureNotice}{\input{template/non-disclosure-notice.tex}}
