@@ -237,3 +237,7 @@
   \newcommand{\dhbwPrintIndependenceNotice}{\input{template/independence-notice.tex}}
   \newcommand{\dhbwPrintNonDisclosureNotice}{\input{template/non-disclosure-notice.tex}}
   \newcommand{\dhbwPrintTitle}{\input{template/title.tex}}
+  \newcommand{\dhbwPrintListOfFigures}{%
+    \newpage
+    \listoffigures\addcontentsline{toc}{section}{\listfigurename}
+  }
