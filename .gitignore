@@ -251,5 +251,8 @@ TSWLatexianTemp*
 # glossaries
 *.glstex
 
-
 # End of https://www.gitignore.io/api/latex
+
+# plantuml package
+*-plantuml.latex
+*-plantuml.txt

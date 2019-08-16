@@ -11,10 +11,10 @@
   %**************************************************************
   % Text
   %
-  % Required font (Times New Roman or Arial). Arial is proprietary. The helvet package replaces Arial.
-  \usepackage{helvet} % \usepackage{times}
+  % Required font (Times New Roman or Arial). Arial is proprietary. The TeX Gyre Heros font is similar to Arial.
+  \usepackage{fontspec}
+  \setsansfont{TeX Gyre Heros}
   \renewcommand{\familydefault}{\sfdefault}
-  \usepackage[T1]{fontenc}
   % Required page margins
   \usepackage[a4paper,tmargin={4cm},bmargin={2cm},lmargin={4cm},rmargin={2cm}]{geometry}
   % Required line spacing (1.5)
@@ -191,3 +191,4 @@
   % NOTE: Has to be loaded after the package tocloft
   %
   \usepackage[parfill]{parskip}
+  \usepackage{plantuml} % has to be loaded here. why? idk -.-

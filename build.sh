@@ -1,7 +1,7 @@
 #!/bin/bash
 
-if ! [ -x "$(command -v pdflatex)" ]; then
-  echo 'pdflatex is not installed. Aborting.' >&2
+if ! [ -x "$(command -v lualatex)" ]; then
+  echo 'lualatex is not installed. Aborting.' >&2
   exit 1
 fi
 
@@ -12,13 +12,13 @@ fi
 
 if [ -x "$(command -v latexmk)" ]; then
   echo 'Using latexmk to compile.' >&2
-  latexmk -synctex=1 -interaction=nonstopmode -file-line-error -pdf root.tex
+  latexmk -synctex=1 -interaction=nonstopmode -file-line-error -pdf -pdflatex=lualatex root.tex
   exit 0
 fi
 
-pdflatex -synctex=1 -interaction=nonstopmode -file-line-error root.tex
+lualatex -synctex=1 -interaction=nonstopmode -file-line-error root.tex
 biber root
-pdflatex -synctex=1 -interaction=nonstopmode -file-line-error root.tex
-pdflatex -synctex=1 -interaction=nonstopmode -file-line-error root.tex
+lualatex -synctex=1 -interaction=nonstopmode -file-line-error root.tex
+lualatex -synctex=1 -interaction=nonstopmode -file-line-error root.tex
 
 exit 0
