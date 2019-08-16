@@ -11,19 +11,19 @@
             ]
         },
         {
-            "name": "pdflatex ➞ biber ➞ pdflatex*2",
+            "name": "lualatex ➞ biber ➞ lualatex*2",
             "tools": [
-                "pdflatex",
+                "lualatex",
                 "biber",
-                "pdflatex",
-                "pdflatex"
+                "lualatex",
+                "lualatex"
             ]
         }
     ],
     "latex-workshop.latex.tools": [
         {
-            "name": "pdflatex",
-            "command": "pdflatex",
+            "name": "lualatex",
+            "command": "lualatex",
             "args": [
                 "-synctex=1",
                 "-interaction=nonstopmode",
@@ -46,6 +46,7 @@
               "-interaction=nonstopmode",
               "-file-line-error",
               "-pdf",
+              "-pdflatex=lualatex",
               "-outdir=%OUTDIR%",
               "%DOC%"
             ],
