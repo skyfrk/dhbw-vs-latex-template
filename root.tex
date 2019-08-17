@@ -14,28 +14,20 @@ company logo    = {title/company-logo.png},
 lecturer        = Prof. Dr. Peter Lustig,
 location        = Villingen-Schwenningen,
 date            = \today,
+longest acronym = API,
+acronyms        = {%
+    \acro{API}{Application Programming Interface}
+    \acroplural{API}[API's]{Application Programming Interfaces}
+},
 debug           = false
 }
 
 \begin{document}
-\dhbwSetFrontMatter
-\dhbwPrintTitle
-\dhbwPrintNonDisclosureNotice
-\dhbwPrintTableOfContents
-\dhbwPrintListOfAcronyms{APIAPI}{%
-    \acro{API}{Application Programming Interface}
-    \acroplural{API}[API's]{Application Programming Interfaces}
-}
-\dhbwSetListMatter
-\dhbwPrintListOfFigures
-\dhbwPrintListOfTables
-\dhbwPrintListOfListings
-\dhbwSetMainMatter
+\dhbwPrintEverythingBefore
 
 \input{content/text}
 
 % Appendix
-\dhbwPrintBibliography
-\dhbwPrintIndependenceNotice
+\dhbwPrintEverythingAfter
 
 \end{document}

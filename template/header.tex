@@ -217,6 +217,8 @@
     lecturer/.store in          = \dhbwGetLecturer,
     location/.store in          = \dhbwGetLocation,
     date/.store in              = \dhbwGetDate,
+    longest acronym/.store in   = \dhbwGetLongestAcronym,
+    acronyms/.store in          = \dhbwGetAcronyms,
     debug/.is if                = debug
   }
 
@@ -249,12 +251,12 @@
     \newpage
     \printbibtabular[title=Literaturverzeichnis]\addcontentsline{toc}{section}{Literaturverzeichnis}
   }
-  \newcommand{\dhbwPrintListOfAcronyms}[2]{%
+  \newcommand{\dhbwPrintListOfAcronyms}{%
     \newpage
     \section*{Abkürzungsverzeichnis}\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
-    \begin{acronym}[#1] % spacing between acronym and long name
+    \begin{acronym}[\dhbwGetLongestAcronym{}\dhbwGetLongestAcronym{}] % spacing between acronym and long name
       \setlength{\itemsep}{-\parsep} % line spacing
-      #2
+      \dhbwGetAcronyms
     \end{acronym}
   }
   \newcommand{\dhbwPrintTableOfContents}{%
@@ -270,4 +272,22 @@
 
   \newcommand{\dhbwSetListMatter}{%
     \pagenumberingnoreset{Roman}
+  }
+
+  \newcommand{\dhbwPrintEverythingBefore}{%
+    \dhbwSetFrontMatter
+    \dhbwPrintTitle
+    \dhbwPrintNonDisclosureNotice
+    \dhbwPrintTableOfContents
+    \dhbwPrintListOfAcronyms
+    \dhbwSetListMatter
+    \dhbwPrintListOfFigures
+    \dhbwPrintListOfTables
+    \dhbwPrintListOfListings
+    \dhbwSetMainMatter
+  }
+  
+  \newcommand{\dhbwPrintEverythingAfter}{%
+    \dhbwPrintBibliography
+    \dhbwPrintIndependenceNotice
   }
