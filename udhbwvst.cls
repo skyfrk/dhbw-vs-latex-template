@@ -108,6 +108,9 @@
   \fancyhead[R]{\thepage}
 }
 
+% change page numbering style without page number reset
+\newcommand\pagenumberingnoreset[1]{\gdef\thepage{\csname @#1\endcsname\c@page}}
+
 % fix for #21 (long author names in footnotes)
 \renewcommand\@makefntext[1]{\leftskip=1em\hskip-0em\@makefnmark#1}
 

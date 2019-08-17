@@ -14,10 +14,6 @@
 
 \NewDocumentEnvironment{subcaptionenv}{m}{}{\subcaption{#1}}
 
-\makeatletter
-\newcommand\pagenumberingnoreset[1]{\gdef\thepage{\csname @#1\endcsname\c@page}}
-\makeatother
-
 \usepackage{pgfkeys}
 
 \newif\ifdebug
