@@ -28,6 +28,7 @@
 \RequirePackage[ngerman]{babel}
 \RequirePackage[autostyle=true,german=quotes]{csquotes}
 \RequirePackage[bottom]{footmisc}
+\RequirePackage{fancyhdr}
 
 % load optional packages (TODO: add if checks)
 
@@ -42,6 +43,15 @@
 % babel package
 \addto\captionsngerman{%
     \renewcommand{\contentsname}{Literaturverzeichnis}
+}
+
+% fancyhdr package
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{0pt} % No line below the page number
+\fancypagestyle{plain}{
+  \fancyhead[R]{\thepage}
 }
 
 % fix for #21 (long author names in footnotes)
