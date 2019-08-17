@@ -29,6 +29,18 @@
 \RequirePackage[autostyle=true,german=quotes]{csquotes}
 \RequirePackage[bottom]{footmisc}
 \RequirePackage{fancyhdr}
+\RequirePackage[%
+    backend     =   biber,
+    style       =   authortitle,
+    citestyle   =   authortitle,
+    hyperref    =   true,
+    autocite    =   footnote,
+    sortlocale  =   de_DE,
+    dashed      =   false,
+    maxnames    =   3,
+    sorting     =   nymdt,
+    sortlocale  =   de_DE
+]{biblatex}
 
 % load optional packages (TODO: add if checks)
 
