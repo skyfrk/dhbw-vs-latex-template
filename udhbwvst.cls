@@ -21,7 +21,7 @@
     lmargin =   {4cm},
     rmargin =   {2cm}
 ]{geometry}
-
+\RequirePackage[onehalfspacing]{setspace}
 
 % style
 
