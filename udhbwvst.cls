@@ -25,15 +25,16 @@
 
 \pgfkeys{%
     udhbwvst/.cd,
-    auto-generate/.is if  = udhbwvst@if@autogenerate,
-    debug/.is if          = udhbwvst@if@debug,
-    print-ndn/.is if      = udhbwvst@if@print@ndn,
-    print-loa/.is if      = udhbwvst@if@print@loa,
-    print-lof/.is if      = udhbwvst@if@print@lof,
-    print-lot/.is if      = udhbwvst@if@print@lot,
-    print-lol/.is if      = udhbwvst@if@print@lol,
-    bib-file/.store in    = \udhbwvst@var@bibfile,
-    bib-file              = literature.bib
+    auto-generate/.is if    = udhbwvst@if@autogenerate,
+    debug/.is if            = udhbwvst@if@debug,
+    print-ndn/.is if        = udhbwvst@if@print@ndn,
+    print-loa/.is if        = udhbwvst@if@print@loa,
+    print-lof/.is if        = udhbwvst@if@print@lof,
+    print-lot/.is if        = udhbwvst@if@print@lot,
+    print-lol/.is if        = udhbwvst@if@print@lol,
+    bib-file/.store in      = \udhbwvst@var@bibfile,
+    bib-file                = literature.bib,
+    company-logo/.store in  = \udhbwvst@var@companylogo
 }
 
 \ProcessPgfOptions{/udhbwvst}
@@ -496,13 +497,13 @@
 }
 
 \newcommand{\dhbwPrintTitle}{%
-  \input{template/title.tex}
+  \input{udhbwvst-title.def}
 }
 
 \newcommand{\dhbwPrintNonDisclosureNotice}{%
   \ifbool{udhbwvst@if@print@ndn}{%
     \newpage  
-    \input{template/non-disclosure-notice.tex}
+    \input{udhbwvst-non-disclosure-notice.def}
   }{}
 }
 
@@ -562,7 +563,7 @@
 
 \newcommand{\dhbwPrintIndependenceNotice}{%
   \newpage
-  \input{template/independence-notice.tex}
+  \input{udhbwvst-independence-notice.def}
 }
 
 \newcommand{\dhbwPrintEverythingBefore}{%
