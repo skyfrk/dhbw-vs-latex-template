@@ -1,103 +1,12 @@
 % Required changes
 \addbibresource{content/misc/literature.bib}
 
-% Import DHBW custom bibliography style
-\usepackage{array}
-\usepackage{longtable}
 \input{template/dhbw-bibstyle}
-% Import DHBW custom citing style
 \input{template/dhbw-citestyle}
 
-% Other directories
-% Required directory adjustments
-\usepackage[subfigure]{tocloft}
-\renewcommand{\cftfigpresnum}{Abbildung }
-\renewcommand{\cfttabpresnum}{Tabelle }  
-\renewcommand{\cftfigaftersnum}{:}
-\renewcommand{\cfttabaftersnum}{:}
-\newlength{\ctmfignumwidth}
-\newlength{\ctmtabnumwidth}
-\settowidth{\ctmfignumwidth}{\cftfigpresnum}
-\settowidth{\ctmtabnumwidth}{\cfttabpresnum}
-\setlength{\cftfignumwidth}{\dimexpr\ctmfignumwidth+1.5em}
-\setlength{\cfttabnumwidth}{\dimexpr\ctmtabnumwidth+1.5em}
-% remove indentation from figures in lof
-\setlength{\cftfigindent}{0pt}
-% remove indentation from tables in lot
-\setlength{\cfttabindent}{0pt}
-
-%**************************************************************
-% Graphics
-%
-\usepackage[dvipdfmx]{graphicx} % Option dvipdfmx fixes latexmk build
 \graphicspath{ {content/assets/} }
-% Fixes latexmk build
-\usepackage{bmpsize}
-% Wrap text around figures
-\usepackage{wrapfig}
-% To place two images beside each other
-\usepackage{subfigure}
 
-%**************************************************************
-% Tables
-%
-\usepackage{tabularx}
-% Fix: Distance of the caption to the table
-\usepackage{caption} 
-% line spacing
-\captionsetup[table]{skip=10pt,font={stretch=1}}
-\captionsetup[figure]{font={stretch=1}} 
 
-%**************************************************************
-% Code listings
-%
-\usepackage{xcolor}
-\usepackage{listings}
-
-\lstdefinestyle{base}{
-  showspaces=false,
-  showtabs=false,
-  frame=single,
-  breaklines=true,
-  numbers=left,
-  showstringspaces=false,
-  breakatwhitespace=true,
-  escapeinside={(*@}{@*)},
-  basicstyle=\footnotesize\ttfamily,
-  belowcaptionskip=\baselineskip
-}
-\lstset{style=base}
-
-\definecolor{bluekeywords}{rgb}{0.13,0.13,1}
-\definecolor{greencomments}{rgb}{0,0.5,0}
-\definecolor{redstrings}{rgb}{0.9,0,0}
-\lstdefinelanguage{csharp}{
-  language=[Sharp]C,
-  commentstyle=\color{greencomments},
-  keywordstyle=\color{bluekeywords}\bfseries,
-  stringstyle=\color{redstrings}
-}
-
-\definecolor{lightgray}{rgb}{0.9, 0.9, 0.9}
-\definecolor{darkgray}{rgb}{0.4, 0.4, 0.4}
-\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
-\lstdefinelanguage{javascript}{
-  keywords={break, case, catch, continue, debugger, default, delete, do, else, false, finally, for, function, if, in, instanceof, new, null, return, switch, this, throw, true, try, typeof, var, void, while, with},
-  morecomment=[l]{//},
-  morecomment=[s]{/*}{*/},
-  morestring=[b]',
-  morestring=[b]",
-  ndkeywords={class, export, boolean, throw, implements, import, this},
-  keywordstyle=\color{blue}\bfseries,
-  ndkeywordstyle=\color{darkgray}\bfseries,
-  identifierstyle=\color{black},
-  commentstyle=\color{purple}\ttfamily,
-  stringstyle=\color{red}\ttfamily,
-  sensitive=true
-}
-
-\renewcommand{\lstlistingname}{Quellcode}
-\renewcommand{\lstlistlistingname}{Quellcodeverzeichnis}
 
 %**************************************************************
 % Acronyms
