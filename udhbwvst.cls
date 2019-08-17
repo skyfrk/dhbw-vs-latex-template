@@ -417,4 +417,37 @@
   }
 }
 
+% No italics
+\DeclareFieldFormat{citetitle}{\normalfont{#1}}
+
+% Custom cite bibmacro
+\newbibmacro*{mycite}{%
+  \printtext[bibhyperref]{%
+    \printfield[citetitle]{labeltitle}
+    \setunit{\addcomma\space}
+    \iffieldundef{year}
+     {\noyear}
+    {\printfield{year}}}}
+
+% Custom footcite command
+\DeclareCiteCommand{\myfootcite}[\mkbibfootnote]
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \usebibmacro{author}
+   \usebibmacro{mycite}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+% Custom cite command
+\DeclareCiteCommand{\mycite}
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+  \usebibmacro{author}
+  \usebibmacro{mycite}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+% Custom direct cite command
+\newcommand{\mydirectfootcite}[3]{\enquote{#1}{\myfootcite[#3]{#2}}}
+
 \endinput
