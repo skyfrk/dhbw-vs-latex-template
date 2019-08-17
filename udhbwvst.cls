@@ -11,12 +11,6 @@
 
 \RequirePackage{etoolbox, pgfopts}
 
-\AtEndPreamble{%
-    \RequirePackage{hyperref}
-    \urlstyle{same}
-    \hypersetup{hidelinks} % TODO add author metadata
-}
-
 % booleans
 
 \newbool{udhbwvst@cls@if@debug}
@@ -31,6 +25,15 @@
 \ProcessPgfOptions{/udhbwvst}
 
 % load packages
+
+\AtEndPreamble{%
+    \RequirePackage{hyperref}
+    \urlstyle{same}
+    \ifbool{udhbwvst@cls@if@debug}{}{%
+        \hypersetup{hidelinks}
+    }
+     % TODO add author metadata via hyperref
+}
 
 \RequirePackage{fontspec}
 \RequirePackage[%
