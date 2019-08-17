@@ -9,13 +9,26 @@
 
 % load essential packages
 
-\RequirePackage{etoolbox}
+\RequirePackage{etoolbox, pgfopts}
 
 \AtEndPreamble{%
     \RequirePackage{hyperref}
     \urlstyle{same}
-    \hypersetup{hidelinks}
+    \hypersetup{hidelinks} % TODO add author metadata
 }
+
+% booleans
+
+\newbool{udhbwvst@cls@if@debug}
+
+% define options
+
+\pgfkeys{%
+    udhbwvst/.cd,
+    debug/.is if    = udhbwvst@cls@if@debug
+}
+
+\ProcessPgfOptions{/udhbwvst}
 
 % load packages
 
@@ -65,9 +78,12 @@
 
 % load optional packages (TODO: add if checks)
 
-\RequirePackage{blindtext}
-\usepackage{rotating}
-\usepackage[absolute]{textpos}
+\ifbool{udhbwvst@cls@if@debug}{%
+    \RequirePackage{blindtext}
+}{}
+
+\RequirePackage{rotating}
+\RequirePackage[absolute]{textpos}
 
 % style
 
