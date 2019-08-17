@@ -229,28 +229,26 @@
     \pagenumbering{gobble}
   }
 
-  \newcommand{\dhbwPrintIndependenceNotice}{\input{template/independence-notice.tex}}
+  \newcommand{\dhbwPrintTitle}{%
+    \input{template/title.tex}
+  }
+
   \newcommand{\dhbwPrintNonDisclosureNotice}{%
     \newpage  
     \input{template/non-disclosure-notice.tex}
   }
-  \newcommand{\dhbwPrintTitle}{\input{template/title.tex}}
-  \newcommand{\dhbwPrintListOfFigures}{%
+
+  \newcommand{\dhbwPrintTableOfContents}{%
     \newpage
-    \listoffigures\addcontentsline{toc}{section}{\listfigurename}
+    \setcounter{page}{2}
+    \tableofcontents
   }
-  \newcommand{\dhbwPrintListOfTables}{%
+
+  \newcommand{\dhbwSetListMatter}{%
     \newpage
-    \listoftables\addcontentsline{toc}{section}{\listtablename}
+    \pagenumberingnoreset{Roman}
   }
-  \newcommand{\dhbwPrintListOfListings}{%
-    \newpage
-    \lstlistoflistings\addcontentsline{toc}{section}{\lstlistlistingname}
-  }
-  \newcommand{\dhbwPrintBibliography}{%
-    \newpage
-    \printbibtabular[title=Literaturverzeichnis]\addcontentsline{toc}{section}{Literaturverzeichnis}
-  }
+
   \newcommand{\dhbwPrintListOfAcronyms}{%
     \newpage
     \section*{Abkürzungsverzeichnis}\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
@@ -258,20 +256,37 @@
       \setlength{\itemsep}{-\parsep} % line spacing
       \dhbwGetAcronyms
     \end{acronym}
-  }
-  \newcommand{\dhbwPrintTableOfContents}{%
+  } 
+
+  \newcommand{\dhbwPrintListOfFigures}{%
     \newpage
-    \setcounter{page}{2}
-    \tableofcontents
+    \listoffigures\addcontentsline{toc}{section}{\listfigurename}
   }
+
+  \newcommand{\dhbwPrintListOfTables}{%
+    \newpage
+    \listoftables\addcontentsline{toc}{section}{\listtablename}
+  }
+
+  \newcommand{\dhbwPrintListOfListings}{%
+    \newpage
+    \lstlistoflistings\addcontentsline{toc}{section}{\lstlistlistingname}
+  }
+
   \newcommand{\dhbwSetMainMatter}{%
     \newpage
     \pagenumbering{arabic}
     \setcounter{page}{1}
   }
 
-  \newcommand{\dhbwSetListMatter}{%
-    \pagenumberingnoreset{Roman}
+  \newcommand{\dhbwPrintBibliography}{%
+    \newpage
+    \printbibtabular[title=Literaturverzeichnis]\addcontentsline{toc}{section}{Literaturverzeichnis}
+  }
+
+  \newcommand{\dhbwPrintIndependenceNotice}{%
+    \newpage
+    \input{template/independence-notice.tex}
   }
 
   \newcommand{\dhbwPrintEverythingBefore}{%
@@ -279,8 +294,8 @@
     \dhbwPrintTitle
     \dhbwPrintNonDisclosureNotice
     \dhbwPrintTableOfContents
-    \dhbwPrintListOfAcronyms
     \dhbwSetListMatter
+    \dhbwPrintListOfAcronyms
     \dhbwPrintListOfFigures
     \dhbwPrintListOfTables
     \dhbwPrintListOfListings
