@@ -238,6 +238,7 @@
   }
   \newcommand{\dhbwPrintListOfAcronyms}[2]{%
     \newpage
+    \pagenumbering{Roman}
     \section*{Abkürzungsverzeichnis}\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
     \begin{acronym}[#1] % spacing between acronym and long name
       \setlength{\itemsep}{-\parsep} % line spacing
@@ -250,4 +251,10 @@
     \setcounter{page}{2}
     \tableofcontents
     \thispagestyle{empty}
+  }
+  \newcommand{\dhbwSetMainMatter}{%
+    \addtocontents{toc}{\protect\thispagestyle{empty}}
+    \newpage
+    \pagenumbering{arabic}
+    \setcounter{page}{1}
   }

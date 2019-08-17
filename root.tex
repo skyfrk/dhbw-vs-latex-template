@@ -18,7 +18,6 @@ debug           = false
 }
 
 \begin{document}\selectlanguage{ngerman}
-
 \dhbwPrintTitle
 \dhbwPrintNonDisclosureNotice
 \dhbwPrintTableOfContents
@@ -29,11 +28,8 @@ debug           = false
 \dhbwPrintListOfFigures
 \dhbwPrintListOfTables
 \dhbwPrintListOfListings
+\dhbwSetMainMatter
 
-\addtocontents{toc}{\protect\thispagestyle{empty}}
-\newpage
-\pagenumbering{arabic}
-\setcounter{page}{1}
 \input{content/text}
 
 % Appendix
