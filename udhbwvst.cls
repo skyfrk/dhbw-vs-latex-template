@@ -31,7 +31,9 @@
     print-loa/.is if      = udhbwvst@if@print@loa,
     print-lof/.is if      = udhbwvst@if@print@lof,
     print-lot/.is if      = udhbwvst@if@print@lot,
-    print-lol/.is if      = udhbwvst@if@print@lol
+    print-lol/.is if      = udhbwvst@if@print@lol,
+    bib-file/.store in    = \udhbwvst@var@bibfile,
+    bib-file              = literature.bib
 }
 
 \ProcessPgfOptions{/udhbwvst}
@@ -234,6 +236,7 @@
 \renewcommand{\lstlistlistingname}{Quellcodeverzeichnis}
 
 % biblatex package TODO: clean up and rearrange this section
+\addbibresource{\udhbwvst@var@bibfile}
 
 % This bibliography style only works because of the help of @moewe (https://tex.stackexchange.com/users/35864/moewe)
 
@@ -469,7 +472,6 @@
 % TODO rearrange everything below:
 
 % Required changes
-\addbibresource{content/misc/literature.bib}
 
 \graphicspath{ {content/assets/} }
 
