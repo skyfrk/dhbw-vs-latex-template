@@ -11,6 +11,12 @@
 
 \RequirePackage{etoolbox}
 
+\AtEndPreamble{%
+    \RequirePackage{hyperref}
+    \urlstyle{same}
+    \hypersetup{hidelinks}
+}
+
 % load packages
 
 \RequirePackage{fontspec}
@@ -68,3 +74,5 @@
 
 % fix for #21 (long author names in footnotes)
 \renewcommand\@makefntext[1]{\leftskip=1em\hskip-0em\@makefnmark#1}
+
+\endinput
