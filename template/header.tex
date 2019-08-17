@@ -8,302 +8,302 @@
 % Fix: sloppy fixes line breaks in URLs
 \documentclass[hidelinks,12pt]{article}
 
-  %**************************************************************
-  % Text
-  %
-  % Required font (Times New Roman or Arial). Arial is proprietary. The TeX Gyre Heros font is similar to Arial.
-  \usepackage{fontspec}
-  \setsansfont{TeX Gyre Heros}
-  \renewcommand{\familydefault}{\sfdefault}
-  % Required page margins
-  \usepackage[a4paper,tmargin={4cm},bmargin={2cm},lmargin={4cm},rmargin={2cm}]{geometry}
-  % Required line spacing (1.5)
-  \usepackage[onehalfspacing]{setspace}
-  % UTF-8-Encoding
-  \usepackage[utf8]{inputenc}
-  % Additional math tools
-  \usepackage{amsmath}
-  \usepackage{amssymb}
-  % Official Euro symbol
-  \usepackage[official]{eurosym}
-  % German hyphenation
-  \usepackage[ngerman]{babel}
-  \addto\captionsngerman{\renewcommand{\contentsname}{Literaturverzeichnis}}
+%**************************************************************
+% Text
+%
+% Required font (Times New Roman or Arial). Arial is proprietary. The TeX Gyre Heros font is similar to Arial.
+\usepackage{fontspec}
+\setsansfont{TeX Gyre Heros}
+\renewcommand{\familydefault}{\sfdefault}
+% Required page margins
+\usepackage[a4paper,tmargin={4cm},bmargin={2cm},lmargin={4cm},rmargin={2cm}]{geometry}
+% Required line spacing (1.5)
+\usepackage[onehalfspacing]{setspace}
+% UTF-8-Encoding
+\usepackage[utf8]{inputenc}
+% Additional math tools
+\usepackage{amsmath}
+\usepackage{amssymb}
+% Official Euro symbol
+\usepackage[official]{eurosym}
+% German hyphenation
+\usepackage[ngerman]{babel}
+\addto\captionsngerman{\renewcommand{\contentsname}{Literaturverzeichnis}}
 
-  % Extension for hyphenation on quotes
-  \usepackage[autostyle=true,german=quotes]{csquotes}
-  % Generate random text
-  \usepackage{blindtext}
-  % Fixes footnotes sometime not being at the bottom of the page (issue #14)
-  \usepackage[bottom]{footmisc}
-  % Fixes indentation issue #21 for long author names in footnotes
-  \makeatletter
-  \renewcommand\@makefntext[1]{\leftskip=1em\hskip-0em\@makefnmark#1}
-  \makeatother 
-  
-  %**************************************************************
-  % Page number
-  %
-  % Required page number position (top-right corner)
-  \usepackage{fancyhdr}
-  \pagestyle{fancy}
-  \fancyhf{}
+% Extension for hyphenation on quotes
+\usepackage[autostyle=true,german=quotes]{csquotes}
+% Generate random text
+\usepackage{blindtext}
+% Fixes footnotes sometime not being at the bottom of the page (issue #14)
+\usepackage[bottom]{footmisc}
+% Fixes indentation issue #21 for long author names in footnotes
+\makeatletter
+\renewcommand\@makefntext[1]{\leftskip=1em\hskip-0em\@makefnmark#1}
+\makeatother 
+
+%**************************************************************
+% Page number
+%
+% Required page number position (top-right corner)
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\thepage}
+% No line below the page number
+\renewcommand{\headrulewidth}{0pt} 
+% Page number position also correct on table-of-content (toc), list of figures (lof), etc. 
+\fancypagestyle{plain}{
   \fancyhead[R]{\thepage}
-  % No line below the page number
-  \renewcommand{\headrulewidth}{0pt} 
-  % Page number position also correct on table-of-content (toc), list of figures (lof), etc. 
-  \fancypagestyle{plain}{
-    \fancyhead[R]{\thepage}
-  }
-  
-  %**************************************************************
-  % Directories 
-  %
-  % Bibliography
-  \usepackage{hyperref} \urlstyle{same}
-  \usepackage[backend=biber,style=authortitle,citestyle=authortitle,hyperref=true,autocite=footnote,sortlocale=de_DE,dashed=false,maxnames=3,sorting=nymdt,sortlocale=de_DE]{biblatex}
-  
-  % Required changes
-  \addbibresource{content/misc/literature.bib}
-  
-  % Import DHBW custom bibliography style
-  \usepackage{array}
-  \usepackage{longtable}
-  \input{template/dhbw-bibstyle}
-  % Import DHBW custom citing style
-  \input{template/dhbw-citestyle}
-  
-  % Other directories
-  % Required directory adjustments
-  \usepackage[subfigure]{tocloft}
-  \renewcommand{\cftfigpresnum}{Abbildung }
-  \renewcommand{\cfttabpresnum}{Tabelle }  
-  \renewcommand{\cftfigaftersnum}{:}
-  \renewcommand{\cfttabaftersnum}{:}
-  \newlength{\ctmfignumwidth}
-  \newlength{\ctmtabnumwidth}
-  \settowidth{\ctmfignumwidth}{\cftfigpresnum}
-  \settowidth{\ctmtabnumwidth}{\cfttabpresnum}
-  \setlength{\cftfignumwidth}{\dimexpr\ctmfignumwidth+1.5em}
-  \setlength{\cfttabnumwidth}{\dimexpr\ctmtabnumwidth+1.5em}
-  % remove indentation from figures in lof
-  \setlength{\cftfigindent}{0pt}
-  % remove indentation from tables in lot
-  \setlength{\cfttabindent}{0pt}
+}
 
-  %**************************************************************
-  % Graphics
-  %
-  \usepackage[dvipdfmx]{graphicx} % Option dvipdfmx fixes latexmk build
-  \graphicspath{ {content/assets/} }
-  % Fixes latexmk build
-  \usepackage{bmpsize}
-  % Wrap text around figures
-  \usepackage{wrapfig}
-  % To place two images beside each other
-  \usepackage{subfigure}
-  
-  %**************************************************************
-  % Tables
-  %
-  \usepackage{tabularx}
-  % Fix: Distance of the caption to the table
-  \usepackage{caption} 
-  % line spacing
-  \captionsetup[table]{skip=10pt,font={stretch=1}}
-  \captionsetup[figure]{font={stretch=1}} 
-  
-  %**************************************************************
-  % Code listings
-  %
-  \usepackage{xcolor}
-  \usepackage{listings}
+%**************************************************************
+% Directories 
+%
+% Bibliography
+\usepackage{hyperref} \urlstyle{same}
+\usepackage[backend=biber,style=authortitle,citestyle=authortitle,hyperref=true,autocite=footnote,sortlocale=de_DE,dashed=false,maxnames=3,sorting=nymdt,sortlocale=de_DE]{biblatex}
 
-  \lstdefinestyle{base}{
-    showspaces=false,
-    showtabs=false,
-    frame=single,
-    breaklines=true,
-    numbers=left,
-    showstringspaces=false,
-    breakatwhitespace=true,
-    escapeinside={(*@}{@*)},
-    basicstyle=\footnotesize\ttfamily,
-    belowcaptionskip=\baselineskip
-  }
-  \lstset{style=base}
+% Required changes
+\addbibresource{content/misc/literature.bib}
 
-  \definecolor{bluekeywords}{rgb}{0.13,0.13,1}
-  \definecolor{greencomments}{rgb}{0,0.5,0}
-  \definecolor{redstrings}{rgb}{0.9,0,0}
-  \lstdefinelanguage{csharp}{
-    language=[Sharp]C,
-    commentstyle=\color{greencomments},
-    keywordstyle=\color{bluekeywords}\bfseries,
-    stringstyle=\color{redstrings}
-  }
+% Import DHBW custom bibliography style
+\usepackage{array}
+\usepackage{longtable}
+\input{template/dhbw-bibstyle}
+% Import DHBW custom citing style
+\input{template/dhbw-citestyle}
 
-  \definecolor{lightgray}{rgb}{0.9, 0.9, 0.9}
-  \definecolor{darkgray}{rgb}{0.4, 0.4, 0.4}
-  \definecolor{purple}{rgb}{0.65, 0.12, 0.82}
-  \lstdefinelanguage{javascript}{
-    keywords={break, case, catch, continue, debugger, default, delete, do, else, false, finally, for, function, if, in, instanceof, new, null, return, switch, this, throw, true, try, typeof, var, void, while, with},
-    morecomment=[l]{//},
-    morecomment=[s]{/*}{*/},
-    morestring=[b]',
-    morestring=[b]",
-    ndkeywords={class, export, boolean, throw, implements, import, this},
-    keywordstyle=\color{blue}\bfseries,
-    ndkeywordstyle=\color{darkgray}\bfseries,
-    identifierstyle=\color{black},
-    commentstyle=\color{purple}\ttfamily,
-    stringstyle=\color{red}\ttfamily,
-    sensitive=true
-  }
+% Other directories
+% Required directory adjustments
+\usepackage[subfigure]{tocloft}
+\renewcommand{\cftfigpresnum}{Abbildung }
+\renewcommand{\cfttabpresnum}{Tabelle }  
+\renewcommand{\cftfigaftersnum}{:}
+\renewcommand{\cfttabaftersnum}{:}
+\newlength{\ctmfignumwidth}
+\newlength{\ctmtabnumwidth}
+\settowidth{\ctmfignumwidth}{\cftfigpresnum}
+\settowidth{\ctmtabnumwidth}{\cfttabpresnum}
+\setlength{\cftfignumwidth}{\dimexpr\ctmfignumwidth+1.5em}
+\setlength{\cfttabnumwidth}{\dimexpr\ctmtabnumwidth+1.5em}
+% remove indentation from figures in lof
+\setlength{\cftfigindent}{0pt}
+% remove indentation from tables in lot
+\setlength{\cfttabindent}{0pt}
 
-  \renewcommand{\lstlistingname}{Quellcode}
-  \renewcommand{\lstlistlistingname}{Quellcodeverzeichnis}
-  
-  %**************************************************************
-  % Acronyms
-  %
-  \usepackage[printonlyused]{acronym}
-  
-  %**************************************************************
-  % Util for the non-disclosure notice lettering on the title page
-  %
-  \usepackage{rotating}
-  \usepackage[absolute]{textpos}
+%**************************************************************
+% Graphics
+%
+\usepackage[dvipdfmx]{graphicx} % Option dvipdfmx fixes latexmk build
+\graphicspath{ {content/assets/} }
+% Fixes latexmk build
+\usepackage{bmpsize}
+% Wrap text around figures
+\usepackage{wrapfig}
+% To place two images beside each other
+\usepackage{subfigure}
 
-  %**************************************************************
-  % Custom macros
-  %
-  \newcommand{\subcaption}[1] {
-    \begin{center}
-      \footnotesize{#1}
-    \end{center}
-  }
+%**************************************************************
+% Tables
+%
+\usepackage{tabularx}
+% Fix: Distance of the caption to the table
+\usepackage{caption} 
+% line spacing
+\captionsetup[table]{skip=10pt,font={stretch=1}}
+\captionsetup[figure]{font={stretch=1}} 
 
-  \usepackage{xparse}
-  \NewDocumentEnvironment{subcaptionenv}{m}{}{\subcaption{#1}}
-  
-  %**************************************************************
-  % Fix: New paragraph is not indent
-  % NOTE: Has to be loaded after the package tocloft
-  %
-  \usepackage[parfill]{parskip}
-  \usepackage{plantuml} % has to be loaded here. why? idk -.-
+%**************************************************************
+% Code listings
+%
+\usepackage{xcolor}
+\usepackage{listings}
+
+\lstdefinestyle{base}{
+  showspaces=false,
+  showtabs=false,
+  frame=single,
+  breaklines=true,
+  numbers=left,
+  showstringspaces=false,
+  breakatwhitespace=true,
+  escapeinside={(*@}{@*)},
+  basicstyle=\footnotesize\ttfamily,
+  belowcaptionskip=\baselineskip
+}
+\lstset{style=base}
+
+\definecolor{bluekeywords}{rgb}{0.13,0.13,1}
+\definecolor{greencomments}{rgb}{0,0.5,0}
+\definecolor{redstrings}{rgb}{0.9,0,0}
+\lstdefinelanguage{csharp}{
+  language=[Sharp]C,
+  commentstyle=\color{greencomments},
+  keywordstyle=\color{bluekeywords}\bfseries,
+  stringstyle=\color{redstrings}
+}
+
+\definecolor{lightgray}{rgb}{0.9, 0.9, 0.9}
+\definecolor{darkgray}{rgb}{0.4, 0.4, 0.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+\lstdefinelanguage{javascript}{
+  keywords={break, case, catch, continue, debugger, default, delete, do, else, false, finally, for, function, if, in, instanceof, new, null, return, switch, this, throw, true, try, typeof, var, void, while, with},
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]",
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  sensitive=true
+}
+
+\renewcommand{\lstlistingname}{Quellcode}
+\renewcommand{\lstlistlistingname}{Quellcodeverzeichnis}
+
+%**************************************************************
+% Acronyms
+%
+\usepackage[printonlyused]{acronym}
+
+%**************************************************************
+% Util for the non-disclosure notice lettering on the title page
+%
+\usepackage{rotating}
+\usepackage[absolute]{textpos}
+
+%**************************************************************
+% Custom macros
+%
+\newcommand{\subcaption}[1] {
+  \begin{center}
+    \footnotesize{#1}
+  \end{center}
+}
+
+\usepackage{xparse}
+\NewDocumentEnvironment{subcaptionenv}{m}{}{\subcaption{#1}}
+
+%**************************************************************
+% Fix: New paragraph is not indent
+% NOTE: Has to be loaded after the package tocloft
+%
+\usepackage[parfill]{parskip}
+\usepackage{plantuml} % has to be loaded here. why? idk -.-
 
 
-  \makeatletter
-  \newcommand\pagenumberingnoreset[1]{\gdef\thepage{\csname @#1\endcsname\c@page}}
-  \makeatother
+\makeatletter
+\newcommand\pagenumberingnoreset[1]{\gdef\thepage{\csname @#1\endcsname\c@page}}
+\makeatother
 
-  \usepackage{pgfkeys}
+\usepackage{pgfkeys}
 
-  \newif\ifdebug
+\newif\ifdebug
 
-  \pgfkeys{
-    /dhbw/.cd,
-    author/.store in            = \dhbwGetAuthor,
-    faculty/.store in           = \dhbwGetFaculty,
-    field of study/.store in    = \dhbwGetFieldOfStudy,
-    academic year/.store in     = \dhbwGetAcademicYear,
-    course/.store in            = \dhbwGetCourse,
-    title/.store in             = \dhbwGetTitle,
-    subtitle/.store in          = \dhbwGetSubtitle,
-    text type/.store in         = \dhbwGetTextType,
-    company name/.store in      = \dhbwGetCompanyName,
-    company logo/.store in      = \dhbwGetCompanyLogo,
-    lecturer/.store in          = \dhbwGetLecturer,
-    location/.store in          = \dhbwGetLocation,
-    date/.store in              = \dhbwGetDate,
-    longest acronym/.store in   = \dhbwGetLongestAcronym,
-    acronyms/.store in          = \dhbwGetAcronyms,
-    debug/.is if                = debug
-  }
+\pgfkeys{
+  /dhbw/.cd,
+  author/.store in            = \dhbwGetAuthor,
+  faculty/.store in           = \dhbwGetFaculty,
+  field of study/.store in    = \dhbwGetFieldOfStudy,
+  academic year/.store in     = \dhbwGetAcademicYear,
+  course/.store in            = \dhbwGetCourse,
+  title/.store in             = \dhbwGetTitle,
+  subtitle/.store in          = \dhbwGetSubtitle,
+  text type/.store in         = \dhbwGetTextType,
+  company name/.store in      = \dhbwGetCompanyName,
+  company logo/.store in      = \dhbwGetCompanyLogo,
+  lecturer/.store in          = \dhbwGetLecturer,
+  location/.store in          = \dhbwGetLocation,
+  date/.store in              = \dhbwGetDate,
+  longest acronym/.store in   = \dhbwGetLongestAcronym,
+  acronyms/.store in          = \dhbwGetAcronyms,
+  debug/.is if                = debug
+}
 
-  \newrobustcmd\dhbwSetup[1]{\pgfqkeys{/dhbw}{#1}}
+\newrobustcmd\dhbwSetup[1]{\pgfqkeys{/dhbw}{#1}}
 
-  \newcommand{\dhbwSetFrontMatter}{%
-    \selectlanguage{ngerman}
-    \pagenumbering{gobble}
-  }
+\newcommand{\dhbwSetFrontMatter}{%
+  \selectlanguage{ngerman}
+  \pagenumbering{gobble}
+}
 
-  \newcommand{\dhbwPrintTitle}{%
-    \input{template/title.tex}
-  }
+\newcommand{\dhbwPrintTitle}{%
+  \input{template/title.tex}
+}
 
-  \newcommand{\dhbwPrintNonDisclosureNotice}{%
-    \newpage  
-    \input{template/non-disclosure-notice.tex}
-  }
+\newcommand{\dhbwPrintNonDisclosureNotice}{%
+  \newpage  
+  \input{template/non-disclosure-notice.tex}
+}
 
-  \newcommand{\dhbwPrintTableOfContents}{%
-    \newpage
-    \setcounter{page}{2}
-    \tableofcontents
-  }
+\newcommand{\dhbwPrintTableOfContents}{%
+  \newpage
+  \setcounter{page}{2}
+  \tableofcontents
+}
 
-  \newcommand{\dhbwSetListMatter}{%
-    \newpage
-    \pagenumberingnoreset{Roman}
-  }
+\newcommand{\dhbwSetListMatter}{%
+  \newpage
+  \pagenumberingnoreset{Roman}
+}
 
-  \newcommand{\dhbwPrintListOfAcronyms}{%
-    \newpage
-    \section*{Abkürzungsverzeichnis}\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
-    \begin{acronym}[\dhbwGetLongestAcronym{}\dhbwGetLongestAcronym{}] % spacing between acronym and long name
-      \setlength{\itemsep}{-\parsep} % line spacing
-      \dhbwGetAcronyms
-    \end{acronym}
-  } 
+\newcommand{\dhbwPrintListOfAcronyms}{%
+  \newpage
+  \section*{Abkürzungsverzeichnis}\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
+  \begin{acronym}[\dhbwGetLongestAcronym{}\dhbwGetLongestAcronym{}] % spacing between acronym and long name
+    \setlength{\itemsep}{-\parsep} % line spacing
+    \dhbwGetAcronyms
+  \end{acronym}
+} 
 
-  \newcommand{\dhbwPrintListOfFigures}{%
-    \newpage
-    \listoffigures\addcontentsline{toc}{section}{\listfigurename}
-  }
+\newcommand{\dhbwPrintListOfFigures}{%
+  \newpage
+  \listoffigures\addcontentsline{toc}{section}{\listfigurename}
+}
 
-  \newcommand{\dhbwPrintListOfTables}{%
-    \newpage
-    \listoftables\addcontentsline{toc}{section}{\listtablename}
-  }
+\newcommand{\dhbwPrintListOfTables}{%
+  \newpage
+  \listoftables\addcontentsline{toc}{section}{\listtablename}
+}
 
-  \newcommand{\dhbwPrintListOfListings}{%
-    \newpage
-    \lstlistoflistings\addcontentsline{toc}{section}{\lstlistlistingname}
-  }
+\newcommand{\dhbwPrintListOfListings}{%
+  \newpage
+  \lstlistoflistings\addcontentsline{toc}{section}{\lstlistlistingname}
+}
 
-  \newcommand{\dhbwSetMainMatter}{%
-    \newpage
-    \pagenumbering{arabic}
-    \setcounter{page}{1}
-  }
+\newcommand{\dhbwSetMainMatter}{%
+  \newpage
+  \pagenumbering{arabic}
+  \setcounter{page}{1}
+}
 
-  \newcommand{\dhbwPrintBibliography}{%
-    \newpage
-    \printbibtabular[title=\contentsname]\addcontentsline{toc}{section}{\contentsname}
-  }
+\newcommand{\dhbwPrintBibliography}{%
+  \newpage
+  \printbibtabular[title=\contentsname]\addcontentsline{toc}{section}{\contentsname}
+}
 
-  \newcommand{\dhbwPrintIndependenceNotice}{%
-    \newpage
-    \input{template/independence-notice.tex}
-  }
+\newcommand{\dhbwPrintIndependenceNotice}{%
+  \newpage
+  \input{template/independence-notice.tex}
+}
 
-  \newcommand{\dhbwPrintEverythingBefore}{%
-    \dhbwSetFrontMatter
-    \dhbwPrintTitle
-    \dhbwPrintNonDisclosureNotice
-    \dhbwPrintTableOfContents
-    \dhbwSetListMatter
-    \dhbwPrintListOfAcronyms
-    \dhbwPrintListOfFigures
-    \dhbwPrintListOfTables
-    \dhbwPrintListOfListings
-    \dhbwSetMainMatter
-  }
-  
-  \newcommand{\dhbwPrintEverythingAfter}{%
-    \dhbwPrintBibliography
-    \dhbwPrintIndependenceNotice
-  }
+\newcommand{\dhbwPrintEverythingBefore}{%
+  \dhbwSetFrontMatter
+  \dhbwPrintTitle
+  \dhbwPrintNonDisclosureNotice
+  \dhbwPrintTableOfContents
+  \dhbwSetListMatter
+  \dhbwPrintListOfAcronyms
+  \dhbwPrintListOfFigures
+  \dhbwPrintListOfTables
+  \dhbwPrintListOfListings
+  \dhbwSetMainMatter
+}
+
+\newcommand{\dhbwPrintEverythingAfter}{%
+  \dhbwPrintBibliography
+  \dhbwPrintIndependenceNotice
+}
