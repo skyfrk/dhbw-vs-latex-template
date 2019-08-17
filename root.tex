@@ -1,62 +1,24 @@
-%    ____  _   _ ______        __ __     ______  
-%   |  _ \| | | | __ \ \      / / \ \   / / ___| 
-%   | | | | |_| |  _ \\ \ /\ / ____\ \ / /\___ \ 
-%   | |_| |  _  | |_) |\ V  V |_____\ V /  ___) |
-%   |____/|_| |_|____/  \_/\_/       \_/  |____/ 
-%
-%  _____ _____ __  __ ____  _        _  _____ _____ 
-% |_   _| ____|  \/  |  _ \| |      / \|_   _| ____|
-%   | | |  _| | |\/| | |_) | |     / _ \ | | |  _|  
-%   | | | |___| |  | |  __/| |___ / ___ \| | | |___ 
-%   |_| |_____|_|  |_|_|   |_____/_/   \_|_| |_____|
-
-%**************************************************************
-% Header
 \input{template/header}
 
-%**************************************************************
-% Properties
 \begin{document}\selectlanguage{ngerman}
 
-%**************************************************************
-% Title
 \dhbwPrintTitle
-
-%**************************************************************
-% Non-disclosure notice
 \dhbwPrintNonDisclosureNotice
 
-%**************************************************************
-% Table of contents
 \newpage
 \pagenumbering{Roman}
 \setcounter{page}{2}
 \tableofcontents
 \thispagestyle{empty}
 
-%**************************************************************
-% List of acronyms
 \dhbwPrintListOfAcronyms{APIAPI}{%
     \acro{API}{Application Programming Interface}
     \acroplural{API}[API's]{Application Programming Interfaces}
 }
-
-%**************************************************************
-% List of figures
 \dhbwPrintListOfFigures
-
-%**************************************************************
-% List of tables
 \dhbwPrintListOfTables
-
-%**************************************************************
-% List of listings
 \dhbwPrintListOfListings
 
-%**************************************************************
-% Text
-
-% Fixes pagination if the table of contents is longer than one page.
 \addtocontents{toc}{\protect\thispagestyle{empty}}
 
 \newpage
@@ -64,18 +26,8 @@
 \setcounter{page}{1}
 \input{content/text}
 
-%**************************************************************
 % Appendix
-% -
-
-%**************************************************************
-% Literature
 \dhbwPrintBibliography
-
-%**************************************************************
-% Independence notice
 \dhbwPrintIndependenceNotice
 
-%**************************************************************
-% The end of the document
 \end{document}
