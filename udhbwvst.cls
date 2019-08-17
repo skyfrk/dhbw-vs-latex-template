@@ -97,7 +97,7 @@
 % load optional packages (TODO: add if checks)
 
 \ifbool{udhbwvst@if@debug}{%
-  \RequirePackage{blindtext}
+  \RequirePackage{blindtext, lipsum}
 }{}
 
 \ifbool{udhbwvst@if@print@ndn}{%
