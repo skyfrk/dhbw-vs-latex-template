@@ -6,7 +6,7 @@
 % Required font size (12)
 % hidelinks hides the hyperref links in the pdf file
 % Fix: sloppy fixes line breaks in URLs
-\documentclass[hidelinks,12pt]{article}
+\documentclass[12pt]{article}
 
 %**************************************************************
 % Text
@@ -61,6 +61,7 @@
 %
 % Bibliography
 \usepackage{hyperref} \urlstyle{same}
+\hypersetup{hidelinks}
 \usepackage[backend=biber,style=authortitle,citestyle=authortitle,hyperref=true,autocite=footnote,sortlocale=de_DE,dashed=false,maxnames=3,sorting=nymdt,sortlocale=de_DE]{biblatex}
 
 % Required changes
