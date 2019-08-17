@@ -6,38 +6,13 @@
 
 \graphicspath{ {content/assets/} }
 
-
-
-%**************************************************************
-% Acronyms
-%
-\usepackage[printonlyused]{acronym}
-
-%**************************************************************
-% Util for the non-disclosure notice lettering on the title page
-%
-\usepackage{rotating}
-\usepackage[absolute]{textpos}
-
-%**************************************************************
-% Custom macros
-%
 \newcommand{\subcaption}[1] {
   \begin{center}
     \footnotesize{#1}
   \end{center}
 }
 
-\usepackage{xparse}
 \NewDocumentEnvironment{subcaptionenv}{m}{}{\subcaption{#1}}
-
-%**************************************************************
-% Fix: New paragraph is not indent
-% NOTE: Has to be loaded after the package tocloft
-%
-\usepackage[parfill]{parskip}
-\usepackage{plantuml} % has to be loaded here. why? idk -.-
-
 
 \makeatletter
 \newcommand\pagenumberingnoreset[1]{\gdef\thepage{\csname @#1\endcsname\c@page}}

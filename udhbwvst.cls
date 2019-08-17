@@ -58,10 +58,16 @@
 \RequirePackage{caption}
 \RequirePackage{xcolor}
 \RequirePackage{listings}
+\RequirePackage[printonlyused]{acronym}
+\RequirePackage{xparse}
+\RequirePackage[parfill]{parskip}
+\RequirePackage{plantuml}
 
 % load optional packages (TODO: add if checks)
 
 \RequirePackage{blindtext}
+\usepackage{rotating}
+\usepackage[absolute]{textpos}
 
 % style
 
