@@ -50,6 +50,7 @@
 \RequirePackage[ngerman]{babel}
 \RequirePackage[autostyle=true,german=quotes]{csquotes}
 \RequirePackage[bottom]{footmisc}
+\RequirePackage{pgfkeys}
 \RequirePackage{fancyhdr}
 \RequirePackage[%
     backend     = biber,
@@ -218,7 +219,7 @@
 \renewcommand{\lstlistingname}{Quellcode}
 \renewcommand{\lstlistlistingname}{Quellcodeverzeichnis}
 
-% biblatex package
+% biblatex package TODO: clean up and rearrange this section
 
 % This bibliography style only works because of the help of @moewe (https://tex.stackexchange.com/users/35864/moewe)
 
@@ -449,5 +450,134 @@
 
 % Custom direct cite command
 \newcommand{\mydirectfootcite}[3]{\enquote{#1}{\myfootcite[#3]{#2}}}
+
+
+% TODO rearrange everything below:
+
+% Required changes
+\addbibresource{content/misc/literature.bib}
+
+\graphicspath{ {content/assets/} }
+
+\newcommand{\subcaption}[1] {
+  \begin{center}
+    \footnotesize{#1}
+  \end{center}
+}
+
+\NewDocumentEnvironment{subcaptionenv}{m}{}{\subcaption{#1}}
+
+\pgfkeys{
+  /dhbw/.cd,
+  author/.store in            = \dhbwGetAuthor,
+  faculty/.store in           = \dhbwGetFaculty,
+  field of study/.store in    = \dhbwGetFieldOfStudy,
+  academic year/.store in     = \dhbwGetAcademicYear,
+  course/.store in            = \dhbwGetCourse,
+  title/.store in             = \dhbwGetTitle,
+  subtitle/.store in          = \dhbwGetSubtitle,
+  text type/.store in         = \dhbwGetTextType,
+  company name/.store in      = \dhbwGetCompanyName,
+  company logo/.store in      = \dhbwGetCompanyLogo,
+  lecturer/.store in          = \dhbwGetLecturer,
+  location/.store in          = \dhbwGetLocation,
+  date/.store in              = \dhbwGetDate,
+  longest acronym/.store in   = \dhbwGetLongestAcronym,
+  acronyms/.store in          = \dhbwGetAcronyms
+}
+
+\newrobustcmd\dhbwSetup[1]{\pgfqkeys{/dhbw}{#1}}
+
+\newcommand{\dhbwSetFrontMatter}{%
+  \selectlanguage{ngerman}
+  \pagenumbering{gobble}
+}
+
+\newcommand{\dhbwPrintTitle}{%
+  \input{template/title.tex}
+}
+
+\newcommand{\dhbwPrintNonDisclosureNotice}{%
+  \newpage  
+  \input{template/non-disclosure-notice.tex}
+}
+
+\newcommand{\dhbwPrintTableOfContents}{%
+  \newpage
+  \setcounter{page}{2}
+  \tableofcontents
+}
+
+\newcommand{\dhbwSetListMatter}{%
+  \newpage
+  \pagenumberingnoreset{Roman}
+}
+
+\newcommand{\dhbwPrintListOfAcronyms}{%
+  \newpage
+  \section*{Abkürzungsverzeichnis}\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
+  \begin{acronym}[\dhbwGetLongestAcronym{}\dhbwGetLongestAcronym{}] % spacing between acronym and long name
+    \setlength{\itemsep}{-\parsep} % line spacing
+    \dhbwGetAcronyms
+  \end{acronym}
+} 
+
+\newcommand{\dhbwPrintListOfFigures}{%
+  \newpage
+  \listoffigures\addcontentsline{toc}{section}{\listfigurename}
+}
+
+\newcommand{\dhbwPrintListOfTables}{%
+  \newpage
+  \listoftables\addcontentsline{toc}{section}{\listtablename}
+}
+
+\newcommand{\dhbwPrintListOfListings}{%
+  \newpage
+  \lstlistoflistings\addcontentsline{toc}{section}{\lstlistlistingname}
+}
+
+\newcommand{\dhbwSetMainMatter}{%
+  \newpage
+  \pagenumbering{arabic}
+  \setcounter{page}{1}
+}
+
+\newcommand{\dhbwPrintBibliography}{%
+  \newpage
+  \printbibtabular[title=\contentsname]\addcontentsline{toc}{section}{\contentsname}
+}
+
+\newcommand{\dhbwPrintIndependenceNotice}{%
+  \newpage
+  \input{template/independence-notice.tex}
+}
+
+\newcommand{\dhbwPrintEverythingBefore}{%
+  \dhbwSetFrontMatter
+  \dhbwPrintTitle
+  \dhbwPrintNonDisclosureNotice
+  \dhbwPrintTableOfContents
+  \dhbwSetListMatter
+  \dhbwPrintListOfAcronyms
+  \dhbwPrintListOfFigures
+  \dhbwPrintListOfTables
+  \dhbwPrintListOfListings
+  \dhbwSetMainMatter
+}
+
+\newcommand{\dhbwPrintEverythingAfter}{%
+  \dhbwPrintBibliography
+  \dhbwPrintIndependenceNotice
+}
+
+\AfterEndPreamble{%
+    \dhbwPrintEverythingBefore
+}
+
+\AtEndDocument{%
+    \dhbwPrintEverythingAfter
+}
+
 
 \endinput

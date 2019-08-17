@@ -1,7 +1,5 @@
 \documentclass[debug]{udhbwvst}
 
-\input{template/header}
-
 \dhbwSetup{%
 author          = Simon Eßlinger,
 faculty         = Wirtschaft,
@@ -20,16 +18,11 @@ longest acronym = API,
 acronyms        = {%
     \acro{API}{Application Programming Interface}
     \acroplural{API}[API's]{Application Programming Interfaces}
-},
-debug           = false
+}
 }
 
 \begin{document}
-\dhbwPrintEverythingBefore
 
 \input{content/text}
-
-% Appendix
-\dhbwPrintEverythingAfter
 
 \end{document}
