@@ -193,6 +193,11 @@
   \usepackage[parfill]{parskip}
   \usepackage{plantuml} % has to be loaded here. why? idk -.-
 
+
+  \makeatletter
+  \newcommand\pagenumberingnoreset[1]{\gdef\thepage{\csname @#1\endcsname\c@page}}
+  \makeatother
+
   \usepackage{pgfkeys}
 
   \newif\ifdebug
@@ -217,8 +222,16 @@
 
   \newrobustcmd\dhbwSetup[1]{\pgfqkeys{/dhbw}{#1}}
 
+  \newcommand{\dhbwSetFrontMatter}{%
+    \selectlanguage{ngerman}
+    \pagenumbering{gobble}
+  }
+
   \newcommand{\dhbwPrintIndependenceNotice}{\input{template/independence-notice.tex}}
-  \newcommand{\dhbwPrintNonDisclosureNotice}{\input{template/non-disclosure-notice.tex}}
+  \newcommand{\dhbwPrintNonDisclosureNotice}{%
+    \newpage  
+    \input{template/non-disclosure-notice.tex}
+  }
   \newcommand{\dhbwPrintTitle}{\input{template/title.tex}}
   \newcommand{\dhbwPrintListOfFigures}{%
     \newpage
@@ -238,7 +251,6 @@
   }
   \newcommand{\dhbwPrintListOfAcronyms}[2]{%
     \newpage
-    \pagenumbering{Roman}
     \section*{Abkürzungsverzeichnis}\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
     \begin{acronym}[#1] % spacing between acronym and long name
       \setlength{\itemsep}{-\parsep} % line spacing
@@ -247,14 +259,15 @@
   }
   \newcommand{\dhbwPrintTableOfContents}{%
     \newpage
-    \pagenumbering{Roman}
     \setcounter{page}{2}
     \tableofcontents
-    \thispagestyle{empty}
   }
   \newcommand{\dhbwSetMainMatter}{%
-    \addtocontents{toc}{\protect\thispagestyle{empty}}
     \newpage
     \pagenumbering{arabic}
     \setcounter{page}{1}
+  }
+
+  \newcommand{\dhbwSetListMatter}{%
+    \pagenumberingnoreset{Roman}
   }
