@@ -28,6 +28,8 @@
   \usepackage[official]{eurosym}
   % German hyphenation
   \usepackage[ngerman]{babel}
+  \addto\captionsngerman{\renewcommand{\contentsname}{Literaturverzeichnis}}
+
   % Extension for hyphenation on quotes
   \usepackage[autostyle=true,german=quotes]{csquotes}
   % Generate random text
@@ -62,7 +64,6 @@
   \usepackage[backend=biber,style=authortitle,citestyle=authortitle,hyperref=true,autocite=footnote,sortlocale=de_DE,dashed=false,maxnames=3,sorting=nymdt,sortlocale=de_DE]{biblatex}
   
   % Required changes
-  \defbibheading{lit}{\section*{Literaturverzeichnis}}
   \addbibresource{content/misc/literature.bib}
   
   % Import DHBW custom bibliography style
@@ -281,7 +282,7 @@
 
   \newcommand{\dhbwPrintBibliography}{%
     \newpage
-    \printbibtabular[title=Literaturverzeichnis]\addcontentsline{toc}{section}{Literaturverzeichnis}
+    \printbibtabular[title=\contentsname]\addcontentsline{toc}{section}{\contentsname}
   }
 
   \newcommand{\dhbwPrintIndependenceNotice}{%
