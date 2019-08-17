@@ -14,6 +14,13 @@
 % load packages
 
 \RequirePackage{fontspec}
+\RequirePackage[%
+    a4paper,
+    tmargin =   {4cm},
+    bmargin =   {2cm},
+    lmargin =   {4cm},
+    rmargin =   {2cm}
+]{geometry}
 
 
 % style
