@@ -22,6 +22,9 @@
     rmargin =   {2cm}
 ]{geometry}
 \RequirePackage[onehalfspacing]{setspace}
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage[official]{eurosym}
 
 % style
 
