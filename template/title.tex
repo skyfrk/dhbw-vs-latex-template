@@ -20,11 +20,13 @@ Studiengang \dhbwGetFieldOfStudy \\
 DUALE HOCHSCHULE BADEN-WÜRTTEMBERG\\
 VILLINGEN-SCHWENNINGEN\\
 \end{center}
-\begin{textblock*}{50mm}(30mm,160mm)
-    \begin{rotate}{50}
-        \fontsize{34}{40}\bfseries\textcolor{red}{Sperrvermerk}
-    \end{rotate}
-\end{textblock*}
+\ifbool{udhbwvst@if@print@ndn}{%
+    \begin{textblock*}{50mm}(30mm,160mm)
+        \begin{rotate}{50}
+            \fontsize{34}{40}\bfseries\textcolor{red}{Sperrvermerk}
+        \end{rotate}
+    \end{textblock*}
+}{}
 \begin{table}[b]
 \begin{tabular}{ll}
 Bearbeiter: 		&	\dhbwGetAuthor \\

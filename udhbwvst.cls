@@ -13,13 +13,25 @@
 
 % booleans
 
-\newbool{udhbwvst@cls@if@debug}
+\newbool{udhbwvst@if@debug}
+\newbool{udhbwvst@if@autogenerate}\booltrue{udhbwvst@if@autogenerate}
+\newbool{udhbwvst@if@print@ndn}\booltrue{udhbwvst@if@print@ndn}
+\newbool{udhbwvst@if@print@loa}\booltrue{udhbwvst@if@print@loa}
+\newbool{udhbwvst@if@print@lof}\booltrue{udhbwvst@if@print@lof}
+\newbool{udhbwvst@if@print@lot}\booltrue{udhbwvst@if@print@lot}
+\newbool{udhbwvst@if@print@lol}\booltrue{udhbwvst@if@print@lol}
 
 % define options
 
 \pgfkeys{%
     udhbwvst/.cd,
-    debug/.is if    = udhbwvst@cls@if@debug
+    auto-generate/.is if  = udhbwvst@if@autogenerate,
+    debug/.is if          = udhbwvst@if@debug,
+    print-ndn/.is if      = udhbwvst@if@print@ndn,
+    print-loa/.is if      = udhbwvst@if@print@loa,
+    print-lof/.is if      = udhbwvst@if@print@lof,
+    print-lot/.is if      = udhbwvst@if@print@lot,
+    print-lol/.is if      = udhbwvst@if@print@lol
 }
 
 \ProcessPgfOptions{/udhbwvst}
@@ -29,7 +41,7 @@
 \AtEndPreamble{%
     \RequirePackage{hyperref}
     \urlstyle{same}
-    \ifbool{udhbwvst@cls@if@debug}{}{%
+    \ifbool{udhbwvst@if@debug}{}{%
         \hypersetup{hidelinks}
     }
      % TODO add author metadata via hyperref
@@ -82,12 +94,14 @@
 
 % load optional packages (TODO: add if checks)
 
-\ifbool{udhbwvst@cls@if@debug}{%
-    \RequirePackage{blindtext}
+\ifbool{udhbwvst@if@debug}{%
+  \RequirePackage{blindtext}
 }{}
 
-\RequirePackage{rotating}
-\RequirePackage[absolute]{textpos}
+\ifbool{udhbwvst@if@print@ndn}{%
+  \RequirePackage{rotating}
+  \RequirePackage[absolute]{textpos}
+}{}
 
 % style
 
@@ -498,8 +512,10 @@
 }
 
 \newcommand{\dhbwPrintNonDisclosureNotice}{%
-  \newpage  
-  \input{template/non-disclosure-notice.tex}
+  \ifbool{udhbwvst@if@print@ndn}{%
+    \newpage  
+    \input{template/non-disclosure-notice.tex}
+  }{}
 }
 
 \newcommand{\dhbwPrintTableOfContents}{%
@@ -514,27 +530,35 @@
 }
 
 \newcommand{\dhbwPrintListOfAcronyms}{%
-  \newpage
-  \section*{Abkürzungsverzeichnis}\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
-  \begin{acronym}[\dhbwGetLongestAcronym{}\dhbwGetLongestAcronym{}] % spacing between acronym and long name
-    \setlength{\itemsep}{-\parsep} % line spacing
-    \dhbwGetAcronyms
-  \end{acronym}
+  \ifbool{udhbwvst@if@print@loa}{%
+    \newpage
+    \section*{Abkürzungsverzeichnis}\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
+    \begin{acronym}[\dhbwGetLongestAcronym{}\dhbwGetLongestAcronym{}] % spacing between acronym and long name
+      \setlength{\itemsep}{-\parsep} % line spacing
+      \dhbwGetAcronyms
+    \end{acronym}
+  }{}
 } 
 
 \newcommand{\dhbwPrintListOfFigures}{%
-  \newpage
-  \listoffigures\addcontentsline{toc}{section}{\listfigurename}
+  \ifbool{udhbwvst@if@print@lof}{%
+    \newpage
+    \listoffigures\addcontentsline{toc}{section}{\listfigurename}
+  }{}
 }
 
 \newcommand{\dhbwPrintListOfTables}{%
-  \newpage
-  \listoftables\addcontentsline{toc}{section}{\listtablename}
+  \ifbool{udhbwvst@if@print@lot}{%
+    \newpage
+    \listoftables\addcontentsline{toc}{section}{\listtablename}
+  }{}
 }
 
 \newcommand{\dhbwPrintListOfListings}{%
-  \newpage
-  \lstlistoflistings\addcontentsline{toc}{section}{\lstlistlistingname}
+  \ifbool{udhbwvst@if@print@lol}{%
+    \newpage
+    \lstlistoflistings\addcontentsline{toc}{section}{\lstlistlistingname}
+  }{}
 }
 
 \newcommand{\dhbwSetMainMatter}{%
@@ -571,13 +595,18 @@
   \dhbwPrintIndependenceNotice
 }
 
+% generate pages
+
 \AfterEndPreamble{%
+  \ifbool{udhbwvst@if@autogenerate}{%
     \dhbwPrintEverythingBefore
+  }{}
 }
 
 \AtEndDocument{%
+  \ifbool{udhbwvst@if@autogenerate}{%
     \dhbwPrintEverythingAfter
+  }{}
 }
-
 
 \endinput
