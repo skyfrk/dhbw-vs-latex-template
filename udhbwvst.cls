@@ -25,6 +25,13 @@
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
 \RequirePackage[official]{eurosym}
+\RequirePackage[ngerman]{babel}
+\RequirePackage[autostyle=true,german=quotes]{csquotes}
+\RequirePackage[bottom]{footmisc}
+
+% load optional packages (TODO: add if checks)
+
+\RequirePackage{blindtext}
 
 % style
 
@@ -32,3 +39,10 @@
 \setsansfont{TeX Gyre Heros} % like Arial
 \renewcommand{\familydefault}{\sfdefault}
 
+% babel package
+\addto\captionsngerman{%
+    \renewcommand{\contentsname}{Literaturverzeichnis}
+}
+
+% fix for #21 (long author names in footnotes)
+\renewcommand\@makefntext[1]{\leftskip=1em\hskip-0em\@makefnmark#1}
