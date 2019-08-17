@@ -235,10 +235,8 @@
 \renewcommand{\lstlistingname}{Quellcode}
 \renewcommand{\lstlistlistingname}{Quellcodeverzeichnis}
 
-% biblatex package TODO: clean up and rearrange this section
+% biblatex package
 \addbibresource{\udhbwvst@var@bibfile}
-
-% This bibliography style only works because of the help of @moewe (https://tex.stackexchange.com/users/35864/moewe)
 
 % Delimitors
 \DeclareDelimFormat[bib,biblist]{nametitledelim}{\addcolon\space}
@@ -272,9 +270,7 @@
 \patchcmd{\printbibtabular}{\blx@printbibliography}{\bbx@printbibtabular}{}{}
 \let\bbx@printbibtabular\blx@printbibliography
 \patchcmd{\bbx@printbibtabular}{\blx@bibliography}{\bbx@bibtabular}{}{}
-\patchcmd{\bbx@printbibtabular}
-  {\def\blx@theenv{bibliography}}{\def\blx@theenv{bibtabular}}{}{}
-
+\patchcmd{\bbx@printbibtabular}{\def\blx@theenv{bibliography}}{\def\blx@theenv{bibtabular}}{}{}
 
 % Underlying macros
 \def\bbx@bibtabular#1{%
@@ -382,10 +378,6 @@
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
 
-% demo new tabular bibliography format
-% I strongly prefer left-aligned with fixed width (L)
-% over justified (p) here
-% longtable for tables that break over pages
 \defbibtabular{bibtabular}
   {\def\arraystretch{2}%
    \begin{longtable}{@{}L{\dimexpr0.25\textwidth-\tabcolsep\relax}L{\dimexpr0.75\textwidth-\tabcolsep\relax}@{}}}
@@ -397,8 +389,7 @@
   \printfield{shorttitle}%
   \printunit*{\addspace}}
 
-% Custom sorting pattern by  @Audrey (https://tex.stackexchange.com/users/4483/audrey)
-% Sorty by Author->Year->Month->Day->Title
+% Sort by Author->Year->Month->Day->Title
 \DeclareSortingTemplate{nymdt}{
   \sort{
     \field{presort}
@@ -447,6 +438,8 @@
      {\noyear}
     {\printfield{year}}}}
 
+% command definitions
+
 % Custom footcite command
 \DeclareCiteCommand{\myfootcite}[\mkbibfootnote]
   {\usebibmacro{prenote}}
@@ -467,13 +460,6 @@
 
 % Custom direct cite command
 \newcommand{\mydirectfootcite}[3]{\enquote{#1}{\myfootcite[#3]{#2}}}
-
-
-% TODO rearrange everything below:
-
-% Required changes
-
-\graphicspath{ {content/assets/} }
 
 \newcommand{\subcaption}[1] {
   \begin{center}
