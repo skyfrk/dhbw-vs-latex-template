@@ -28,7 +28,7 @@ acronyms        = {%
 \begin{document}
 
 \section{This is a section}
-\blindtext \myfootcite[Vgl.][42]{example}
+\blindtext \dhbwFootcite[Vgl.][42]{example}
 \subsection{This is a subsection}
 \blindtext \ac{API}
 \subsubsection{This is a subsubsection}
@@ -39,13 +39,13 @@ acronyms        = {%
     \centering
     \caption{Example caption}
     \includegraphics[width=\textwidth]{assets/figure.png} 
-    \subcaption{Source: \mycite[69]{example}}
+    \subcaption{Source: \dhbwCite[69]{example}}
     \label{fig:goodreference}
 \end{figure}
 
 \blindtext
 
-\begin{subcaptionenv}{Source: \mycite[Vgl.][2]{example}}
+\begin{subcaptionenv}{Source: \dhbwCite[Vgl.][2]{example}}
     \begin{lstlisting}[caption={Express Example}, language=javascript]
 const express = require('express')
 const app = express()
@@ -76,7 +76,7 @@ app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
         @enduml    
     \end{plantuml}
-    \caption*{\footnotesize{Quelle: \mycite[69]{example}}}
+    \caption*{\footnotesize{Quelle: \dhbwCite[69]{example}}}
     \label{fig:plantuml_test}
 \end{figure}
 

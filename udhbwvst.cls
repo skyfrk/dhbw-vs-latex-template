@@ -444,7 +444,7 @@
 % TODO: better cite, better footcite, 
 
 % Custom footcite command
-\DeclareCiteCommand{\myfootcite}[\mkbibfootnote]
+\DeclareCiteCommand{\dhbwFootcite}[\mkbibfootnote]
   {\usebibmacro{prenote}}
   {\usebibmacro{citeindex}%
    \usebibmacro{author}
@@ -453,7 +453,7 @@
   {\usebibmacro{postnote}}
 
 % Custom cite command
-\DeclareCiteCommand{\mycite}
+\DeclareCiteCommand{\dhbwCite}
   {\usebibmacro{prenote}}
   {\usebibmacro{citeindex}%
   \usebibmacro{author}
@@ -462,15 +462,17 @@
   {\usebibmacro{postnote}}
 
 % Custom direct cite command
-\newcommand{\mydirectfootcite}[3]{\enquote{#1}{\myfootcite[#3]{#2}}}
+\newcommand{\dhbwFootciteDirect}[3]{\enquote{#1}{\myfootcite[#3]{#2}}}
 
-\newcommand{\subcaption}[1] {
+\newcommand{\subcaption}[1]{
   \begin{center}
     \footnotesize{#1}
   \end{center}
 }
 
-\NewDocumentEnvironment{subcaptionenv}{m}{}{\subcaption{#1}}
+\NewDocumentEnvironment{subcaptionenv}{m}{}{% 
+  \subcaption{#1}
+}
 
 \pgfkeys{
   /dhbw/.cd,
