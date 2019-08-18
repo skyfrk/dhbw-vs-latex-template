@@ -33,8 +33,7 @@
     print-lot/.is if        = udhbwvst@if@print@lot,
     print-lol/.is if        = udhbwvst@if@print@lol,
     bib-file/.store in      = \udhbwvst@var@bibfile,
-    bib-file                = literature.bib,
-    company-logo/.store in  = \udhbwvst@var@companylogo
+    bib-file                = literature.bib
 }
 
 \ProcessPgfOptions{/udhbwvst}
@@ -440,6 +439,9 @@
     {\printfield{year}}}}
 
 % command definitions
+
+% TODO: figure macro, env for figure, table, listing
+% TODO: better cite, better footcite, 
 
 % Custom footcite command
 \DeclareCiteCommand{\myfootcite}[\mkbibfootnote]
