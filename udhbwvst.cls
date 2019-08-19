@@ -477,6 +477,29 @@
   \end{figure}
 }
 
+\pgfkeys{%
+  /dhbwFigureEnv/.is family,
+  /dhbwFigureEnv,
+  caption/.estore in  = \udhbwvst@cmd@dhbwfigureenv@caption,
+  label/.estore in    = \udhbwvst@cmd@dhbwfigureenv@label,
+  float/.estore in    = \udhbwvst@cmd@dhbwfigureenv@float,
+  float               = ht,
+  source/.estore in   = \udhbwvst@cmd@dhbwfigureenv@source,
+  source              = \udhbwvst@var@defaultshortreference
+}
+
+\NewDocumentEnvironment{dhbwfigure}{m}{%
+  \pgfkeys{/dhbwFigureEnv, #1}
+  \edef\efigure{\noexpand\begin{figure}[\udhbwvst@cmd@dhbwfigureenv@float]}
+  \efigure
+    \centering
+    \caption{\udhbwvst@cmd@dhbwfigureenv@caption}
+}{%
+  \caption*{\footnotesize{\udhbwvst@var@shortreferenceprefix{}\udhbwvst@cmd@dhbwfigureenv@source}}
+  \label{\udhbwvst@cmd@dhbwfigureenv@label}
+  \end{figure}
+}
+
 % Custom footcite command
 \DeclareCiteCommand{\dhbwFootcite}[\mkbibfootnote]
   {\usebibmacro{prenote}}
