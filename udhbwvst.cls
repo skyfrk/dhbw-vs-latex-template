@@ -495,9 +495,32 @@
     \centering
     \caption{\udhbwvst@cmd@dhbwfigureenv@caption}
 }{%
-  \caption*{\footnotesize{\udhbwvst@var@shortreferenceprefix{}\udhbwvst@cmd@dhbwfigureenv@source}}
-  \label{\udhbwvst@cmd@dhbwfigureenv@label}
+    \caption*{\footnotesize{\udhbwvst@var@shortreferenceprefix{}\udhbwvst@cmd@dhbwfigureenv@source}}
+    \label{\udhbwvst@cmd@dhbwfigureenv@label}
   \end{figure}
+}
+
+\pgfkeys{%
+  /dhbwTableEnv/.is family,
+  /dhbwTableEnv,
+  caption/.estore in  = \udhbwvst@cmd@dhbwtableenv@caption,
+  label/.estore in    = \udhbwvst@cmd@dhbwtableenv@label,
+  float/.estore in    = \udhbwvst@cmd@dhbwtableenv@float,
+  float               = ht,
+  source/.estore in   = \udhbwvst@cmd@dhbwtableenv@source,
+  source              = \udhbwvst@var@defaultshortreference
+}
+
+\NewDocumentEnvironment{dhbwtable}{m}{%
+  \pgfkeys{/dhbwTableEnv, #1}
+  \edef\etable{\noexpand\begin{table}[\udhbwvst@cmd@dhbwtableenv@float]}
+  \etable
+    \centering
+    \caption{\udhbwvst@cmd@dhbwtableenv@caption}
+}{%
+  \caption*{\footnotesize{\udhbwvst@var@shortreferenceprefix{}\udhbwvst@cmd@dhbwtableenv@source}}
+  \label{\udhbwvst@cmd@dhbwtableenv@label}
+  \end{table}
 }
 
 % Custom footcite command
