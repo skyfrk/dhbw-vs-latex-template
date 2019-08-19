@@ -1,10 +1,13 @@
+% settings
+
 \newcommand*{\udhbwvst@cls@date}{2019-08-17}
 \newcommand*{\udhbwvst@cls@info}{Unofficial DHBW Villingen-Schwenningen text class}
+\newcommand*{\udhbwvst@var@shortreferenceprefix}{Quelle:\space}
+\newcommand*{\udhbwvst@var@defaultshortreference}{Eigene Darstellung.}
+
+% setup
 
 \ProvidesClass{udhbwvst}[\udhbwvst@cls@date\space\udhbwvst@cls@info]
-
-% load base class
-
 \LoadClass[12pt]{article}
 
 % load essential packages
@@ -20,6 +23,7 @@
 \newbool{udhbwvst@if@print@lof}\booltrue{udhbwvst@if@print@lof}
 \newbool{udhbwvst@if@print@lot}\booltrue{udhbwvst@if@print@lot}
 \newbool{udhbwvst@if@print@lol}\booltrue{udhbwvst@if@print@lol}
+\newbool{udhbwvst@if@plantuml}
 
 % define options
 
@@ -33,7 +37,8 @@
     print-lot/.is if        = udhbwvst@if@print@lot,
     print-lol/.is if        = udhbwvst@if@print@lol,
     bib-file/.store in      = \udhbwvst@var@bibfile,
-    bib-file                = literature.bib
+    bib-file                = literature.bib,
+    plantuml/.is if         = udhbwvst@if@plantuml
 }
 
 \ProcessPgfOptions{/udhbwvst}
@@ -93,9 +98,11 @@
 \RequirePackage{xparse}
 \RequirePackage[parfill]{parskip}
 
-% load optional packages (TODO: add if checks)
+% load optional packages
 
-\RequirePackage{plantuml}
+\ifbool{udhbwvst@if@plantuml}{%
+  \RequirePackage{plantuml}
+}{}
 
 \ifbool{udhbwvst@if@debug}{%
   \RequirePackage{blindtext, lipsum}
@@ -444,6 +451,32 @@
 % TODO: figure macro, env for figure, table, listing
 % TODO: better cite, better footcite, 
 
+\pgfkeys{%
+  /dhbwFigure/.is family,
+  /dhbwFigure,
+  caption/.estore in  = \udhbwvst@cmd@dhbwfigure@caption,
+  path/.estore in     = \udhbwvst@cmd@dhbwfigure@path,
+  label/.estore in    = \udhbwvst@cmd@dhbwfigure@label,
+  source/.estore in   = \udhbwvst@cmd@dhbwfigure@source,
+  source              = \udhbwvst@var@defaultshortreference,
+  width/.estore in    = \udhbwvst@cmd@dhbwfigure@width,
+  width               = \textwidth,
+  float/.estore in    = \udhbwvst@cmd@dhbwfigure@float,
+  float               = ht
+}
+
+\newcommand{\dhbwFigure}[1]{
+  \pgfkeys{/dhbwFigure, #1}
+  \edef\efigure{\noexpand\begin{figure}[\udhbwvst@cmd@dhbwfigure@float]}
+  \efigure
+    \centering
+    \caption{\udhbwvst@cmd@dhbwfigure@caption}
+    \includegraphics[width=\udhbwvst@cmd@dhbwfigure@width]{\udhbwvst@cmd@dhbwfigure@path} 
+    \caption*{\footnotesize{\udhbwvst@var@shortreferenceprefix\udhbwvst@cmd@dhbwfigure@source}}
+    \label{\udhbwvst@cmd@dhbwfigure@label}
+  \end{figure}
+}
+
 % Custom footcite command
 \DeclareCiteCommand{\dhbwFootcite}[\mkbibfootnote]
   {\usebibmacro{prenote}}
@@ -469,7 +502,7 @@
   \lstset{#1}
 }{%
   \begin{center}
-    \footnotesize{Quelle:\space#2}
+    \footnotesize{\udhbwvst@var@shortreferenceprefix#2}
   \end{center}
 }
 

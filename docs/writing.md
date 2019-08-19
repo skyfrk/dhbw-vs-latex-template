@@ -244,7 +244,7 @@ In the example below the `wrapfigure` environment takes two arguments. The first
 
 ### PlantUML figure
 
-If you have [set up](./setup.md#optional-install-plantuml) PlantUML as described you can embed [PlantUML-diagrams](http://www.plantuml.com/) in your LaTeX code. Just surround you PlantUML notation with the `plantuml` environment:
+If you have [set up](./setup.md#optional-install-plantuml) PlantUML as described and also set the class option `plantuml` to `true` you can embed [PlantUML-diagrams](http://www.plantuml.com/) in your LaTeX code. Just surround you PlantUML notation with the `plantuml` environment:
 
 ```tex
 \begin{figure}[h]

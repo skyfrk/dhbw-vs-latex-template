@@ -1,7 +1,8 @@
 \documentclass[%
     debug           = true,
     auto-generate   = true,
-    print-ndn       = true
+    print-ndn       = true,
+    plantuml        = true
 ]{udhbwvst}
 
 \dhbwSetup{%
@@ -38,10 +39,19 @@ acronyms        = {%
 \begin{figure}[ht] 
     \centering
     \caption{Example caption}
-    \includegraphics[width=\textwidth]{assets/figure.png} 
-    \footnotesize{Source: \dhbwCite[69]{example}}
+    \includegraphics[width=0.7\textwidth]{assets/figure.png} 
+    \caption*{\footnotesize{Source: \dhbwCite[69]{example}}}
     \label{fig:goodreference}
 \end{figure}
+
+\blindtext
+
+\dhbwFigure{%
+    caption = Caption,
+    path    = assets/figure.png,
+    label   = fig:mytestfig,
+    width   = 0.7\textwidth
+}
 
 \lipsum
 
@@ -67,7 +77,7 @@ app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 % app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 % \end{code}
 
-\autoref{lst:test}
+\autoref{lst:lol}
 
 \blindtext
 
