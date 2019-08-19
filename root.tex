@@ -29,7 +29,7 @@ acronyms        = {%
 \begin{document}
 
 \section{This is a section}
-\blindtext \dhbwFootcite[Vgl.][42]{example}
+\blindtext \footcite[Vgl.][42]{example}
 \subsection{This is a subsection}
 \blindtext \ac{API}
 \subsubsection{This is a subsubsection}
@@ -40,7 +40,7 @@ acronyms        = {%
     \centering
     \caption{Example caption}
     \includegraphics[width=0.7\textwidth]{assets/figure.png} 
-    \caption*{\footnotesize{Source: \dhbwCite[69]{example}}}
+    \caption*{\footnotesize{Source: \cite[69]{example}}}
     \label{fig:goodreference}
 \end{figure}
 
@@ -98,13 +98,13 @@ app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
         @enduml    
     \end{plantuml}
-    \caption*{\footnotesize{Quelle: \dhbwCite[69]{example}}}
+    \caption*{\footnotesize{Quelle: \cite[69]{example}}}
     \label{fig:plantuml_test}
 \end{figure}
 
 \section{lol}
 
-ü ö ä ß test
+\dfootcite{ü}{example}{} ö ä ß test\ifootcite{example}{2}
 
 \lipsum
 
@@ -133,5 +133,16 @@ app.listen(port, () => console.log(`Example app listening on port ${port}!`))
         3               & Profit!               \\ \hline
     \end{tabular}
 \end{dhbwtable}
+
+\lipsum
+
+\dhbwFigure{%
+    caption = Caption2,
+    path    = assets/figure.png,
+    label   = fig:mytestfig2,
+    width   = 0.8\textwidth
+}
+
+\lipsum
 
 \end{document}

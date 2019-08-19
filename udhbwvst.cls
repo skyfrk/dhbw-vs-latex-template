@@ -3,7 +3,8 @@
 \newcommand*{\udhbwvst@cls@date}{2019-08-17}
 \newcommand*{\udhbwvst@cls@info}{Unofficial DHBW Villingen-Schwenningen text class}
 \newcommand*{\udhbwvst@var@shortreferenceprefix}{Quelle:\space}
-\newcommand*{\udhbwvst@var@defaultshortreference}{Eigene Darstellung.}
+\newcommand*{\udhbwvst@var@defaultshortreference}{Eigene Darstellung}
+\newcommand*{\udhbwvst@var@indirectciteprefix}{Vgl\adddot}
 
 % setup
 
@@ -448,8 +449,29 @@
 
 % command definitions
 
-% TODO: figure macro, env for figure, table, listing
-% TODO: better cite, better footcite, 
+\DeclareCiteCommand{\footcite}[\mkbibfootnote]
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \usebibmacro{author}
+   \usebibmacro{mycite}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+\DeclareCiteCommand{\cite}
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+  \usebibmacro{author}
+  \usebibmacro{mycite}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+\newcommand{\dfootcite}[3]{%
+  \enquote{#1}{\footcite[#3]{#2}}
+} % TODO fix optional arg
+
+\newcommand{\ifootcite}[2]{%
+  \footcite[\udhbwvst@var@indirectciteprefix][#2]{#1}
+} % TODO fix optional arg
 
 \pgfkeys{%
   /dhbwFigure/.is family,
@@ -522,27 +544,6 @@
   \label{\udhbwvst@cmd@dhbwtableenv@label}
   \end{table}
 }
-
-% Custom footcite command
-\DeclareCiteCommand{\dhbwFootcite}[\mkbibfootnote]
-  {\usebibmacro{prenote}}
-  {\usebibmacro{citeindex}%
-   \usebibmacro{author}
-   \usebibmacro{mycite}}
-  {\multicitedelim}
-  {\usebibmacro{postnote}}
-
-% Custom cite command
-\DeclareCiteCommand{\dhbwCite}
-  {\usebibmacro{prenote}}
-  {\usebibmacro{citeindex}%
-  \usebibmacro{author}
-  \usebibmacro{mycite}}
-  {\multicitedelim}
-  {\usebibmacro{postnote}}
-
-% Custom direct cite command
-\newcommand{\dhbwFootciteDirect}[3]{\enquote{#1}{\myfootcite[#3]{#2}}}
 
 \lstnewenvironment{code}[2]{%
   \lstset{#1}
