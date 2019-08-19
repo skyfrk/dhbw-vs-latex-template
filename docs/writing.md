@@ -305,11 +305,10 @@ The `\label{tab:marker}` command tags the table with a marker. So that you can l
 
 ## Code listing
 
-Adding a code listing requires a few commands explained below the example:
+You can add a code listing using the `code` environment:
 
 ```tex
-\begin{subcaptionenv}{Source: \mycite[Vgl.][2]{example}}
-    \begin{lstlisting}[caption={Express Example},language=javascript,label=lst:express]
+\begin{code}{caption={Express Example},language=javascript,label=lst:express}{\mycite[Vgl.][2]{example}}
 const express = require('express')
 const app = express()
 const port = 3000
@@ -317,19 +316,28 @@ const port = 3000
 app.get('/', (req, res) => res.send('Hello World!'))
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
-    \end{lstlisting}
-\end{subcaptionenv}
+\end{code}
 ```
 
-The `subcaptionenv` environment takes a text as argument which will be placed in the center below the content of the environment formatted as a unnumbered subcaption to be used for short references.
+The `code` environment is a custom `listings` environment. The first argument is used to pass options through to the `listings` environment and the second argument is the used for the short reference.
 
-The `lstlisting` environment takes a few `options` as key-value pairs listed below and formats code inside the environment accordingly.
+:warning: You should always pass the options listed below to the `listings` environment:
 
 | Option     | Description                                                                                                                                                                                                |
 | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `caption`  | The caption to appear above the code listing and in the list of code listings.                                                                                                                             |
 | `language` | The language of the source code used for syntax highlighting. In addition to the languages [supported by default](https://ctan.org/pkg/listings) this template adds support for `csharp` and `javascript`. |
 | `label`    | The marker used for [referencing](#labels-and-referencing). Has to begin with `lst:`.                                                                                                                      |
+
+:warning: The short reference below the code listing is not inside the same float as the code. It can happen that the code listing and the reference have a page break between them. To prevent this you have to wrap the `code` environment with a `minipage` environment:
+
+```tex
+\begin{minipage}[c]{\textwidth}
+\begin{code}{...}{...}
+...
+\end{code}
+\end{minipage}
+```
 
 ## Labels and referencing
 

@@ -92,9 +92,10 @@
 \RequirePackage[printonlyused]{acronym}
 \RequirePackage{xparse}
 \RequirePackage[parfill]{parskip}
-\RequirePackage{plantuml}
 
 % load optional packages (TODO: add if checks)
+
+\RequirePackage{plantuml}
 
 \ifbool{udhbwvst@if@debug}{%
   \RequirePackage{blindtext, lipsum}
@@ -464,18 +465,16 @@
 % Custom direct cite command
 \newcommand{\dhbwFootciteDirect}[3]{\enquote{#1}{\myfootcite[#3]{#2}}}
 
-\newcommand{\subcaption}[1]{
+\lstnewenvironment{code}[2]{%
+  \lstset{#1}
+}{%
   \begin{center}
-    \footnotesize{#1}
+    \footnotesize{Quelle:\space#2}
   \end{center}
 }
 
-\NewDocumentEnvironment{subcaptionenv}{m}{}{% 
-  \subcaption{#1}
-}
-
-\pgfkeys{
-  /dhbw/.cd,
+\pgfkeys{%
+  /dhbwSetup/.cd,
   author/.store in            = \dhbwGetAuthor,
   faculty/.store in           = \dhbwGetFaculty,
   field of study/.store in    = \dhbwGetFieldOfStudy,
@@ -493,7 +492,7 @@
   acronyms/.store in          = \dhbwGetAcronyms
 }
 
-\newrobustcmd\dhbwSetup[1]{\pgfqkeys{/dhbw}{#1}}
+\newrobustcmd\dhbwSetup[1]{\pgfqkeys{/dhbwSetup}{#1}}
 
 \newcommand{\dhbwSetFrontMatter}{%
   \selectlanguage{ngerman}
