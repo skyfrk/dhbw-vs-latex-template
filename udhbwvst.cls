@@ -465,13 +465,17 @@
   {\multicitedelim}
   {\usebibmacro{postnote}}
 
-\newcommand{\dfootcite}[3]{%
-  \enquote{#1}{\footcite[#3]{#2}}
-} % TODO fix optional arg
+\NewDocumentCommand{\dfootcite}{O{}mm}{%
+  \enquote{#3}{\footcite[#1]{#2}}
+}
 
-\newcommand{\ifootcite}[2]{%
-  \footcite[\udhbwvst@var@indirectciteprefix][#2]{#1}
-} % TODO fix optional arg
+\NewDocumentCommand{\ifootcite}{O{}m}{%
+  \footcite[\udhbwvst@var@indirectciteprefix][#1]{#2}
+}
+
+\NewDocumentCommand{\icite}{O{}m}{%
+  \cite[\udhbwvst@var@indirectciteprefix][#1]{#2}
+}
 
 \pgfkeys{%
   /dhbwFigure/.is family,
