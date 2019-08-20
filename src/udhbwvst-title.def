@@ -38,7 +38,7 @@ Betreuender Dozent:	&	\dhbwGetLecturer \\
 \begin{tabularx}{\textwidth}{lXl}
 \includegraphics[width=.3\linewidth]{dhbw-vs-logo.png} &
 &
-\raisebox{\height}{\includegraphics[width=.3\linewidth]{\dhbwGetCompanyLogo} }
+\includegraphics[width=.3\linewidth]{\dhbwGetCompanyLogo}
 \end{tabularx}
 \end{table}
 
