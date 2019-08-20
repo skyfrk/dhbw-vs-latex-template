@@ -15,7 +15,7 @@ Documentation and general tips and tricks on how to wirte an academic text assig
   - [Cite without footnote](#cite-without-footnote)
     - [Cite indirect without footnote](#cite-indirect-without-footnote)
 - [Acronyms](#acronyms)
-  - [Add a new acronym](#add-a-new-acronym)
+  - [Define a new acronym](#define-a-new-acronym)
     - [Define a custom plural](#define-a-custom-plural)
   - [Using acronyms in text](#using-acronyms-in-text)
 - [Figures](#figures)
@@ -219,18 +219,20 @@ Here is a short reference: \icite[42]{hitchhiker78}
 
 This template uses the `acronym` CTAN package. Have a look at it's [documentation](https://ctan.org/pkg/acronym) for details on advanced usage.
 
-### Add a new acronym
+### Define a new acronym
 
-Before you can use an acronym in your text you have to add it inside the `acronym` environment in `content/misc/acronyms.tex`. The `acronym` environment takes one argument which will dictate how much space between the acronym and the long version of the acronym there will be. The `acronym` environment will just count the length of given parameter. According to the DHBW-VS you should always use the longest acronym twice here. Example below:
+Before you can use an acronym in your text you have to define it inside the `acronyms` key of the [\dhbwSetup](#required-dhbwsetup-command) command. You also have to setup the `longest acronym` key. The `acronym` package will count the length of the given parameter and use it for the spacing between the short and the long version of an acronym. Example below:
 
 ```tex
-\begin{acronym}[NiPNiP]
-
-\acro{C9}{Cloud 9}
-\acro{NiP}{Ninjas in Pyjamas}
-\acro{VP}{Virtus Pro}
-
-\end{acronym}
+\dhbwSetup{%
+    ...
+    longest acronym = NiP,
+    acronyms        = {%
+        \acro{C9}{Cloud 9}
+        \acro{NiP}{Ninjas in Pyjamas}
+        \acro{VP}{Virtus Pro}
+    }
+}
 ```
 
 :warning: You must manually sort the acronyms by alphabet. As of august 2019 the `acronym` package doesn't support automatic sorting.
@@ -242,12 +244,14 @@ Command: `\acroplural{acronym}[shortPlural]{longPlural}`
 The `acronym` package adds an `s` to the short and long version of an acronym if no custom plural is defined. There are many cases when adding an `s` doesn't work. See the german example below:
 
 ```tex
-\begin{acronym}[NiPNiP]
-
-\acro{GF}{Globale Firma}
-\acroplural{GF}[GF]{Globale Firmen}
-
-\end{acronym}
+\dhbwSetup{%
+    ...
+    longest acronym = GF,
+    acronyms        = {%
+        \acro{GF}{Globale Firma}
+        \acroplural{GF}[GF]{Globale Firmen}
+    }
+}
 ```
 
 ### Using acronyms in text
