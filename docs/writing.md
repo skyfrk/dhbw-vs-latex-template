@@ -461,7 +461,7 @@ In Abschnitt 2 findet sich kein Widerspruch.
 
 ## Bibliography
 
-When you're researching it is advised to store every source of information as an entry in your bibliography file located at `/content/misc/literature.bib`. Biblatex will make sure to only print references you actually refered to in your bibliography at the end of the text. Biblatex will also sort entries by author, then by year, then by month, then by day and finally by title.
+When you're researching it is advised to store every source of information as an entry in your bibliography file. Biblatex will make sure to only print references you actually refered to in your bibliography at the end of the text. Biblatex will also sort entries by author, then by year, then by month, then by day and finally by title.
 
 :warning: The DHBW-VS bibliography style was only tested with the entires of type [book](#add-entry-of-type-book) and [online](#add-entry-of-type-online). However [other types of entries](https://www.ctan.org/pkg/biblatex) should also work as long as they provide a `shorttitle` field!
 
