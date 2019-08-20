@@ -133,6 +133,7 @@
 \fancypagestyle{plain}{
   \fancyhead[R]{\thepage}
 }
+\setlength{\headheight}{15pt}
 
 % change page numbering style without page number reset
 \newcommand\pagenumberingnoreset[1]{\gdef\thepage{\csname @#1\endcsname\c@page}}
