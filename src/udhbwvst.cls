@@ -52,7 +52,13 @@
     \ifbool{udhbwvst@if@debug}{}{%
         \hypersetup{hidelinks}
     }
-     % TODO add author metadata via hyperref
+    \hypersetup{%
+      pdftitle    = {\ifdef{\dhbwGetTitle}{\dhbwGetTitle}{undefined}},
+      pdfsubject  = {\ifdef{\dhbwGetTitle}{\dhbwGetTitle}{undefined}},
+      pdfauthor   = {\ifdef{\dhbwGetAuthor}{\dhbwGetAuthor}{undefined}},
+      pdfcreator  = {Lua\LaTeX},
+      pdfproducer = {Lua\LaTeX}
+    }
 }
 
 \RequirePackage{fontspec}
