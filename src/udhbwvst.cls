@@ -534,6 +534,32 @@
 }
 
 \pgfkeys{%
+  /dhbwWrapfigure/.is family,
+  /dhbwWrapfigure,
+  caption/.estore in        = \udhbwvst@cmd@dhbwwrapfigure@caption,
+  label/.estore in          = \udhbwvst@cmd@dhbwwrapfigure@label,
+  source/.estore in         = \udhbwvst@cmd@dhbwwrapfigure@source,
+  source                    = \udhbwvst@var@defaultshortreference,
+  placement/.estore in      = \udhbwvst@cmd@dhbwwrapfigure@placement,
+  width/.store in           = \udhbwvst@cmd@dhbwwrapfigure@width,
+  width                     = {0.45\textwidth},
+  image width/.store in     = \udhbwvst@cmd@dhbwwrapfigure@imgwidth,
+  image width               = {0.4\textwidth},
+  path/.estore in           = \udhbwvst@cmd@dhbwwrapfigure@path
+}
+
+\newcommand{\dhbwWrapfigure}[1]{
+  \pgfkeys{/dhbwWrapfigure, #1}
+  \begin{wrapfigure}{\udhbwvst@cmd@dhbwwrapfigure@placement}{\udhbwvst@cmd@dhbwwrapfigure@width}
+    \centering
+    \caption{\udhbwvst@cmd@dhbwwrapfigure@caption}
+    \includegraphics[width=\udhbwvst@cmd@dhbwwrapfigure@imgwidth]{\udhbwvst@cmd@dhbwwrapfigure@path} 
+    \caption*{\footnotesize{\udhbwvst@var@shortreferenceprefix{}\udhbwvst@cmd@dhbwwrapfigure@source}}
+    \label{\udhbwvst@cmd@dhbwwrapfigure@label}
+  \end{wrapfigure}
+}
+
+\pgfkeys{%
   /dhbwTableEnv/.is family,
   /dhbwTableEnv,
   caption/.estore in  = \udhbwvst@cmd@dhbwtableenv@caption,
