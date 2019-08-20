@@ -33,7 +33,7 @@ Alternatives:
 
 ## Compiling to PDF
 
-Run `build.sh` or `build.ps1` depending on your operating system. Both scripts try to use `latexmk` and else fall back to `lualatex` and `biber`.
+Run `./build.sh filename.tex` or `build.ps1 -file filename.tex` depending on your operating system. Both scripts try to use `latexmk` and else fall back to `lualatex` and `biber`.
 
 > `latexmk` [com­pletely au­to­mates](https://www.ctan.org/pkg/latexmk/) the pro­cess of gen­er­at­ing a LaTeX document.
 
