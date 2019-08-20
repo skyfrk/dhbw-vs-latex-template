@@ -33,7 +33,7 @@ Documentation and general tips and tricks on how to wirte an academic text assig
 
 ## The udhbwvst class
 
-`udhbwvst` stands for ***Unofficial DHBW Villingen-Schwenningen*** LaTeX ***template***. Despite what the name suggests this class isn't a template anymore but a solid LaTeX class which can be build upon.
+The name of the class stands for ***Unofficial DHBW Villingen-Schwenningen*** LaTeX ***template***. Despite what the name suggests this class isn't a template anymore but a solid LaTeX class which can be build upon.
 
 ### Class options
 
