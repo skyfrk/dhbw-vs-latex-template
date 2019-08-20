@@ -4,7 +4,7 @@ Documentation and general tips and tricks on how to wirte an academic text assig
 
 - [The udhbwvst class](#the-udhbwvst-class)
   - [Class options](#class-options)
-  - [Required dhbwSetup command](#required-dhbwsetup-command)
+  - [Required \dhbwSetup command](#required-dhbwsetup-command)
 - [Sectioning](#sectioning)
   - [Sections](#sections)
   - [Subsections](#subsections)
@@ -33,6 +33,8 @@ Documentation and general tips and tricks on how to wirte an academic text assig
 
 ## The udhbwvst class
 
+`udhbwvst` stands for ***Unofficial DHBW Villingen-Schwenningen*** LaTeX ***template***. Despite what the name suggests this class isn't a template anymore but a solid LaTeX class which can be build upon.
+
 ### Class options
 
 | Option          | Default          | Description                                                            |
@@ -47,7 +49,7 @@ Documentation and general tips and tricks on how to wirte an academic text assig
 | `bib-file`      | `literature.bib` | Path to the bibliography file.                                         |
 | `plantuml`      | `false`          | Loads the `plantuml` package.                                          |
 
-### Required dhbwSetup command
+### Required \dhbwSetup command
 
 In order to use the template you have to run the `\dhbwSetup{...}` command in your preamble. All parameters are required. You can access any key inside your document with the `\dhbwGet*` commands.
 
