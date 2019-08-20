@@ -394,7 +394,7 @@ The `\label{tab:marker}` command tags the table with a marker. So that you can l
 You can add a code listing using the `code` environment:
 
 ```tex
-\begin{code}{caption={Express Example},language=javascript,label=lst:express}{\mycite[Vgl.][2]{example}}
+\begin{code}{caption={Express Example},language=javascript,label=lst:express}{\icite[2]{example}}
 const express = require('express')
 const app = express()
 const port = 3000
