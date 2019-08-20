@@ -1,0 +1,42 @@
+\documentclass[%
+    auto-generate   = true,             % generate all required pages
+    debug           = true,             % turn on debug for \lipsum
+    print-ndn       = true,             % print non-disclosure notice
+    print-loa       = true,             % print list of acronyms
+    print-lof       = true,             % print list of figures
+    print-lot       = true,             % print list of tables
+    print-lol       = true,             % print list of listings
+    bib-file        = literature.bib,   % path to bibliography file
+    plantuml        = true              % use plantuml
+]{udhbwvst}
+
+\dhbwSetup{%
+    author          = Max Mustermann,
+    faculty         = Wirtschaft,
+    field of study  = Wirtschaftsinformatik,
+    academic year   = 1990,
+    course          = B,
+    title           = Eine Arbeit,
+    subtitle        = Ein Untertitel,
+    text type       = Projektarbeit 2,
+    company name    = SpaceX,
+    company logo    = company-logo.png,
+    lecturer        = Prof. Dr. Frank Staab,
+    location        = Villingen-Schwenningen,
+    date            = \today,
+    longest acronym = API,
+    acronyms        = {%
+        \acro{API}{Application Programming Interface}
+        \acroplural{API}[API's]{Application Programming Interfaces}
+    }
+}
+
+\begin{document}
+
+\blinddocument{}
+
+\section{Fazit}
+
+Eine \ac{API} ist toll.\ifootcite{hanselman_encarta}
+
+\end{document}
