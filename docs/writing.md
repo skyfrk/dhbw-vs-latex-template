@@ -4,6 +4,7 @@ Documentation and general tips and tricks on how to wirte an academic text assig
 
 - [The udhbwvst class](#the-udhbwvst-class)
   - [Class options](#class-options)
+  - [Required dhbwSetup command](#required-dhbwsetup-command)
 - [Sectioning](#sectioning)
   - [Sections](#sections)
   - [Subsections](#subsections)
@@ -45,6 +46,29 @@ Documentation and general tips and tricks on how to wirte an academic text assig
 | `print-lol`     | `true`           | Prints the list of code listings.                                      |
 | `bib-file`      | `literature.bib` | Path to the bibliography file.                                         |
 | `plantuml`      | `false`          | Loads the `plantuml` package.                                          |
+
+### Required dhbwSetup command
+
+In order to use the template you have to run the `\dhbwSetup{...}` command in your preamble. All parameters are required. You can access any key inside your document with the `\dhbwGet*` commands.
+
+| Parameter         | Stored in                | Description                                                          | Example                 |
+| ----------------- | ------------------------ | -------------------------------------------------------------------- | ----------------------- |
+| `author`          | `\dhbwGetAuthor`         | Full name of the author.                                             | Max Mustermann          |
+| `faculty`         | `\dhbwGetFaculty`        | Faculty of the author.                                               | Wirtschaft              |
+| `field of study`  | `\dhbwGetFieldOfStudy`   | Field of study of the author.                                        | Wirtschaftsinformatik   |
+| `academic year`   | `\dhbwGetAcademicYear`   | Academic year of the author.                                         | 2017                    |
+| `course`          | `\dhbwGetCourse`         | Course of the author.                                                | B                       |
+| `title`           | `\dhbwGetTitle`          | Title of the text.                                                   | Eine Arbeit             |
+| `subtitle`        | `\dhbwGetSubtitle`       | Subtitle of the text                                                 | Mit einem Untertitel    |
+| `text type`       | `\dhbwGetTextType`       | Type of the text.                                                    | Projektarbeit 2         |
+| `company name`    | `\dhbwGetCompanyName`    | Name of the authors employer.                                        | Eine GmbH               |
+| `company logo`    | `\dhbwGetCompanyLogo`    | Path to the logo of the authors employer.                            | `./assets/logo.png`     |
+| `lecturer`        | `\dhbwGetLecturer`       | Name of the lecturer of the author.                                  | Prof. Dr. Martin Kimmig |
+| `location`        | `\dhbwGetLocation`       | Name of the location where the author signs the independence notice. | Villingen-Schwenningen  |
+| `date`            | `\dhbwGetDate`           | When the author signs the independence notice.                       | `\today`                |
+| `longest acronym` | `\dhbwGetLongestAcronym` | The longest acronym in short form (Required for formatting).         | `DevOps`                |
+| `acronyms`        | `\dhbwGetAcronyms`       | The definition of the acronyms used in the text.                     | See [here](#acronyms)   |
+
 
 ## Sectioning
 
