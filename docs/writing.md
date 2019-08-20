@@ -202,10 +202,10 @@ Here is a short reference: \cite[Vgl.][42]{hitchhiker78}
 
 Command: `\cite[page]{bibEntryId}`
 
-| Parameter    | Description                                                                            |
-| ------------ | -------------------------------------------------------------------------------------- |
-| `bibEntryId` | The identifier of the entry in the [bibliography](#bibliography).                      |
-| `page`       | The number of the page you are citing from. Can be empty. Optional.                    |
+| Parameter    | Description                                                         |
+| ------------ | ------------------------------------------------------------------- |
+| `bibEntryId` | The identifier of the entry in the [bibliography](#bibliography).   |
+| `page`       | The number of the page you are citing from. Can be empty. Optional. |
 
 Creates a short reference with given `bibEntryId`, `page` and prenote `Vgl.` where the command is called. Example below:
 
@@ -359,12 +359,10 @@ If you have [set up](./setup.md#optional-install-plantuml) PlantUML as described
 
 ## Tables
 
-Adding a table requires a few commands explained below the example:
+When adding a table you should wrap it inside the `dhbwtable` environment so that the DHBW formatting requirements are met automatically.
 
 ```tex
-\begin{table}[h]
-    \caption{Evil plan}
-    \centering
+\begin{dhbwtable}{caption={Evilplan},label=tab:mytable,source={\icite{peterson16}},float=h}
     \begin{tabular}{ | c | l |}
         \hline
         \textbf{Phase}  & \textbf{Action}       \\ \hline
@@ -372,22 +370,17 @@ Adding a table requires a few commands explained below the example:
         2               & ???                   \\ \hline
         3               & Profit!               \\ \hline
     \end{tabular}
-    \caption*{\footnotesize{Source: Own imagination}}
-    \label{tab:evil_plan}
-\end{table}
+\end{dhbwtable}
 ```
 
-The `table` environment takes a [placement specifier](https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions#Figures) as argument. You're most likely to use `h` which LaTeX interprets as `place the table here`.
-
-The `\centering` command centers everything inside the `table` environment.
-
-The `\caption{caption}` command defines the title of the table which will be placed above the table and also be used in the list of tables.
+| Parameter | Default              | Description                                                                                                                                                      |
+| --------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `caption` | -                    | Title above the table.                                                                                                                                           |
+| `label`   | -                    | Marker for `hyperref`. Make sure to start your marker with  `tab:` so that [automatic referencing](#labels-and-referencing) works. This marker has to be unique. |
+| `float`   | `ht`                 | [Floating specifier](https://en.wikibooks.org/wiki/LaTeX/Tables#Floating_with_table)                                                                             |
+| `source`  | `Eigene Darstellung` | Source of the data in the table.                                                                                                                                 |
 
 Inside the `tabular` environment the actual table is created. [Click here](https://en.wikibooks.org/wiki/LaTeX/Tables#The_tabular_environment) for a detailed guide on how to use the `tabular` environment.
-
-The `\caption*{\footnotesize{short reference}}` command combination adds a text below the table to be used as short reference for the source of the data in the table.
-
-The `\label{tab:marker}` command tags the table with a marker. So that you can later refer to the image. Make sure to always write `tab:` in front of your marker so that [automatic referencing](#labels-and-referencing) works. This marker has to be unique.
 
 ## Code listing
 
