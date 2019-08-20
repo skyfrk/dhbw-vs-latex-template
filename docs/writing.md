@@ -9,9 +9,11 @@ Documentation and general tips and tricks on how to wirte an academic text assig
   - [Sections](#sections)
   - [Subsections](#subsections)
 - [Citing](#citing)
-  - [Cite direct with footnote](#cite-direct-with-footnote)
-  - [Cite indirect with footnote](#cite-indirect-with-footnote)
+  - [Cite with footnote](#cite-with-footnote)
+    - [Cite direct with footnote](#cite-direct-with-footnote)
+    - [Cite indirect with footnote](#cite-indirect-with-footnote)
   - [Cite without footnote](#cite-without-footnote)
+    - [Cite indirect without footnote](#cite-indirect-without-footnote)
 - [Acronyms](#acronyms)
   - [Add a new acronym](#add-a-new-acronym)
     - [Define a custom plural](#define-a-custom-plural)
@@ -124,58 +126,94 @@ Nobody reads this anyway...
 
 Every cite command will add the referenced bibliography entry to the [bibliography](#bibliography) at the end of the text.
 
-### Cite direct with footnote
+### Cite with footnote
 
-Command: `\mydirectfootcite{text}{bibEntryId}{page}`
+Command: `\footcite[prenote][page]{bibEntryId}`
 
-| Parameter    | Description                                                       |
-| ------------ | ----------------------------------------------------------------- |
-| `text`       | The text you want to cite directly.                               |
-| `bibEntryId` | The identifier of the entry in the [bibliography](#bibliography). |
-| `page`       | The number of the page you are citing from. Can be empty.         |
-
-Wraps given text in `„` and `"` and adds a footnote with given `bibEntryId` and `page`. Example below:
-
-```tex
-...so thats why a \mydirectfootcite{towel is the most
-important item a Hitchhiker can carry}{hitchhiker78}{42}.
-```
-
-> This is just a wrapper using [\myfootcite](#cite-indirect) and `\enquote` from the CTAN package [csquotes](https://www.ctan.org/pkg/csquotes).
-
-### Cite indirect with footnote
-
-Command: `\myfootcite[prenote][page]{bibEntryId}`
-
-| Parameter    | Description                                                                  |
-| ------------ | ---------------------------------------------------------------------------- |
-| `prenote`    | A prenote that will appear in front of the short reference (Usually `Vgl.`). |
-| `page`       | The number of the page you are citing from. Can be empty.                    |
-| `bibEntryId` | The identifier of the entry in the [bibliography](#bibliography).            |
+| Parameter    | Description                                                                            |
+| ------------ | -------------------------------------------------------------------------------------- |
+| `bibEntryId` | The identifier of the entry in the [bibliography](#bibliography).                      |
+| `prenote`    | A prenote that will appear in front of the short reference (Usually `Vgl.`). Optional. |
+| `page`       | The number of the page you are citing from. Optional.                                  |
 
 Adds a footnote with given `bibEntryId`, `prenote` and `page`. Example below:
 
 ```tex
 A Hitchhiker’s Guide To The Galaxy PDF by Adam Douglas
-is a timeless science fiction masterpiece.\myfootcite[Vgl.][42]{hitchhiker78}
+is a timeless science fiction masterpiece.\footcite[Vgl.][42]{hitchhiker78}
 This is the next sentence...
 ```
 
+#### Cite direct with footnote
+
+Command: `\dfootcite[page]{text}{bibEntryId}`
+
+| Parameter    | Description                                                       |
+| ------------ | ----------------------------------------------------------------- |
+| `text`       | The text you want to cite directly.                               |
+| `bibEntryId` | The identifier of the entry in the [bibliography](#bibliography). |
+| `page`       | The number of the page you are citing from. Optional.             |
+
+Wraps given text in `„` and `"` and adds a footnote with given `bibEntryId` and `page`. Example below:
+
+```tex
+...so thats why a \dfootcite[42]{hitchhiker78}{towel is the most
+important item a Hitchhiker can carry}.
+```
+
+> This is just a wrapper using [\footcite](#cite-with-footnote) and `\enquote` from the CTAN package [csquotes](https://www.ctan.org/pkg/csquotes).
+
+#### Cite indirect with footnote
+
+Command: `\ifootcite[page]{bibEntryId}`
+
+| Parameter    | Description                                                       |
+| ------------ | ----------------------------------------------------------------- |
+| `bibEntryId` | The identifier of the entry in the [bibliography](#bibliography). |
+| `page`       | The number of the page you are citing from. Optional.             |
+
+Adds a footnote with given `bibEntryId`, `page` and the prenote `Vgl.`. Example below:
+
+```tex
+A Hitchhiker’s Guide To The Galaxy PDF by Adam Douglas
+is a timeless science fiction masterpiece.\ifootcite[42]{hitchhiker78}
+This is the next sentence...
+```
+
+> This is just a wrapper using [\footcite](#cite-with-footnote).
+
 ### Cite without footnote
 
-Command: `\mycite[prenote][page]{bibEntryId}`
+Command: `\cite[prenote][page]{bibEntryId}`
 
-| Parameter    | Description                                                                  |
-| ------------ | ---------------------------------------------------------------------------- |
-| `prenote`    | A prenote that will appear in front of the short reference (Usually `Vgl.`). |
-| `page`       | The number of the page you are citing from. Can be empty.                    |
-| `bibEntryId` | The identifier of the entry in the [bibliography](#bibliography).            |
+| Parameter    | Description                                                                            |
+| ------------ | -------------------------------------------------------------------------------------- |
+| `bibEntryId` | The identifier of the entry in the [bibliography](#bibliography).                      |
+| `prenote`    | A prenote that will appear in front of the short reference (Usually `Vgl.`). Optional. |
+| `page`       | The number of the page you are citing from. Can be empty. Optional.                    |
 
 Creates a short reference with given `bibEntryId`, `prenote` and `page` where the command is called. Example below:
 
 ```tex
-Here is a short reference: \mycite[Vgl.][42]{hitchhiker78}
+Here is a short reference: \cite[Vgl.][42]{hitchhiker78}
 ```
+
+#### Cite indirect without footnote
+
+Command: `\cite[page]{bibEntryId}`
+
+| Parameter    | Description                                                                            |
+| ------------ | -------------------------------------------------------------------------------------- |
+| `bibEntryId` | The identifier of the entry in the [bibliography](#bibliography).                      |
+| `page`       | The number of the page you are citing from. Can be empty. Optional.                    |
+
+Creates a short reference with given `bibEntryId`, `page` and prenote `Vgl.` where the command is called. Example below:
+
+```tex
+Here is a short reference: \icite[42]{hitchhiker78}
+```
+
+> This is just a wrapper using [\cite](#cite-without-footnote).
 
 ## Acronyms
 
