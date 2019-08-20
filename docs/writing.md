@@ -2,6 +2,8 @@
 
 Documentation and general tips and tricks on how to wirte an academic text assignment for the [DBHW-VS](https://www.dhbw-vs.de/).
 
+- [The udhbwvst class](#the-udhbwvst-class)
+  - [Class options](#class-options)
 - [Sectioning](#sectioning)
   - [Sections](#sections)
   - [Subsections](#subsections)
@@ -27,6 +29,22 @@ Documentation and general tips and tricks on how to wirte an academic text assig
     - [Firstname lastname combinations](#firstname-lastname-combinations)
     - [Author is just one word](#author-is-just-one-word)
     - [More than one author](#more-than-one-author)
+
+## The udhbwvst class
+
+### Class options
+
+| Option          | Default          | Description                                                            |
+| --------------- | ---------------- | ---------------------------------------------------------------------- |
+| `auto-generate` | `true`           | Generates all required pages around the text.                          |
+| `debug`         | `false`          | Loads packages `lipsum` and `blindtext` and displays `hyperref`-links. |
+| `print-ndn`     | `true`           | Prints the non-disclosure notice.                                      |
+| `print-loa`     | `true`           | Prints the list of acronyms.                                           |
+| `print-lof`     | `true`           | Prints the list of figures.                                            |
+| `print-lot`     | `true`           | Prints the list of tables.                                             |
+| `print-lol`     | `true`           | Prints the list of code listings.                                      |
+| `bib-file`      | `literature.bib` | Path to the bibliography file.                                         |
+| `plantuml`      | `false`          | Loads the `plantuml` package.                                          |
 
 ## Sectioning
 
