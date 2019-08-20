@@ -541,6 +541,7 @@
   source/.estore in         = \udhbwvst@cmd@dhbwwrapfigure@source,
   source                    = \udhbwvst@var@defaultshortreference,
   placement/.estore in      = \udhbwvst@cmd@dhbwwrapfigure@placement,
+  placement                 = R,
   width/.store in           = \udhbwvst@cmd@dhbwwrapfigure@width,
   width                     = {0.45\textwidth},
   image width/.store in     = \udhbwvst@cmd@dhbwwrapfigure@imgwidth,
