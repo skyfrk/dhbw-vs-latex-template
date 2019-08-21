@@ -168,12 +168,12 @@ This is the next sentence...
 
 #### Cite direct with footnote
 
-Command: `\dfootcite[page]{text}{bibEntryId}`
+Command: `\dfootcite[page]{bibEntryId}{text}`
 
 | Parameter    | Description                                                       |
 | ------------ | ----------------------------------------------------------------- |
-| `text`       | The text you want to cite directly.                               |
 | `bibEntryId` | The identifier of the entry in the [bibliography](#bibliography). |
+| `text`       | The text you want to cite directly.                               |
 | `page`       | The number of the page you are citing from. Optional.             |
 
 Wraps given text in `„` and `"` and adds a footnote with given `bibEntryId` and `page`. Example below:
