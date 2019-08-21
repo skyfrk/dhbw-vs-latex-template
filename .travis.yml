@@ -1,6 +1,10 @@
 env:
 - REPO_NAME="dhbw-vs-latex-template"
 language: generic
+branches:
+  only:
+    - master
+    - develop
 script:
  - cd . # nothing to do here
 before_deploy:
