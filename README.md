@@ -6,39 +6,43 @@
 
 ---
 
-This is a LaTeX template for academic text assignments at the [DBHW-VS](https://www.dhbw-vs.de/), especially for business computer science students created along [the specifications](template/dhbw-text-requirements.md) written by Mrs. Heinrich. Using this template **speeds up the writing process** as you only have to **focus on writing actual content**. All weird formatting requirements are met automatically! :beer::sunglasses::v:
+This is a LaTeX template for academic text assignments at the [DBHW-VS](https://www.dhbw-vs.de/), especially for business computer science students created along [the specifications](docs/dhbw-text-requirements-2017.md) written by Mrs. Heinrich. Using this template **speeds up the writing process** as you only have to **focus on writing actual content**. All weird formatting requirements are met automatically! :beer::sunglasses::v:
 
 >If you're looking for a [Citavi](https://www.citavi.com/) template checkout [stabiloBOSS96/ZitationsstilDHBW-VS-WI](https://github.com/stabiloBOSS96/ZitationsstilDHBW-VS-WI).
-
-Academic text assignment built using this template: [skyfrk/dhbw-vs-smart-home-report](https://github.com/skyfrk/dhbw-vs-smart-home-report)
 
 ## :fire: Get started
 
 1. Download the [latest release](https://github.com/skyfrk/dhbw-vs-latex-template/releases/latest).
 2. Run through the [setup instructions](./docs/setup.md).
-3. Customize `content/misc/config.tex` to your needs.
-4. Start writing your text in `content/text.tex` guided by the [documentation](./docs/writing.md)!
+3. Start writing your text and read the [documentation](./docs/writing.md)!
 
 ### [:open_book: Documentation](./docs/writing.md)
 
-### :file_folder: Important files and folders
+### :file_folder: Minimal working example
 
-```text
-├── content                             | All content related to your text assignment.
-│   ├── assets                          | Folder for binary assets.
-│   ├── misc                            | Folder for miscellaneous files.
-│   │   ├── acronyms.tex                | List of acronyms.
-│   │   ├── config.tex                  | Configuration of the template.
-│   │   └── literature.bib              | Bibliography.
-│   └── text.tex                        | Actual text.
-├── root.tex                            | The root TeX file which glues all parts together.
-└── template                            | Template related files. Normally not to be touched.
-    ├── dhbw-bibstyle.tex               | Bibliography style definitions.
-    ├── dhbw-citestyle.tex              | Citing command definitions.
-    ├── header.tex                      | Preamble of the document.
-    ├── independence-notice.tex         | Independence notice found at the end of the document.
-    ├── non-disclosure-notice.tex       | Non-disclosure notice found after the title page.
-    └── title.tex                       | The title page.
+The code below is enough to generate a title page, a non-disclosure notice, a table of contents, a list of acronyms, a list of figures, a list of tables, a list of code listings, a bibliography and an independence notice. :smile:
+
+```tex
+\documentclass{udhbwvst}
+
+\dhbwSetup{%
+    author          = Max Mustermann,
+    faculty         = Wirtschaft,
+    field of study  = Wirtschaftsinformatik,
+    academic year   = 1990,
+    course          = B,
+    title           = Eine Arbeit,
+    subtitle        = Ein Untertitel,
+    text type       = Projektarbeit 2,
+    company name    = SpaceX,
+    lecturer        = Prof. Dr. Frank Staab
+}
+
+\begin{document}
+
+% your text could be here!
+
+\end{document}
 ```
 
 ## :blush: Contribute
@@ -60,6 +64,7 @@ Feel free to open an [issue](https://github.com/skyfrk/dhbw-vs-latex-template/is
 * [robingenz](https://github.com/robingenz) for general improvements.
 * [MrcoSchrnr](https://github.com/MrcoSchrnr) for useful hints.
 * [bluecoder24](https://github.com/bluecoder24) for updating the page margins.
+* [faltfe](https://github.com/faltfe) for [inspiration](https://github.com/faltfe/iodhbwm) for version 3.
 
 ## :page_facing_up: License
 
