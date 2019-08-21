@@ -1,0 +1,55 @@
+\documentclass[%
+    auto-generate   = false,            % generate all required pages
+    debug           = false,            % turn on debug for \lipsum, \blindtext and hyperref link markers
+    print-ndn       = true,             % print non-disclosure notice
+    print-loa       = true,             % print list of acronyms
+    print-lof       = true,             % print list of figures
+    print-lot       = true,             % print list of tables
+    print-lol       = true,             % print list of listings
+    bib-file        = literature.bib,   % path to bibliography file
+    plantuml        = false             % use plantuml
+]{udhbwvst}
+
+\dhbwSetup{%
+    author          = Max Mustermann,           % Full name of the author.
+    faculty         = Wirtschaft,               % Faculty of the author.
+    field of study  = Wirtschaftsinformatik,    % Field of study of the author.
+    academic year   = 1990,                     % Academic year of the author.
+    course          = B,                        % Course of the author.
+    title           = Eine Arbeit,              % Title of the text.
+    subtitle        = Ein Untertitel,           % Subtitle of the text
+    text type       = Projektarbeit 2,          % Type of the text.
+    company name    = SpaceX,                   % Name of the authors employer.
+    company logo    = company-logo.png,         % Path to the logo of the authors employer.
+    lecturer        = Prof. Dr. Frank Staab,    % Name of the lecturer of the author.
+    location        = Villingen-Schwenningen,   % Name of the location where the author signs the independence notice.
+    date            = \today,                   % When the author signs the independence notice.
+    longest acronym = API,                      % The longest acronym you defined below (used for formatting).
+    acronyms        = {}
+}
+
+\begin{document}
+
+\dhbwSetFrontMatter
+
+\dhbwPrintTitle
+\dhbwPrintNonDisclosureNotice
+\dhbwPrintTableOfContents
+
+\dhbwSetListMatter
+
+\dhbwPrintListOfAcronyms
+\dhbwPrintListOfFigures
+\dhbwPrintListOfTables
+\dhbwPrintListOfListings
+
+\dhbwSetMainMatter
+
+\section{Einleitung}
+
+Your text here.\ifootcite{example_online}
+
+\dhbwPrintBibliography
+\dhbwPrintIndependenceNotice
+
+\end{document}
