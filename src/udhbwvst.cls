@@ -5,6 +5,7 @@
 \newcommand*{\udhbwvst@var@shortreferenceprefix}{Quelle:\space}
 \newcommand*{\udhbwvst@var@defaultshortreference}{Eigene Darstellung}
 \newcommand*{\udhbwvst@var@indirectciteprefix}{Vgl\adddot}
+\newcommand*{\udhbwvst@var@bibliographyname}{Literaturverzeichnis}
 
 % setup
 
@@ -125,11 +126,6 @@
 % fontspec package
 \setsansfont{TeX Gyre Heros} % like Arial
 \renewcommand{\familydefault}{\sfdefault}
-
-% babel package
-\addto\captionsngerman{%
-    \renewcommand{\contentsname}{Literaturverzeichnis}
-}
 
 % fancyhdr package
 \pagestyle{fancy}
@@ -607,7 +603,9 @@
   location/.store in          = \dhbwGetLocation,
   date/.store in              = \dhbwGetDate,
   longest acronym/.store in   = \dhbwGetLongestAcronym,
-  acronyms/.store in          = \dhbwGetAcronyms
+  longest acronym             = xD,
+  acronyms/.store in          = \dhbwGetAcronyms,
+  acronyms                    = {}
 }
 
 \newrobustcmd\dhbwSetup[1]{\pgfqkeys{/dhbwSetup}{#1}}
@@ -679,7 +677,7 @@
 
 \newcommand{\dhbwPrintBibliography}{%
   \newpage
-  \printbibtabular[title=\contentsname]\addcontentsline{toc}{section}{\contentsname}
+  \printbibtabular[title=\udhbwvst@var@bibliographyname]\addcontentsline{toc}{section}{\udhbwvst@var@bibliographyname}
 }
 
 \newcommand{\dhbwPrintIndependenceNotice}{%
