@@ -573,6 +573,7 @@
     \centering
     \caption{\udhbwvst@cmd@dhbwtableenv@caption}
 }{%
+  \setlength\belowcaptionskip{4pt}
   \caption*{\footnotesize{\udhbwvst@var@shortreferenceprefix{}\udhbwvst@cmd@dhbwtableenv@source}}
   \label{\udhbwvst@cmd@dhbwtableenv@label}
   \end{table}
@@ -582,7 +583,8 @@
   \lstset{#1}
 }{%
   \begin{center}
-    \footnotesize{\udhbwvst@var@shortreferenceprefix#2}
+    \setlength\abovecaptionskip{-2pt}
+    \captionof*{figure}{\footnotesize{\udhbwvst@var@shortreferenceprefix#2}}
   \end{center}
 }
 
