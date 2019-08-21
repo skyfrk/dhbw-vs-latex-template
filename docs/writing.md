@@ -5,6 +5,7 @@ Documentation and general tips and tricks on how to wirte an academic text assig
 - [The udhbwvst class](#the-udhbwvst-class)
   - [Class options](#class-options)
   - [Required \dhbwSetup command](#required-dhbwsetup-command)
+  - [Document structure \dhbw* commands](#document-structure-dhbw-commands)
 - [Sectioning](#sectioning)
   - [Sections](#sections)
   - [Subsections](#subsections)
@@ -19,9 +20,10 @@ Documentation and general tips and tricks on how to wirte an academic text assig
     - [Define a custom plural](#define-a-custom-plural)
   - [Using acronyms in text](#using-acronyms-in-text)
 - [Figures](#figures)
-  - [Normal figure](#normal-figure)
-  - [Wrap figures](#wrap-figures)
-  - [PlantUML figure](#plantuml-figure)
+  - [The dhbwfigure environment](#the-dhbwfigure-environment)
+  - [The \dhbwFigure command](#the-dhbwfigure-command)
+  - [The \dhbwWrapfigure command](#the-dhbwwrapfigure-command)
+  - [PlantUML figures](#plantuml-figures)
 - [Tables](#tables)
 - [Code listing](#code-listing)
 - [Labels and referencing](#labels-and-referencing)
@@ -73,6 +75,9 @@ In order to use the template you have to run the `\dhbwSetup{...}` command in yo
 | `longest acronym` | `\dhbwGetLongestAcronym` | The longest acronym in short form (Required for formatting).         | `DevOps`                |
 | `acronyms`        | `\dhbwGetAcronyms`       | The definition of the acronyms used in the text.                     | See [here](#acronyms)   |
 
+### Document structure \dhbw* commands
+
+TODO
 
 ## Sectioning
 
@@ -284,58 +289,81 @@ to this, NiP is also an active shareholder in the clothing company DRKN.
 
 All figures will be automatically numbered and added to the list of figures.
 
-### Normal figure
+### The dhbwfigure environment
 
-Adding a figure requires a few commands explained below the example:
-
-```tex
-\begin{figure}[h]
-    \centering
-    \caption{Quality Meme}
-    \includegraphics[width=\textwidth]{surprised_pikachu.png}
-    \caption*{\footnotesize{Source: \mycite{pikachu_website}}}
-    \label{fig:pikachu}
-\end{figure}
-```
-
-The `figure` environment takes a [placement specifier](https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions#Figures) as argument. You're most likely to use `h` which LaTeX interprets as `place the figure here`.
-
-The `\centering` command centers everything inside the `figure` environment.
-
-The `\caption{caption}` command defines the title of the figure which will be placed above the figure and also be used in the list of figures.
-
-The `\includegraphics[options]{pathToFigure}` command from the [graphicx](https://ctan.org/pkg/graphicx) CTAN package actually imports the figure to the pdf. You can specify many `options` like `width` or `scale` as key-value pairs separated by a `,`. Have a look at [the documentation of the graphicx package](https://ctan.org/pkg/graphicx) for advanced options.
-
-:warning: When `pathToFigure` is a relative path have in mind that the base directory for including graphics is `content/assets/`.
-
-The `\caption*{\footnotesize{short reference}}` command combination adds a text below the figure to be used as short reference for the source of the figure.
-
-The `\label{fig:marker}` command tags the figure with a marker. So that you can later refer to the image. Make sure to always write `fig:` in front of your marker so that [automatic referencing](#labels-and-referencing) works. This marker has to be unique.
-
-### Wrap figures
-
-When you have a small graphic you can use the `wrapfigure` environment from the [wrapfig](https://ctan.org/pkg/wrapfig) CTAN package instead of the `figure` environment to let your text wrap around the graphic.
-
-In the example below the `wrapfigure` environment takes two arguments. The first argument specifies the postion (normally `r` or `l` for right and left) and the second argument specifies the width of the graphic. Have a look at the [documentation of the wrapfig package](https://ctan.org/pkg/wrapfig) for details on advanced usage.
+When adding a figure you should wrap it inside the `dhbwfigure` environment so that the DHBW formatting requirements are met automatically.
 
 ```tex
-\begin{wrapfigure}{r}{0.5\textwidth}
-    \centering
-    \caption{Quality Meme}
+\begin{dhbwfigure}{caption=Pikachu,label=fig:pikachu,source={Internet People}}
     \includegraphics[width=\textwidth]{surprised_pikachu.png}
-    \caption*{\footnotesize{Source: \mycite{pikachu_website}}}
-    \label{fig:pikachu}
-\end{wrapfigure}
+\end{dhbwfigure}
 ```
 
-### PlantUML figure
+The `dhbwfigure` environment parameters `caption` and `label` are mandatory. See all possible parameters below:
+
+| Parameter | Default            | Description                                                                                                                                                      |
+| --------- | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `caption` | -                  | Title of the figure.                                                                                                                                             |
+| `label`   | -                  | Marker for `hyperref`. Make sure to start your marker with  `fig:` so that [automatic referencing](#labels-and-referencing) works. This marker has to be unique. |
+| `float`   | `ht`               | [Floating specifier](https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions#Figures).                                                                  |
+| `source`  | Eigene Darstellung | Source of the picture.                                                                                                                                           |
+
+### The \dhbwFigure command
+
+If you only want to quickly embed an image file you can use the `\dhbwFigure` command:
+
+```tex
+\dhbwFigure{caption=Pikachu,label=fig:pikachu,path=surprised_pikachu.png}
+```
+
+The parameters `caption`, `path` and `label` are required. See a full list of available parameters below:
+
+| Parameter | Default            | Description                                                                                                                                                      |
+| --------- | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `caption` | -                  | Title of the figure.                                                                                                                                             |
+| `path`    | -                  | Path to the image.                                                                                                                                               |
+| `label`   | -                  | Marker for `hyperref`. Make sure to start your marker with  `fig:` so that [automatic referencing](#labels-and-referencing) works. This marker has to be unique. |
+| `source`  | Eigene Darstellung | Source of the picture.                                                                                                                                           |
+| `width`   | `\textwidth`       | Width of the figure.                                                                                                                                             |
+| `float`   | `ht`               | [Floating specifier](https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions#Figures).                                                                  |
+
+> `\dhbwFigure` is like the [dhbwfigure environment](#the-dhbwfigure-environment) with integrated `\includegraphics` command.
+
+### The \dhbwWrapfigure command
+
+If you want to embed a small graphic wrapped by your text you can use the `\dhbwWrapfigure` command which uses the `wrapfigure` environment from the [wrapfig](https://ctan.org/pkg/wrapfig) CTAN package.
+
+```tex
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis condimentum
+lacus quis nisi pulvinar, sed bibendum neque posuere. Nam ipsum nisl,
+egestas at lectus vel, suscipit hendrerit mi. Sed dapibus fermentum mauris,
+ut euismod leo vehicula ut. Mauris bibendum imperdiet nunc.
+
+\dhbwWrapfigure{caption=Small Pikachu,label=fig:smallpikachu,path=small_pikachu.png}
+
+Nullam accumsan, odio at ultrices vehicula, velit massa porta turpis, sed
+auctor sem nisl in tortor. Nullam sollicitudin mollis arcu vitae sollicitudin.
+Nunc rhoncus augue luctus erat maximus, sit amet commodo quam pellentesque.  
+```
+
+| Parameter     | Default            | Description                                                                                                                                                      |
+| ------------- | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `caption`     | -                  | Title of the figure.                                                                                                                                             |
+| `label`       | -                  | Marker for `hyperref`. Make sure to start your marker with  `fig:` so that [automatic referencing](#labels-and-referencing) works. This marker has to be unique. |
+| `path`        | -                  | Path to the image.                                                                                                                                               |
+| `source`      | Eigene Darstellung | Source of the picture.                                                                                                                                           |
+| `placement`   | `R`                | [Placement specifier](http://mirrors.ctan.org/macros/latex/contrib/wrapfig/wrapfig-doc.pdf).                                                                     |
+| `width`       | `0.45\textwidth`   | Width of the `wrapfigure` environment.                                                                                                                           |
+| `image width` | `0.4\textwidth`    | Width of the picture.                                                                                                                                            |
+
+> It is not possible to provide a `dhbwwrapfigure` environment because the `wrapfigure` environment doesn't work if wrapped in another environment.
+
+### PlantUML figures
 
 If you have [set up](./setup.md#optional-install-plantuml) PlantUML as described and also set the class option `plantuml` to `true` you can embed [PlantUML-diagrams](http://www.plantuml.com/) in your LaTeX code. Just surround you PlantUML notation with the `plantuml` environment:
 
 ```tex
-\begin{figure}[h]
-    \centering
-    \caption{Informative sequence diagram}
+\begin{dhbwfigure}{caption=Informative Sequence Diagram,label=fig:seq}
     \begin{plantuml}
         @startuml
 
@@ -348,11 +376,9 @@ If you have [set up](./setup.md#optional-install-plantuml) PlantUML as described
         sensors <-> opc
         opc <-> cloud
 
-        @enduml    
+        @enduml
     \end{plantuml}
-    \caption*{\footnotesize{Source: Own creation.}}
-    \label{fig:plantuml_test}
-\end{figure}
+\end{dhbwfigure}
 ```
 
 :warning: As of version `0.2.3` of the `plantuml` LuaLaTeX package [UTF8 isn't supported](https://github.com/koppor/plantuml/issues/10). You can use any unicode character though (see [special characters](http://plantuml.com/creole)). For example `<U+00D6>` can be used to express `Ö`. Use a [unicode character table](https://unicode-table.com/en/) until UTF8 is supported.
@@ -377,7 +403,7 @@ When adding a table you should wrap it inside the `dhbwtable` environment so tha
 | --------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `caption` | -                    | Title above the table.                                                                                                                                           |
 | `label`   | -                    | Marker for `hyperref`. Make sure to start your marker with  `tab:` so that [automatic referencing](#labels-and-referencing) works. This marker has to be unique. |
-| `float`   | `ht`                 | [Floating specifier](https://en.wikibooks.org/wiki/LaTeX/Tables#Floating_with_table)                                                                             |
+| `float`   | `ht`                 | [Floating specifier](https://en.wikibooks.org/wiki/LaTeX/Tables#Floating_with_table).                                                                            |
 | `source`  | `Eigene Darstellung` | Source of the data in the table.                                                                                                                                 |
 
 Inside the `tabular` environment the actual table is created. [Click here](https://en.wikibooks.org/wiki/LaTeX/Tables#The_tabular_environment) for a detailed guide on how to use the `tabular` environment.
