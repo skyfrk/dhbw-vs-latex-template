@@ -77,7 +77,24 @@ In order to use the template you have to run the `\dhbwSetup{...}` command in yo
 
 ### Document structure \dhbw* commands
 
-TODO
+If you set the [class option](#class-options) `auto-generate` to `false` you can use following commands to build a custom document:
+
+| Command                         | Description                                                                                          |
+| ------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `\dhbwSetFrontMatter`           | Sets up formatting for front pages.                                                                  |
+| `\dhbwPrintTitle`               | Prints the title page.                                                                               |
+| `\dhbwPrintNonDisclosureNotice` | Prints the non-disclosure notice if the [class option](#class-options) `print-ndn` is set to `true`. |
+| `\dhbwPrintTableOfContents`     | Prints the table of content.                                                                         |
+| `\dhbwSetListMatter`            | Sets up formatting for the list pages.                                                               |
+| `\dhbwPrintListOfAcronyms`      | Prints the list of acronyms if the [class option](#class-options) `print-loa` is set to `true`.      |
+| `\dhbwPrintListOfFigures`       | Prints the list of figures if the [class option](#class-options) `print-lof` is set to `true`.       |
+| `\dhbwPrintListOfTables`        | Prints the list of tables if the [class option](#class-options) `print-lot` is set to `true`.        |
+| `\dhbwPrintListOfListings`      | Prints the list of code listings if the [class option](#class-options) `print-lol` is set to `true`. |
+| `\dhbwSetMainMatter`            | Sets up formatting for the main text pages.                                                          |
+| `\dhbwPrintBibliography`        | Prints the bibliography.                                                                             |
+| `\dhbwPrintIndependenceNotice`  | Prints the independence notice.                                                                      |
+| `\dhbwPrintEverythingBefore`    | Prints all pages and sets up all formatting before the main text.                                    |
+| `\dhbwPrintEverythingAfter`     | Prints the bibliography and the independence notice.                                                 |
 
 ## Sectioning
 
