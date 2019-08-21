@@ -222,7 +222,7 @@ Here is a short reference: \cite[Vgl.][42]{hitchhiker78}
 
 #### Cite indirect without footnote
 
-Command: `\cite[page]{bibEntryId}`
+Command: `\icite[page]{bibEntryId}`
 
 | Parameter    | Description                                                         |
 | ------------ | ------------------------------------------------------------------- |
