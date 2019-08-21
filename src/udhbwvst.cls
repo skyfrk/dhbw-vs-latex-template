@@ -158,8 +158,7 @@
 \setlength{\cfttabindent}{0pt}
 
 % caption package
-\captionsetup[table]{skip=10pt,font={stretch=1}}
-\captionsetup[figure]{font={stretch=1}}
+\captionsetup{font={singlespacing}}
 
 % listings package
 \lstdefinestyle{base}{%
@@ -172,7 +171,7 @@
   breakatwhitespace = true,
   escapeinside      = {(*@}{@*)},
   basicstyle        = \footnotesize\ttfamily,
-  belowcaptionskip  = \baselineskip
+  belowcaptionskip  = 13pt
 }
 \lstset{style=base}
 
