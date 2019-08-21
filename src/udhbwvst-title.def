@@ -38,7 +38,9 @@ Betreuender Dozent:	&	\dhbwGetLecturer \\
 \begin{tabularx}{\textwidth}{lXl}
 \includegraphics[width=.3\linewidth]{dhbw-vs-logo.png} &
 &
+\ifdef{\dhbwGetCompanyLogo}{%
 \includegraphics[width=.3\linewidth]{\dhbwGetCompanyLogo}
+}{}
 \end{tabularx}
 \end{table}
 
