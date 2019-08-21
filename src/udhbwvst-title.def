@@ -1,0 +1,47 @@
+\newgeometry{
+left=3cm,
+right=3cm,
+top=2cm,
+bottom=4cm
+}
+
+\begin{center}
+\vspace*{1cm} \ \\
+{\fontsize{40}{48}\selectfont \bfseries \dhbwGetTitle \\}
+\vspace{0.75cm}
+{\Large\bfseries \dhbwGetSubtitle \\}
+\vspace{1.5cm}
+\dhbwGetTextType \\
+Studienjahrgang \dhbwGetAcademicYear \\
+Kurs \dhbwGetCourse \\
+\vspace{1.5cm}
+Fakultät \dhbwGetFaculty \\
+Studiengang \dhbwGetFieldOfStudy \\
+DUALE HOCHSCHULE BADEN-WÜRTTEMBERG\\
+VILLINGEN-SCHWENNINGEN\\
+\end{center}
+\ifbool{udhbwvst@if@print@ndn}{%
+    \begin{textblock*}{50mm}(30mm,160mm)
+        \begin{rotate}{50}
+            \fontsize{34}{40}\bfseries\textcolor{red}{Sperrvermerk}
+        \end{rotate}
+    \end{textblock*}
+}{}
+\begin{table}[b]
+\begin{tabular}{ll}
+Bearbeiter: 		&	\dhbwGetAuthor \\
+Ausbildungsbetrieb:	&	\dhbwGetCompanyName \\
+Betreuender Dozent:	&	\dhbwGetLecturer \\
+\end{tabular}\\
+\\
+\\
+\begin{tabularx}{\textwidth}{lXl}
+\includegraphics[width=.3\linewidth]{dhbw-vs-logo.png} &
+&
+\ifdef{\dhbwGetCompanyLogo}{%
+\includegraphics[width=.3\linewidth]{\dhbwGetCompanyLogo}
+}{}
+\end{tabularx}
+\end{table}
+
+\restoregeometry

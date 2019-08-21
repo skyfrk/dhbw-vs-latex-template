@@ -1,0 +1,142 @@
+\documentclass[%
+    auto-generate   = true,             % generate all required pages
+    debug           = true,             % turn on debug for \lipsum
+    print-ndn       = true,             % print non-disclosure notice
+    print-loa       = true,             % print list of acronyms
+    print-lof       = true,             % print list of figures
+    print-lot       = true,             % print list of tables
+    print-lol       = true,             % print list of listings
+    bib-file        = literature.bib,   % path to bibliography file
+    plantuml        = true              % use plantuml
+]{udhbwvst}
+
+\dhbwSetup{%
+    author          = Max Mustermann,
+    faculty         = Wirtschaft,
+    field of study  = Wirtschaftsinformatik,
+    academic year   = 1990,
+    course          = B,
+    title           = Eine Arbeit,
+    subtitle        = Ein Untertitel,
+    text type       = Projektarbeit 2,
+    company name    = SpaceX,
+    company logo    = company-logo.png,
+    lecturer        = Prof. Dr. Frank Staab,
+    location        = Villingen-Schwenningen,
+    date            = \today,
+    longest acronym = DHBW,
+    acronyms        = {%
+        \acro{API}{Application Programming Interface}
+        \acroplural{API}[API's]{Application Programming Interfaces}
+        \acro{DHBW}{Duale Hochschule Baden Württemberg}
+        \acro{TDD}{Test Driven Development}
+    }
+}
+
+\begin{document}
+
+\section{Zitieren}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consectetur dictum venenatis. Maecenas pulvinar, enim accumsan vestibulum bibendum, nulla lectus varius massa, ut venenatis arcu lacus sit amet risus. Morbi eros lorem, placerat nec neque at, pellentesque ultricies purus. Fusce ut faucibus eros. Cras et mauris vitae purus rhoncus posuere vitae eu magna. Etiam ac libero tempus, blandit enim id, auctor felis. Sed sit amet nunc risus. Maecenas eu nisl vel lorem consequat maximus. Ut at pulvinar ipsum. Phasellus maximus purus metus, eu laoreet nulla auctor quis. Etiam et tristique odio.\footcite[Vgl.][42]{iot_standard_war}
+
+Pellentesque a lorem in nunc condimentum sodales et eget est. Aenean eget metus laoreet, egestas augue et, iaculis purus. Sed vitae erat sem. \dfootcite[12]{zigbee_membership}{Nunc scelerisque, mauris vel pharetra commodo, leo lacus fringilla diam, consequat cursus quam eros quis ante.} Sed sit amet erat nec urna posuere ultricies nec id arcu. Maecenas tristique nulla leo, eget dapibus lorem lacinia sed. Etiam maximus, velit eu dictum fermentum, nulla arcu aliquet neque, in semper nulla sapien vitae sem. In ac felis orci. Nullam egestas lectus et ex fermentum, ac tempus diam condimentum. Curabitur elementum sapien eu molestie porttitor. Cras vel semper lectus. Donec at orci nulla.\ifootcite[2]{zwave_faq}
+
+Zitat ohne Fußnote: \cite[12]{zwave_alliance_vision}
+
+Indirektes Zitat ohne Fußnote: \icite[42]{zwave_product_count}
+
+\section{Abkürzungen}
+
+Eine \ac{API} ist toll. Eine \ac{API} ist wirklich toll. Sed sit amet erat nec urna posuere ultricies nec id arcu. Maecenas tristique nulla leo, eget dapibus lorem lacinia sed. Etiam maximus, \ac{DHBW} eu dictum fermentum, nulla \ac{DHBW} arcu aliquet neque, in semper nulla sapien vitae sem. Fusce ut faucibus eros. Cras et mauris vitae purus rhoncus posuere vitae eu magna. Etiam ac libero \ac{TDD} tempus, blandit enim id, auctor \ac{TDD} felis.
+
+\section{Abbildungen}
+
+\subsection{Normale Abbildung}
+
+\begin{dhbwfigure}{caption=Eine Abbildung,label=fig:egal,source=\icite{safewise_zwave_vs_zigbee}}
+    \includegraphics[width=\textwidth]{company-logo.png}
+\end{dhbwfigure}
+
+Sed magna tortor, fermentum eget ligula et, volutpat tempus ipsum. Aliquam sodales maximus dui, quis laoreet erat fermentum eget. Donec ornare metus quis laoreet efficitur. Curabitur tincidunt nisl orci, non blandit lorem \autoref{fig:egal} sagittis in. Nullam leo massa, faucibus a imperdiet eget, tincidunt a dui. Etiam placerat nibh nec massa laoreet imperdiet. In facilisis dui vel lectus vestibulum facilisis. Proin ut arcu sed libero ultricies interdum sit amet sed nulla. Nullam at vehicula turpis, at malesuada tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
+
+\subsection{Normale Abbildung mit dem Macro}
+
+\dhbwFigure{%
+    caption=Abbildung,
+    label=fig:sowasvonegal,
+    source=\cite[12]{smartcave_zwave_vs_zigbee},
+    path=company-logo.png
+}
+
+Morbi at placerat urna, vitae rutrum elit. Suspendisse potenti. Duis sollicitudin arcu iaculis leo iaculis pretium. Maecenas elit ex, tempus ut egestas et, euismod sed quam. Pellentesque tincidunt euismod gravida. In \autoref{fig:sowasvonegal} at risus sit amet sem cursus commodo. Quisque ac dolor a est hendrerit ultricies. Fusce congue metus eu ante elementum semper. Pellentesque elementum magna id leo fringilla gravida. Donec placerat ligula in sapien semper rutrum. Etiam consequat turpis bibendum tellus pulvinar convallis. Duis malesuada felis quis nunc laoreet elementum.
+
+\subsection{Wrapfigure}
+
+Sed auctor neque sodales augue venenatis pharetra. Nunc purus felis, sollicitudin vitae congue quis, sagittis quis mi. Pellentesque non ante id sapien venenatis facilisis. Integer finibus, enim tempor molestie tempor, sapien nisl dictum est, eu dapibus erat orci id dui. Cras sodales diam eget enim elementum venenatis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec mattis tristique purus, ut luctus augue dictum at. Donec condimentum lacinia felis, sed cursus tellus pulvinar vitae. Praesent aliquet felis ac vulputate malesuada. Duis malesuada velit vel dolor facilisis facilisis. Nunc laoreet felis in egestas semper. Suspendisse nec lectus mattis, lacinia ex eget, commodo neque. Nam nisl neque, accumsan suscipit pretium at, eleifend vel nibh. Duis sit amet turpis quis justo semper euismod. Pellentesque maximus porttitor mollis. 
+
+\dhbwWrapfigure{%
+    caption=SpaceX Logo,
+    label=fig:spacexlogo,
+    placement=R,
+    source=\icite{spacex_com_about},
+    path={company-logo.png}
+}
+
+\autoref{fig:spacexlogo} ist schön. Es ist ein lang erwiesener Fakt, dass ein Leser vom Text abgelenkt wird, wenn er sich ein Layout ansieht. Der Punkt, Lorem Ipsum zu nutzen, ist, dass es mehr oder weniger die normale Anordnung von Buchstaben darstellt und somit nach lesbarer Sprache aussieht. Viele Desktop Publisher und Webeditoren nutzen mittlerweile Lorem Ipsum als den Standardtext, auch die Suche im Internet nach "lorem ipsum" macht viele Webseiten sichtbar, wo diese noch immer vorkommen. Mittlerweile gibt es mehrere Versionen des Lorem Ipsum, einige zufällig, andere bewusst (beeinflusst von Witz und des eigenen Geschmacks)
+
+\subsection{PlantUML}
+
+In tempor tincidunt leo ac tristique. Quisque viverra fringilla diam, vel rutrum turpis tempor non. Ut varius vulputate arcu vitae tincidunt. Nulla auctor lorem iaculis, vestibulum velit mollis, efficitur tortor. Praesent rutrum nulla id est consectetur ornare. Nam pretium, nisi ut porttitor auctor, neque leo rutrum magna, vel luctus velit orci eget lacus. Proin ante nibh, iaculis quis elit nec, sodales vehicula est. Donec consectetur velit ac ultrices venenatis. Morbi iaculis gravida arcu, nec imperdiet ex tincidunt ut. 
+
+\begin{dhbwfigure}{caption=PlantUML Diagram,label=fig:seq}
+    \begin{plantuml}
+        @startuml
+
+        box "Machine"
+            participant "Sensors" as sensors
+            participant "OPC UA Server" as opc
+        end box
+        participant "Cloud" as cloud
+
+        sensors <-> opc
+        opc <-> cloud
+
+        @enduml
+    \end{plantuml}
+\end{dhbwfigure}
+
+Nunc tincidunt at tortor a maximus. Integer lobortis libero nec vehicula consectetur. Sed at tempus orci, et sodales nunc. Suspendisse rhoncus sollicitudin pellentesque. Praesent elementum congue tincidunt. Sed pulvinar hendrerit \autoref{fig:seq} consectetur. Maecenas nisl tortor, mattis sodales blandit id, dictum sit amet ex. Aenean nec mollis ex, non laoreet orci. Nunc velit metus, condimentum ac sagittis quis, consectetur sodales massa. Nullam sollicitudin bibendum turpis, quis vehicula purus. 
+
+\section{Tabellen}
+
+\begin{dhbwtable}{caption={Evilplan},label=tab:mytable,source={\icite{zwave_plus_certification}},float=h}
+    \begin{tabular}{ | c | l |}
+        \hline
+        \textbf{Phase}  & \textbf{Action}       \\ \hline
+        1               & Use a latex template  \\ \hline
+        2               & ???                   \\ \hline
+        3               & Profit!               \\ \hline
+    \end{tabular}
+\end{dhbwtable}
+
+In tempor tincidunt leo ac tristique. Quisque viverra fringilla diam, vel rutrum turpis tempor non. Ut varius vulputate arcu vitae tincidunt. Nulla auctor lorem iaculis, vestibulum velit mollis, efficitur tortor. Praesent rutrum nulla id est consectetur ornare. Nam pretium, nisi ut porttitor auctor, neque leo \autoref{tab:mytable} rutrum magna, vel luctus velit orci eget lacus. Proin ante nibh, iaculis quis elit nec, sodales vehicula est. Donec consectetur velit ac ultrices venenatis. Morbi iaculis gravida arcu, nec imperdiet ex tincidunt ut.
+
+\section{Code}
+
+Sed auctor neque sodales augue venenatis pharetra. Nunc purus felis, sollicitudin vitae congue quis, sagittis quis mi. Pellentesque non ante id sapien venenatis facilisis. Integer finibus, enim tempor molestie tempor, sapien nisl dictum est, eu dapibus erat orci id dui. Cras sodales diam eget enim elementum venenatis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec mattis tristique purus, ut luctus augue dictum at. Donec condimentum lacinia felis, sed cursus tellus pulvinar vitae. Praesent aliquet felis ac vulputate malesuada. Duis malesuada velit vel dolor facilisis facilisis. Nunc laoreet felis in egestas semper. Suspendisse nec lectus mattis, lacinia ex eget, commodo neque. Nam nisl neque, accumsan suscipit pretium at, eleifend vel nibh. Duis sit amet turpis quis justo semper euismod. Pellentesque maximus porttitor mollis.
+
+\begin{code}{caption={Express Example},language=javascript,label=lst:express}{\icite[2]{figure_mqtt_architecture}}
+    const express = require('express')
+    const app = express()
+    const port = 3000
+    
+    app.get('/', (req, res) => res.send('Hello World!'))
+    
+    app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+\end{code}
+
+Fusce ullamcorper fermentum nibh sit amet pharetra. Curabitur rhoncus gravida dolor molestie blandit. Nam porttitor arcu sed tellus porta, eu molestie nunc scelerisque. Pellentesque quis est nulla. Duis malesuada nulla \autoref{lst:express} nec ultrices condimentum. Praesent pulvinar quis nibh ac dignissim. Nullam mollis scelerisque odio nec mollis. Morbi pulvinar viverra eros. Aliquam interdum fermentum erat at varius. Etiam cursus turpis sed consequat volutpat. Mauris in tempor nunc, sed consectetur est. Pellentesque maximus nulla vitae vestibulum elementum. 
+
+\blinddocument
+
+\end{document}

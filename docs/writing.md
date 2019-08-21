@@ -2,21 +2,28 @@
 
 Documentation and general tips and tricks on how to wirte an academic text assignment for the [DBHW-VS](https://www.dhbw-vs.de/).
 
+- [The udhbwvst class](#the-udhbwvst-class)
+  - [Class options](#class-options)
+  - [Required \dhbwSetup command](#required-dhbwsetup-command)
+  - [Document structure \dhbw* commands](#document-structure-dhbw-commands)
 - [Sectioning](#sectioning)
   - [Sections](#sections)
   - [Subsections](#subsections)
 - [Citing](#citing)
-  - [Cite direct with footnote](#cite-direct-with-footnote)
-  - [Cite indirect with footnote](#cite-indirect-with-footnote)
+  - [Cite with footnote](#cite-with-footnote)
+    - [Cite direct with footnote](#cite-direct-with-footnote)
+    - [Cite indirect with footnote](#cite-indirect-with-footnote)
   - [Cite without footnote](#cite-without-footnote)
+    - [Cite indirect without footnote](#cite-indirect-without-footnote)
 - [Acronyms](#acronyms)
-  - [Add a new acronym](#add-a-new-acronym)
+  - [Define a new acronym](#define-a-new-acronym)
     - [Define a custom plural](#define-a-custom-plural)
   - [Using acronyms in text](#using-acronyms-in-text)
 - [Figures](#figures)
-  - [Normal figure](#normal-figure)
-  - [Wrap figures](#wrap-figures)
-  - [PlantUML figure](#plantuml-figure)
+  - [The dhbwfigure environment](#the-dhbwfigure-environment)
+  - [The \dhbwFigure command](#the-dhbwfigure-command)
+  - [The \dhbwWrapfigure command](#the-dhbwwrapfigure-command)
+  - [PlantUML figures](#plantuml-figures)
 - [Tables](#tables)
 - [Code listing](#code-listing)
 - [Labels and referencing](#labels-and-referencing)
@@ -27,6 +34,67 @@ Documentation and general tips and tricks on how to wirte an academic text assig
     - [Firstname lastname combinations](#firstname-lastname-combinations)
     - [Author is just one word](#author-is-just-one-word)
     - [More than one author](#more-than-one-author)
+
+## The udhbwvst class
+
+The name of the class stands for ***Unofficial DHBW Villingen-Schwenningen*** LaTeX ***template***. Despite what the name suggests this class isn't a template anymore but a solid LaTeX class which can be build upon.
+
+### Class options
+
+| Option          | Default          | Description                                                            |
+| --------------- | ---------------- | ---------------------------------------------------------------------- |
+| `auto-generate` | `true`           | Generates all required pages around the text.                          |
+| `debug`         | `false`          | Loads packages `lipsum` and `blindtext` and displays `hyperref`-links. |
+| `print-ndn`     | `true`           | Prints the non-disclosure notice.                                      |
+| `print-loa`     | `true`           | Prints the list of acronyms.                                           |
+| `print-lof`     | `true`           | Prints the list of figures.                                            |
+| `print-lot`     | `true`           | Prints the list of tables.                                             |
+| `print-lol`     | `true`           | Prints the list of code listings.                                      |
+| `bib-file`      | `literature.bib` | Path to the bibliography file.                                         |
+| `plantuml`      | `false`          | Loads the `plantuml` package.                                          |
+
+### Required \dhbwSetup command
+
+In order to use the template you have to run the `\dhbwSetup{...}` command in your preamble. All parameters without a default value are **required**. You can access any key inside your document with the `\dhbwGet*` commands.
+
+| Parameter         | Stored in                | Default                | Description                                                          | Example                 |
+| ----------------- | ------------------------ | ---------------------- | -------------------------------------------------------------------- | ----------------------- |
+| `author`          | `\dhbwGetAuthor`         | -                      | Full name of the author.                                             | Max Mustermann          |
+| `faculty`         | `\dhbwGetFaculty`        | -                      | Faculty of the author.                                               | Wirtschaft              |
+| `field of study`  | `\dhbwGetFieldOfStudy`   | -                      | Field of study of the author.                                        | Wirtschaftsinformatik   |
+| `academic year`   | `\dhbwGetAcademicYear`   | -                      | Academic year of the author.                                         | 2017                    |
+| `course`          | `\dhbwGetCourse`         | -                      | Course of the author.                                                | B                       |
+| `title`           | `\dhbwGetTitle`          | -                      | Title of the text.                                                   | Eine Arbeit             |
+| `subtitle`        | `\dhbwGetSubtitle`       | -                      | Subtitle of the text                                                 | Mit einem Untertitel    |
+| `text type`       | `\dhbwGetTextType`       | -                      | Type of the text.                                                    | Projektarbeit 2         |
+| `company name`    | `\dhbwGetCompanyName`    | -                      | Name of the authors employer.                                        | Eine GmbH               |
+| `company logo`    | `\dhbwGetCompanyLogo`    | -                      | Path to the logo of the authors employer.                            | `./assets/logo.png`     |
+| `lecturer`        | `\dhbwGetLecturer`       | -                      | Name of the lecturer of the author.                                  | Prof. Dr. Martin Kimmig |
+| `location`        | `\dhbwGetLocation`       | Villingen-Schwenningen | Name of the location where the author signs the independence notice. | Villingen-Schwenningen  |
+| `date`            | `\dhbwGetDate`           | `\today`               | When the author signs the independence notice.                       | 21. August 2019         |
+| `longest acronym` | `\dhbwGetLongestAcronym` | xD                     | The longest acronym in short form (Required for formatting).         | `DevOps`                |
+| `acronyms`        | `\dhbwGetAcronyms`       | `{}`                   | The definition of the acronyms used in the text.                     | See [here](#acronyms)   |
+
+### Document structure \dhbw* commands
+
+If you set the [class option](#class-options) `auto-generate` to `false` you can use following commands to build a custom document:
+
+| Command                         | Description                                                                                          |
+| ------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `\dhbwSetFrontMatter`           | Sets up formatting for front pages.                                                                  |
+| `\dhbwPrintTitle`               | Prints the title page.                                                                               |
+| `\dhbwPrintNonDisclosureNotice` | Prints the non-disclosure notice if the [class option](#class-options) `print-ndn` is set to `true`. |
+| `\dhbwPrintTableOfContents`     | Prints the table of content.                                                                         |
+| `\dhbwSetListMatter`            | Sets up formatting for the list pages.                                                               |
+| `\dhbwPrintListOfAcronyms`      | Prints the list of acronyms if the [class option](#class-options) `print-loa` is set to `true`.      |
+| `\dhbwPrintListOfFigures`       | Prints the list of figures if the [class option](#class-options) `print-lof` is set to `true`.       |
+| `\dhbwPrintListOfTables`        | Prints the list of tables if the [class option](#class-options) `print-lot` is set to `true`.        |
+| `\dhbwPrintListOfListings`      | Prints the list of code listings if the [class option](#class-options) `print-lol` is set to `true`. |
+| `\dhbwSetMainMatter`            | Sets up formatting for the main text pages.                                                          |
+| `\dhbwPrintBibliography`        | Prints the bibliography.                                                                             |
+| `\dhbwPrintIndependenceNotice`  | Prints the independence notice.                                                                      |
+| `\dhbwPrintEverythingBefore`    | Prints all pages and sets up all formatting before the main text.                                    |
+| `\dhbwPrintEverythingAfter`     | Prints the bibliography and the independence notice.                                                 |
 
 ## Sectioning
 
@@ -80,75 +148,113 @@ Nobody reads this anyway...
 
 Every cite command will add the referenced bibliography entry to the [bibliography](#bibliography) at the end of the text.
 
-### Cite direct with footnote
+### Cite with footnote
 
-Command: `\mydirectfootcite{text}{bibEntryId}{page}`
+Command: `\footcite[prenote][page]{bibEntryId}`
 
-| Parameter    | Description                                                       |
-| ------------ | ----------------------------------------------------------------- |
-| `text`       | The text you want to cite directly.                               |
-| `bibEntryId` | The identifier of the entry in the [bibliography](#bibliography). |
-| `page`       | The number of the page you are citing from. Can be empty.         |
-
-Wraps given text in `„` and `"` and adds a footnote with given `bibEntryId` and `page`. Example below:
-
-```tex
-...so thats why a \mydirectfootcite{towel is the most
-important item a Hitchhiker can carry}{hitchhiker78}{42}.
-```
-
-> This is just a wrapper using [\myfootcite](#cite-indirect) and `\enquote` from the CTAN package [csquotes](https://www.ctan.org/pkg/csquotes).
-
-### Cite indirect with footnote
-
-Command: `\myfootcite[prenote][page]{bibEntryId}`
-
-| Parameter    | Description                                                                  |
-| ------------ | ---------------------------------------------------------------------------- |
-| `prenote`    | A prenote that will appear in front of the short reference (Usually `Vgl.`). |
-| `page`       | The number of the page you are citing from. Can be empty.                    |
-| `bibEntryId` | The identifier of the entry in the [bibliography](#bibliography).            |
+| Parameter    | Description                                                                            |
+| ------------ | -------------------------------------------------------------------------------------- |
+| `bibEntryId` | The identifier of the entry in the [bibliography](#bibliography).                      |
+| `prenote`    | A prenote that will appear in front of the short reference (Usually `Vgl.`). Optional. |
+| `page`       | The number of the page you are citing from. Optional.                                  |
 
 Adds a footnote with given `bibEntryId`, `prenote` and `page`. Example below:
 
 ```tex
 A Hitchhiker’s Guide To The Galaxy PDF by Adam Douglas
-is a timeless science fiction masterpiece.\myfootcite[Vgl.][42]{hitchhiker78}
+is a timeless science fiction masterpiece.\footcite[Vgl.][42]{hitchhiker78}
 This is the next sentence...
 ```
 
+#### Cite direct with footnote
+
+Command: `\dfootcite[page]{bibEntryId}{text}`
+
+| Parameter    | Description                                                       |
+| ------------ | ----------------------------------------------------------------- |
+| `bibEntryId` | The identifier of the entry in the [bibliography](#bibliography). |
+| `text`       | The text you want to cite directly.                               |
+| `page`       | The number of the page you are citing from. Optional.             |
+
+Wraps given text in `„` and `"` and adds a footnote with given `bibEntryId` and `page`. Example below:
+
+```tex
+...so thats why a \dfootcite[42]{hitchhiker78}{towel is the most
+important item a Hitchhiker can carry}.
+```
+
+> This is just a wrapper using [\footcite](#cite-with-footnote) and `\enquote` from the CTAN package [csquotes](https://www.ctan.org/pkg/csquotes).
+
+#### Cite indirect with footnote
+
+Command: `\ifootcite[page]{bibEntryId}`
+
+| Parameter    | Description                                                       |
+| ------------ | ----------------------------------------------------------------- |
+| `bibEntryId` | The identifier of the entry in the [bibliography](#bibliography). |
+| `page`       | The number of the page you are citing from. Optional.             |
+
+Adds a footnote with given `bibEntryId`, `page` and the prenote `Vgl.`. Example below:
+
+```tex
+A Hitchhiker’s Guide To The Galaxy PDF by Adam Douglas
+is a timeless science fiction masterpiece.\ifootcite[42]{hitchhiker78}
+This is the next sentence...
+```
+
+> This is just a wrapper using [\footcite](#cite-with-footnote).
+
 ### Cite without footnote
 
-Command: `\mycite[prenote][page]{bibEntryId}`
+Command: `\cite[prenote][page]{bibEntryId}`
 
-| Parameter    | Description                                                                  |
-| ------------ | ---------------------------------------------------------------------------- |
-| `prenote`    | A prenote that will appear in front of the short reference (Usually `Vgl.`). |
-| `page`       | The number of the page you are citing from. Can be empty.                    |
-| `bibEntryId` | The identifier of the entry in the [bibliography](#bibliography).            |
+| Parameter    | Description                                                                            |
+| ------------ | -------------------------------------------------------------------------------------- |
+| `bibEntryId` | The identifier of the entry in the [bibliography](#bibliography).                      |
+| `prenote`    | A prenote that will appear in front of the short reference (Usually `Vgl.`). Optional. |
+| `page`       | The number of the page you are citing from. Can be empty. Optional.                    |
 
 Creates a short reference with given `bibEntryId`, `prenote` and `page` where the command is called. Example below:
 
 ```tex
-Here is a short reference: \mycite[Vgl.][42]{hitchhiker78}
+Here is a short reference: \cite[Vgl.][42]{hitchhiker78}
 ```
+
+#### Cite indirect without footnote
+
+Command: `\icite[page]{bibEntryId}`
+
+| Parameter    | Description                                                         |
+| ------------ | ------------------------------------------------------------------- |
+| `bibEntryId` | The identifier of the entry in the [bibliography](#bibliography).   |
+| `page`       | The number of the page you are citing from. Can be empty. Optional. |
+
+Creates a short reference with given `bibEntryId`, `page` and prenote `Vgl.` where the command is called. Example below:
+
+```tex
+Here is a short reference: \icite[42]{hitchhiker78}
+```
+
+> This is just a wrapper using [\cite](#cite-without-footnote).
 
 ## Acronyms
 
 This template uses the `acronym` CTAN package. Have a look at it's [documentation](https://ctan.org/pkg/acronym) for details on advanced usage.
 
-### Add a new acronym
+### Define a new acronym
 
-Before you can use an acronym in your text you have to add it inside the `acronym` environment in `content/misc/acronyms.tex`. The `acronym` environment takes one argument which will dictate how much space between the acronym and the long version of the acronym there will be. The `acronym` environment will just count the length of given parameter. According to the DHBW-VS you should always use the longest acronym twice here. Example below:
+Before you can use an acronym in your text you have to define it inside the `acronyms` key of the [\dhbwSetup](#required-dhbwsetup-command) command. You also have to setup the `longest acronym` key. The `acronym` package will count the length of the given parameter and use it for the spacing between the short and the long version of an acronym. Example below:
 
 ```tex
-\begin{acronym}[NiPNiP]
-
-\acro{C9}{Cloud 9}
-\acro{NiP}{Ninjas in Pyjamas}
-\acro{VP}{Virtus Pro}
-
-\end{acronym}
+\dhbwSetup{%
+    ...
+    longest acronym = NiP,
+    acronyms        = {%
+        \acro{C9}{Cloud 9}
+        \acro{NiP}{Ninjas in Pyjamas}
+        \acro{VP}{Virtus Pro}
+    }
+}
 ```
 
 :warning: You must manually sort the acronyms by alphabet. As of august 2019 the `acronym` package doesn't support automatic sorting.
@@ -160,12 +266,14 @@ Command: `\acroplural{acronym}[shortPlural]{longPlural}`
 The `acronym` package adds an `s` to the short and long version of an acronym if no custom plural is defined. There are many cases when adding an `s` doesn't work. See the german example below:
 
 ```tex
-\begin{acronym}[NiPNiP]
-
-\acro{GF}{Globale Firma}
-\acroplural{GF}[GF]{Globale Firmen}
-
-\end{acronym}
+\dhbwSetup{%
+    ...
+    longest acronym = GF,
+    acronyms        = {%
+        \acro{GF}{Globale Firma}
+        \acroplural{GF}[GF]{Globale Firmen}
+    }
+}
 ```
 
 ### Using acronyms in text
@@ -198,58 +306,81 @@ to this, NiP is also an active shareholder in the clothing company DRKN.
 
 All figures will be automatically numbered and added to the list of figures.
 
-### Normal figure
+### The dhbwfigure environment
 
-Adding a figure requires a few commands explained below the example:
+When adding a figure you should wrap it inside the `dhbwfigure` environment so that the DHBW formatting requirements are met automatically.
 
 ```tex
-\begin{figure}[h]
-    \centering
-    \caption{Quality Meme}
+\begin{dhbwfigure}{caption=Pikachu,label=fig:pikachu,source={Internet People}}
     \includegraphics[width=\textwidth]{surprised_pikachu.png}
-    \caption*{\footnotesize{Source: \mycite{pikachu_website}}}
-    \label{fig:pikachu}
-\end{figure}
+\end{dhbwfigure}
 ```
 
-The `figure` environment takes a [placement specifier](https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions#Figures) as argument. You're most likely to use `h` which LaTeX interprets as `place the figure here`.
+The `dhbwfigure` environment parameters `caption` and `label` are mandatory. See all possible parameters below:
 
-The `\centering` command centers everything inside the `figure` environment.
+| Parameter | Default            | Description                                                                                                                                                      |
+| --------- | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `caption` | -                  | Title of the figure.                                                                                                                                             |
+| `label`   | -                  | Marker for `hyperref`. Make sure to start your marker with  `fig:` so that [automatic referencing](#labels-and-referencing) works. This marker has to be unique. |
+| `float`   | `ht`               | [Floating specifier](https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions#Figures).                                                                  |
+| `source`  | Eigene Darstellung | Source of the picture.                                                                                                                                           |
 
-The `\caption{caption}` command defines the title of the figure which will be placed above the figure and also be used in the list of figures.
+### The \dhbwFigure command
 
-The `\includegraphics[options]{pathToFigure}` command from the [graphicx](https://ctan.org/pkg/graphicx) CTAN package actually imports the figure to the pdf. You can specify many `options` like `width` or `scale` as key-value pairs separated by a `,`. Have a look at [the documentation of the graphicx package](https://ctan.org/pkg/graphicx) for advanced options.
-
-:warning: When `pathToFigure` is a relative path have in mind that the base directory for including graphics is `content/assets/`.
-
-The `\caption*{\footnotesize{short reference}}` command combination adds a text below the figure to be used as short reference for the source of the figure.
-
-The `\label{fig:marker}` command tags the figure with a marker. So that you can later refer to the image. Make sure to always write `fig:` in front of your marker so that [automatic referencing](#labels-and-referencing) works. This marker has to be unique.
-
-### Wrap figures
-
-When you have a small graphic you can use the `wrapfigure` environment from the [wrapfig](https://ctan.org/pkg/wrapfig) CTAN package instead of the `figure` environment to let your text wrap around the graphic.
-
-In the example below the `wrapfigure` environment takes two arguments. The first argument specifies the postion (normally `r` or `l` for right and left) and the second argument specifies the width of the graphic. Have a look at the [documentation of the wrapfig package](https://ctan.org/pkg/wrapfig) for details on advanced usage.
+If you only want to quickly embed an image file you can use the `\dhbwFigure` command:
 
 ```tex
-\begin{wrapfigure}{r}{0.5\textwidth}
-    \centering
-    \caption{Quality Meme}
-    \includegraphics[width=\textwidth]{surprised_pikachu.png}
-    \caption*{\footnotesize{Source: \mycite{pikachu_website}}}
-    \label{fig:pikachu}
-\end{wrapfigure}
+\dhbwFigure{caption=Pikachu,label=fig:pikachu,path=surprised_pikachu.png}
 ```
 
-### PlantUML figure
+The parameters `caption`, `path` and `label` are required. See a full list of available parameters below:
 
-If you have [set up](./setup.md#optional-install-plantuml) PlantUML as described you can embed [PlantUML-diagrams](http://www.plantuml.com/) in your LaTeX code. Just surround you PlantUML notation with the `plantuml` environment:
+| Parameter | Default            | Description                                                                                                                                                      |
+| --------- | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `caption` | -                  | Title of the figure.                                                                                                                                             |
+| `path`    | -                  | Path to the image.                                                                                                                                               |
+| `label`   | -                  | Marker for `hyperref`. Make sure to start your marker with  `fig:` so that [automatic referencing](#labels-and-referencing) works. This marker has to be unique. |
+| `source`  | Eigene Darstellung | Source of the picture.                                                                                                                                           |
+| `width`   | `\textwidth`       | Width of the figure.                                                                                                                                             |
+| `float`   | `ht`               | [Floating specifier](https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions#Figures).                                                                  |
+
+> `\dhbwFigure` is like the [dhbwfigure environment](#the-dhbwfigure-environment) with integrated `\includegraphics` command.
+
+### The \dhbwWrapfigure command
+
+If you want to embed a small graphic wrapped by your text you can use the `\dhbwWrapfigure` command which uses the `wrapfigure` environment from the [wrapfig](https://ctan.org/pkg/wrapfig) CTAN package.
 
 ```tex
-\begin{figure}[h]
-    \centering
-    \caption{Informative sequence diagram}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis condimentum
+lacus quis nisi pulvinar, sed bibendum neque posuere. Nam ipsum nisl,
+egestas at lectus vel, suscipit hendrerit mi. Sed dapibus fermentum mauris,
+ut euismod leo vehicula ut. Mauris bibendum imperdiet nunc.
+
+\dhbwWrapfigure{caption=Small Pikachu,label=fig:smallpikachu,path=small_pikachu.png}
+
+Nullam accumsan, odio at ultrices vehicula, velit massa porta turpis, sed
+auctor sem nisl in tortor. Nullam sollicitudin mollis arcu vitae sollicitudin.
+Nunc rhoncus augue luctus erat maximus, sit amet commodo quam pellentesque.  
+```
+
+| Parameter     | Default            | Description                                                                                                                                                      |
+| ------------- | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `caption`     | -                  | Title of the figure.                                                                                                                                             |
+| `label`       | -                  | Marker for `hyperref`. Make sure to start your marker with  `fig:` so that [automatic referencing](#labels-and-referencing) works. This marker has to be unique. |
+| `path`        | -                  | Path to the image.                                                                                                                                               |
+| `source`      | Eigene Darstellung | Source of the picture.                                                                                                                                           |
+| `placement`   | `R`                | [Placement specifier](http://mirrors.ctan.org/macros/latex/contrib/wrapfig/wrapfig-doc.pdf).                                                                     |
+| `width`       | `0.45\textwidth`   | Width of the `wrapfigure` environment.                                                                                                                           |
+| `image width` | `0.4\textwidth`    | Width of the picture.                                                                                                                                            |
+
+> It is not possible to provide a `dhbwwrapfigure` environment because the `wrapfigure` environment doesn't work if wrapped in another environment.
+
+### PlantUML figures
+
+If you have [set up](./setup.md#optional-install-plantuml) PlantUML as described and also set the class option `plantuml` to `true` you can embed [PlantUML-diagrams](http://www.plantuml.com/) in your LaTeX code. Just surround you PlantUML notation with the `plantuml` environment:
+
+```tex
+\begin{dhbwfigure}{caption=Informative Sequence Diagram,label=fig:seq}
     \begin{plantuml}
         @startuml
 
@@ -262,23 +393,19 @@ If you have [set up](./setup.md#optional-install-plantuml) PlantUML as described
         sensors <-> opc
         opc <-> cloud
 
-        @enduml    
+        @enduml
     \end{plantuml}
-    \caption*{\footnotesize{Source: Own creation.}}
-    \label{fig:plantuml_test}
-\end{figure}
+\end{dhbwfigure}
 ```
 
 :warning: As of version `0.2.3` of the `plantuml` LuaLaTeX package [UTF8 isn't supported](https://github.com/koppor/plantuml/issues/10). You can use any unicode character though (see [special characters](http://plantuml.com/creole)). For example `<U+00D6>` can be used to express `Ö`. Use a [unicode character table](https://unicode-table.com/en/) until UTF8 is supported.
 
 ## Tables
 
-Adding a table requires a few commands explained below the example:
+When adding a table you should wrap it inside the `dhbwtable` environment so that the DHBW formatting requirements are met automatically.
 
 ```tex
-\begin{table}[h]
-    \caption{Evil plan}
-    \centering
+\begin{dhbwtable}{caption={Evilplan},label=tab:mytable,source={\icite{peterson16}},float=h}
     \begin{tabular}{ | c | l |}
         \hline
         \textbf{Phase}  & \textbf{Action}       \\ \hline
@@ -286,30 +413,24 @@ Adding a table requires a few commands explained below the example:
         2               & ???                   \\ \hline
         3               & Profit!               \\ \hline
     \end{tabular}
-    \caption*{\footnotesize{Source: Own imagination}}
-    \label{tab:evil_plan}
-\end{table}
+\end{dhbwtable}
 ```
 
-The `table` environment takes a [placement specifier](https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions#Figures) as argument. You're most likely to use `h` which LaTeX interprets as `place the table here`.
-
-The `\centering` command centers everything inside the `table` environment.
-
-The `\caption{caption}` command defines the title of the table which will be placed above the table and also be used in the list of tables.
+| Parameter | Default              | Description                                                                                                                                                      |
+| --------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `caption` | -                    | Title above the table.                                                                                                                                           |
+| `label`   | -                    | Marker for `hyperref`. Make sure to start your marker with  `tab:` so that [automatic referencing](#labels-and-referencing) works. This marker has to be unique. |
+| `float`   | `ht`                 | [Floating specifier](https://en.wikibooks.org/wiki/LaTeX/Tables#Floating_with_table).                                                                            |
+| `source`  | `Eigene Darstellung` | Source of the data in the table.                                                                                                                                 |
 
 Inside the `tabular` environment the actual table is created. [Click here](https://en.wikibooks.org/wiki/LaTeX/Tables#The_tabular_environment) for a detailed guide on how to use the `tabular` environment.
 
-The `\caption*{\footnotesize{short reference}}` command combination adds a text below the table to be used as short reference for the source of the data in the table.
-
-The `\label{tab:marker}` command tags the table with a marker. So that you can later refer to the image. Make sure to always write `tab:` in front of your marker so that [automatic referencing](#labels-and-referencing) works. This marker has to be unique.
-
 ## Code listing
 
-Adding a code listing requires a few commands explained below the example:
+You can add a code listing using the `code` environment:
 
 ```tex
-\begin{subcaptionenv}{Source: \mycite[Vgl.][2]{example}}
-    \begin{lstlisting}[caption={Express Example},language=javascript,label=lst:express]
+\begin{code}{caption={Express Example},language=javascript,label=lst:express}{\icite[2]{example}}
 const express = require('express')
 const app = express()
 const port = 3000
@@ -317,19 +438,28 @@ const port = 3000
 app.get('/', (req, res) => res.send('Hello World!'))
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
-    \end{lstlisting}
-\end{subcaptionenv}
+\end{code}
 ```
 
-The `subcaptionenv` environment takes a text as argument which will be placed in the center below the content of the environment formatted as a unnumbered subcaption to be used for short references.
+The `code` environment is a custom `listings` environment. The first argument is used to pass options through to the `listings` environment and the second argument is the used for the short reference.
 
-The `lstlisting` environment takes a few `options` as key-value pairs listed below and formats code inside the environment accordingly.
+:warning: You should always pass the options listed below to the `listings` environment:
 
 | Option     | Description                                                                                                                                                                                                |
 | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `caption`  | The caption to appear above the code listing and in the list of code listings.                                                                                                                             |
 | `language` | The language of the source code used for syntax highlighting. In addition to the languages [supported by default](https://ctan.org/pkg/listings) this template adds support for `csharp` and `javascript`. |
 | `label`    | The marker used for [referencing](#labels-and-referencing). Has to begin with `lst:`.                                                                                                                      |
+
+:warning: The short reference below the code listing is not inside the same float as the code. It can happen that the code listing and the reference have a page break between them. To prevent this you have to wrap the `code` environment with a `minipage` environment:
+
+```tex
+\begin{minipage}[c]{\textwidth}
+\begin{code}{...}{...}
+...
+\end{code}
+\end{minipage}
+```
 
 ## Labels and referencing
 
@@ -367,7 +497,7 @@ In Abschnitt 2 findet sich kein Widerspruch.
 
 ## Bibliography
 
-When you're researching it is advised to store every source of information as an entry in your bibliography file located at `/content/misc/literature.bib`. Biblatex will make sure to only print references you actually refered to in your bibliography at the end of the text. Biblatex will also sort entries by author, then by year, then by month, then by day and finally by title.
+When you're researching it is advised to store every source of information as an entry in your bibliography file. Biblatex will make sure to only print references you actually refered to in your bibliography at the end of the text. Biblatex will also sort entries by author, then by year, then by month, then by day and finally by title.
 
 :warning: The DHBW-VS bibliography style was only tested with the entires of type [book](#add-entry-of-type-book) and [online](#add-entry-of-type-online). However [other types of entries](https://www.ctan.org/pkg/biblatex) should also work as long as they provide a `shorttitle` field!
 
