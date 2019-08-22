@@ -171,4 +171,16 @@
 			"\\autoref{$1}"
 		]
 	},
+	"bib entry online": {
+		"prefix": "@online",
+		"body": [
+			"@online{$1,",
+			"\tauthor\t\t= {$2},",
+			"\tshorttitle\t= {$3},",
+			"\turl\t\t\t= {$4},",
+			"\turldate\t\t= {${5:${6:0000}-${7:00}-${8:00}}},",
+			"\tdate\t\t= {${9:${10:0000}-${11:00}-${12:00}}}",
+			"}"
+		]
+	}
 }
