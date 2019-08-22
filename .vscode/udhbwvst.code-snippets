@@ -69,5 +69,11 @@
 		"body": [
 			"\\icite${2:[]}{${1:bibEntryId}}"
 		]
+	},
+	"Command \\acro": {
+		"prefix": "\\acro",
+		"body": [
+			"\\acro{$1}{$2}"
+		]
 	}
 }
