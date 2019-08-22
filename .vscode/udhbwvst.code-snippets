@@ -133,5 +133,18 @@
 			"\timage width\t= ${7:{0.4\\textwidth}}",
 			"}"
 		]
+	},
+	"dhbwtable environment": {
+		"prefix": "dhbwtable",
+		"body": [
+			"\\begin{dhbwtable}{%",
+			"\tcaption\t= $1,",
+			"\tlabel\t= tab:$2,",
+			"\tsource\t= $3,",
+			"\tfloat\t= ${4:ht}",
+			"}",
+			"\t$TM_SELECTED_TEXT$0",
+			"\\end{dhbwtable}"
+		]
 	}
 }
