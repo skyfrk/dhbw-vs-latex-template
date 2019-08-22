@@ -87,5 +87,11 @@
 		"body": [
 			"\\ac{$1}"
 		]
+	},
+	"Command \\acp": {
+		"prefix": "\\acp",
+		"body": [
+			"\\acp{$1}"
+		]
 	}
 }
