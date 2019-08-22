@@ -93,5 +93,13 @@
 		"body": [
 			"\\acp{$1}"
 		]
+	},
+	"dhbwfigure environment": {
+		"prefix": "dhbwfigure",
+		"body": [
+			"\\begin{dhbwfigure}{caption=$1,label=fig:$2,source=$3,float=${4:ht}}",
+			"\t$TM_SELECTED_TEXT$0",
+			"\\end{dhbwfigure}"
+		]
 	}
 }
