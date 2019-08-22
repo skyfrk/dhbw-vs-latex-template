@@ -164,5 +164,11 @@
 			"\\end{code}",
 			"\\end{minipage}"
 		]
-	}
+	},
+	"Command \\autoref": {
+		"prefix": "\\autoref",
+		"body": [
+			"\\autoref{$1}"
+		]
+	},
 }
