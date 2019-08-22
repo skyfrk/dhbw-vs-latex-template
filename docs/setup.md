@@ -64,7 +64,8 @@ Copy all files inside the `src` folder to your working directory. As long as you
 
 ### Optional setup
 
-* If you're using VS Code as text editor you can take advantage of the already configured `.vscode/settings.json` which compiles using `latexmk` (part of TeX Live and MiKTeX) and if you don't want to use `latexmk` there is a another recipe using just `lualatex` and `biber`.
+* If you're using VS Code you can take advantage of the already configured `.vscode/settings.json` which compiles using `latexmk` (part of TeX Live and MiKTeX) and if you don't want to use `latexmk` there is a another recipe using just `lualatex` and `biber`.
+* If you're using VS Code you can take advantage of many predefined snippets (`.vscode/udhbwvst.code-snippets`).
 * If you are using [git](https://git-scm.com/) you can use the provided `.gitignore` file.
 
 ## Compiling to PDF
