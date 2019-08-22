@@ -63,5 +63,11 @@
 		"body": [
 			"\\cite[${2:Vgl.}][$3]{${1:bibEntryId}}"
 		]
+	},
+	"Command \\icite": {
+		"prefix": "\\icite",
+		"body": [
+			"\\icite${2:[]}{${1:bibEntryId}}"
+		]
 	}
 }
