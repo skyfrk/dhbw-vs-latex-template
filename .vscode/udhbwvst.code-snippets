@@ -101,5 +101,11 @@
 			"\t$TM_SELECTED_TEXT$0",
 			"\\end{dhbwfigure}"
 		]
+	},
+	"Command \\dhbwFigure": {
+		"prefix": "\\dhbwFigure",
+		"body": [
+			"\\dhbwFigure{caption=$1,label=fig:$2,path=$3,source=$4${5:,width=\\textwidth,float=ht}}"
+		]
 	}
 }
