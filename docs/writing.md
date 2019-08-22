@@ -34,6 +34,7 @@ Documentation and general tips and tricks on how to wirte an academic text assig
     - [Firstname lastname combinations](#firstname-lastname-combinations)
     - [Author is just one word](#author-is-just-one-word)
     - [More than one author](#more-than-one-author)
+- [VSCode snippets](#vscode-snippets)
 
 ## The udhbwvst class
 
@@ -608,3 +609,24 @@ You can use the keyword `and others` if there are to many authors:
     ...
 }
 ```
+
+## VSCode snippets
+
+There are a few [VSCode snippets](https://code.visualstudio.com/docs/editor/userdefinedsnippets) predefined in `.vscode/udhbwvst.code-snippets` you can take advantage of:
+
+| Prefix            | Description                                                                    |
+| ----------------- | ------------------------------------------------------------------------------ |
+| `udhbwvst`        | Setup the `udhbwvst` class.                                                    |
+| `\dhbwSetup`      | Snippet for the [\dhbwSetup](#required-dhbwsetup-command) command.             |
+| `\footcite`       | Snippet for the [\footcite](#cite-with-footnote) command.                      |
+| `\dfootcite`      | Snippet for the [\dfootcite](#cite-direct-with-footnote) command.              |
+| `\ifootcite`      | Snippet for the [\ifootcite](#cite-indirect-with-footnote) command.            |
+| `\icite`          | Snippet for the [\icite](#cite-indirect-without-footnote) command.             |
+| `dhbwfigure`      | Snippet for the [dhbwfigure](#the-dhbwfigure-environment) environment.         |
+| `\dhbwFigure`     | Snippet for the [\dhbwFigure](#the-dhbwfigure-command) command.                |
+| `\dhbwWrapfigure` | Snippet for the [\dhbwWrapfigure](#the-dhbwwrapfigure-command) command.        |
+| `dhbwtable`       | Snippet for the [dhbwtable](#tables) environment.                              |
+| `code`            | Snippet for the [code](#code-listing) environment.                             |
+| `codeprotected`   | Snippet for the [code](#code-listing) environment but wrapped in a `minipage`. |
+| `@online`         | Snippet for an [@online](#add-entry-of-type-online) bibliography entry.        |
+| `@book`           | Snippet for an [@book](#add-entry-of-type-book) bibliography entry.            |
