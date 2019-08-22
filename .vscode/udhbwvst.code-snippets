@@ -58,40 +58,10 @@
 			"\\ifootcite${2:[]}{${1:bibEntryId}}"
 		]
 	},
-	"Command \\cite": {
-		"prefix": "\\cite",
-		"body": [
-			"\\cite[${2:Vgl.}][$3]{${1:bibEntryId}}"
-		]
-	},
 	"Command \\icite": {
 		"prefix": "\\icite",
 		"body": [
 			"\\icite${2:[]}{${1:bibEntryId}}"
-		]
-	},
-	"Command \\acro": {
-		"prefix": "\\acro",
-		"body": [
-			"\\acro{$1}{$2}"
-		]
-	},
-	"Command \\acroplural": {
-		"prefix": "\\acroplural",
-		"body": [
-			"\\acroplural{$1}{$2}"
-		]
-	},
-	"Command \\ac": {
-		"prefix": "\\ac",
-		"body": [
-			"\\ac{$1}"
-		]
-	},
-	"Command \\acp": {
-		"prefix": "\\acp",
-		"body": [
-			"\\acp{$1}"
 		]
 	},
 	"dhbwfigure environment": {
@@ -163,12 +133,6 @@
 			"$TM_SELECTED_TEXT$0",
 			"\\end{code}",
 			"\\end{minipage}"
-		]
-	},
-	"Command \\autoref": {
-		"prefix": "\\autoref",
-		"body": [
-			"\\autoref{$1}"
 		]
 	},
 	"bib entry online": {
