@@ -1,5 +1,5 @@
 {
-	"Setup the udhbwvst class": {
+	"udhbwvst class setup": {
 		"prefix": "udhbwvst",
 		"body": [
 			"\\documentclass[%",
@@ -14,7 +14,8 @@
 			"\tplantuml\t\t= ${9|false,true|}\t% Loads the plantuml package.",
 			"]{udhbwvst}"
 		],
-		"scope": "tex,latex"
+		"scope": "tex,latex",
+		"description": "Sets up the udhbwvst documentclass."
 	},
 	"Command: \\dhbwSetup": {
 		"prefix": "\\dhbwSetup",
@@ -40,35 +41,40 @@
 			"\t}",
 			"}"
 		],
-		"scope": "tex,latex"
+		"scope": "tex,latex",
+		"description": "Sets up the \\dhbwSetup command with all possible fields."
 	},
 	"Command \\footcite": {
 		"prefix": "\\footcite",
 		"body": [
 			"\\footcite[${2:Vgl.}][$3]{${1:bibEntryId}}"
 		],
-		"scope": "tex,latex"
+		"scope": "tex,latex",
+		"description": "Create a citation with a footnote."
 	},
 	"Command \\dfootcite": {
 		"prefix": "\\dfootcite",
 		"body": [
 			"\\dfootcite${2:[]}{${1:bibEntryId}}{$TM_SELECTED_TEXT$3}"
 		],
-		"scope": "tex,latex"
+		"scope": "tex,latex",
+		"description": "Create a direct citation with a footnote."
 	},
 	"Command \\ifootcite": {
 		"prefix": "\\ifootcite",
 		"body": [
 			"\\ifootcite${2:[]}{${1:bibEntryId}}"
 		],
-		"scope": "tex,latex"
+		"scope": "tex,latex",
+		"description": "Create a indirect citation with a footnote."
 	},
 	"Command \\icite": {
 		"prefix": "\\icite",
 		"body": [
 			"\\icite${2:[]}{${1:bibEntryId}}"
 		],
-		"scope": "tex,latex"
+		"scope": "tex,latex",
+		"description": "Create a citation without a footnote."
 	},
 	"dhbwfigure environment": {
 		"prefix": "dhbwfigure",
@@ -82,7 +88,8 @@
 			"\t$TM_SELECTED_TEXT$0",
 			"\\end{dhbwfigure}"
 		],
-		"scope": "tex,latex"
+		"scope": "tex,latex",
+		"description": "Sets up a dhbwfigure environment with all possible fields."
 	},
 	"Command \\dhbwFigure": {
 		"prefix": "\\dhbwFigure",
@@ -96,7 +103,8 @@
 			"\tfloat\t= ${6:ht}",
 			"}"
 		],
-		"scope": "tex,latex"
+		"scope": "tex,latex",
+		"description": "Sets up the \\dhbwFigure command with all possible fields."
 	},
 	"Command \\dhbwWrapfigure": {
 		"prefix": "\\dhbwWrapfigure",
@@ -111,7 +119,8 @@
 			"\timage width\t= ${7:{0.4\\textwidth}}",
 			"}"
 		],
-		"scope": "tex,latex"
+		"scope": "tex,latex",
+		"description": "Sets up the \\dhbwWrapfigure command with all possible fields."
 	},
 	"dhbwtable environment": {
 		"prefix": "dhbwtable",
@@ -125,7 +134,8 @@
 			"\t$TM_SELECTED_TEXT$0",
 			"\\end{dhbwtable}"
 		],
-		"scope": "tex,latex"
+		"scope": "tex,latex",
+		"description": "Sets up the dhbwtable environment with all possible fields."
 	},
 	"code environment": {
 		"prefix": "code",
@@ -134,7 +144,8 @@
 			"$TM_SELECTED_TEXT$0",
 			"\\end{code}"
 		],
-		"scope": "tex,latex"
+		"scope": "tex,latex",
+		"description": "Sets up the code environment with all possible fields."
 	},
 	"protected code environment": {
 		"prefix": "codeprotected",
@@ -145,7 +156,8 @@
 			"\\end{code}",
 			"\\end{minipage}"
 		],
-		"scope": "tex,latex"
+		"scope": "tex,latex",
+		"description": "Sets up the code environment with all possible fields and wraps it inside a minipage environment to make sure that the subcaption and the code listings stick together."
 	},
 	"bib entry online": {
 		"prefix": "@online",
@@ -159,7 +171,8 @@
 			"\tdate\t\t= {${10:${11:0000}-${12:00}-${13:00}}}",
 			"}"
 		],
-		"scope": "tex,latex,bibtex"
+		"scope": "tex,latex,bibtex",
+		"description": "Adds a bibliography entry of type @online."
 	},
 	"bib entry book": {
 		"prefix": "@book",
@@ -174,6 +187,7 @@
 			"\tlocation\t= {$8}",
 			"}"
 		],
-		"scope": "tex,latex,bibtex"
+		"scope": "tex,latex,bibtex",
+		"description": "Adds a bibliography entry of type @book."
 	}
 }
