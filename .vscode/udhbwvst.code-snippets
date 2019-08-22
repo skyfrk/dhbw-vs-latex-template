@@ -13,7 +13,8 @@
 			"\tbib-file\t\t= {${8:literature.bib}},\t% Path to the bibliography file.",
 			"\tplantuml\t\t= ${9|false,true|}\t% Loads the plantuml package.",
 			"]{udhbwvst}"
-		]
+		],
+		"scope": "tex,latex"
 	},
 	"Command: \\dhbwSetup": {
 		"prefix": "\\dhbwSetup",
@@ -38,31 +39,36 @@
 			"\t\t% You have to manually sort them by alphabet.",
 			"\t}",
 			"}"
-		]
+		],
+		"scope": "tex,latex"
 	},
 	"Command \\footcite": {
 		"prefix": "\\footcite",
 		"body": [
 			"\\footcite[${2:Vgl.}][$3]{${1:bibEntryId}}"
-		]
+		],
+		"scope": "tex,latex"
 	},
 	"Command \\dfootcite": {
 		"prefix": "\\dfootcite",
 		"body": [
 			"\\dfootcite${2:[]}{${1:bibEntryId}}{$TM_SELECTED_TEXT$3}"
-		]
+		],
+		"scope": "tex,latex"
 	},
 	"Command \\ifootcite": {
 		"prefix": "\\ifootcite",
 		"body": [
 			"\\ifootcite${2:[]}{${1:bibEntryId}}"
-		]
+		],
+		"scope": "tex,latex"
 	},
 	"Command \\icite": {
 		"prefix": "\\icite",
 		"body": [
 			"\\icite${2:[]}{${1:bibEntryId}}"
-		]
+		],
+		"scope": "tex,latex"
 	},
 	"dhbwfigure environment": {
 		"prefix": "dhbwfigure",
@@ -75,7 +81,8 @@
 			"}",
 			"\t$TM_SELECTED_TEXT$0",
 			"\\end{dhbwfigure}"
-		]
+		],
+		"scope": "tex,latex"
 	},
 	"Command \\dhbwFigure": {
 		"prefix": "\\dhbwFigure",
@@ -88,7 +95,8 @@
 			"\twidth\t= ${5:\\textwidth},",
 			"\tfloat\t= ${6:ht}",
 			"}"
-		]
+		],
+		"scope": "tex,latex"
 	},
 	"Command \\dhbwWrapfigure": {
 		"prefix": "\\dhbwWrapfigure",
@@ -102,7 +110,8 @@
 			"\twidth\t\t= ${6:{0.45\\textwidth}},",
 			"\timage width\t= ${7:{0.4\\textwidth}}",
 			"}"
-		]
+		],
+		"scope": "tex,latex"
 	},
 	"dhbwtable environment": {
 		"prefix": "dhbwtable",
@@ -115,7 +124,8 @@
 			"}",
 			"\t$TM_SELECTED_TEXT$0",
 			"\\end{dhbwtable}"
-		]
+		],
+		"scope": "tex,latex"
 	},
 	"code environment": {
 		"prefix": "code",
@@ -123,7 +133,8 @@
 			"\\begin{code}{caption=$1,label=lst:$2,language=${3:javascript}}{$4}",
 			"$TM_SELECTED_TEXT$0",
 			"\\end{code}"
-		]
+		],
+		"scope": "tex,latex"
 	},
 	"protected code environment": {
 		"prefix": "codeprotected",
@@ -133,7 +144,8 @@
 			"$TM_SELECTED_TEXT$0",
 			"\\end{code}",
 			"\\end{minipage}"
-		]
+		],
+		"scope": "tex,latex"
 	},
 	"bib entry online": {
 		"prefix": "@online",
@@ -146,7 +158,8 @@
 			"\turldate\t\t= {${6:${7:0000}-${8:00}-${9:00}}},",
 			"\tdate\t\t= {${10:${11:0000}-${12:00}-${13:00}}}",
 			"}"
-		]
+		],
+		"scope": "tex,latex,bibtex"
 	},
 	"bib entry book": {
 		"prefix": "@book",
@@ -160,6 +173,7 @@
 			"\tpublisher\t= {$7},",
 			"\tlocation\t= {$8}",
 			"}"
-		]
+		],
+		"scope": "tex,latex,bibtex"
 	}
 }
