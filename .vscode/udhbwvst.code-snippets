@@ -1,0 +1,18 @@
+{
+	"Setup the udhbwvst class": {
+		"prefix": "udhbwvst",
+		"body": [
+			"\\documentclass[%",
+			"\tauto-generate\t= ${1|true,false|},\t% Generates all required pages around the text.",
+			"\tdebug\t\t\t= ${2|false,true|},\t% Loads packages lipsum and blindtext and displays hyperref-links.",
+			"\tprint-ndn\t\t= ${3|true,false|},\t% Prints the non-disclosure notice.",
+			"\tprint-loa\t\t= ${4|true,false|},\t% Prints the list of acronyms.",
+			"\tprint-lof\t\t= ${5|true,false|},\t% Prints the list of figures.",
+			"\tprint-lot\t\t= ${6|true,false|},\t% Prints the list of tables.",
+			"\tprint-lol\t\t= ${7|true,false|},\t% Prints the list of code listings.",
+			"\tbib-file\t\t= ${8:literature.bib},\t% Path to the bibliography file.",
+			"\tplantuml\t\t= ${9|false,true|}\t% Loads the plantuml package.",
+			"]{udhbwvst}"
+		]
+	}
+}
