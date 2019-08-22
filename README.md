@@ -1,7 +1,7 @@
 <div align=center>
 <h1>DHBW-VS academic text LaTeX template</h1>
 
-![Travis (.org)](https://img.shields.io/travis/skyfrk/dhbw-vs-latex-template?style=flat&color=brightgreen) ![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/skyfrk/dhbw-vs-latex-template?color=brightgreen&label=version) ![GitHub top language](https://img.shields.io/github/languages/top/skyfrk/dhbw-vs-latex-template?style=flat&color=brightgreen) ![GitHub](https://img.shields.io/github/license/skyfrk/dhbw-vs-latex-template?color=brightgreen) ![GitHub last commit](https://img.shields.io/github/last-commit/skyfrk/dhbw-vs-latex-template) ![GitHub All Releases](https://img.shields.io/github/downloads/skyfrk/dhbw-vs-latex-template/total?style=flat&color=brightgreen)
+![Travis (.org)](https://img.shields.io/travis/skyfrk/dhbw-vs-latex-template?style=flat&color=brightgreen) ![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/skyfrk/dhbw-vs-latex-template?color=brightgreen&label=version) ![GitHub commits since latest release](https://img.shields.io/github/commits-since/skyfrk/dhbw-vs-latex-template/latest?color=brightgreen) ![GitHub last commit](https://img.shields.io/github/last-commit/skyfrk/dhbw-vs-latex-template) ![GitHub All Releases](https://img.shields.io/github/downloads/skyfrk/dhbw-vs-latex-template/total?style=flat&color=brightgreen) ![GitHub](https://img.shields.io/github/license/skyfrk/dhbw-vs-latex-template?color=brightgreen)
 </div>
 
 ---
