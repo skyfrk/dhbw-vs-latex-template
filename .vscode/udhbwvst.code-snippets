@@ -183,5 +183,19 @@
 			"\tdate\t\t= {${10:${11:0000}-${12:00}-${13:00}}}",
 			"}"
 		]
+	},
+	"bib entry book": {
+		"prefix": "@book",
+		"body": [
+			"@book{$1,",
+			"\tauthor\t\t= {$2},",
+			"\ttitle\t\t= {$3},",
+			"\tshorttitle\t= {$4},",
+			"\tyear\t\t= {${5:0000}},",
+			"\tedition\t\t= {${6:3}},",
+			"\tpublisher\t= {$7},",
+			"\tlocation\t= {$8}",
+			"}"
+		]
 	}
 }
