@@ -105,7 +105,14 @@
 	"Command \\dhbwFigure": {
 		"prefix": "\\dhbwFigure",
 		"body": [
-			"\\dhbwFigure{caption=$1,label=fig:$2,path=$3,source=$4${5:,width=\\textwidth,float=ht}}"
+			"\\dhbwFigure{%",
+			"\tcaption\t= $1,",
+			"\tlabel\t= fig:$2,",
+			"\tpath\t= $3,",
+			"\tsource\t= $4,",
+			"\twidth\t= ${5:\\textwidth},",
+			"\tfloat\t= ${6:ht}",
+			"}"
 		]
 	},
 	"Command \\dhbwWrapfigure": {
