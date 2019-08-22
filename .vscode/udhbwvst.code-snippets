@@ -97,7 +97,12 @@
 	"dhbwfigure environment": {
 		"prefix": "dhbwfigure",
 		"body": [
-			"\\begin{dhbwfigure}{caption=$1,label=fig:$2,source=$3,float=${4:ht}}",
+			"\\begin{dhbwfigure}{%",
+			"\tcaption\t= $1,",
+			"\tlabel\t= fig:$2,",
+			"\tsource\t= $3,",
+			"\tfloat\t= ${4:ht}",
+			"}",
 			"\t$TM_SELECTED_TEXT$0",
 			"\\end{dhbwfigure}"
 		]
