@@ -39,5 +39,11 @@
 			"\t}",
 			"}"
 		]
+	},
+	"Command \\footcite": {
+		"prefix": "\\footcite",
+		"body": [
+			"\\footcite[${2:Vgl.}][$3]{${1:bibEntryId}}"
+		]
 	}
 }
