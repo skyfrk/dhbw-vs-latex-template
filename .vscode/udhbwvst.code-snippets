@@ -57,5 +57,11 @@
 		"body": [
 			"\\ifootcite${2:[]}{${1:bibEntryId}}"
 		]
+	},
+	"Command \\cite": {
+		"prefix": "\\cite",
+		"body": [
+			"\\cite[${2:Vgl.}][$3]{${1:bibEntryId}}"
+		]
 	}
 }
