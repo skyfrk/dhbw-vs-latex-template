@@ -154,5 +154,15 @@
 			"$TM_SELECTED_TEXT$0",
 			"\\end{code}"
 		]
+	},
+	"protected code environment": {
+		"prefix": "codeprotected",
+		"body": [
+			"\\begin{minipage}[c]{\\textwidth}",
+			"\\begin{code}{caption=$1,label=lst:$2,language=${3:javascript}}{$4}",
+			"$TM_SELECTED_TEXT$0",
+			"\\end{code}",
+			"\\end{minipage}"
+		]
 	}
 }
