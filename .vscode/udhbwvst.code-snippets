@@ -14,5 +14,30 @@
 			"\tplantuml\t\t= ${9|false,true|}\t% Loads the plantuml package.",
 			"]{udhbwvst}"
 		]
+	},
+	"Command: \\dhbwSetup": {
+		"prefix": "\\dhbwSetup",
+		"body": [
+			"\\dhbwSetup{%",
+			"\tauthor\t\t\t= ${1:Vorname Nachname},",
+			"\tfaculty\t\t\t= ${2|Wirtschaft,Sozialwesen|},",
+			"\tfield of study\t= ${3|Wirtschaftsinformatik,BWL-Bank,BWL-Controlling & Consulting,BWL-Digital Business Management,BWL-Industrie,BWL-International Business,BWL-Mittelständische Wirtschaft,BWL-Technical Management,RSW-Steuern und Prüfungswesen,RSW-Wirtschaftsprüfung,Soziale Arbeit - Bildung und Beruf,Soziale Arbeit - Jugend- Familien- und Sozialhilfe,Soziale Arbeit - Netzwerk- und Sozialraumarbeit,Soziale Arbeit im Gesundheitswesen,Soziale Arbeit - Menschen mit Behinderung,Soziale Arbeit - Psychische Gesundheit und Sucht,Sozialwirtschaft|},",
+			"\tacademic year\t= ${4:2017},",
+			"\tcourse\t\t\t= ${5|A,B,C,D|},",
+			"\ttitle\t\t\t= ${6:Titel der Arbeit},",
+			"\tsubtitle\t\t= ${7:Untertitel der Arbeit},",
+			"\ttext type\t\t= ${8|Projektarbeit 1,Projektarbeit 2,Bachelorarbeit|},",
+			"\tcompany name\t= ${9:Eine GmbH},",
+			"\tcompany logo\t= ${10:./assets/logo.png},",
+			"\tlecturer\t\t= ${11:Prof. Dr. Vorname Nachname},",
+			"\tlocation\t\t= ${12:Villingen-Schwenningen},",
+			"\tdate\t\t\t= ${13:\\today},",
+			"\tlongest acronym\t= ${14:xD},",
+			"\tacronyms\t\t= {%",
+			"\t\t% Define your acronyms with \\acro{short form}{long form} here.",
+			"\t\t% You have to manually sort them by alphabet.",
+			"\t}",
+			"}"
+		]
 	}
 }
