@@ -75,5 +75,11 @@
 		"body": [
 			"\\acro{$1}{$2}"
 		]
+	},
+	"Command \\acroplural": {
+		"prefix": "\\acroplural",
+		"body": [
+			"\\acroplural{$1}{$2}"
+		]
 	}
 }
