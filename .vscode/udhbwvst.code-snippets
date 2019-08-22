@@ -51,5 +51,11 @@
 		"body": [
 			"\\dfootcite${2:[]}{${1:bibEntryId}}{$TM_SELECTED_TEXT$3}"
 		]
+	},
+	"Command \\ifootcite": {
+		"prefix": "\\ifootcite",
+		"body": [
+			"\\ifootcite${2:[]}{${1:bibEntryId}}"
+		]
 	}
 }
