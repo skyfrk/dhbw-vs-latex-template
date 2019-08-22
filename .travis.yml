@@ -4,7 +4,7 @@ language: generic
 script:
  - cd . # nothing to do here
 before_deploy:
-- zip -r ${REPO_NAME}_${TRAVIS_TAG}-${TRAVIS_BUILD_NUMBER}.zip .vscode src .gitignore build.sh build.ps1 install_udhbwvst_tl.ps1 install_udhbwvst_tl.sh
+- zip -r ${REPO_NAME}_${TRAVIS_TAG}-${TRAVIS_BUILD_NUMBER}.zip .vscode src .gitignore build.sh build.ps1 install_udhbwvst_tl.ps1 install_udhbwvst_tl.sh -x src/.gitignore
 deploy:
   provider: releases
   api_key:
