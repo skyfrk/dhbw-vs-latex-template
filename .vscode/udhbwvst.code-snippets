@@ -81,5 +81,11 @@
 		"body": [
 			"\\acroplural{$1}{$2}"
 		]
+	},
+	"Command \\ac": {
+		"prefix": "\\ac",
+		"body": [
+			"\\ac{$1}"
+		]
 	}
 }
