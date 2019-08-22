@@ -56,5 +56,6 @@
     ],
     "latex-workshop.synctex.afterBuild.enabled": true,
     "latex-workshop.intellisense.package.enabled": true,
-    "latex-workshop.chktex.enabled": true
+    "latex-workshop.chktex.enabled": true,
+    "editor.tabCompletion": "onlySnippets"
 }
