@@ -502,6 +502,8 @@ When you're researching it is advised to store every source of information as an
 
 :warning: The DHBW-VS bibliography style was only tested with the entires of type [book](#add-entry-of-type-book) and [online](#add-entry-of-type-online). However [other types of entries](https://www.ctan.org/pkg/biblatex) should also work as long as they provide a `shorttitle` field!
 
+:warning: Make sure [to escape special characters](https://tex.stackexchange.com/a/34586) with `\`.
+
 ### Add entry of type book
 
 In order to satisfy the DHBW-VS requirements an bibliography entry of type `book` has to provide following fields:
