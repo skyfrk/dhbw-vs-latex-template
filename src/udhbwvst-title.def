@@ -1,47 +1,48 @@
 \newgeometry{
 left=3cm,
 right=3cm,
-top=2cm,
-bottom=4cm
+top=3cm,
+bottom=3cm
 }
 
-\begin{center}
-\vspace*{1cm} \ \\
-{\fontsize{40}{48}\selectfont \bfseries \dhbwGetTitle \\}
-\vspace{0.75cm}
-{\Large\bfseries \dhbwGetSubtitle \\}
-\vspace{1.5cm}
-\dhbwGetTextType \\
-Studienjahrgang \dhbwGetAcademicYear \\
-Kurs \dhbwGetCourse \\
-\vspace{1.5cm}
-Fakultät \dhbwGetFaculty \\
-Studiengang \dhbwGetFieldOfStudy \\
-DUALE HOCHSCHULE BADEN-WÜRTTEMBERG\\
-VILLINGEN-SCHWENNINGEN\\
-\end{center}
-\ifbool{udhbwvst@if@print@ndn}{%
-    \begin{textblock*}{50mm}(30mm,160mm)
-        \begin{rotate}{50}
-            \fontsize{34}{40}\bfseries\textcolor{red}{Sperrvermerk}
-        \end{rotate}
-    \end{textblock*}
+\definecolor{dhbwRed}{RGB}{226,0,26}
+
+\begin{minipage}{.05\linewidth}
+    \rule{1pt}{7cm}
+\end{minipage}
+\begin{minipage}{.95\linewidth}
+\begin{flushleft}
+\vspace*{\baselineskip}
+{\Huge\textbf{\dhbwGetTitle}}\\   
+\ifdef{\dhbwGetSubtitle}{%
+\vspace*{\baselineskip}
+{\Large\textbf{\dhbwGetSubtitle}}
 }{}
-\begin{table}[b]
-\begin{tabular}{ll}
-Bearbeiter: 		&	\dhbwGetAuthor \\
-Ausbildungsbetrieb:	&	\dhbwGetCompanyName \\
-Betreuender Dozent:	&	\dhbwGetLecturer \\
-\end{tabular}\\
-\\
-\\
-\begin{tabularx}{\textwidth}{lXl}
-\includegraphics[width=.3\linewidth]{dhbw-vs-logo.png} &
-&
-\ifdef{\dhbwGetCompanyLogo}{%
-\includegraphics[width=.3\linewidth]{\dhbwGetCompanyLogo}
-}{}
-\end{tabularx}
-\end{table}
+\end{flushleft}
+\end{minipage}\\
+
+\vfill
+
+\begin{minipage}{0.3\linewidth}
+    \hfill firmen logo
+\end{minipage}
+\begin{minipage}{0.6\linewidth}
+    \hfill daten
+\end{minipage}
+\hfill\begin{minipage}{0.05\linewidth}
+    \hfill\rule{1pt}{5cm}
+\end{minipage}\\
+
+\vspace*{2cm}
+
+\begin{minipage}{0.05\linewidth}
+    \rule{1pt}{5cm}
+\end{minipage}
+\begin{minipage}{0.6\linewidth}
+    daten
+\end{minipage}
+\begin{minipage}{0.3\linewidth}
+    dh logo
+\end{minipage}
 
 \restoregeometry
