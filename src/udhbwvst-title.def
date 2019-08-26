@@ -1,48 +1,64 @@
-\newgeometry{
-left=3cm,
-right=3cm,
-top=3cm,
-bottom=3cm
+\newgeometry{%
+    left    = 25mm,
+    right   = 25mm,
+    top     = 30mm,
+    bottom  = 30mm
 }
 
-\definecolor{dhbwRed}{RGB}{226,0,26}
+\ifbool{udhbwvst@if@print@ndn}{%
+    \begin{textblock*}{50mm}(35mm,185mm)
+        \begin{rotate}{40}
+            \fontsize{40}{40}\bfseries\textcolor{dhbwRed}{Sperrvermerk}
+        \end{rotate}
+    \end{textblock*}
+}{}
 
 \begin{minipage}{.05\linewidth}
-    \rule{1pt}{7cm}
+    \rule{4pt}{6cm}
 \end{minipage}
-\begin{minipage}{.95\linewidth}
-\begin{flushleft}
-\vspace*{\baselineskip}
-{\Huge\textbf{\dhbwGetTitle}}\\   
-\ifdef{\dhbwGetSubtitle}{%
-\vspace*{\baselineskip}
-{\Large\textbf{\dhbwGetSubtitle}}
-}{}
-\end{flushleft}
+\begin{minipage}{.9\linewidth}
+    \begin{flushleft}
+        {\Huge\textbf{\dhbwGetTitle}}\\   
+        \ifdef{\dhbwGetSubtitle}{%
+            \vspace*{\baselineskip}
+            {\Large\textbf{\dhbwGetSubtitle}}
+        }{}
+    \end{flushleft}
 \end{minipage}\\
 
 \vfill
 
-\begin{minipage}{0.3\linewidth}
-    \hfill firmen logo
+\begin{minipage}{.95\linewidth}
+\begin{flushright}
+    \textbf{\dhbwGetAuthor}\ \cdot\ \dhbwGetCompanyName\\
+    \dhbwGetFieldOfStudy\ \cdot\ Jahrgang\ \dhbwGetAcademicYear\ \cdot\ Kurs\ \dhbwGetCourse\\
+    \dhbwGetTextType\\
+    \ifdef{\dhbwGetCompanyLogo}{%
+        \vspace{1cm}
+        \includegraphics[width=.35\linewidth]{\dhbwGetCompanyLogo}
+    }{}
+    \end{flushright}
 \end{minipage}
-\begin{minipage}{0.6\linewidth}
-    \hfill daten
-\end{minipage}
-\hfill\begin{minipage}{0.05\linewidth}
-    \hfill\rule{1pt}{5cm}
+\hfill\begin{minipage}{.05\linewidth}
+    \hfill\rule{2pt}{6cm}
 \end{minipage}\\
 
 \vspace*{2cm}
 
-\begin{minipage}{0.05\linewidth}
-    \rule{1pt}{5cm}
+\begin{minipage}{.05\linewidth}
+    \rule{2pt}{4cm}
 \end{minipage}
 \begin{minipage}{0.6\linewidth}
-    daten
-\end{minipage}
+    \begin{flushleft}
+        \textbf{Duale Hochschule Baden-Württemberg}\\
+        \textbf{Villingen-Schwenningen}\\
+        Fakultät\ \dhbwGetFaculty\\
+        Betreuer dieser Arbeit:\\
+        \dhbwGetLecturer\\
+    \end{flushleft}
+\end{minipage}\hfill
 \begin{minipage}{0.3\linewidth}
-    dh logo
+    \includegraphics[width=\linewidth]{dhbw-vs-logo.png}
 \end{minipage}
 
 \restoregeometry
