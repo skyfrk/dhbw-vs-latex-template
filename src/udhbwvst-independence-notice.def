@@ -3,7 +3,12 @@
 Ich versichere hiermit, dass ich meine \dhbwGetTextType{} mit dem Thema
 
 \begin{center}
-    \textbf{{\large \dhbwGetTitle{}} \\\dhbwGetSubtitle{}}
+    \textbf{%
+        {\large \dhbwGetTitle{}}\\
+        \ifdef{\dhbwGetSubtitle{}}{%
+            \dhbwGetSubtitle{}
+        }{}
+    }
 \end{center}
 
 selbstständig und nur mit den angegebenen Quellen und Hilfsmitteln verfasst habe sowie dass die eingereichte gedruckte Version mit der elektronischen Version inhaltlich übereinstimmt.
