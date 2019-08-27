@@ -143,6 +143,9 @@
 % fix for #21 (long author names in footnotes)
 \renewcommand\@makefntext[1]{\leftskip=1em\hskip-0em\@makefnmark#1}
 
+% xcolor package
+\definecolor{dhbwRed}{RGB}{226,0,26}
+
 % tocloft package
 \renewcommand{\cftfigpresnum}{Abbildung }
 \renewcommand{\cfttabpresnum}{Tabelle }  

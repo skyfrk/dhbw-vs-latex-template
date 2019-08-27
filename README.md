@@ -34,7 +34,6 @@ The code below is enough to generate a title page, a non-disclosure notice, a ta
     academic year   = 1990,
     course          = B,
     title           = Eine Arbeit,
-    subtitle        = Ein Untertitel,
     text type       = Projektarbeit 2,
     company name    = SpaceX,
     lecturer        = Prof. Dr. Frank Staab
