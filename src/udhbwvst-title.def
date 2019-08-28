@@ -18,9 +18,11 @@
 \end{minipage}
 \begin{minipage}{.9\linewidth}
     \begin{flushleft}
-        {\Huge\textbf{\dhbwGetTitle}}\\   
+        \setstretch{2}
+        {\Huge\textbf{\dhbwGetTitle}}\\
         \ifdef{\dhbwGetSubtitle}{%
-            \vspace*{\baselineskip}
+            \vspace*{3mm}
+            \setstretch{1.5}
             {\Large\textbf{\dhbwGetSubtitle}}
         }{}
     \end{flushleft}
