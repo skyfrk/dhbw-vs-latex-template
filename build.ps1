@@ -13,10 +13,10 @@ if (-not (Get-Command lualatex -errorAction SilentlyContinue)){
 if (Get-Command latexmk -errorAction SilentlyContinue)
 {
     Write-Host 'Using latexmk'
-    latexmk -synctex=1 -interaction=nonstopmode -file-line-error -pdf -pdflatex=lualatex $file
+    latexmk -synctex=1 -interaction=nonstopmode -file-line-error -shell-escape -pdf -pdflatex=lualatex $file
 } else {
-    lualatex -synctex=1 -interaction=nonstopmode -file-line-error $file
+    lualatex -synctex=1 -interaction=nonstopmode -file-line-error -shell-escape $file
     biber (Get-Item $file ).Basename
-    lualatex -synctex=1 -interaction=nonstopmode -file-line-error $file
-    lualatex -synctex=1 -interaction=nonstopmode -file-line-error $file
+    lualatex -synctex=1 -interaction=nonstopmode -file-line-error -shell-escape $file
+    lualatex -synctex=1 -interaction=nonstopmode -file-line-error -shell-escape $file
 }
