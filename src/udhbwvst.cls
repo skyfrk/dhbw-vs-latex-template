@@ -149,7 +149,7 @@
 % acro package
 \DeclareAcroListStyle{dhbw}{table}{%
   table = longtable,
-  table-spec = >{\bfseries}lp{.7\linewidth}
+  table-spec = >{\bfseries}lp{\linewidth}
 }
 
 \acsetup{%
