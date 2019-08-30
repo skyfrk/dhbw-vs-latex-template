@@ -73,8 +73,6 @@ In order to use the template you have to run the `\dhbwSetup{...}` command in yo
 | `lecturer`        | `\dhbwGetLecturer`       | -                      | Name of the lecturer of the author.                                  | Prof. Dr. Martin Kimmig |
 | `location`        | `\dhbwGetLocation`       | Villingen-Schwenningen | Name of the location where the author signs the independence notice. | Villingen-Schwenningen  |
 | `date`            | `\dhbwGetDate`           | `\today`               | When the author signs the independence notice.                       | 21. August 2019         |
-| `longest acronym` | `\dhbwGetLongestAcronym` | xD                     | The longest acronym in short form (Required for formatting).         | `DevOps`                |
-| `acronyms`        | `\dhbwGetAcronyms`       | `{}`                   | The definition of the acronyms used in the text.                     | See [here](#acronyms)   |
 
 ### Document structure \dhbw* commands
 
