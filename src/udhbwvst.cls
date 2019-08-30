@@ -103,6 +103,7 @@
 \RequirePackage{xcolor}
 \RequirePackage{listings}
 \RequirePackage{xparse}
+\RequirePackage{acro}
 \RequirePackage[parfill]{parskip}
 
 % load optional packages
@@ -144,6 +145,19 @@
 
 % xcolor package
 \definecolor{dhbwRed}{RGB}{226,0,26}
+
+% acro package
+\DeclareAcroListStyle{dhbw}{table}{%
+  table = longtable,
+  table-spec = >{\bfseries}lp{.7\linewidth}
+}
+
+\acsetup{%
+  hyperref    = true,
+  only-used   = true,
+  sort        = true,
+  list-style  = dhbw
+}
 
 % tocloft package
 \renewcommand{\cftfigpresnum}{Abbildung }
@@ -641,7 +655,7 @@
 \newcommand{\dhbwPrintListOfAcronyms}{%
   \ifbool{udhbwvst@if@print@loa}{%
     \newpage
-    \section*{Abkürzungsverzeichnis}\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
+    \printacronyms[name=Abkürzungsverzeichnis]\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
   }{}
 } 
 
