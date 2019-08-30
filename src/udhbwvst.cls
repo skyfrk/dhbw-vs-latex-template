@@ -102,7 +102,6 @@
 \RequirePackage{caption}
 \RequirePackage{xcolor}
 \RequirePackage{listings}
-\RequirePackage[printonlyused]{acronym}
 \RequirePackage{xparse}
 \RequirePackage[parfill]{parskip}
 
@@ -607,11 +606,7 @@
   location/.store in          = \dhbwGetLocation,
   location                    = Villingen-Schwenningen,
   date/.store in              = \dhbwGetDate,
-  date                        = \today,
-  longest acronym/.store in   = \dhbwGetLongestAcronym,
-  longest acronym             = xD,
-  acronyms/.store in          = \dhbwGetAcronyms,
-  acronyms                    = {}
+  date                        = \today
 }
 
 \newrobustcmd\dhbwSetup[1]{\pgfqkeys{/dhbwSetup}{#1}}
@@ -647,10 +642,6 @@
   \ifbool{udhbwvst@if@print@loa}{%
     \newpage
     \section*{Abkürzungsverzeichnis}\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
-    \begin{acronym}[\dhbwGetLongestAcronym{}\dhbwGetLongestAcronym{}] % spacing between acronym and long name
-      \setlength{\itemsep}{-\parsep} % line spacing
-      \dhbwGetAcronyms
-    \end{acronym}
   }{}
 } 
 
