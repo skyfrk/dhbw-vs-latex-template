@@ -102,8 +102,8 @@
 \RequirePackage{caption}
 \RequirePackage{xcolor}
 \RequirePackage{listings}
-\RequirePackage[printonlyused]{acronym}
 \RequirePackage{xparse}
+\RequirePackage{acro}
 \RequirePackage[parfill]{parskip}
 
 % load optional packages
@@ -145,6 +145,19 @@
 
 % xcolor package
 \definecolor{dhbwRed}{RGB}{226,0,26}
+
+% acro package
+\DeclareAcroListStyle{dhbw}{table}{%
+  table = longtable,
+  table-spec = >{\bfseries}lp{\linewidth}
+}
+
+\acsetup{%
+  hyperref    = true,
+  only-used   = true,
+  sort        = true,
+  list-style  = dhbw
+}
 
 % tocloft package
 \renewcommand{\cftfigpresnum}{Abbildung }
@@ -607,11 +620,7 @@
   location/.store in          = \dhbwGetLocation,
   location                    = Villingen-Schwenningen,
   date/.store in              = \dhbwGetDate,
-  date                        = \today,
-  longest acronym/.store in   = \dhbwGetLongestAcronym,
-  longest acronym             = xD,
-  acronyms/.store in          = \dhbwGetAcronyms,
-  acronyms                    = {}
+  date                        = \today
 }
 
 \newrobustcmd\dhbwSetup[1]{\pgfqkeys{/dhbwSetup}{#1}}
@@ -646,11 +655,7 @@
 \newcommand{\dhbwPrintListOfAcronyms}{%
   \ifbool{udhbwvst@if@print@loa}{%
     \newpage
-    \section*{Abkürzungsverzeichnis}\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
-    \begin{acronym}[\dhbwGetLongestAcronym{}\dhbwGetLongestAcronym{}] % spacing between acronym and long name
-      \setlength{\itemsep}{-\parsep} % line spacing
-      \dhbwGetAcronyms
-    \end{acronym}
+    \printacronyms[name=Abkürzungsverzeichnis]\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
   }{}
 } 
 
