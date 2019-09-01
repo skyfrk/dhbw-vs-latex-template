@@ -16,7 +16,7 @@ Checkout [this example](./docs/examples/full/full.pdf) featuring all the magic o
 
 1. Download the [latest release](https://github.com/skyfrk/dhbw-vs-latex-template/releases/latest).
 2. Run through the [setup instructions](./docs/setup.md).
-3. Get the [recommended starter template](./docs/examples/starter-recommended), start writing your text and read the [docs](./docs/writing.md)!
+3. Get the [recommended starter template](./docs/examples/starter-recommended), apply [necessary patches](./docs/patches.md), start writing your text and read the [docs](./docs/writing.md)!
 
 ### [:open_book: Documentation](./docs/writing.md)
 
