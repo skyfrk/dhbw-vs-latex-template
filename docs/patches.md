@@ -4,7 +4,7 @@
 - [Required adjustments for 2018 students](#required-adjustments-for-2018-students)
 - [Required adjustments for 2019 students](#required-adjustments-for-2019-students)
 
-Since the formatting specifications for text work at the DHBW-VS are changed regularly, so that no template can be created which could relieve students of the scientific work, a few manual adjustments are necessary for the different academic years.
+Since the formatting specifications for text work at the DHBW-VS are [changed regularly](https://github.com/skyfrk/dhbw-vs-latex-template/issues/42), so that no template can be created which could relieve students of the scientific work, a few manual adjustments are necessary for the different academic years.
 
 :warning: This template always tries to satisfy the latest requirements. Required adjustments for compliance with older specifications are documented here.
 
