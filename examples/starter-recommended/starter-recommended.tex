@@ -1,5 +1,5 @@
 \documentclass[%
-    auto-generate   = false,            % generate all required pages
+    auto-generate   = true,             % generate all required pages
     debug           = false,            % turn on debug for \lipsum, \blindtext and hyperref link markers
     print-ndn       = true,             % print non-disclosure notice
     print-loa       = true,             % print list of acronyms
@@ -23,33 +23,13 @@
     company logo    = company-logo.png,         % Path to the logo of the authors employer.
     lecturer        = Prof. Dr. Frank Staab,    % Name of the lecturer of the author.
     location        = Villingen-Schwenningen,   % Name of the location where the author signs the independence notice.
-    date            = \today,                   % When the author signs the independence notice.
-    longest acronym = API,                      % The longest acronym you defined below (used for formatting).
-    acronyms        = {}
+    date            = \today                    % When the author signs the independence notice.
 }
 
 \begin{document}
 
-\dhbwSetFrontMatter
-
-\dhbwPrintTitle
-\dhbwPrintNonDisclosureNotice
-\dhbwPrintTableOfContents
-
-\dhbwSetListMatter
-
-\dhbwPrintListOfAcronyms
-\dhbwPrintListOfFigures
-\dhbwPrintListOfTables
-\dhbwPrintListOfListings
-
-\dhbwSetMainMatter
-
 \section{Einleitung}
 
 Your text here.\ifootcite{example_online}
-
-\dhbwPrintBibliography
-\dhbwPrintIndependenceNotice
 
 \end{document}

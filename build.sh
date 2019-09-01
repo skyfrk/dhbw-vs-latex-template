@@ -15,13 +15,13 @@ fi
 
 if [ -x "$(command -v latexmk)" ]; then
   echo 'Using latexmk to compile.' >&2
-  latexmk -synctex=1 -interaction=nonstopmode -file-line-error -pdf -pdflatex=lualatex $FILE
+  latexmk -synctex=1 -interaction=nonstopmode -file-line-error -shell-escape -pdf -pdflatex=lualatex $FILE
   exit 0
 fi
 
-lualatex -synctex=1 -interaction=nonstopmode -file-line-error $FILE
+lualatex -synctex=1 -interaction=nonstopmode -file-line-error -shell-escape $FILE
 biber $FILE_WITHOUT_EXT
-lualatex -synctex=1 -interaction=nonstopmode -file-line-error $FILE
-lualatex -synctex=1 -interaction=nonstopmode -file-line-error $FILE
+lualatex -synctex=1 -interaction=nonstopmode -file-line-error -shell-escape $FILE
+lualatex -synctex=1 -interaction=nonstopmode -file-line-error -shell-escape $FILE
 
 exit 0

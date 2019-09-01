@@ -1,14 +1,14 @@
 <div align=center>
 <h1>DHBW-VS academic text LaTeX template</h1>
 
-![Travis (.org)](https://img.shields.io/travis/skyfrk/dhbw-vs-latex-template?style=flat&color=brightgreen) ![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/skyfrk/dhbw-vs-latex-template?color=brightgreen&label=version) ![GitHub commits since latest release](https://img.shields.io/github/commits-since/skyfrk/dhbw-vs-latex-template/latest?color=brightgreen) ![GitHub last commit](https://img.shields.io/github/last-commit/skyfrk/dhbw-vs-latex-template) ![GitHub All Releases](https://img.shields.io/github/downloads/skyfrk/dhbw-vs-latex-template/total?style=flat&color=brightgreen) ![GitHub](https://img.shields.io/github/license/skyfrk/dhbw-vs-latex-template?color=brightgreen)
+![Travis (.org)](https://img.shields.io/travis/skyfrk/dhbw-vs-latex-template?style=flat&color=brightgreen) ![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/skyfrk/dhbw-vs-latex-template?color=brightgreen&label=version) ![GitHub commits since latest release](https://img.shields.io/github/commits-since/skyfrk/dhbw-vs-latex-template/latest/develop?color=brightgreen) ![GitHub last commit](https://img.shields.io/github/last-commit/skyfrk/dhbw-vs-latex-template) ![GitHub All Releases](https://img.shields.io/github/downloads/skyfrk/dhbw-vs-latex-template/total?style=flat&color=brightgreen) ![GitHub](https://img.shields.io/github/license/skyfrk/dhbw-vs-latex-template?color=brightgreen)
 </div>
 
 ---
 
 This is a unofficial LaTeX template for academic text assignments at the [DBHW-VS](https://www.dhbw-vs.de/), especially for business computer science students created along [the specifications](docs/dhbw-text-requirements-2017.md) by Mrs. Heinrich. Using this template **speeds up the writing process** as you only have to **focus on writing actual content**. All weird formatting requirements are met automatically! :beer::sunglasses::v:
 
-Checkout [this example](./docs/examples/full/full.pdf) featuring all the magic of this template!
+Checkout [this example](./examples/full/full.pdf) featuring all the magic of this template!
 
 >If you're looking for a [Citavi](https://www.citavi.com/) template checkout [stabiloBOSS96/ZitationsstilDHBW-VS-WI](https://github.com/stabiloBOSS96/ZitationsstilDHBW-VS-WI).
 
@@ -16,7 +16,7 @@ Checkout [this example](./docs/examples/full/full.pdf) featuring all the magic o
 
 1. Download the [latest release](https://github.com/skyfrk/dhbw-vs-latex-template/releases/latest).
 2. Run through the [setup instructions](./docs/setup.md).
-3. Get the [recommended starter template](./docs/examples/starter-recommended), start writing your text and read the [docs](./docs/writing.md)!
+3. Get the [recommended starter template](./examples/starter-recommended), apply [necessary patches](./docs/patches.md), start writing your text and read the [docs](./docs/writing.md)!
 
 ### [:open_book: Documentation](./docs/writing.md)
 

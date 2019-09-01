@@ -102,8 +102,8 @@
 \RequirePackage{caption}
 \RequirePackage{xcolor}
 \RequirePackage{listings}
-\RequirePackage[printonlyused]{acronym}
 \RequirePackage{xparse}
+\RequirePackage{acro}
 \RequirePackage[parfill]{parskip}
 
 % load optional packages
@@ -145,6 +145,19 @@
 
 % xcolor package
 \definecolor{dhbwRed}{RGB}{226,0,26}
+
+% acro package
+\DeclareAcroListStyle{dhbw}{table}{%
+  table = longtable,
+  table-spec = >{\bfseries}lp{\linewidth}
+}
+
+\acsetup{%
+  hyperref    = true,
+  only-used   = true,
+  sort        = true,
+  list-style  = dhbw
+}
 
 % tocloft package
 \renewcommand{\cftfigpresnum}{Abbildung }
@@ -253,7 +266,6 @@
 \addbibresource{\udhbwvst@var@bibfile}
 
 % Delimitors
-\DeclareDelimFormat[bib,biblist]{nametitledelim}{\addcolon\space}
 \renewcommand{\newunitpunct}{\addcomma\space}
 \DeclareDelimFormat{multinamedelim}{\addsemicolon\space}
 \DeclareDelimAlias{finalnamedelim}{multinamedelim}
@@ -262,7 +274,7 @@
 \DeclareNameAlias{sortname}{family-given}
 
 % Shorttitle in parens
-\DeclareFieldFormat*{shorttitle}{\mkbibparens{#1}}
+\DeclareFieldFormat*{shorttitle}{\mkbibbrackets{#1}}
 
 % No italics in title and subtitle
 \DeclareFieldFormat{title}{\normalfont{#1}}
@@ -316,7 +328,7 @@
   \let\blx@done\relax
   \blx@listloop{#1}%
   % tabular output for each item in list macro
-  \def\do##1{\bbx@tab@label{##1} & \bbx@tab@item{##1}\\}%
+  \def\do##1{\bbx@tab@label{##1}\addcolon & \bbx@tab@item{##1}\\}%
   \csuse{blx@env@\blx@theenv}%
   \dolistloop{\blx@tempa}%
   \csuse{blx@endenv@\blx@theenv}%
@@ -607,14 +619,21 @@
   location/.store in          = \dhbwGetLocation,
   location                    = Villingen-Schwenningen,
   date/.store in              = \dhbwGetDate,
-  date                        = \today,
-  longest acronym/.store in   = \dhbwGetLongestAcronym,
-  longest acronym             = xD,
-  acronyms/.store in          = \dhbwGetAcronyms,
-  acronyms                    = {}
+  date                        = \today
 }
 
 \newrobustcmd\dhbwSetup[1]{\pgfqkeys{/dhbwSetup}{#1}}
+
+\newcommand{\dhbwSetFontArial}{%
+  \setsansfont{Arial}
+  \renewcommand{\familydefault}{\sfdefault}
+}
+
+\newcommand{\dhbwSetFontTimesNewRoman}{%
+  \setmainfont{Times New Roman}
+  \renewcommand{\familydefault}{\rmdefault}
+}
+
 
 \newcommand{\dhbwSetFrontMatter}{%
   \selectlanguage{ngerman}
@@ -646,11 +665,7 @@
 \newcommand{\dhbwPrintListOfAcronyms}{%
   \ifbool{udhbwvst@if@print@loa}{%
     \newpage
-    \section*{Abkürzungsverzeichnis}\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
-    \begin{acronym}[\dhbwGetLongestAcronym{}\dhbwGetLongestAcronym{}] % spacing between acronym and long name
-      \setlength{\itemsep}{-\parsep} % line spacing
-      \dhbwGetAcronyms
-    \end{acronym}
+    \printacronyms[name=Abkürzungsverzeichnis]\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
   }{}
 } 
 
@@ -683,7 +698,9 @@
 
 \newcommand{\dhbwPrintBibliography}{%
   \newpage
+  \singlespacing
   \printbibtabular[title=\udhbwvst@var@bibliographyname]\addcontentsline{toc}{section}{\udhbwvst@var@bibliographyname}
+  \onehalfspacing
 }
 
 \newcommand{\dhbwPrintIndependenceNotice}{%

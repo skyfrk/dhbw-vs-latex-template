@@ -33,12 +33,7 @@
 			"\tcompany logo\t= {${10:./assets/logo.png}},",
 			"\tlecturer\t\t= {${11:Prof. Dr. Vorname Nachname}},",
 			"\tlocation\t\t= {${12:Villingen-Schwenningen}},",
-			"\tdate\t\t\t= {${13:\\today}},",
-			"\tlongest acronym\t= {${14:xD}},",
-			"\tacronyms\t\t= {%",
-			"\t\t% Define your acronyms with \\acro{short form}{long form} here.",
-			"\t\t% You have to manually sort them by alphabet.",
-			"\t}",
+			"\tdate\t\t\t= {${13:\\today}}",
 			"}"
 		],
 		"scope": "tex,latex",
@@ -189,5 +184,16 @@
 		],
 		"scope": "tex,latex,bibtex",
 		"description": "Adds a bibliography entry of type @book."
+	},
+	"Command \\DeclareAcronym": {
+		"prefix": "\\decacro",
+		"body": [
+			"\\DeclareAcronym{$1}{%",
+			"\tshort\t\t= ${2:$1},",
+			"\tlong\t\t= $3",
+			"}"
+		],
+		"scope": "tex,latex",
+		"description": "Sets up the \\DeclareAcronym command with the short and long field. The VSCode extension LaTeX Workshop already has a snippet defined but that one doesn't come with the two standard fields already in place."
 	}
 }

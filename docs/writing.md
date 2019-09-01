@@ -6,6 +6,7 @@ Documentation and general tips and tricks on how to wirte an academic text assig
   - [Class options](#class-options)
   - [Required \dhbwSetup command](#required-dhbwsetup-command)
   - [Document structure \dhbw* commands](#document-structure-dhbw-commands)
+  - [More \dhbw* commands](#more-dhbw-commands)
 - [Sectioning](#sectioning)
   - [Sections](#sections)
   - [Subsections](#subsections)
@@ -58,23 +59,21 @@ The name of the class stands for ***Unofficial DHBW Villingen-Schwenningen*** La
 
 In order to use the template you have to run the `\dhbwSetup{...}` command in your preamble. All parameters without a default value are **required**. You can access any key inside your document with the `\dhbwGet*` commands.
 
-| Parameter         | Stored in                | Default                | Description                                                          | Example                 |
-| ----------------- | ------------------------ | ---------------------- | -------------------------------------------------------------------- | ----------------------- |
-| `author`          | `\dhbwGetAuthor`         | -                      | Full name of the author.                                             | Max Mustermann          |
-| `faculty`         | `\dhbwGetFaculty`        | -                      | Faculty of the author.                                               | Wirtschaft              |
-| `field of study`  | `\dhbwGetFieldOfStudy`   | -                      | Field of study of the author.                                        | Wirtschaftsinformatik   |
-| `academic year`   | `\dhbwGetAcademicYear`   | -                      | Academic year of the author.                                         | 2017                    |
-| `course`          | `\dhbwGetCourse`         | -                      | Course of the author.                                                | B                       |
-| `title`           | `\dhbwGetTitle`          | -                      | Title of the text.                                                   | Eine Arbeit             |
-| `subtitle`        | `\dhbwGetSubtitle`       | -                      | Subtitle of the text                                                 | Mit einem Untertitel    |
-| `text type`       | `\dhbwGetTextType`       | -                      | Type of the text.                                                    | Projektarbeit 2         |
-| `company name`    | `\dhbwGetCompanyName`    | -                      | Name of the authors employer.                                        | Eine GmbH               |
-| `company logo`    | `\dhbwGetCompanyLogo`    | -                      | Path to the logo of the authors employer.                            | `./assets/logo.png`     |
-| `lecturer`        | `\dhbwGetLecturer`       | -                      | Name of the lecturer of the author.                                  | Prof. Dr. Martin Kimmig |
-| `location`        | `\dhbwGetLocation`       | Villingen-Schwenningen | Name of the location where the author signs the independence notice. | Villingen-Schwenningen  |
-| `date`            | `\dhbwGetDate`           | `\today`               | When the author signs the independence notice.                       | 21. August 2019         |
-| `longest acronym` | `\dhbwGetLongestAcronym` | xD                     | The longest acronym in short form (Required for formatting).         | `DevOps`                |
-| `acronyms`        | `\dhbwGetAcronyms`       | `{}`                   | The definition of the acronyms used in the text.                     | See [here](#acronyms)   |
+| Parameter        | Stored in              | Default                | Description                                                          | Example                 |
+| ---------------- | ---------------------- | ---------------------- | -------------------------------------------------------------------- | ----------------------- |
+| `author`         | `\dhbwGetAuthor`       | -                      | Full name of the author.                                             | Max Mustermann          |
+| `faculty`        | `\dhbwGetFaculty`      | -                      | Faculty of the author.                                               | Wirtschaft              |
+| `field of study` | `\dhbwGetFieldOfStudy` | -                      | Field of study of the author.                                        | Wirtschaftsinformatik   |
+| `academic year`  | `\dhbwGetAcademicYear` | -                      | Academic year of the author.                                         | 2017                    |
+| `course`         | `\dhbwGetCourse`       | -                      | Course of the author.                                                | B                       |
+| `title`          | `\dhbwGetTitle`        | -                      | Title of the text.                                                   | Eine Arbeit             |
+| `subtitle`       | `\dhbwGetSubtitle`     | -                      | Subtitle of the text                                                 | Mit einem Untertitel    |
+| `text type`      | `\dhbwGetTextType`     | -                      | Type of the text.                                                    | Projektarbeit 2         |
+| `company name`   | `\dhbwGetCompanyName`  | -                      | Name of the authors employer.                                        | Eine GmbH               |
+| `company logo`   | `\dhbwGetCompanyLogo`  | -                      | Path to the logo of the authors employer.                            | `./assets/logo.png`     |
+| `lecturer`       | `\dhbwGetLecturer`     | -                      | Name of the lecturer of the author.                                  | Prof. Dr. Martin Kimmig |
+| `location`       | `\dhbwGetLocation`     | Villingen-Schwenningen | Name of the location where the author signs the independence notice. | Villingen-Schwenningen  |
+| `date`           | `\dhbwGetDate`         | `\today`               | When the author signs the independence notice.                       | 21. August 2019         |
 
 ### Document structure \dhbw* commands
 
@@ -96,6 +95,14 @@ If you set the [class option](#class-options) `auto-generate` to `false` you can
 | `\dhbwPrintIndependenceNotice`  | Prints the independence notice.                                                                      |
 | `\dhbwPrintEverythingBefore`    | Prints all pages and sets up all formatting before the main text.                                    |
 | `\dhbwPrintEverythingAfter`     | Prints the bibliography and the independence notice.                                                 |
+
+### More \dhbw* commands
+
+| Command                    | Description                                                                                                                            |
+| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `\dhbwSetFontArial`        | Sets the font to `Arial`. Make sure that `Arial` is installed as a system font. Should be called in your preamble.                     |
+| `dhbwSetFontTimesNewRoman` | Sets the font to `Times New Roman`. Make sure that `Times New Roman` is installed as a system font. Should be called in your preamble. |
+
 
 ## Sectioning
 
@@ -240,40 +247,35 @@ Here is a short reference: \icite[42]{hitchhiker78}
 
 ## Acronyms
 
-This template uses the `acronym` CTAN package. Have a look at it's [documentation](https://ctan.org/pkg/acronym) for details on advanced usage.
+This template uses the `acro` CTAN package which sorts acronyms by their `ID` automatically! Have a look at it's [documentation](http://mirrors.ctan.org/macros/latex/contrib/acro/acro_en.pdf) for details on advanced usage.
 
 ### Define a new acronym
 
-Before you can use an acronym in your text you have to define it inside the `acronyms` key of the [\dhbwSetup](#required-dhbwsetup-command) command. You also have to setup the `longest acronym` key. The `acronym` package will count the length of the given parameter and use it for the spacing between the short and the long version of an acronym. Example below:
+Before you can use an acronym in your text you have to define it in your preamble (below the `\dhbwSetup` command).
 
 ```tex
 \dhbwSetup{%
     ...
-    longest acronym = NiP,
-    acronyms        = {%
-        \acro{C9}{Cloud 9}
-        \acro{NiP}{Ninjas in Pyjamas}
-        \acro{VP}{Virtus Pro}
-    }
+}
+
+\DeclareAcronym{PDF}{%
+    short     = PDF,
+    long      = Portable Document Format
 }
 ```
 
-:warning: You must manually sort the acronyms by alphabet. As of august 2019 the `acronym` package doesn't support automatic sorting.
+> If you don't specify the `short` field the ID will be used as `short`.
 
 #### Define a custom plural
 
-Command: `\acroplural{acronym}[shortPlural]{longPlural}`
-
-The `acronym` package adds an `s` to the short and long version of an acronym if no custom plural is defined. There are many cases when adding an `s` doesn't work. See the german example below:
+The `acro` package adds an `s` to the short and long version of an acronym if no custom plural is defined. There are many cases when adding an `s` doesn't work. See the german example below:
 
 ```tex
-\dhbwSetup{%
-    ...
-    longest acronym = GF,
-    acronyms        = {%
-        \acro{GF}{Globale Firma}
-        \acroplural{GF}[GF]{Globale Firmen}
-    }
+\DeclareAcronym{GF}{%
+    short           = GF,
+    short-plural    = GF,
+    long            = Globale Firma
+    long-plural     = Globale Firmen
 }
 ```
 
@@ -281,7 +283,7 @@ The `acronym` package adds an `s` to the short and long version of an acronym if
 
 Commands: `\ac{acronym}` (singular) and `\acp{acronym}` (plural)
 
-The `acronym` package will make sure that first time an acronym is used it will be defined with the long version inline!
+The `acro` package will make sure that first time an acronym is used it will be defined with the long version inline!
 
 The `\acp{acronym}` command will add an `s` to the acronym if no [custom plural](#define-a-custom-plural) was defined.
 
@@ -301,7 +303,7 @@ education within the esports industry through several initiatives. In addition
 to this, NiP is also an active shareholder in the clothing company DRKN.
 ```
 
-:warning: You always have wrap your acronyms in one of the commands above in order for the `acronym` package to work correctly.
+:warning: You always have wrap your acronyms in one of the commands above in order for the `acro` package to work correctly.
 
 ## Figures
 
@@ -632,3 +634,4 @@ There are a few [VSCode snippets](https://code.visualstudio.com/docs/editor/user
 | `codeprotected`   | Snippet for the [code](#code-listing) environment but wrapped in a `minipage`. |
 | `@online`         | Snippet for an [@online](#add-entry-of-type-online) bibliography entry.        |
 | `@book`           | Snippet for an [@book](#add-entry-of-type-book) bibliography entry.            |
+| `\decacro`        | Snippet for setting up an [acronym](#acronyms).                                |

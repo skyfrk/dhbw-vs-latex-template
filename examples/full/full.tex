@@ -23,15 +23,23 @@
     company logo    = company-logo.png,
     lecturer        = Prof. Dr. Frank Staab,
     location        = Villingen-Schwenningen,
-    date            = \today,
-    longest acronym = DHBW,
-    acronyms        = {%
-        \acro{API}{Application Programming Interface}
-        \acroplural{API}[API's]{Application Programming Interfaces}
-        \acro{DHBW}{Duale Hochschule Baden Württemberg}
-        \acro{TDD}{Test Driven Development}
-    }
+    date            = \today
 }
+
+\DeclareAcronym{API}{%
+    short		= API,
+    long		= Application Programming Interface
+}
+
+\DeclareAcronym{DHBW}{%
+    short		= DHBW,
+    long		= Duale Hochschule Baden Württemberg
+}
+
+\DeclareAcronym{TDD}{%
+    short		= TDD,
+    long		= Test Driven Development
+}   
 
 \begin{document}
 
