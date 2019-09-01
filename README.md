@@ -8,7 +8,7 @@
 
 This is a unofficial LaTeX template for academic text assignments at the [DBHW-VS](https://www.dhbw-vs.de/), especially for business computer science students created along [the specifications](docs/dhbw-text-requirements-2017.md) by Mrs. Heinrich. Using this template **speeds up the writing process** as you only have to **focus on writing actual content**. All weird formatting requirements are met automatically! :beer::sunglasses::v:
 
-Checkout [this example](./docs/examples/full/full.pdf) featuring all the magic of this template!
+Checkout [this example](./examples/full/full.pdf) featuring all the magic of this template!
 
 >If you're looking for a [Citavi](https://www.citavi.com/) template checkout [stabiloBOSS96/ZitationsstilDHBW-VS-WI](https://github.com/stabiloBOSS96/ZitationsstilDHBW-VS-WI).
 
@@ -16,7 +16,7 @@ Checkout [this example](./docs/examples/full/full.pdf) featuring all the magic o
 
 1. Download the [latest release](https://github.com/skyfrk/dhbw-vs-latex-template/releases/latest).
 2. Run through the [setup instructions](./docs/setup.md).
-3. Get the [recommended starter template](./docs/examples/starter-recommended), apply [necessary patches](./docs/patches.md), start writing your text and read the [docs](./docs/writing.md)!
+3. Get the [recommended starter template](./examples/starter-recommended), apply [necessary patches](./docs/patches.md), start writing your text and read the [docs](./docs/writing.md)!
 
 ### [:open_book: Documentation](./docs/writing.md)
 
