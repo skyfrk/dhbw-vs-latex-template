@@ -6,6 +6,7 @@ Documentation and general tips and tricks on how to wirte an academic text assig
   - [Class options](#class-options)
   - [Required \dhbwSetup command](#required-dhbwsetup-command)
   - [Document structure \dhbw* commands](#document-structure-dhbw-commands)
+  - [More \dhbw* commands](#more-dhbw-commands)
 - [Sectioning](#sectioning)
   - [Sections](#sections)
   - [Subsections](#subsections)
@@ -58,21 +59,21 @@ The name of the class stands for ***Unofficial DHBW Villingen-Schwenningen*** La
 
 In order to use the template you have to run the `\dhbwSetup{...}` command in your preamble. All parameters without a default value are **required**. You can access any key inside your document with the `\dhbwGet*` commands.
 
-| Parameter         | Stored in                | Default                | Description                                                          | Example                 |
-| ----------------- | ------------------------ | ---------------------- | -------------------------------------------------------------------- | ----------------------- |
-| `author`          | `\dhbwGetAuthor`         | -                      | Full name of the author.                                             | Max Mustermann          |
-| `faculty`         | `\dhbwGetFaculty`        | -                      | Faculty of the author.                                               | Wirtschaft              |
-| `field of study`  | `\dhbwGetFieldOfStudy`   | -                      | Field of study of the author.                                        | Wirtschaftsinformatik   |
-| `academic year`   | `\dhbwGetAcademicYear`   | -                      | Academic year of the author.                                         | 2017                    |
-| `course`          | `\dhbwGetCourse`         | -                      | Course of the author.                                                | B                       |
-| `title`           | `\dhbwGetTitle`          | -                      | Title of the text.                                                   | Eine Arbeit             |
-| `subtitle`        | `\dhbwGetSubtitle`       | -                      | Subtitle of the text                                                 | Mit einem Untertitel    |
-| `text type`       | `\dhbwGetTextType`       | -                      | Type of the text.                                                    | Projektarbeit 2         |
-| `company name`    | `\dhbwGetCompanyName`    | -                      | Name of the authors employer.                                        | Eine GmbH               |
-| `company logo`    | `\dhbwGetCompanyLogo`    | -                      | Path to the logo of the authors employer.                            | `./assets/logo.png`     |
-| `lecturer`        | `\dhbwGetLecturer`       | -                      | Name of the lecturer of the author.                                  | Prof. Dr. Martin Kimmig |
-| `location`        | `\dhbwGetLocation`       | Villingen-Schwenningen | Name of the location where the author signs the independence notice. | Villingen-Schwenningen  |
-| `date`            | `\dhbwGetDate`           | `\today`               | When the author signs the independence notice.                       | 21. August 2019         |
+| Parameter        | Stored in              | Default                | Description                                                          | Example                 |
+| ---------------- | ---------------------- | ---------------------- | -------------------------------------------------------------------- | ----------------------- |
+| `author`         | `\dhbwGetAuthor`       | -                      | Full name of the author.                                             | Max Mustermann          |
+| `faculty`        | `\dhbwGetFaculty`      | -                      | Faculty of the author.                                               | Wirtschaft              |
+| `field of study` | `\dhbwGetFieldOfStudy` | -                      | Field of study of the author.                                        | Wirtschaftsinformatik   |
+| `academic year`  | `\dhbwGetAcademicYear` | -                      | Academic year of the author.                                         | 2017                    |
+| `course`         | `\dhbwGetCourse`       | -                      | Course of the author.                                                | B                       |
+| `title`          | `\dhbwGetTitle`        | -                      | Title of the text.                                                   | Eine Arbeit             |
+| `subtitle`       | `\dhbwGetSubtitle`     | -                      | Subtitle of the text                                                 | Mit einem Untertitel    |
+| `text type`      | `\dhbwGetTextType`     | -                      | Type of the text.                                                    | Projektarbeit 2         |
+| `company name`   | `\dhbwGetCompanyName`  | -                      | Name of the authors employer.                                        | Eine GmbH               |
+| `company logo`   | `\dhbwGetCompanyLogo`  | -                      | Path to the logo of the authors employer.                            | `./assets/logo.png`     |
+| `lecturer`       | `\dhbwGetLecturer`     | -                      | Name of the lecturer of the author.                                  | Prof. Dr. Martin Kimmig |
+| `location`       | `\dhbwGetLocation`     | Villingen-Schwenningen | Name of the location where the author signs the independence notice. | Villingen-Schwenningen  |
+| `date`           | `\dhbwGetDate`         | `\today`               | When the author signs the independence notice.                       | 21. August 2019         |
 
 ### Document structure \dhbw* commands
 
@@ -94,6 +95,14 @@ If you set the [class option](#class-options) `auto-generate` to `false` you can
 | `\dhbwPrintIndependenceNotice`  | Prints the independence notice.                                                                      |
 | `\dhbwPrintEverythingBefore`    | Prints all pages and sets up all formatting before the main text.                                    |
 | `\dhbwPrintEverythingAfter`     | Prints the bibliography and the independence notice.                                                 |
+
+### More \dhbw* commands
+
+| Command                    | Description                                                                                                                            |
+| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `\dhbwSetFontArial`        | Sets the font to `Arial`. Make sure that `Arial` is installed as a system font. Should be called in your preamble.                     |
+| `dhbwSetFontTimesNewRoman` | Sets the font to `Times New Roman`. Make sure that `Times New Roman` is installed as a system font. Should be called in your preamble. |
+
 
 ## Sectioning
 

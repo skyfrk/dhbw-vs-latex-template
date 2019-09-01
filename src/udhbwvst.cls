@@ -624,6 +624,17 @@
 
 \newrobustcmd\dhbwSetup[1]{\pgfqkeys{/dhbwSetup}{#1}}
 
+\newcommand{\dhbwSetFontArial}{%
+  \setsansfont{Arial}
+  \renewcommand{\familydefault}{\sfdefault}
+}
+
+\newcommand{\dhbwSetFontTimesNewRoman}{%
+  \setmainfont{Times New Roman}
+  \renewcommand{\familydefault}{\rmdefault}
+}
+
+
 \newcommand{\dhbwSetFrontMatter}{%
   \selectlanguage{ngerman}
   \pagenumbering{gobble}
