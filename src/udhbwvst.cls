@@ -266,7 +266,6 @@
 \addbibresource{\udhbwvst@var@bibfile}
 
 % Delimitors
-\DeclareDelimFormat[bib,biblist]{nametitledelim}{\addcolon\space}
 \renewcommand{\newunitpunct}{\addcomma\space}
 \DeclareDelimFormat{multinamedelim}{\addsemicolon\space}
 \DeclareDelimAlias{finalnamedelim}{multinamedelim}
@@ -275,7 +274,7 @@
 \DeclareNameAlias{sortname}{family-given}
 
 % Shorttitle in parens
-\DeclareFieldFormat*{shorttitle}{\mkbibparens{#1}}
+\DeclareFieldFormat*{shorttitle}{\mkbibbrackets{#1}}
 
 % No italics in title and subtitle
 \DeclareFieldFormat{title}{\normalfont{#1}}
@@ -329,7 +328,7 @@
   \let\blx@done\relax
   \blx@listloop{#1}%
   % tabular output for each item in list macro
-  \def\do##1{\bbx@tab@label{##1} & \bbx@tab@item{##1}\\}%
+  \def\do##1{\bbx@tab@label{##1}\addcolon & \bbx@tab@item{##1}\\}%
   \csuse{blx@env@\blx@theenv}%
   \dolistloop{\blx@tempa}%
   \csuse{blx@endenv@\blx@theenv}%
@@ -688,7 +687,9 @@
 
 \newcommand{\dhbwPrintBibliography}{%
   \newpage
+  \singlespacing
   \printbibtabular[title=\udhbwvst@var@bibliographyname]\addcontentsline{toc}{section}{\udhbwvst@var@bibliographyname}
+  \onehalfspacing
 }
 
 \newcommand{\dhbwPrintIndependenceNotice}{%
