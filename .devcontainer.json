@@ -1,6 +1,6 @@
 {
-    "name": "LaTeX",
-    "dockerFile": "Dockerfile",
+    "name": "Arch Linux TexLive PlantUML udhbwvst",
+    "image": "skyfrk/udhbwvst:latest",
     "extensions": [
         "James-Yu.latex-workshop",
         "streetsidesoftware.code-spell-checker",
