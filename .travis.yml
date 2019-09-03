@@ -14,6 +14,7 @@ before_deploy:
   - cp .gitignore example
   - cp build.sh example
   - cp build.ps1 example
+  - cp .devcontainer.json example
   - echo "$ARTIFACT_NAME $TRAVIS_TAG Build $TRAVIS_BUILD_NUMBER" > version.txt
   - touch example/text.tex
   - touch example/literature.bib
