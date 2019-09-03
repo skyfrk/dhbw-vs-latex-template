@@ -12,8 +12,11 @@
   - [Quick and dirty installation](#quick-and-dirty-installation)
   - [Optional setup](#optional-setup)
 - [Compiling to PDF](#compiling-to-pdf)
+  - [Using Docker](#using-docker)
 
 ## Prerequisites
+
+You can skip setting up the prerequisites if you plan on using the provided VSCode `.devcontainer.json`.
 
 ### Install a LaTeX distribution
 
@@ -82,3 +85,18 @@ Copy all files inside the `src` folder to your working directory. As long as you
 Run `./build.sh yourmain.tex` or `build.ps1 -file yourmain.tex` depending on your operating system. The build scripts try to use `latexmk` and fall back to `lualatex` and `biber` if `latexmk` is not available.
 
 > `latexmk` [com­pletely au­to­mates](https://www.ctan.org/pkg/latexmk/) the pro­cess of gen­er­at­ing a LaTeX document.
+
+### Using Docker
+
+You can also use the provided [docker image](https://hub.docker.com/r/skyfrk/udhbwvst) to build your text:
+
+```bash
+docker run --rm -it -v /path/to/your/workdir:/work skyfrk/udhbwvst:latest latexmk \
+  -synctex=1 \
+  -interaction=nonstopmode \
+  -file-line-error \
+  -pdf \
+  -pdflatex=lualatex \
+  -shell-escape \
+  yourtext.tex
+```
