@@ -162,7 +162,7 @@
 			"\ttitle\t\t= {$3},",
 			"\tshorttitle\t= {$4},",
 			"\turl\t\t\t= {$5},",
-			"\turldate\t\t= {${6:${7:0000}-${8:00}-${9:00}}},",
+			"\turldate\t\t= {${6:${7:$CURRENT_YEAR}-${8:$CURRENT_MONTH}-${9:$CURRENT_DATE}}},",
 			"\tdate\t\t= {${10:${11:0000}-${12:00}-${13:00}}}",
 			"}"
 		],
