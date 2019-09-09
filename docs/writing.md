@@ -303,7 +303,7 @@ education within the esports industry through several initiatives. In addition
 to this, NiP is also an active shareholder in the clothing company DRKN.
 ```
 
-:warning: You always have wrap your acronyms in one of the commands above in order for the `acro` package to work correctly.
+⚠ You always have wrap your acronyms in one of the commands above in order for the `acro` package to work correctly.
 
 ## Figures
 
@@ -401,7 +401,7 @@ If you have [set up](./setup.md#optional-install-plantuml) PlantUML as described
 \end{dhbwfigure}
 ```
 
-:warning: As of version `0.2.3` of the `plantuml` LuaLaTeX package [UTF8 isn't supported](https://github.com/koppor/plantuml/issues/10). You can use any unicode character though (see [special characters](http://plantuml.com/creole)). For example `<U+00D6>` can be used to express `Ö`. Use a [unicode character table](https://unicode-table.com/en/) until UTF8 is supported.
+⚠ As of version `0.2.3` of the `plantuml` LuaLaTeX package [UTF8 isn't supported](https://github.com/koppor/plantuml/issues/10). You can use any unicode character though (see [special characters](http://plantuml.com/creole)). For example `<U+00D6>` can be used to express `Ö`. Use a [unicode character table](https://unicode-table.com/en/) until UTF8 is supported.
 
 ## Tables
 
@@ -446,7 +446,7 @@ app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
 The `code` environment is a custom `listings` environment. The first argument is used to pass options through to the `listings` environment and the second argument is the used for the short reference.
 
-:warning: You should always pass the options listed below to the `listings` environment:
+⚠ You should always pass the options listed below to the `listings` environment:
 
 | Option     | Description                                                                                                                                                                                                |
 | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -454,7 +454,7 @@ The `code` environment is a custom `listings` environment. The first argument is
 | `language` | The language of the source code used for syntax highlighting. In addition to the languages [supported by default](https://ctan.org/pkg/listings) this template adds support for `csharp` and `javascript`. |
 | `label`    | The marker used for [referencing](#labels-and-referencing). Has to begin with `lst:`.                                                                                                                      |
 
-:warning: The short reference below the code listing is not inside the same float as the code. It can happen that the code listing and the reference have a page break between them. To prevent this you have to wrap the `code` environment with a `minipage` environment:
+⚠ The short reference below the code listing is not inside the same float as the code. It can happen that the code listing and the reference have a page break between them. To prevent this you have to wrap the `code` environment with a `minipage` environment:
 
 ```tex
 \begin{minipage}[c]{\textwidth}
@@ -502,9 +502,9 @@ In Abschnitt 2 findet sich kein Widerspruch.
 
 When you're researching it is advised to store every source of information as an entry in your bibliography file. Biblatex will make sure to only print references you actually refered to in your bibliography at the end of the text. Biblatex will also sort entries by author, then by year, then by month, then by day and finally by title.
 
-:warning: The DHBW-VS bibliography style was only tested with the entires of type [book](#add-entry-of-type-book) and [online](#add-entry-of-type-online). However [other types of entries](https://www.ctan.org/pkg/biblatex) should also work as long as they provide a `shorttitle` field!
+⚠ The DHBW-VS bibliography style was only tested with the entires of type [book](#add-entry-of-type-book) and [online](#add-entry-of-type-online). However [other types of entries](https://www.ctan.org/pkg/biblatex) should also work as long as they provide a `shorttitle` field!
 
-:warning: Make sure [to escape special characters](https://tex.stackexchange.com/a/34586) with `\`.
+⚠ Make sure [to escape special characters](https://tex.stackexchange.com/a/34586) with `\`.
 
 ### Add entry of type book
 
@@ -515,8 +515,8 @@ In order to satisfy the DHBW-VS requirements an bibliography entry of type `book
 | `author`     | Author or authors of the book. See [author field format](#author-field-format).                                     |
 | `title`      | Title of the book.                                                                                                  |
 | `shorttitle` | Shorttitle for the reference.  Has to be unique.                                                                    |
-| `year`       | Year of the publication of the book. :warning: Do not add a year field when the year is unknown.                    |
-| `edition`    | The edition of the book. :warning: Do not add an edition field when you're refering to the first edition of a book. |
+| `year`       | Year of the publication of the book. ⚠ Do not add a year field when the year is unknown.                    |
+| `edition`    | The edition of the book. ⚠ Do not add an edition field when you're refering to the first edition of a book. |
 | `publisher`  | The publisher of the book.                                                                                          |
 | `location`   | The city or place where to book was published.                                                                      |
 
@@ -542,7 +542,7 @@ In order to satisfy the DHBW-VS requirements an bibliography entry of type `onli
 | `author`     | Author or authors of the online entry. See [author field format](#author-field-format).                        |
 | `title`      | The title of the online entry                                                                                  |
 | `shorttitle` | The shorttitle of the online entry. Has to be unique.                                                          |
-| `date`       | The date of the publication of the online entry. :warning: Do not add a `date` field when the date is unknown. |
+| `date`       | The date of the publication of the online entry. ⚠ Do not add a `date` field when the date is unknown. |
 | `url`        | The URL pointing to the online entry.                                                                          |
 | `urldate`    | The date when the URL was visited the last time in `yyyy-mm-dd` format.                                        |
 

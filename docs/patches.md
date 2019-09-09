@@ -6,7 +6,7 @@
 
 Since the formatting specifications for text work at the DHBW-VS are [changed regularly](https://github.com/skyfrk/dhbw-vs-latex-template/issues/42), so that no template can be created which could relieve students of the scientific work, a few manual adjustments are necessary for the different academic years.
 
-:warning: This template always tries to satisfy the latest requirements. Required adjustments for compliance with older specifications are documented here.
+⚠ This template always tries to satisfy the latest requirements. Required adjustments for compliance with older specifications are documented here.
 
 ## Required adjustments for 2017 students
 
