@@ -91,6 +91,7 @@
     sorting     = nymdt,
     sortlocale  = de_DE
 ]{biblatex}
+\RequirePackage{biblatex-ext-tabular}
 \RequirePackage{array}
 \RequirePackage{longtable}
 \RequirePackage[subfigure]{tocloft}
@@ -262,6 +263,10 @@
 \renewcommand{\lstlistingname}{Quellcode}
 \renewcommand{\lstlistlistingname}{Quellcodeverzeichnis}
 
+% longtable package
+\newcolumntype{L}[1]{%
+  >{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
 % biblatex package
 \addbibresource{\udhbwvst@var@bibfile}
 
@@ -290,95 +295,6 @@
     {\printtext{\noyear}}
     {\printdate}}
 
-% User-level command for printing tabular bibliography
-\let\printbibtabular\printbibliography
-\patchcmd{\printbibtabular}{\blx@printbibliography}{\bbx@printbibtabular}{}{}
-\patchcmd{\printbibtabular}{\blx@printbibliography}{\bbx@printbibtabular}{}{}
-\let\bbx@printbibtabular\blx@printbibliography
-\patchcmd{\bbx@printbibtabular}{\blx@bibliography}{\bbx@bibtabular}{}{}
-\patchcmd{\bbx@printbibtabular}{\def\blx@theenv{bibliography}}{\def\blx@theenv{bibtabular}}{}{}
-
-% Underlying macros
-\def\bbx@bibtabular#1{%
-  \blx@langstrings
-  \blx@bibheading\blx@theheading\blx@thetitle
-  \blx@bibnote\blx@theprenote
-  \begingroup
-  \blx@bibinit
-  \let\@noitemerr\@empty
-  \let\blx@noitem\blx@warn@bibempty
-  \ifnum\bibinitsep=\z@
-    \let\blx@initsep\relax
-  \fi
-  \ifnum\bibnamesep=\z@
-    \let\blx@namesep\relax
-  \fi
-  \csuse{blx@hook@bibinit}%
-  \csuse{blx@hook@bibinit@next}%
-  % copy filtered list of entries to internal list macro
-  \def\blx@do##1{%
-    \blx@ifdata{##1}{%
-      \begingroup
-      \blx@getdata{##1}%
-      \blx@bibcheck
-      \iftoggle{blx@skipentry}{}{%
-        \global\let\blx@noitem\@empty
-        \listadd\blx@tempa{##1}}%
-      \endgroup}{}}%
-  \let\blx@done\relax
-  \blx@listloop{#1}%
-  % tabular output for each item in list macro
-  \def\do##1{\bbx@tab@label{##1}\addcolon & \bbx@tab@item{##1}\\}%
-  \csuse{blx@env@\blx@theenv}%
-  \dolistloop{\blx@tempa}%
-  \csuse{blx@endenv@\blx@theenv}%
-  \blx@bibnote\blx@thepostnote
-  \endgroup
-  \endgroup% this closed a goup opened by \printbibtabular
-}
-
-\def\bbx@tab@label#1{%
-  \begingroup
-  \blx@getdata{#1}%
-  \blx@setdefaultrefcontext{#1}%
-  \blx@setoptions@type\abx@field@entrytype
-  \blx@setoptions@entry
-  \blx@thelabelnumber
-  \blx@initsep
-  \blx@namesep
-  \csuse{blx@hook@bibitem}%
-  \addtocounter{instcount}\@ne
-  \blx@anchor
-  \csuse{bbx@tabenv@\blx@theenv}\relax
-  \endgroup
-}
-
-\def\bbx@tab@item#1{%
-  \begingroup
-  \blx@getdata{#1}%
-  \blx@setoptions@type\abx@field@entrytype
-  \blx@setoptions@entry
-  \blx@thelabelnumber
-  \csuse{blx@hook@bibitem}%
-  \csuse{blx@item@\blx@theenv}\relax
-  \blx@execute
-  \blx@initunit
-  \blx@beglangbib
-  \bibsentence
-  \blx@pagetracker
-  \blx@driver\abx@field@entrytype
-  \blx@postpunct
-  \blx@endlangbib
-  \endgroup
-}
-
-% User-level command for defining tabular bibliography format
-\newrobustcmd*{\defbibtabular}[5]{%
-  \long\csdef{blx@env@#1}{#2}%
-  \long\csdef{blx@endenv@#1}{#3}%
-  \long\csdef{bbx@tabenv@#1}{#4}%
-  \long\csdef{blx@item@#1}{#5}}
-
 % Sortname labels (a robust style should add provision for missing labelnames)
 \newbibmacro*{sortname}{%
   \ifnameundef{labelname}
@@ -400,16 +316,16 @@
     {}
     {\clearname{\thefield{labelnamesource}}}}
 
-\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
-\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
-\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
-
-\defbibtabular{bibtabular}
-  {\def\arraystretch{2}%
-   \begin{longtable}{@{}L{\dimexpr0.25\textwidth-\tabcolsep\relax}L{\dimexpr0.75\textwidth-\tabcolsep\relax}@{}}}
-  {\end{longtable}}
-  {\usebibmacro{sortname}}
-  {\usebibmacro{omitsortname}}
+\defbibtabular{bibtabular}{\setlength{\LTpre}{0pt}%
+  \setlength{\LTpost}{0pt}%
+  \renewcommand*{\arraystretch}{2}%
+  \begin{longtable}{%
+    @{}
+    L{\dimexpr0.25\textwidth-\tabcolsep\relax}
+    L{\dimexpr0.75\textwidth-\tabcolsep\relax}
+    @{}}}
+  {\end{longtable}}{\anchorlang{\usebibmacro{tabular:sortname}} &
+  \driver{\usebibmacro{tabular:omitsortname}} \\}
 
 \renewbibmacro*{begentry}{%
   \printfield{shorttitle}%
