@@ -295,7 +295,7 @@
     L{\dimexpr0.25\textwidth-\tabcolsep\relax}
     L{\dimexpr0.75\textwidth-\tabcolsep\relax}
     @{}}}
-  {\end{longtable}}{\anchorlang{\usebibmacro{tabular:sortname}} &
+  {\end{longtable}}{\anchorlang{\usebibmacro{tabular:sortname}}\addcolon &
   \driver{\usebibmacro{tabular:omitsortname}} \\}
 
 % Sort by Author->Year->Month->Day->Title
