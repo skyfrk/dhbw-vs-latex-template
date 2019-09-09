@@ -270,51 +270,22 @@
 % biblatex package
 \addbibresource{\udhbwvst@var@bibfile}
 
-% Delimitors
 \renewcommand{\newunitpunct}{\addcomma\space}
 \DeclareDelimFormat{multinamedelim}{\addsemicolon\space}
 \DeclareDelimAlias{finalnamedelim}{multinamedelim}
-
-% Print always: authorlastname, authorfirstname
-\DeclareNameAlias{sortname}{family-given}
-
-% Shorttitle in parens
+\DeclareNameAlias{sortname}{family-given} % authorlastname, authorfirstname
 \DeclareFieldFormat*{shorttitle}{\mkbibbrackets{#1}}
-
-% No italics in title and subtitle
 \DeclareFieldFormat{title}{\normalfont{#1}}
 \DeclareFieldFormat{subtitle}{\normalfont{#1}}
-
-% Removes url prefix
-\DeclareFieldFormat{url}{\url{#1}}
-
-% Adds o.J. if no date is given:
+\DeclareFieldFormat{url}{\url{#1}} % Removes url prefix
 \newcommand{\noyear}{\addcomma \space o\adddot J\adddot}
 \renewbibmacro*{date}{%
   \iffieldundef{year}
     {\printtext{\noyear}}
     {\printdate}}
-
-% Sortname labels (a robust style should add provision for missing labelnames)
-\newbibmacro*{sortname}{%
-  \ifnameundef{labelname}
-    {\printtext[bold]{No name given.}%
-     \PackageWarning{biblatex}{No labelname for entry \thefield{entrykey},\MessageBreak
-       we need to think of something else}}
-    {\printnames[sortname]{labelname}%
-     \iffieldequalstr{labelnamesource}{editor}
-       {\setunit{\printdelim{editortypedelim}}%
-        \usebibmacro{editor+othersstrg}}
-       {\iffieldequalstr{labelnamesource}{translator}
-          {\setunit{\printdelim{translatortypedelim}}%
-           \usebibmacro{translator+othersstrg}}
-          {}}}}
-
-% Bibitem hook to suppress redundant sortname list
-\newbibmacro*{omitsortname}{%
-  \ifnameundef{labelname}
-    {}
-    {\clearname{\thefield{labelnamesource}}}}
+\renewbibmacro*{begentry}{%
+  \printfield{shorttitle}%
+  \printunit*{\addspace}}
 
 \defbibtabular{bibtabular}{\setlength{\LTpre}{0pt}%
   \setlength{\LTpost}{0pt}%
@@ -326,10 +297,6 @@
     @{}}}
   {\end{longtable}}{\anchorlang{\usebibmacro{tabular:sortname}} &
   \driver{\usebibmacro{tabular:omitsortname}} \\}
-
-\renewbibmacro*{begentry}{%
-  \printfield{shorttitle}%
-  \printunit*{\addspace}}
 
 % Sort by Author->Year->Month->Day->Title
 \DeclareSortingTemplate{nymdt}{
@@ -368,11 +335,8 @@
   }
 }
 
-% No italics
 \DeclareFieldFormat{citetitle}{\normalfont{#1}}
-
-% Custom cite bibmacro
-\newbibmacro*{mycite}{%
+\newbibmacro*{dhbwcite}{%
   \printtext[bibhyperref]{%
     \printfield[citetitle]{labeltitle}
     \setunit{\addcomma\space}
@@ -386,7 +350,7 @@
   {\usebibmacro{prenote}}
   {\usebibmacro{citeindex}%
    \usebibmacro{author}
-   \usebibmacro{mycite}}
+   \usebibmacro{dhbwcite}}
   {\multicitedelim}
   {\usebibmacro{postnote}}
 
@@ -394,7 +358,7 @@
   {\usebibmacro{prenote}}
   {\usebibmacro{citeindex}%
   \usebibmacro{author}
-  \usebibmacro{mycite}}
+  \usebibmacro{dhbwcite}}
   {\multicitedelim}
   {\usebibmacro{postnote}}
 
