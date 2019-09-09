@@ -58,7 +58,7 @@ Feel free to open an [issue](https://github.com/skyfrk/dhbw-vs-latex-template/is
 * BibLaTeX documentation: [BibLaTeX manual](https://www.ctan.org/pkg/biblatex)
 * Q&A community: [tex.stackexchange.com](https://tex.stackexchange.com/)
 
-### ♥ Contributors
+### ❤ Contributors
 
 * [moewe](https://tex.stackexchange.com/users/35864/moewe) for the bibliography style.
 * [Audrey](https://tex.stackexchange.com/users/4483/audrey) for the custom nymdt sorting style.
