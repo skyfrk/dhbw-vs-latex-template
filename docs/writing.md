@@ -1,6 +1,6 @@
 # Writing <!-- omit in toc -->
 
-Documentation and general tips and tricks on how to wirte an academic text assignment for the [DBHW-VS](https://www.dhbw-vs.de/).
+Documentation and general tips and tricks on how to write an academic text assignment for the [DBHW-VS](https://www.dhbw-vs.de/).
 
 - [The udhbwvst class](#the-udhbwvst-class)
   - [Class options](#class-options)
