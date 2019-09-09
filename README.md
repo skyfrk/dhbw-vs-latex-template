@@ -60,13 +60,9 @@ Feel free to open an [issue](https://github.com/skyfrk/dhbw-vs-latex-template/is
 
 ### ❤ Contributors
 
-* [moewe](https://tex.stackexchange.com/users/35864/moewe) for the bibliography style.
-* [Audrey](https://tex.stackexchange.com/users/4483/audrey) for the custom nymdt sorting style.
-* [robingenz](https://github.com/robingenz) for general improvements.
-* [MrcoSchrnr](https://github.com/MrcoSchrnr) for useful hints.
-* [bluecoder24](https://github.com/bluecoder24) for updating the page margins.
+* [robingenz](https://github.com/robingenz) for general improvements and excellent issues.
+* [moewe](https://tex.stackexchange.com/users/35864/moewe) for the amazing [biblatex-ext package](https://github.com/moewew/biblatex-ext).
 * [faltfe](https://github.com/faltfe) for [inspiration](https://github.com/faltfe/iodhbwm) for version 3.
-
-## 📄 License
-
-Licensed under the [MIT](https://opensource.org/licenses/mit-license.php) license.
+* [Audrey](https://tex.stackexchange.com/users/4483/audrey) for the custom nymdt sorting style.
+* [bluecoder24](https://github.com/bluecoder24) for updating the page margins.
+* [MrcoSchrnr](https://github.com/MrcoSchrnr) for useful hints.
