@@ -57,7 +57,7 @@ The name of the class stands for ***Unofficial DHBW Villingen-Schwenningen*** La
 
 ### Required \dhbwSetup command
 
-In order to use the template you have to run the `\dhbwSetup{...}` command in your preamble. All parameters without a default value are **required**. You can access any key inside your document with the `\dhbwGet*` commands.
+In order to use the template you have to run the `\dhbwSetup{...}` command in your preamble. All parameters inside brackets are optional. You can access any key inside your document with the `\dhbwGet*` commands.
 
 | Parameter        | Stored in              | Default                | Description                                                          | Example                 |
 | ---------------- | ---------------------- | ---------------------- | -------------------------------------------------------------------- | ----------------------- |
@@ -67,13 +67,13 @@ In order to use the template you have to run the `\dhbwSetup{...}` command in yo
 | `academic year`  | `\dhbwGetAcademicYear` | -                      | Academic year of the author.                                         | 2017                    |
 | `course`         | `\dhbwGetCourse`       | -                      | Course of the author.                                                | B                       |
 | `title`          | `\dhbwGetTitle`        | -                      | Title of the text.                                                   | Eine Arbeit             |
-| `subtitle`       | `\dhbwGetSubtitle`     | -                      | Subtitle of the text                                                 | Mit einem Untertitel    |
+| (`subtitle`)     | `\dhbwGetSubtitle`     | -                      | Subtitle of the text                                                 | Mit einem Untertitel    |
 | `text type`      | `\dhbwGetTextType`     | -                      | Type of the text.                                                    | Projektarbeit 2         |
 | `company name`   | `\dhbwGetCompanyName`  | -                      | Name of the authors employer.                                        | Eine GmbH               |
-| `company logo`   | `\dhbwGetCompanyLogo`  | -                      | Path to the logo of the authors employer.                            | `./assets/logo.png`     |
+| (`company logo`) | `\dhbwGetCompanyLogo`  | -                      | Path to the logo of the authors employer.                            | `./assets/logo.png`     |
 | `lecturer`       | `\dhbwGetLecturer`     | -                      | Name of the lecturer of the author.                                  | Prof. Dr. Martin Kimmig |
-| `location`       | `\dhbwGetLocation`     | Villingen-Schwenningen | Name of the location where the author signs the independence notice. | Villingen-Schwenningen  |
-| `date`           | `\dhbwGetDate`         | `\today`               | When the author signs the independence notice.                       | 21. August 2019         |
+| (`location`)     | `\dhbwGetLocation`     | Villingen-Schwenningen | Name of the location where the author signs the independence notice. | Villingen-Schwenningen  |
+| (`date`)         | `\dhbwGetDate`         | `\today`               | When the author signs the independence notice.                       | 21. August 2019         |
 
 ### Document structure \dhbw* commands
 
@@ -510,15 +510,15 @@ When you're researching it is advised to store every source of information as an
 
 In order to satisfy the DHBW-VS requirements an bibliography entry of type `book` has to provide following fields:
 
-| Field        | Description                                                                                                         |
-| ------------ | ------------------------------------------------------------------------------------------------------------------- |
-| `author`     | Author or authors of the book. See [author field format](#author-field-format).                                     |
-| `title`      | Title of the book.                                                                                                  |
-| `shorttitle` | Shorttitle for the reference.  Has to be unique.                                                                    |
+| Field        | Description                                                                                                 |
+| ------------ | ----------------------------------------------------------------------------------------------------------- |
+| `author`     | Author or authors of the book. See [author field format](#author-field-format).                             |
+| `title`      | Title of the book.                                                                                          |
+| `shorttitle` | Shorttitle for the reference.  Has to be unique.                                                            |
 | `year`       | Year of the publication of the book. ⚠ Do not add a year field when the year is unknown.                    |
 | `edition`    | The edition of the book. ⚠ Do not add an edition field when you're refering to the first edition of a book. |
-| `publisher`  | The publisher of the book.                                                                                          |
-| `location`   | The city or place where to book was published.                                                                      |
+| `publisher`  | The publisher of the book.                                                                                  |
+| `location`   | The city or place where to book was published.                                                              |
 
 Take a look at the [documentation of the biblatex package](https://www.ctan.org/pkg/biblatex) for optional entry fields. Example below:
 
@@ -537,14 +537,14 @@ Take a look at the [documentation of the biblatex package](https://www.ctan.org/
 
 In order to satisfy the DHBW-VS requirements an bibliography entry of type `online` has to provide following fields:
 
-| Field        | Description                                                                                                    |
-| ------------ | -------------------------------------------------------------------------------------------------------------- |
-| `author`     | Author or authors of the online entry. See [author field format](#author-field-format).                        |
-| `title`      | The title of the online entry                                                                                  |
-| `shorttitle` | The shorttitle of the online entry. Has to be unique.                                                          |
+| Field        | Description                                                                                            |
+| ------------ | ------------------------------------------------------------------------------------------------------ |
+| `author`     | Author or authors of the online entry. See [author field format](#author-field-format).                |
+| `title`      | The title of the online entry                                                                          |
+| `shorttitle` | The shorttitle of the online entry. Has to be unique.                                                  |
 | `date`       | The date of the publication of the online entry. ⚠ Do not add a `date` field when the date is unknown. |
-| `url`        | The URL pointing to the online entry.                                                                          |
-| `urldate`    | The date when the URL was visited the last time in `yyyy-mm-dd` format.                                        |
+| `url`        | The URL pointing to the online entry.                                                                  |
+| `urldate`    | The date when the URL was visited the last time in `yyyy-mm-dd` format.                                |
 
 Valid example:
 
