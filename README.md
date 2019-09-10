@@ -48,9 +48,7 @@ The code below is enough to generate a title page, a non-disclosure notice, a ta
 
 ## 😊 Contribute
 
-Feel free to open an [issue](https://github.com/skyfrk/dhbw-vs-latex-template/issues) or submit a pull request if you discovered a bug or if there are new specifications! 📚
-
-> Everything except the output of this template should be written in english for better accessibility!
+Feel free to open an [issue](https://github.com/skyfrk/dhbw-vs-latex-template/issues) or submit a pull request after reading our [contributing guidelines](./CONTRIBUTING.md) if you discover a bug or if there are new specifications! 📚
 
 ### 🔎 Resources
 
