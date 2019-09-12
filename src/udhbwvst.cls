@@ -547,28 +547,36 @@
 \newcommand{\dhbwPrintListOfAcronyms}{%
   \ifbool{udhbwvst@if@print@loa}{%
     \newpage
-    \printacronyms[name=Abkürzungsverzeichnis]\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
+    \phantomsection
+    \addcontentsline{toc}{section}{Abkürzungsverzeichnis}
+    \printacronyms[name=Abkürzungsverzeichnis]
   }{}
 } 
 
 \newcommand{\dhbwPrintListOfFigures}{%
   \ifbool{udhbwvst@if@print@lof}{%
     \newpage
-    \listoffigures\addcontentsline{toc}{section}{\listfigurename}
+    \phantomsection
+    \addcontentsline{toc}{section}{\listfigurename}
+    \listoffigures
   }{}
 }
 
 \newcommand{\dhbwPrintListOfTables}{%
   \ifbool{udhbwvst@if@print@lot}{%
     \newpage
-    \listoftables\addcontentsline{toc}{section}{\listtablename}
+    \phantomsection
+    \addcontentsline{toc}{section}{\listtablename}
+    \listoftables
   }{}
 }
 
 \newcommand{\dhbwPrintListOfListings}{%
   \ifbool{udhbwvst@if@print@lol}{%
     \newpage
-    \lstlistoflistings\addcontentsline{toc}{section}{\lstlistlistingname}
+    \phantomsection
+    \addcontentsline{toc}{section}{\lstlistlistingname}
+    \lstlistoflistings
   }{}
 }
 
@@ -581,12 +589,17 @@
 \newcommand{\dhbwPrintBibliography}{%
   \newpage
   \singlespacing
-  \printbibtabular[title=\udhbwvst@var@bibliographyname]\addcontentsline{toc}{section}{\udhbwvst@var@bibliographyname}
+  \phantomsection
+  \addcontentsline{toc}{section}{\udhbwvst@var@bibliographyname}
+  \printbibtabular[title=\udhbwvst@var@bibliographyname]
   \onehalfspacing
 }
 
 \newcommand{\dhbwPrintIndependenceNotice}{%
   \newpage
+  \phantomsection
+  \addcontentsline{toc}{section}{Selbstständigkeitserklärung}
+  \section*{Selbstständigkeitserklärung}
   \input{udhbwvst-independence-notice.def}
 }
 
