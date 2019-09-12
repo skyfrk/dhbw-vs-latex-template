@@ -55,11 +55,12 @@
     }
     \hypersetup{%
       pdftitle    = {\ifdef{\dhbwGetTitle}{\dhbwGetTitle}{undefined}},
-      pdfsubject  = {\ifdef{\dhbwGetTitle}{\dhbwGetTitle}{undefined}},
+      pdfsubject  = {\ifdef{\dhbwGetTextType}{\dhbwGetTextType}{undefined}},
       pdfauthor   = {\ifdef{\dhbwGetAuthor}{\dhbwGetAuthor}{undefined}},
       pdfcreator  = {Lua\LaTeX},
       pdfproducer = {Lua\LaTeX},
-      unicode     = true
+      pdfencoding = {auto},
+      pdflang     = {de}
     }
 }
 
