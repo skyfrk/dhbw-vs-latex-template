@@ -58,7 +58,8 @@
       pdfsubject  = {\ifdef{\dhbwGetTitle}{\dhbwGetTitle}{undefined}},
       pdfauthor   = {\ifdef{\dhbwGetAuthor}{\dhbwGetAuthor}{undefined}},
       pdfcreator  = {Lua\LaTeX},
-      pdfproducer = {Lua\LaTeX}
+      pdfproducer = {Lua\LaTeX},
+      unicode     = true
     }
 }
 
