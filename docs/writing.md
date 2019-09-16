@@ -98,11 +98,11 @@ If you set the [class option](#class-options) `auto-generate` to `false` you can
 
 ### More \dhbw* commands
 
-| Command                    | Description                                                                                                                            |
-| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| `\dhbwSetFontArial`        | Sets the font to `Arial`. Make sure that `Arial` is installed as a system font. Should be called in your preamble.                     |
-| `dhbwSetFontTimesNewRoman` | Sets the font to `Times New Roman`. Make sure that `Times New Roman` is installed as a system font. Should be called in your preamble. |
-
+| Command                      | Description                                                                                                                            |
+| ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `\dhbwSetFontArial`          | Sets the font to `Arial`. Make sure that `Arial` is installed as a system font. Should be called in your preamble.                     |
+| `\dhbwSetFontTimesNewRoman`  | Sets the font to `Times New Roman`. Make sure that `Times New Roman` is installed as a system font. Should be called in your preamble. |
+| `\dhbwSetOneHalfLineSpacing` | Sets the line spacing to Microsoft Words [interpretation](https://tex.stackexchange.com/a/276516) of `1.5 line spacing`.               |
 
 ## Sectioning
 

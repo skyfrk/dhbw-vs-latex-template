@@ -72,7 +72,7 @@
     lmargin = {4cm},
     rmargin = {2cm}
 ]{geometry}
-\RequirePackage[onehalfspacing]{setspace}
+\RequirePackage{setspace}
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
 \RequirePackage[official]{eurosym}
@@ -264,6 +264,13 @@
 
 \renewcommand{\lstlistingname}{Quellcode}
 \renewcommand{\lstlistlistingname}{Quellcodeverzeichnis}
+
+% setspace package
+\newcommand{\dhbwSetOneHalfLineSpacing}{%
+  \setstretch{1.44} % is equal to 1.5 MS Word line spacing
+}
+
+\dhbwSetOneHalfLineSpacing
 
 % longtable package
 \newcolumntype{L}[1]{%
@@ -535,8 +542,10 @@
 
 \newcommand{\dhbwPrintTableOfContents}{%
   \newpage
+  \onehalfspacing % there is enough space by default
   \setcounter{page}{2}
   \tableofcontents
+  \dhbwSetOneHalfLineSpacing
 }
 
 \newcommand{\dhbwSetListMatter}{%
@@ -592,7 +601,7 @@
   \phantomsection
   \addcontentsline{toc}{section}{\udhbwvst@var@bibliographyname}
   \printbibtabular[title=\udhbwvst@var@bibliographyname]
-  \onehalfspacing
+  \dhbwSetOneHalfLineSpacing
 }
 
 \newcommand{\dhbwPrintIndependenceNotice}{%
