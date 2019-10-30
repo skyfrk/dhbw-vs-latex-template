@@ -272,10 +272,10 @@ The `acro` package adds an `s` to the short and long version of an acronym if no
 
 ```tex
 \DeclareAcronym{GF}{%
-    short           = GF,
-    short-plural    = GF,
-    long            = Globale Firma
-    long-plural     = Globale Firmen
+    short               = GF,
+    short-plural-form   = GF,
+    long                = Globale Firma
+    long-plural-form    = Globale Firmen
 }
 ```
 
