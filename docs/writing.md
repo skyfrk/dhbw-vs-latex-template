@@ -401,7 +401,7 @@ If you have [set up](./setup.md#optional-install-plantuml) PlantUML as described
 \end{dhbwfigure}
 ```
 
-⚠ Until version `0.3.0` of the `plantuml` LuaLaTeX package [UTF8 wasn't supported](https://github.com/koppor/plantuml/issues/10). You can still use any unicode character if you are using an earlier version (see [special characters](http://plantuml.com/creole)). For example `<U+00D6>` can be used to express `Ö`. Use a [unicode character table](https://unicode-table.com/en/) until UTF8 is supported.
+⚠ Until version `0.3.0` of the `plantuml` LuaLaTeX package [UTF8 wasn't supported](https://github.com/koppor/plantuml/issues/10). You can still use any unicode character if you are using an earlier version (see [special characters](http://plantuml.com/creole)). For example `<U+00D6>` can be used to express `Ö`. Use a [unicode character table](https://unicode-table.com/en/).
 
 ## Tables
 
