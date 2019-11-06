@@ -559,6 +559,7 @@
     \phantomsection
     \addcontentsline{toc}{section}{Abkürzungsverzeichnis}
     \printacronyms[name=Abkürzungsverzeichnis]
+    \addtocounter{table}{-1} % \printacronyms with longtable adds 1 to the table counter
   }{}
 } 
 
