@@ -526,7 +526,8 @@
 
 \newcommand{\dhbwSetFrontMatter}{%
   \selectlanguage{ngerman}
-  \pagenumbering{gobble}
+  \pagenumbering{Alph}
+  \pagestyle{empty}
 }
 
 \newcommand{\dhbwPrintTitle}{%
