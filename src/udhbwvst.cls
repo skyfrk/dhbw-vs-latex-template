@@ -140,9 +140,6 @@
 }
 \setlength{\headheight}{15pt}
 
-% change page numbering style without page number reset
-\newcommand\pagenumberingnoreset[1]{\gdef\thepage{\csname @#1\endcsname\c@page}}
-
 % fix for #21 (long author names in footnotes)
 \renewcommand\@makefntext[1]{\leftskip=1em\hskip-0em\@makefnmark#1}
 
@@ -544,14 +541,16 @@
 \newcommand{\dhbwPrintTableOfContents}{%
   \newpage
   \onehalfspacing % there is enough space by default
-  \setcounter{page}{2}
+  \pagenumbering{Roman}
+  \addtocontents{toc}{\protect\thispagestyle{empty}} % no page number for multipage tocs
   \tableofcontents
+  \thispagestyle{empty}
   \dhbwSetOneHalfLineSpacing
 }
 
 \newcommand{\dhbwSetListMatter}{%
   \newpage
-  \pagenumberingnoreset{Roman}
+  \pagestyle{plain}
 }
 
 \newcommand{\dhbwPrintListOfAcronyms}{%
