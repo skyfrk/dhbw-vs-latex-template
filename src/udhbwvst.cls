@@ -370,7 +370,7 @@
   \usebibmacro{author}
   \usebibmacro{dhbwcite}}
   {\multicitedelim}
-  {\usebibmacro{postnote}}
+  {\usebibmacro{postnote}\finentry}
 
 \NewDocumentCommand{\dfootcite}{O{}mm}{%
   \enquote{#3}{\footcite[#1]{#2}}
