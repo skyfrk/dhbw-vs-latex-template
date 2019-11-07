@@ -108,6 +108,7 @@
 \RequirePackage{xparse}
 \RequirePackage{acro}
 \RequirePackage[parfill]{parskip}
+\RequirePackage{titletoc}
 \RequirePackage[title,titletoc]{appendix}
 
 % load optional packages
@@ -266,6 +267,31 @@
 
 \renewcommand{\lstlistingname}{Quellcode}
 \renewcommand{\lstlistlistingname}{Quellcodeverzeichnis}
+
+% titletoc package
+\contentsuse{lstlisting}{lol}
+\titlecontents{lstlisting}[0em]
+              {\addvspace{0.25pc}}
+              {\lstlistingname\addspace\thecontentslabel:\addspace}
+              {}
+              {\titlerule*[0.5em]{$\cdot$}\contentspage}
+              []
+
+\contentsuse{figure}{lof}
+\titlecontents{figure}[0em]
+              {\addvspace{0.25pc}}
+              {\figurename\addspace\thecontentslabel:\addspace}
+              {}
+              {\titlerule*[0.5em]{$\cdot$}\contentspage}
+              []
+
+\contentsuse{table}{lof}
+\titlecontents{table}[0em]
+              {\addvspace{0.25pc}}
+              {\tablename\addspace\thecontentslabel:\addspace}
+              {}
+              {\titlerule*[0.5em]{$\cdot$}\contentspage}
+              []
 
 % setspace package
 \newcommand{\dhbwSetOneHalfLineSpacing}{%
