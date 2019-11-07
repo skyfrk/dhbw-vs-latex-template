@@ -97,7 +97,6 @@
 \RequirePackage{longtable}
 \RequirePackage{tabu}
 \RequirePackage[subfigure]{tocloft}
-\RequirePackage[dvipdfmx]{graphicx}
 \RequirePackage{bmpsize}
 \RequirePackage{wrapfig}
 \RequirePackage{subfigure}
