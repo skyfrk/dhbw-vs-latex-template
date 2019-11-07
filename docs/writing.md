@@ -57,7 +57,7 @@ The name of the class stands for ***Unofficial DHBW Villingen-Schwenningen*** La
 
 ### Required \dhbwSetup command
 
-In order to use the template you have to run the `\dhbwSetup{...}` command in your preamble. All parameters inside brackets are optional. You can access any key inside your document with the `\dhbwGet*` commands.
+In order to use the template you have to run the `\dhbwSetup{...}` command in your preamble. All parameters inside parentheses are optional. You can access any key inside your document with the `\dhbwGet*` commands.
 
 | Parameter        | Stored in              | Default                | Description                                                          | Example                 |
 | ---------------- | ---------------------- | ---------------------- | -------------------------------------------------------------------- | ----------------------- |
