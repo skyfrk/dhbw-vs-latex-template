@@ -28,6 +28,8 @@ Documentation and general tips and tricks on how to write an academic text assig
 - [Tables](#tables)
 - [Code listing](#code-listing)
 - [Labels and referencing](#labels-and-referencing)
+- [Appendices](#appendices)
+  - [Appendix with custom title](#appendix-with-custom-title)
 - [Bibliography](#bibliography)
   - [Add entry of type book](#add-entry-of-type-book)
   - [Add entry of type online](#add-entry-of-type-online)
@@ -95,6 +97,7 @@ If you set the [class option](#class-options) `auto-generate` to `false` you can
 | `\dhbwPrintIndependenceNotice`  | Prints the independence notice.                                                                      |
 | `\dhbwPrintEverythingBefore`    | Prints all pages and sets up all formatting before the main text.                                    |
 | `\dhbwPrintEverythingAfter`     | Prints the bibliography and the independence notice.                                                 |
+| `\dhbwAppendix`                 | Creates a new appendix.                                                                              |
 
 ### More \dhbw* commands
 
@@ -497,6 +500,45 @@ In Abschnitt 2 findet sich kein Widerspruch.
 ```
 
 [Click here](https://en.wikibooks.org/wiki/LaTeX/Labels_and_Cross-referencing) or read the [documenation of the hyperref package](https://ctan.org/pkg/hyperref) for details on advanced usage.
+
+## Appendices
+
+This template uses the [appendix CTAN package](https://ctan.org/pkg/appendix) for managing appendices. Below you can see how to add one or more appendices:
+
+```tex
+% your text
+
+\begin{dhbwappendices}
+
+    \dhbwAppendix{app:example}
+    This is an appendix.
+
+\end{dhbwappendices}
+
+% bibliography & independence-notice
+```
+
+You can refer to an appendix from your text using `\autoref{app:example}` which will print `Anhang I`, `Anhang II` and so on. The `app:` label-prefix is optional. Any labeled section created inside the `dhbwappendices` environment will be refered to as `Anhang`.
+
+### Appendix with custom title
+
+You can create appendices with custom titles as shown below:
+
+```tex
+% your text
+
+\begin{dhbwappendices}
+
+    \newpage
+    \section{Roadmap}\label{app:roadmap}
+    This is an appendix.
+
+\end{dhbwappendices}
+
+% bibliography & independence-notice
+```
+
+The example above will create an appendix with the title `Anhang I Roadmap`.
 
 ## Bibliography
 
