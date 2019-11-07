@@ -95,6 +95,7 @@
 \RequirePackage{biblatex-ext-tabular}
 \RequirePackage{array}
 \RequirePackage{longtable}
+\RequirePackage{tabu}
 \RequirePackage[subfigure]{tocloft}
 \RequirePackage[dvipdfmx]{graphicx}
 \RequirePackage{bmpsize}
@@ -148,8 +149,8 @@
 
 % acro package
 \DeclareAcroListStyle{dhbw}{table}{%
-  table = longtable,
-  table-spec = >{\bfseries}lp{\linewidth}
+  table = longtabu ,
+  table-spec = @{}>{\bfseries}lX@{}
 }
 
 \acsetup{%
