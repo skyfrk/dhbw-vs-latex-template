@@ -87,7 +87,6 @@
     citestyle   = authortitle,
     hyperref    = true,
     autocite    = footnote,
-    sortlocale  = de_DE,
     dashed      = false,
     maxnames    = 3,
     sorting     = nymdt,
