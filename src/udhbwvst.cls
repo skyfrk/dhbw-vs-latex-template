@@ -108,6 +108,7 @@
 \RequirePackage{xparse}
 \RequirePackage{acro}
 \RequirePackage[parfill]{parskip}
+\RequirePackage[title,titletoc]{appendix}
 
 % load optional packages
 
@@ -175,6 +176,10 @@
 
 % caption package
 \captionsetup{font={singlespacing}}
+
+% appendix packge
+\newcommand*{\Appendixautorefname}{Appendix}
+\newcommand*{\Anhangautorefname}{Anhang}
 
 % listings package
 \lstdefinestyle{base}{%
@@ -487,6 +492,19 @@
     \setlength\abovecaptionskip{-2pt}
     \captionof*{figure}{\footnotesize{\udhbwvst@var@shortreferenceprefix#2}}
   \end{center}
+}
+
+\NewDocumentEnvironment{dhbwappendices}{}{%
+  \edef\eappendices{\noexpand\begin{appendices}}
+  \eappendices
+  \renewcommand{\thesection}{\Roman{section}}
+}{%
+  \end{appendices}
+}
+
+\newcommand{\dhbwAppendix}[1]{
+  \newpage
+  \section{}\label{#1}
 }
 
 \pgfkeys{%
