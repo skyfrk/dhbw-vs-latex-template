@@ -31,16 +31,21 @@
 
 \pgfkeys{%
     udhbwvst/.cd,
-    auto-generate/.is if    = udhbwvst@if@autogenerate,
-    debug/.is if            = udhbwvst@if@debug,
-    print-ndn/.is if        = udhbwvst@if@print@ndn,
-    print-loa/.is if        = udhbwvst@if@print@loa,
-    print-lof/.is if        = udhbwvst@if@print@lof,
-    print-lot/.is if        = udhbwvst@if@print@lot,
-    print-lol/.is if        = udhbwvst@if@print@lol,
-    bib-file/.store in      = \udhbwvst@var@bibfile,
-    bib-file                = literature.bib,
-    plantuml/.is if         = udhbwvst@if@plantuml
+    auto-generate/.is if        = udhbwvst@if@autogenerate,
+    debug/.is if                = udhbwvst@if@debug,
+    print-ndn/.is if            = udhbwvst@if@print@ndn,
+    print-loa/.is if            = udhbwvst@if@print@loa,
+    print-lof/.is if            = udhbwvst@if@print@lof,
+    print-lot/.is if            = udhbwvst@if@print@lot,
+    print-lol/.is if            = udhbwvst@if@print@lol,
+    bib-file/.store in          = \udhbwvst@var@bibfile,
+    bib-file                    = literature.bib,
+    plantuml/.is if             = udhbwvst@if@plantuml,
+    title-style-file/.store in  = \udhbwvst@var@titlestylefile,
+    title-style-file            = udhbwvst-title-default.def,
+    title-style/.is choice,
+    title-style/modern/.estyle  = {/udhbwvst/title-style-file = udhbwvst-title-modern.def},
+    title-style/default/.estyle = {/udhbwvst/title-style-file = udhbwvst-title-default.def}
 }
 
 \ProcessPgfOptions{/udhbwvst}
@@ -571,7 +576,7 @@
 }
 
 \newcommand{\dhbwPrintTitle}{%
-  \input{udhbwvst-title.def}
+  \input{\udhbwvst@var@titlestylefile}
 }
 
 \newcommand{\dhbwPrintNonDisclosureNotice}{%
