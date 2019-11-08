@@ -12,6 +12,7 @@
 			"\tprint-lol\t\t= ${7|true,false|},\t% Prints the list of code listings.",
 			"\tbib-file\t\t= {${8:literature.bib}},\t% Path to the bibliography file.",
 			"\tplantuml\t\t= ${9|false,true|}\t% Loads the plantuml package.",
+			"\ttitle-style\t\t= ${10|default,modern|}\t% Sets the style of the title page.",
 			"]{udhbwvst}"
 		],
 		"scope": "tex,latex",
