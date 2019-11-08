@@ -640,6 +640,7 @@
 }
 
 \newcommand{\dhbwPrintBibliography}{%
+  \DeclareDelimFormat{multinamedelim}{\newline}
   \newpage
   \singlespacing
   \phantomsection
