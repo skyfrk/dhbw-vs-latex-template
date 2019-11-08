@@ -45,17 +45,18 @@ The name of the class stands for ***Unofficial DHBW Villingen-Schwenningen*** La
 
 ### Class options
 
-| Option          | Default          | Description                                                            |
-| --------------- | ---------------- | ---------------------------------------------------------------------- |
-| `auto-generate` | `true`           | Generates all required pages around the text.                          |
-| `debug`         | `false`          | Loads packages `lipsum` and `blindtext` and displays `hyperref`-links. |
-| `print-ndn`     | `true`           | Prints the non-disclosure notice.                                      |
-| `print-loa`     | `true`           | Prints the list of acronyms.                                           |
-| `print-lof`     | `true`           | Prints the list of figures.                                            |
-| `print-lot`     | `true`           | Prints the list of tables.                                             |
-| `print-lol`     | `true`           | Prints the list of code listings.                                      |
-| `bib-file`      | `literature.bib` | Path to the bibliography file.                                         |
-| `plantuml`      | `false`          | Loads the `plantuml` package.                                          |
+| Option          | Default          | Description                                                                   |
+| --------------- | ---------------- | ----------------------------------------------------------------------------- |
+| `auto-generate` | `true`           | Generates all required pages around the text.                                 |
+| `debug`         | `false`          | Loads packages `lipsum` and `blindtext` and displays `hyperref`-links.        |
+| `print-ndn`     | `true`           | Prints the non-disclosure notice.                                             |
+| `print-loa`     | `true`           | Prints the list of acronyms.                                                  |
+| `print-lof`     | `true`           | Prints the list of figures.                                                   |
+| `print-lot`     | `true`           | Prints the list of tables.                                                    |
+| `print-lol`     | `true`           | Prints the list of code listings.                                             |
+| `bib-file`      | `literature.bib` | Path to the bibliography file.                                                |
+| `plantuml`      | `false`          | Loads the `plantuml` package.                                                 |
+| `title-style`   | `default`        | Loads the specified title page style. Available options: `default`, `modern`. |
 
 ### Required \dhbwSetup command
 
