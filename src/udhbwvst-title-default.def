@@ -1,0 +1,65 @@
+\newgeometry{%
+    left    = 25mm,
+    right   = 25mm,
+    top     = 30mm,
+    bottom  = 30mm
+}
+
+\ifbool{udhbwvst@if@print@ndn}{%
+    \begin{textblock*}{50mm}(35mm,185mm)
+        \begin{rotate}{60}
+            \fontsize{40}{40}\bfseries\textcolor{dhbwRed}{Sperrvermerk}
+        \end{rotate}
+    \end{textblock*}
+}{}
+
+\begin{center}
+    \setstretch{2}
+    {\Huge \textbf{\dhbwGetTitle}}\\
+    \ifdef{\dhbwGetSubtitle}{%
+        \vspace{5mm}
+        \setstretch{1.44}
+        {\Large \textbf{\dhbwGetSubtitle}}
+    }{}
+    \vfill
+    \dhbwGetTextType\\
+    Studienjahrgang\ \dhbwGetAcademicYear\\
+    Kurs\ \dhbwGetCourse\\
+    \vspace{1cm}
+    Fakultät\ \dhbwGetFaculty\\
+    Studiengang\ \dhbwGetFieldOfStudy\\
+    \vspace{1cm}
+    DUALE\ HOCHSCHULE\ BADEN-WÜRTTEMBERG\\
+    VILLINGEN-SCHWENNINGEN\\
+    \ifundef{\dhbwGetCompanyLogo}{%
+        \vspace{1cm}
+        \includegraphics[width=0.45\linewidth]{udhbwvst-dhbw-vs-logo.png}\\
+    }{}
+\end{center}
+
+\vspace{1cm}
+
+\begin{minipage}[t]{0.5\linewidth}
+    Bearbeiter:\\
+    \dhbwGetAuthor
+    \vspace{3mm}\noindent\\
+    Ausbildungsbetrieb:\\
+    \dhbwGetCompanyName 
+\end{minipage}\hfill
+\begin{minipage}[t]{0.5\linewidth}
+    \hfill
+    \begin{tabular}[t]{l@{}}
+        Betreuender\ Dozent:\\
+        \dhbwGetLecturer
+    \end{tabular}
+\end{minipage}\vspace{5mm}\\
+
+\ifdef{\dhbwGetCompanyLogo}{%
+    \begin{minipage}[c]{0.5\linewidth}
+        \includegraphics[width=0.83\linewidth]{udhbwvst-dhbw-vs-logo.png}\hfill
+    \end{minipage}\hfill
+    \begin{minipage}[c]{0.5\linewidth}
+        \hfill\includegraphics[width=0.83\linewidth]{\dhbwGetCompanyLogo}
+    \end{minipage}
+}{}
+\restoregeometry
