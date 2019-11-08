@@ -310,7 +310,7 @@
 \DeclareDelimFormat{multinamedelim}{\addsemicolon\space}
 \DeclareDelimAlias{finalnamedelim}{multinamedelim}
 \DeclareNameAlias{sortname}{family-given} % authorlastname, authorfirstname
-\DeclareFieldFormat*{shorttitle}{\mkbibbrackets{#1}}
+\DeclareFieldFormat*{shorttitle}{\mkbibparens{#1}}
 \DeclareFieldFormat{title}{\normalfont{#1}}
 \DeclareFieldFormat{subtitle}{\normalfont{#1}}
 \DeclareFieldFormat{url}{\url{#1}} % Removes url prefix
