@@ -3,7 +3,7 @@
 \newcommand*{\udhbwvst@cls@date}{2019-08-17}
 \newcommand*{\udhbwvst@cls@info}{Unofficial DHBW Villingen-Schwenningen text class}
 \newcommand*{\udhbwvst@var@shortreferenceprefix}{Quelle:\space}
-\newcommand*{\udhbwvst@var@defaultshortreference}{Eigene Darstellung}
+\newcommand*{\udhbwvst@var@defaultshortreference}{Eigene Darstellung.}
 \newcommand*{\udhbwvst@var@indirectciteprefix}{Vgl\adddot}
 \newcommand*{\udhbwvst@var@bibliographyname}{Literaturverzeichnis}
 
