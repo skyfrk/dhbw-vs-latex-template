@@ -82,10 +82,10 @@
 \RequirePackage{fontspec}
 \RequirePackage[%
     a4paper,
-    tmargin = {4cm},
+    tmargin = {2.5cm},
     bmargin = {2cm},
     lmargin = {4cm},
-    rmargin = {2cm}
+    rmargin = {1.5cm}
 ]{geometry}
 \RequirePackage{setspace}
 \RequirePackage{amsmath}
