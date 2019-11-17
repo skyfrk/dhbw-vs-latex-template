@@ -1,0 +1,18 @@
+{
+  "name": "dhbw-vs-latex-template",
+  "version": "4.4.2",
+  "directories": {
+    "doc": "docs",
+    "example": "examples"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skyfrk/dhbw-vs-latex-template.git"
+  },
+  "author": "Simon Eßlinger",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/skyfrk/dhbw-vs-latex-template/issues"
+  },
+  "homepage": "https://github.com/skyfrk/dhbw-vs-latex-template"
+}
