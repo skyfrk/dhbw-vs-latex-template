@@ -53,6 +53,16 @@
 % load packages
 
 \AtEndPreamble{%
+    % fancyhdr package has to be loaded after last \geometry{} call
+    \pagestyle{fancy}
+    \fancyhf{}
+    \fancyhead[R]{\thepage}
+    \renewcommand{\headrulewidth}{0pt} % No line below the page number
+    \fancypagestyle{plain}{
+      \fancyhead[R]{\thepage}
+    }
+    \setlength{\headheight}{16pt}
+
     \RequirePackage{hyperref}
     \urlstyle{same}
     \ifbool{udhbwvst@if@debug}{}{%
@@ -135,16 +145,6 @@
 % fontspec package
 \setsansfont{TeX Gyre Heros} % like Arial
 \renewcommand{\familydefault}{\sfdefault}
-
-% fancyhdr package
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[R]{\thepage}
-\renewcommand{\headrulewidth}{0pt} % No line below the page number
-\fancypagestyle{plain}{
-  \fancyhead[R]{\thepage}
-}
-\setlength{\headheight}{15pt}
 
 % fix for #21 (long author names in footnotes)
 \renewcommand\@makefntext[1]{\leftskip=1em\hskip-0em\@makefnmark#1}
