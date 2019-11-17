@@ -14,5 +14,15 @@
   "bugs": {
     "url": "https://github.com/skyfrk/dhbw-vs-latex-template/issues"
   },
-  "homepage": "https://github.com/skyfrk/dhbw-vs-latex-template"
+  "homepage": "https://github.com/skyfrk/dhbw-vs-latex-template",
+  "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "husky": "^3.0.9"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }  
+  }
 }
