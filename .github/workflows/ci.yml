@@ -9,8 +9,8 @@ jobs:
       - name: Set up examples
         run: |
           cp -r ./src/* ./examples/full/
-          cp -r ./src/* ./examples/started-advanced/
-          cp -r ./src/* ./examples/started-recommended/
+          cp -r ./src/* ./examples/starter-advanced/
+          cp -r ./src/* ./examples/starter-recommended/
       - name: Build test document full.tex
         uses: dante-ev/latex-action@master
         with:
@@ -21,11 +21,11 @@ jobs:
         uses: dante-ev/latex-action@master
         with:
           root_file: starter-advanced.tex
-          working_directory: ./examples/started-advanced
+          working_directory: ./examples/starter-advanced
           args: -pdf -latexoption=-file-line-error -latexoption=-interaction=nonstopmode -pdflatex=lualatex -latexoption=-shell-escape
-      - name: Build test document started-recommended.tex
+      - name: Build test document starter-recommended.tex
         uses: dante-ev/latex-action@master
         with:
-          root_file: started-recommended.tex
-          working_directory: ./examples/started-recommended
+          root_file: starter-recommended.tex
+          working_directory: ./examples/starter-recommended
           args: -pdf -latexoption=-file-line-error -latexoption=-interaction=nonstopmode -pdflatex=lualatex -latexoption=-shell-escape
