@@ -1,5 +1,6 @@
 # Contributing guidelines
 
+* run `npm install` to setup [commitizen](https://github.com/commitizen/cz-cli) and [commitlint](https://github.com/conventional-changelog/commitlint) in order to comply with the [conventional commits specification](https://www.conventionalcommits.org)!
 * Update the [full example](./examples/full/full.tex) if you add a new feature.
 * Rebuild all PDF examples if you change something that causes visual changes.
 * Add documentation when you add a new feature.
