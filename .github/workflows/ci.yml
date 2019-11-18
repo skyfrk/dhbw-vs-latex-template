@@ -29,3 +29,14 @@ jobs:
           root_file: starter-recommended.tex
           working_directory: ./examples/starter-recommended
           args: -pdf -latexoption=-file-line-error -latexoption=-interaction=nonstopmode -pdflatex=lualatex -latexoption=-shell-escape
+      - name: Collect artifacts
+        run: |
+          mkdir -p ./artifacts/examples
+          cp ./examples/full/full.pdf ./artifacts/examples/
+          cp ./examples/starter-advanced/starter-advanced.pdf ./artifacts/examples/
+          cp ./examples/starter-recommended/starter-recommended.pdf ./artifacts/examples/
+      - name: Upload build artifact
+            uses: actions/upload-artifact@master
+            with:
+              name: artifact
+              path: ./artifacts
