@@ -1,5 +1,5 @@
 {
-    "name": "Arch Linux TexLive PlantUML udhbwvst",
+    "name": "danteev/texlive with udhbwvst preinstalled",
     "image": "skyfrk/udhbwvst:latest",
     "extensions": [
         "James-Yu.latex-workshop",
