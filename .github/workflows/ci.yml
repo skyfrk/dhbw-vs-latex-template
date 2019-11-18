@@ -1,0 +1,31 @@
+name: CI
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up git repo
+        uses: actions/checkout@v1
+      - name: Set up examples
+        run: |
+          cp -r ./src/* ./examples/full/
+          cp -r ./src/* ./examples/started-advanced/
+          cp -r ./src/* ./examples/started-recommended/
+      - name: Build test document full.tex
+        uses: dante-ev/latex-action@master
+        with:
+          root_file: full.tex
+          working_directory: ./examples/full
+          args: -pdf -latexoption=-file-line-error -latexoption=-interaction=nonstopmode -pdflatex=lualatex -latexoption=-shell-escape
+      - name: Build test document starter-advanced.tex
+        uses: dante-ev/latex-action@master
+        with:
+          root_file: starter-advanced.tex
+          working_directory: ./examples/started-advanced
+          args: -pdf -latexoption=-file-line-error -latexoption=-interaction=nonstopmode -pdflatex=lualatex -latexoption=-shell-escape
+      - name: Build test document started-recommended.tex
+        uses: dante-ev/latex-action@master
+        with:
+          root_file: started-recommended.tex
+          working_directory: ./examples/started-recommended
+          args: -pdf -latexoption=-file-line-error -latexoption=-interaction=nonstopmode -pdflatex=lualatex -latexoption=-shell-escape
