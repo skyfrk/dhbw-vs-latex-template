@@ -36,7 +36,7 @@ jobs:
           cp ./examples/starter-advanced/starter-advanced.pdf ./artifacts/examples/
           cp ./examples/starter-recommended/starter-recommended.pdf ./artifacts/examples/
       - name: Upload build artifact
-            uses: actions/upload-artifact@master
-            with:
-              name: artifact
-              path: ./artifacts
+        uses: actions/upload-artifact@master
+        with:
+          name: artifact
+          path: ./artifacts
