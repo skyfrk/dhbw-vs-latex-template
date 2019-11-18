@@ -1,0 +1,20 @@
+{
+    "branch": "master",
+    "plugins": [
+        "@semantic-release/commit-analyzer",
+        "@semantic-release/release-notes-generator",
+        ["@semantic-release/changelog", {
+            "changelogFile": "docs/changelog.md"
+        }],
+        ["@semantic-release/npm", { "npmPublish": false }],
+        ["@semantic-release/exec", {
+            "prepareCmd": "chmod +x prepare_release.sh && ./prepare_release.sh ${nextRelease.version}"
+        }],
+        ["@semantic-release/git", {
+            "assets": ["docs/changelog.md", "package.json", "package-lock.json", "examples/**/*.pdf", "src/udhbwvst.cls"]
+        }],
+        ["@semantic-release/github", {
+            "assets": ["udhbwvst-*.zip"]
+        }]
+    ]
+}

@@ -5,6 +5,9 @@
     "doc": "docs",
     "example": "examples"
   },
+  "scripts": {
+    "semantic-release": "semantic-release"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/skyfrk/dhbw-vs-latex-template.git"
@@ -18,9 +21,13 @@
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
+    "@semantic-release/changelog": "^3.0.5",
+    "@semantic-release/exec": "^3.3.8",
+    "@semantic-release/git": "^7.0.18",
     "commitizen": "^4.0.3",
     "cz-conventional-changelog": "^3.0.2",
-    "husky": "^3.0.9"
+    "husky": "^3.0.9",
+    "semantic-release": "^15.13.31"
   },
   "husky": {
     "hooks": {
