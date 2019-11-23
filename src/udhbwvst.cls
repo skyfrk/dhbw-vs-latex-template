@@ -124,6 +124,7 @@
 \RequirePackage{acro}
 \RequirePackage[parfill]{parskip}
 \RequirePackage{titletoc}
+\RequirePackage{titlesec}
 \RequirePackage[title,titletoc]{appendix}
 
 % load optional packages
@@ -297,6 +298,14 @@
               {}
               {\titlerule*[0.5em]{$\cdot$}\contentspage}
               []
+
+% titlesec package
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 
 % setspace package
 \newcommand{\dhbwSetOneHalfLineSpacing}{%
