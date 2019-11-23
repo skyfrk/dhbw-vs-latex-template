@@ -136,7 +136,9 @@ The first sentence in the next section...
 
 ### Subsections
 
-Use `\subsection{title}` and `\subsubsection{title}` to create subsections below a section and subsubsections below a subsection. Example below:
+Use `\subsection{title}`, `\subsubsection{title}` and `\paragraph{title}` to create subsections below a section, subsubsections below a subsection and subsubsubsections below subsubsections. Use the label `subsec:` to mark a subsection.
+
+Example below:
 
 ```tex
 ...this is the last sentence of the previous section.
@@ -149,9 +151,14 @@ The first sentence in the next section...
 
 The first sentence in this subsections...
 
-\subsubsection{The title of my subsubsection}
+\subsubsection{The title of my subsubsection}\label{subsec:somelabel}
 
 Nobody reads this anyway...
+
+\paragraph{The title of my subsubsubsection}
+
+We're here in \autoref{subsec:somelabel}.
+And yes, nobody reads the docs...
 ```
 
 > Sections / Subsections should always have a least two childs!
