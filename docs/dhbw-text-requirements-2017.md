@@ -121,7 +121,7 @@ Possible:
 ## Table of contents
 
 * Table of contents is not in the table of contents
-* Page number: II (roman; not displayed)
+* First page number: I (roman; not displayed)
 * All pages which are not part of the text don't get a number in the table of contents
 
 ## Text
@@ -147,7 +147,7 @@ Recommended:
 * Order entries by lastname of the author
 * Firstnames: Either all written out, or all as initials
 * No Dr. titles etc. in the literature
-* More than three authors: List only the first one + u.a.
+* More than three authors: List only the first one + `u.a.`
 * More than one title per author: Order entries by year starting with the oldest
 * Do not print "first edition"
 
