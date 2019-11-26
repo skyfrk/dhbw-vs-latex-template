@@ -656,7 +656,6 @@
 
 \newcommand{\dhbwPrintBibliography}{%
   \DeclareDelimFormat{multinamedelim}{\newline}
-  \renewcommand*{\finentrypunct}{}
   \newpage
   \singlespacing
   \phantomsection
