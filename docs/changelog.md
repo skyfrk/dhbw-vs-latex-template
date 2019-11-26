@@ -1,3 +1,10 @@
+## [4.5.1](https://github.com/skyfrk/dhbw-vs-latex-template/compare/v4.5.0...v4.5.1) (2019-11-26)
+
+
+### Bug Fixes
+
+* add missing dot at the end of bib entries ([1eea270](https://github.com/skyfrk/dhbw-vs-latex-template/commit/1eea27075f05fd1075913d6244672d292f250b44)), closes [#61](https://github.com/skyfrk/dhbw-vs-latex-template/issues/61)
+
 # [4.5.0](https://github.com/skyfrk/dhbw-vs-latex-template/compare/v4.4.3...v4.5.0) (2019-11-23)
 
 
