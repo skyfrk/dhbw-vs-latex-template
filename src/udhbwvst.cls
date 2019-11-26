@@ -193,13 +193,16 @@
   showspaces        = false,
   showtabs          = false,
   frame             = single,
+  framexleftmargin  = 2em,
   breaklines        = true,
   numbers           = left,
+  xleftmargin       = 2em,
   showstringspaces  = false,
   breakatwhitespace = true,
   escapeinside      = {(*@}{@*)},
   basicstyle        = \footnotesize\ttfamily,
-  belowcaptionskip  = 13pt
+  belowcaptionskip  = 13pt,
+  numberstyle       = \tiny
 }
 \lstset{style=base}
 
