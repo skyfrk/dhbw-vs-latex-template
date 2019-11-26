@@ -1,3 +1,10 @@
+## [4.5.2](https://github.com/skyfrk/dhbw-vs-latex-template/compare/v4.5.1...v4.5.2) (2019-11-26)
+
+
+### Bug Fixes
+
+* move listings line numbers inside the frame ([a713836](https://github.com/skyfrk/dhbw-vs-latex-template/commit/a713836db057b62eeb293ededbdf0759cf766314))
+
 ## [4.5.1](https://github.com/skyfrk/dhbw-vs-latex-template/compare/v4.5.0...v4.5.1) (2019-11-26)
 
 
