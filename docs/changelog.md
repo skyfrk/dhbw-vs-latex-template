@@ -1,3 +1,10 @@
+## [4.5.3](https://github.com/skyfrk/dhbw-vs-latex-template/compare/v4.5.2...v4.5.3) (2020-03-08)
+
+
+### Bug Fixes
+
+* install udhbwvst in TEXMFLOCAL ([45c2824](https://github.com/skyfrk/dhbw-vs-latex-template/commit/45c2824bf2b09ea27ab83b4aa47789717435efde))
+
 ## [4.5.2](https://github.com/skyfrk/dhbw-vs-latex-template/compare/v4.5.1...v4.5.2) (2019-11-26)
 
 
