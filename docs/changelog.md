@@ -1,3 +1,10 @@
+## [4.5.4](https://github.com/skyfrk/dhbw-vs-latex-template/compare/v4.5.3...v4.5.4) (2020-03-28)
+
+
+### Bug Fixes
+
+* make course and academic year optional ([a102785](https://github.com/skyfrk/dhbw-vs-latex-template/commit/a102785294626c661618bbb7e799360d675030ed)), closes [#85](https://github.com/skyfrk/dhbw-vs-latex-template/issues/85)
+
 ## [4.5.3](https://github.com/skyfrk/dhbw-vs-latex-template/compare/v4.5.2...v4.5.3) (2020-03-08)
 
 

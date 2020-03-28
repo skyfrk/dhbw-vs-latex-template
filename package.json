@@ -1,6 +1,6 @@
 {
   "name": "dhbw-vs-latex-template",
-  "version": "4.5.3",
+  "version": "4.5.4",
   "directories": {
     "doc": "docs",
     "example": "examples"
