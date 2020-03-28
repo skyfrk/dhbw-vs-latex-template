@@ -23,8 +23,12 @@
     }{}
     \vfill
     \dhbwGetTextType\\
-    Studienjahrgang\ \dhbwGetAcademicYear\\
-    Kurs\ \dhbwGetCourse\\
+    \ifdef{\dhbwGetAcademicYear}{%
+        \ Studienjahrgang\ \dhbwGetAcademicYear\\
+    }{}
+    \ifdef{\dhbwGetCourse}{%
+        \ Kurs\ \dhbwGetCourse\\
+    }{}
     \vspace{1cm}
     Fakultät\ \dhbwGetFaculty\\
     Studiengang\ \dhbwGetFieldOfStudy\\

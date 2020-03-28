@@ -33,7 +33,14 @@
 \begin{minipage}{.95\linewidth}
 \begin{flushright}
     \textbf{\dhbwGetAuthor}\ \cdot\ \dhbwGetCompanyName\\
-    \dhbwGetFieldOfStudy\ \cdot\ Jahrgang\ \dhbwGetAcademicYear\ \cdot\ Kurs\ \dhbwGetCourse\\
+    \dhbwGetFieldOfStudy
+    \ifdef{\dhbwGetAcademicYear}{%
+        \ \cdot\ Jahrgang\ \dhbwGetAcademicYear
+    }{}
+    \ifdef{\dhbwGetCourse}{%
+        \cdot\ Kurs\ \dhbwGetCourse
+    }{}
+    \\
     \dhbwGetTextType\\
     \ifdef{\dhbwGetCompanyLogo}{%
         \vspace{1cm}
