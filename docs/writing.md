@@ -67,8 +67,8 @@ In order to use the template you have to run the `\dhbwSetup{...}` command in yo
 | `author`         | `\dhbwGetAuthor`       | -                      | Full name of the author.                                             | Max Mustermann          |
 | `faculty`        | `\dhbwGetFaculty`      | -                      | Faculty of the author.                                               | Wirtschaft              |
 | `field of study` | `\dhbwGetFieldOfStudy` | -                      | Field of study of the author.                                        | Wirtschaftsinformatik   |
-| `academic year`  | `\dhbwGetAcademicYear` | -                      | Academic year of the author.                                         | 2017                    |
-| `course`         | `\dhbwGetCourse`       | -                      | Course of the author.                                                | B                       |
+| (`academic year`)  | `\dhbwGetAcademicYear` | -                      | Academic year of the author.                                         | 2017                    |
+| (`course`)         | `\dhbwGetCourse`       | -                      | Course of the author.                                                | B                       |
 | `title`          | `\dhbwGetTitle`        | -                      | Title of the text.                                                   | Eine Arbeit             |
 | (`subtitle`)     | `\dhbwGetSubtitle`     | -                      | Subtitle of the text                                                 | Mit einem Untertitel    |
 | `text type`      | `\dhbwGetTextType`     | -                      | Type of the text.                                                    | Projektarbeit 2         |
