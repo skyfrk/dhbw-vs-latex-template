@@ -62,21 +62,21 @@ The name of the class stands for ***Unofficial DHBW Villingen-Schwenningen*** La
 
 In order to use the template you have to run the `\dhbwSetup{...}` command in your preamble. All parameters inside parentheses are optional. You can access any key inside your document with the `\dhbwGet*` commands.
 
-| Parameter        | Stored in              | Default                | Description                                                          | Example                 |
-| ---------------- | ---------------------- | ---------------------- | -------------------------------------------------------------------- | ----------------------- |
-| `author`         | `\dhbwGetAuthor`       | -                      | Full name of the author.                                             | Max Mustermann          |
-| `faculty`        | `\dhbwGetFaculty`      | -                      | Faculty of the author.                                               | Wirtschaft              |
-| `field of study` | `\dhbwGetFieldOfStudy` | -                      | Field of study of the author.                                        | Wirtschaftsinformatik   |
-| (`academic year`)  | `\dhbwGetAcademicYear` | -                      | Academic year of the author.                                         | 2017                    |
-| (`course`)         | `\dhbwGetCourse`       | -                      | Course of the author.                                                | B                       |
-| `title`          | `\dhbwGetTitle`        | -                      | Title of the text.                                                   | Eine Arbeit             |
-| (`subtitle`)     | `\dhbwGetSubtitle`     | -                      | Subtitle of the text                                                 | Mit einem Untertitel    |
-| `text type`      | `\dhbwGetTextType`     | -                      | Type of the text.                                                    | Projektarbeit 2         |
-| `company name`   | `\dhbwGetCompanyName`  | -                      | Name of the authors employer.                                        | Eine GmbH               |
-| (`company logo`) | `\dhbwGetCompanyLogo`  | -                      | Path to the logo of the authors employer.                            | `./assets/logo.png`     |
-| `lecturer`       | `\dhbwGetLecturer`     | -                      | Name of the lecturer of the author.                                  | Prof. Dr. Martin Kimmig |
-| (`location`)     | `\dhbwGetLocation`     | Villingen-Schwenningen | Name of the location where the author signs the independence notice. | Villingen-Schwenningen  |
-| (`date`)         | `\dhbwGetDate`         | `\today`               | When the author signs the independence notice.                       | 21. August 2019         |
+| Parameter         | Stored in              | Default                | Description                                                          | Example                 |
+| ----------------- | ---------------------- | ---------------------- | -------------------------------------------------------------------- | ----------------------- |
+| `author`          | `\dhbwGetAuthor`       | -                      | Full name of the author.                                             | Max Mustermann          |
+| `faculty`         | `\dhbwGetFaculty`      | -                      | Faculty of the author.                                               | Wirtschaft              |
+| `field of study`  | `\dhbwGetFieldOfStudy` | -                      | Field of study of the author.                                        | Wirtschaftsinformatik   |
+| (`academic year`) | `\dhbwGetAcademicYear` | -                      | Academic year of the author.                                         | 2017                    |
+| (`course`)        | `\dhbwGetCourse`       | -                      | Course of the author.                                                | B                       |
+| `title`           | `\dhbwGetTitle`        | -                      | Title of the text.                                                   | Eine Arbeit             |
+| (`subtitle`)      | `\dhbwGetSubtitle`     | -                      | Subtitle of the text                                                 | Mit einem Untertitel    |
+| `text type`       | `\dhbwGetTextType`     | -                      | Type of the text.                                                    | Projektarbeit 2         |
+| `company name`    | `\dhbwGetCompanyName`  | -                      | Name of the authors employer.                                        | Eine GmbH               |
+| (`company logo`)  | `\dhbwGetCompanyLogo`  | -                      | Path to the logo of the authors employer.                            | `./assets/logo.png`     |
+| `lecturer`        | `\dhbwGetLecturer`     | -                      | Name of the lecturer of the author.                                  | Prof. Dr. Martin Kimmig |
+| (`location`)      | `\dhbwGetLocation`     | Villingen-Schwenningen | Name of the location where the author signs the independence notice. | Villingen-Schwenningen  |
+| (`date`)          | `\dhbwGetDate`         | `\today`               | When the author signs the independence notice.                       | 21. August 2019         |
 
 ### Document structure \dhbw* commands
 
@@ -183,6 +183,13 @@ Adds a footnote with given `bibEntryId`, `prenote` and `page`. Example below:
 A Hitchhiker’s Guide To The Galaxy PDF by Adam Douglas
 is a timeless science fiction masterpiece.\footcite[Vgl.][42]{hitchhiker78}
 This is the next sentence...
+```
+
+A footnote is always followed by a blank space. Use `\unskip` to suppress this blank space. Use case:
+
+```tex
+This is a sentence (with some thing to footcite
+in parentheses\footcite[Vgl.][42]{hitchhiker78}\unskip) in the middle of the sentence.
 ```
 
 #### Cite direct with footnote
