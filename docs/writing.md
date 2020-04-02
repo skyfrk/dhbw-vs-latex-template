@@ -161,6 +161,8 @@ We're here in \autoref{subsec:somelabel}.
 And yes, nobody reads the docs...
 ```
 
+Use `\setcounter{tocdepth}{4}` in your preamble if paragraphs should be listed in the table of contents.
+
 > Sections / Subsections should always have a least two childs!
 
 ## Citing
