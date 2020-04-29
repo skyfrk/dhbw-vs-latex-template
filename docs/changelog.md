@@ -1,3 +1,10 @@
+## [4.5.5](https://github.com/skyfrk/dhbw-vs-latex-template/compare/v4.5.4...v4.5.5) (2020-04-29)
+
+
+### Bug Fixes
+
+* always load rotating and textpos ([89f7d55](https://github.com/skyfrk/dhbw-vs-latex-template/commit/89f7d55360bb0bede39a464a9b482db065807de8)), closes [#90](https://github.com/skyfrk/dhbw-vs-latex-template/issues/90)
+
 ## [4.5.4](https://github.com/skyfrk/dhbw-vs-latex-template/compare/v4.5.3...v4.5.4) (2020-03-28)
 
 
