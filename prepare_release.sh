@@ -1,10 +1,13 @@
-#!/bin/bash
+#!/bin/sh
 
 # Update date in src/udhbwvst.cls
 sed -i 's/\\newcommand\*{\\udhbwvst@cls@date}{.*}/\\newcommand\*{\\udhbwvst@cls@date}{'"$(printf '%(%Y-%m-%d)T\n' -1)"'}/g' src/udhbwvst.cls
 
 # Update version in src/udhbwvst.cls
 sed -i 's/\\newcommand\*{\\udhbwvst@cls@version}{.*}/\\newcommand\*{\\udhbwvst@cls@version}{'"$1"'}/g' src/udhbwvst.cls
+
+# Update version in devcontainer.json
+sed -i 's/"skyfrk\/udhbwvst:[a-zA-Z0-9.-]\+"/"skyfrk\/udhbwvst:'"$1"'"/g' .devcontainer.json
 
 # Create starter project
 mkdir starter
