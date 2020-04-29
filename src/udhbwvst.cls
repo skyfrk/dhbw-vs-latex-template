@@ -126,6 +126,8 @@
 \RequirePackage{titletoc}
 \RequirePackage{titlesec}
 \RequirePackage[title,titletoc]{appendix}
+\RequirePackage{rotating}
+\RequirePackage[absolute]{textpos}
 
 % load optional packages
 
@@ -135,11 +137,6 @@
 
 \ifbool{udhbwvst@if@debug}{%
   \RequirePackage{blindtext, lipsum}
-}{}
-
-\ifbool{udhbwvst@if@print@ndn}{%
-  \RequirePackage{rotating}
-  \RequirePackage[absolute]{textpos}
 }{}
 
 % style
