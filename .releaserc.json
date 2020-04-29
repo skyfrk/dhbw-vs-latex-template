@@ -11,7 +11,7 @@
             "prepareCmd": "chmod +x prepare_release.sh && ./prepare_release.sh ${nextRelease.version}"
         }],
         ["@semantic-release/git", {
-            "assets": ["docs/changelog.md", "package.json", "package-lock.json", "examples/**/*.pdf", "src/udhbwvst.cls"]
+            "assets": ["docs/changelog.md", "package.json", "package-lock.json", "examples/**/*.pdf", "src/udhbwvst.cls", ".devcontainer.json"]
         }],
         ["@semantic-release/github", {
             "assets": ["udhbwvst-*.zip"]
