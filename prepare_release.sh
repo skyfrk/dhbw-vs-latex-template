@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Update date in src/udhbwvst.cls
 sed -i 's/\\newcommand\*{\\udhbwvst@cls@date}{.*}/\\newcommand\*{\\udhbwvst@cls@date}{'"$(printf '%(%Y-%m-%d)T\n' -1)"'}/g' src/udhbwvst.cls
