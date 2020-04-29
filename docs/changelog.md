@@ -1,3 +1,10 @@
+## [4.5.6](https://github.com/skyfrk/dhbw-vs-latex-template/compare/v4.5.5...v4.5.6) (2020-04-29)
+
+
+### Bug Fixes
+
+* **udhbwvst:** define release date ([b777b56](https://github.com/skyfrk/dhbw-vs-latex-template/commit/b777b56c4a2aeacf158491ad75fc8dbcd2dc7ab2))
+
 ## [4.5.5](https://github.com/skyfrk/dhbw-vs-latex-template/compare/v4.5.4...v4.5.5) (2020-04-29)
 
 
