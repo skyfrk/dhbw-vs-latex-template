@@ -1,3 +1,10 @@
+# [4.6.0](https://github.com/skyfrk/dhbw-vs-latex-template/compare/v4.5.6...v4.6.0) (2020-05-04)
+
+
+### Features
+
+* **udhbwvst:** add dhbwlongtable environment ([6567bc8](https://github.com/skyfrk/dhbw-vs-latex-template/commit/6567bc81c1279cf4e7e040a4c1babb2af0b71f6a))
+
 ## [4.5.6](https://github.com/skyfrk/dhbw-vs-latex-template/compare/v4.5.5...v4.5.6) (2020-04-29)
 
 
