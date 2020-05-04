@@ -133,6 +133,20 @@
 		"scope": "tex,latex",
 		"description": "Sets up the dhbwtable environment with all possible fields."
 	},
+	"dhbwlongtable environment": {
+		"prefix": "dhbwlongtable",
+		"body": [
+			"\\begin{dhbwlongtable}{$1}{%",
+			"\tcaption\t= $2,",
+			"\tlabel\t= tab:$3,",
+			"\tsource\t= $4",
+			"}",
+			"\t$TM_SELECTED_TEXT$0",
+			"\\end{dhbwlongtable}"
+		],
+		"scope": "tex,latex",
+		"description": "Sets up the dhbwlongtable environment with all possible fields."
+	},
 	"code environment": {
 		"prefix": "code",
 		"body": [
