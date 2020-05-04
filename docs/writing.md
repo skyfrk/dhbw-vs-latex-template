@@ -26,6 +26,7 @@ Documentation and general tips and tricks on how to write an academic text assig
   - [The \dhbwWrapfigure command](#the-dhbwwrapfigure-command)
   - [PlantUML figures](#plantuml-figures)
 - [Tables](#tables)
+- [Long tables](#long-tables)
 - [Code listing](#code-listing)
 - [Labels and referencing](#labels-and-referencing)
 - [Appendices](#appendices)
@@ -448,6 +449,31 @@ When adding a table you should wrap it inside the `dhbwtable` environment so tha
 
 Inside the `tabular` environment the actual table is created. [Click here](https://en.wikibooks.org/wiki/LaTeX/Tables#The_tabular_environment) for a detailed guide on how to use the `tabular` environment.
 
+## Long tables
+
+The environment `dhbwlongtable` provides a wrapper for the [longtable CTAN package](https://ctan.org/pkg/longtable) which enables tables spanning across pagebreaks. The frist argument is the longtable definition and the second argument is a key-value list. Here is an example:
+
+```tex
+\begin{dhbwlongtable}{ | p{0.3\linewidth} | p{0.7\linewidth} | }{%
+    caption = This is the caption,
+    label   = tab:label
+}
+
+\hline
+\textbf{Column 1} & \textbf{Column 2} \\ \hline
+This & is an example \\ \hline
+
+\end{dhbwlongtable}
+```
+
+| Parameter | Default              | Description                                                                                                                                                      |
+| --------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `caption` | -                    | Title above the table.                                                                                                                                           |
+| `label`   | -                    | Marker for `hyperref`. Make sure to start your marker with  `tab:` so that [automatic referencing](#labels-and-referencing) works. This marker has to be unique. |
+| `source`  | `Eigene Darstellung` | Source of the data in the table.                                                                                                                                 |
+
+Read the `longtable` [manual](http://mirrors.ctan.org/macros/latex/required/tools/longtable.pdf) for guidance on how to define long tables!
+
 ## Code listing
 
 You can add a code listing using the `code` environment:
@@ -689,6 +715,7 @@ There are a few [VSCode snippets](https://code.visualstudio.com/docs/editor/user
 | `\dhbwFigure`     | Snippet for the [\dhbwFigure](#the-dhbwfigure-command) command.                |
 | `\dhbwWrapfigure` | Snippet for the [\dhbwWrapfigure](#the-dhbwwrapfigure-command) command.        |
 | `dhbwtable`       | Snippet for the [dhbwtable](#tables) environment.                              |
+| `dhbwlongtable`       | Snippet for the [dhbwlongtable](#long-tables) environment.                              |
 | `code`            | Snippet for the [code](#code-listing) environment.                             |
 | `codeprotected`   | Snippet for the [code](#code-listing) environment but wrapped in a `minipage`. |
 | `@online`         | Snippet for an [@online](#add-entry-of-type-online) bibliography entry.        |
