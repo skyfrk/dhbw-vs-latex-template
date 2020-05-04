@@ -715,7 +715,7 @@ There are a few [VSCode snippets](https://code.visualstudio.com/docs/editor/user
 | `\dhbwFigure`     | Snippet for the [\dhbwFigure](#the-dhbwfigure-command) command.                |
 | `\dhbwWrapfigure` | Snippet for the [\dhbwWrapfigure](#the-dhbwwrapfigure-command) command.        |
 | `dhbwtable`       | Snippet for the [dhbwtable](#tables) environment.                              |
-| `dhbwlongtable`       | Snippet for the [dhbwlongtable](#long-tables) environment.                              |
+| `dhbwlongtable`   | Snippet for the [dhbwlongtable](#long-tables) environment.                     |
 | `code`            | Snippet for the [code](#code-listing) environment.                             |
 | `codeprotected`   | Snippet for the [code](#code-listing) environment but wrapped in a `minipage`. |
 | `@online`         | Snippet for an [@online](#add-entry-of-type-online) bibliography entry.        |
