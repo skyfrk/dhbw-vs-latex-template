@@ -525,6 +525,25 @@
   \end{table}
 }
 
+\pgfkeys{%
+  /dhbwLongTableEnv/.is family,
+  /dhbwLongTableEnv,
+  caption/.estore in  = \udhbwvst@cmd@dhbwlongtableenv@caption,
+  label/.estore in    = \udhbwvst@cmd@dhbwlongtableenv@label,
+  source/.estore in   = \udhbwvst@cmd@dhbwlongtableenv@source,
+  source              = \udhbwvst@var@defaultshortreference
+}
+
+\NewDocumentEnvironment{dhbwlongtable}{mm}{%
+  \pgfkeys{/dhbwLongTableEnv, #2}
+  \edef\elongtable{\noexpand\begin{longtable}{#1}}
+  \elongtable
+    \caption{\udhbwvst@cmd@dhbwlongtableenv@caption} \label{\udhbwvst@cmd@dhbwlongtableenv@label} \\
+}{%
+  \caption*{\footnotesize{\udhbwvst@var@shortreferenceprefix{}\udhbwvst@cmd@dhbwlongtableenv@source}}
+  \end{longtable}
+}
+
 \lstnewenvironment{code}[2]{%
   \lstset{#1}
 }{%
