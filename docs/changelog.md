@@ -1,3 +1,10 @@
+# [4.7.0](https://github.com/skyfrk/dhbw-vs-latex-template/compare/v4.6.0...v4.7.0) (2020-05-12)
+
+
+### Features
+
+* **udhbwvst:** add font-size class option ([82ad2cf](https://github.com/skyfrk/dhbw-vs-latex-template/commit/82ad2cf48987eb2791c5c7de254bd239ce2beae5)), closes [#97](https://github.com/skyfrk/dhbw-vs-latex-template/issues/97)
+
 # [4.6.0](https://github.com/skyfrk/dhbw-vs-latex-template/compare/v4.5.6...v4.6.0) (2020-05-04)
 
 
