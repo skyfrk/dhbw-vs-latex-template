@@ -11,8 +11,9 @@
 			"\tprint-lot\t\t= ${6|true,false|},\t% Prints the list of tables.",
 			"\tprint-lol\t\t= ${7|true,false|},\t% Prints the list of code listings.",
 			"\tbib-file\t\t= {${8:literature.bib}},\t% Path to the bibliography file.",
-			"\tplantuml\t\t= ${9|false,true|}\t% Loads the plantuml package.",
-			"\ttitle-style\t\t= ${10|default,modern|}\t% Sets the style of the title page.",
+			"\tplantuml\t\t= ${9|false,true|},\t% Loads the plantuml package.",
+			"\ttitle-style\t\t= ${10|default,modern|},\t% Sets the style of the title page.",
+			"\tfont-size\t\t= ${11:12pt}\t%Sets the font size.",
 			"]{udhbwvst}"
 		],
 		"scope": "tex,latex",
