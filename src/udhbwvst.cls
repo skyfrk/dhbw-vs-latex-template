@@ -11,7 +11,6 @@
 % setup
 
 \ProvidesClass{udhbwvst}[\udhbwvst@cls@date\space\udhbwvst@cls@info]
-\LoadClass[12pt]{article}
 
 % load essential packages
 
@@ -46,10 +45,14 @@
     title-style-file            = udhbwvst-title-default.def,
     title-style/.is choice,
     title-style/modern/.estyle  = {/udhbwvst/title-style-file = udhbwvst-title-modern.def},
-    title-style/default/.estyle = {/udhbwvst/title-style-file = udhbwvst-title-default.def}
+    title-style/default/.estyle = {/udhbwvst/title-style-file = udhbwvst-title-default.def},
+    font-size/.store in         = \udhbwvst@var@fontsize,
+    font-size                   = 12pt
 }
 
 \ProcessPgfOptions{/udhbwvst}
+
+\LoadClass[\udhbwvst@var@fontsize]{article}
 
 % load packages
 
