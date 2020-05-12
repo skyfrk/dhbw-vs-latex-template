@@ -58,6 +58,7 @@ The name of the class stands for ***Unofficial DHBW Villingen-Schwenningen*** La
 | `bib-file`      | `literature.bib` | Path to the bibliography file.                                                |
 | `plantuml`      | `false`          | Loads the `plantuml` package.                                                 |
 | `title-style`   | `default`        | Loads the specified title page style. Available options: `default`, `modern`. |
+| `font-size`     | `12pt`           | Sets the base font size.                                                      |
 
 ### Required \dhbwSetup command
 
