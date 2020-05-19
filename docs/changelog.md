@@ -1,3 +1,10 @@
+# [4.8.0](https://github.com/skyfrk/dhbw-vs-latex-template/compare/v4.7.0...v4.8.0) (2020-05-19)
+
+
+### Features
+
+* improve url linebreaks by loading xurl ([3c91e4a](https://github.com/skyfrk/dhbw-vs-latex-template/commit/3c91e4afe62e399e04a59ad2b17c6f8aac32a54a))
+
 # [4.7.0](https://github.com/skyfrk/dhbw-vs-latex-template/compare/v4.6.0...v4.7.0) (2020-05-12)
 
 
