@@ -131,6 +131,8 @@
 \RequirePackage[title,titletoc]{appendix}
 \RequirePackage{rotating}
 \RequirePackage[absolute]{textpos}
+\RequirePackage{xurl} % for better url linebreaks
+
 
 % load optional packages
 
