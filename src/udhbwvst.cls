@@ -1,7 +1,7 @@
 % settings
 
-\newcommand*{\udhbwvst@cls@date}{2020-05-19}
-\newcommand*{\udhbwvst@cls@version}{4.8.0}
+\newcommand*{\udhbwvst@cls@date}{2020-05-30}
+\newcommand*{\udhbwvst@cls@version}{4.8.1}
 \newcommand*{\udhbwvst@cls@info}{Unofficial DHBW Villingen-Schwenningen text class}
 \newcommand*{\udhbwvst@var@shortreferenceprefix}{Quelle:\space}
 \newcommand*{\udhbwvst@var@defaultshortreference}{Eigene Darstellung.}

@@ -1,3 +1,10 @@
+## [4.8.1](https://github.com/skyfrk/dhbw-vs-latex-template/compare/v4.8.0...v4.8.1) (2020-05-30)
+
+
+### Bug Fixes
+
+* force hyperref to use unicode pdf encoding ([fc66417](https://github.com/skyfrk/dhbw-vs-latex-template/commit/fc66417853df09941d18787f108cba89c392eee6)), closes [#100](https://github.com/skyfrk/dhbw-vs-latex-template/issues/100)
+
 # [4.8.0](https://github.com/skyfrk/dhbw-vs-latex-template/compare/v4.7.0...v4.8.0) (2020-05-19)
 
 
