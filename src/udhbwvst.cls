@@ -78,7 +78,7 @@
       pdfauthor   = {\ifdef{\dhbwGetAuthor}{\dhbwGetAuthor}{undefined}},
       pdfcreator  = {Lua\LaTeX},
       pdfproducer = {Lua\LaTeX},
-      pdfencoding = {auto},
+      pdfencoding = {unicode},
       pdflang     = {de}
     }
 }
