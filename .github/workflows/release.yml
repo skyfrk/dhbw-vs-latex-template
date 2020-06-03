@@ -35,6 +35,7 @@ jobs:
           working_directory: ./examples/starter-recommended
           args: -pdf -latexoption=-file-line-error -latexoption=-interaction=nonstopmode -pdflatex=lualatex -latexoption=-shell-escape
       - name: Upload build artifacts (examples)
+        uses: actions/upload-artifact@v2
         with:
           name: examples
           path: examples/**/*.pdf
