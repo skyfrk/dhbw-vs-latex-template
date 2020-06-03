@@ -220,7 +220,7 @@
 		"prefix": "@germanlaw",
 		"body": [
 			"@germanlaw{$1,",
-			"\tauthor\t\t\t= {o.A.},",
+			"\tauthor\t\t\t= {o.V.},",
 			"\ttitle\t\t\t= {$2},",
 			"\tshorttitle\t\t= {$3},",
 			"\tlawsource\t\t= {$4},",
