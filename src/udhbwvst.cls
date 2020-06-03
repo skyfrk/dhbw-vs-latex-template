@@ -109,7 +109,8 @@
     dashed      = false,
     maxnames    = 3,
     sorting     = nymdt,
-    sortlocale  = de_DE
+    sortlocale  = de_DE,
+    datamodel   = udhbwvst-datamodel
 ]{biblatex}
 \RequirePackage{biblatex-ext-tabular}
 \RequirePackage{array}
@@ -326,11 +327,44 @@
 % biblatex package
 \addbibresource{\udhbwvst@var@bibfile}
 
+\DeclareLabeldate{%
+  \field{date}
+  \field{eventdate}
+  \field{origdate}
+  \field{lawdate} % add lawdate
+  \field{urldate}
+  \literal{nodate}
+}
+
+% \DeclareFieldFormat[germanlaw]{shorttitle}{\normalfont{#1}}
+\DeclareFieldFormat[germanlaw]{lawfirstpage}{S.\ \normalfont{#1}}
+\DeclareFieldFormat[germanlaw]{lawvolume}{Bd.\ \normalfont{#1}}
+\DeclareFieldFormat[germanlaw]{lawdate}{i.d.F.\ vom\ \normalfont{#1}}
+
+\newbibmacro*{germanlawmacro}{
+    \printfield{title}
+    \printlawdate
+    \iffieldundef{lawsource}
+      {}
+      {\setunit{\addcomma\addspace}
+        \printfield{lawsource}}
+    \iffieldundef{lawsourceyear}
+      {}
+      {\setunit{\addspace}
+        \printfield{lawsourceyear}}
+    \iffieldundef{lawvolume}
+      {}
+      {\setunit{\addspace}
+        \printfield{lawvolume}}
+    \setunit{\addcomma\addspace\bibpagespunct}
+    \printfield{lawfirstpage}
+}
+
 \renewcommand{\newunitpunct}{\addcomma\space}
 \DeclareDelimFormat{multinamedelim}{\addsemicolon\space}
 \DeclareDelimAlias{finalnamedelim}{multinamedelim}
 \DeclareNameAlias{sortname}{family-given} % authorlastname, authorfirstname
-\DeclareFieldFormat*{shorttitle}{\mkbibparens{#1}}
+\DeclareFieldFormat{shorttitle}{\mkbibparens{#1}}
 \DeclareFieldFormat{title}{\normalfont{#1}}
 \DeclareFieldFormat[article]{title}{\normalfont{#1},}
 \DeclareFieldFormat{journaltitle}{\normalfont{#1}}
@@ -356,6 +390,14 @@
     @{}}}
   {\end{longtable}}{\anchorlang{\usebibmacro{tabular:sortname}} &
   \driver{\usebibmacro{tabular:omitsortname}} \\}
+
+\DeclareBibliographyDriver{germanlaw}{
+  \usebibmacro{bibindex}
+  \usebibmacro{begentry}
+  \usebibmacro{germanlawmacro}
+  \newunit\newblock
+  \usebibmacro{finentry}
+}
 
 % Sort by Author->Year->Month->Day->Title
 \DeclareSortingTemplate{nymdt}{
