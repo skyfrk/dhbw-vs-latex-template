@@ -1,3 +1,15 @@
+# [4.10.0](https://github.com/skyfrk/dhbw-vs-latex-template/compare/v4.9.0...v4.10.0) (2020-06-03)
+
+
+### Bug Fixes
+
+* remove bibindex from germanlaw driver ([02196c2](https://github.com/skyfrk/dhbw-vs-latex-template/commit/02196c271dbfc30fb04f32c3cbb134f8e4b70628))
+
+
+### Features
+
+* add germanlaw bib entry type ([b9f123a](https://github.com/skyfrk/dhbw-vs-latex-template/commit/b9f123a3bfcdc522c689f4954f0f1dedff675cc8))
+
 # [4.9.0](https://github.com/skyfrk/dhbw-vs-latex-template/compare/v4.8.1...v4.9.0) (2020-06-03)
 
 
