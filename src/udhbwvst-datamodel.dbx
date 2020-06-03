@@ -1,4 +1,7 @@
-\DeclareDatamodelEntrytypes{germanlaw}
-\DeclareDatamodelFields[type=field, datatype=literal]{lawsource,lawsourceyear,lawvolume,lawfirstpage}
-\DeclareDatamodelFields[type=field, datatype=date, skipout]{lawdate}
+\DeclareDatamodelEntrytypes{germanlaw,verdict}
+
+\DeclareDatamodelFields[type=field, datatype=literal]{lawsource,lawsourceyear,lawvolume,lawfirstpage,verdictref,verdictcourt}
+\DeclareDatamodelFields[type=field, datatype=date, skipout]{lawdate,verdictdate}
+
 \DeclareDatamodelEntryfields[germanlaw]{lawsource,lawsourceyear,lawvolume,lawfirstpage,lawdate,title,shorttitle,author}
+\DeclareDatamodelEntryfields[verdict]{verdictref,verdictcourt,verdictdate,title,shorttitle,author,url,urldate}

@@ -332,11 +332,11 @@
   \field{eventdate}
   \field{origdate}
   \field{lawdate} % add lawdate
+  \field{verdictdate} % add verdictdate
   \field{urldate}
   \literal{nodate}
 }
 
-% \DeclareFieldFormat[germanlaw]{shorttitle}{\normalfont{#1}}
 \DeclareFieldFormat[germanlaw]{lawfirstpage}{S.\ \normalfont{#1}}
 \DeclareFieldFormat[germanlaw]{lawvolume}{Bd.\ \normalfont{#1}}
 \DeclareFieldFormat[germanlaw]{lawdate}{i.d.F.\ vom\ \normalfont{#1}}
@@ -358,6 +358,19 @@
         \printfield{lawvolume}}
     \setunit{\addcomma\addspace\bibpagespunct}
     \printfield{lawfirstpage}
+}
+
+\DeclareFieldFormat[verdict]{title}{Az.\ \normalfont{#1}}
+\DeclareFieldFormat[verdict]{verdictdate}{Urteil\ vom\ \normalfont{#1}}
+
+\newbibmacro*{verdictmacro}{
+    \printfield{verdictcourt}
+    \setunit{\addcomma\addspace}
+    \printverdictdate
+    \setunit{\addcomma\addspace}
+    \printfield{title}
+    \setunit{\addcomma\addspace}
+    \usebibmacro{url+urldate}
 }
 
 \renewcommand{\newunitpunct}{\addcomma\space}
@@ -394,6 +407,13 @@
 \DeclareBibliographyDriver{germanlaw}{
   \usebibmacro{begentry}
   \usebibmacro{germanlawmacro}
+  \newunit\newblock
+  \usebibmacro{finentry}
+}
+
+\DeclareBibliographyDriver{verdict}{
+  \usebibmacro{begentry}
+  \usebibmacro{verdictmacro}
   \newunit\newblock
   \usebibmacro{finentry}
 }
