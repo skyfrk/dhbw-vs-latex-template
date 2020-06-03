@@ -35,7 +35,7 @@ Documentation and general tips and tricks on how to write an academic text assig
   - [Add entry of type book](#add-entry-of-type-book)
   - [Add entry of type online](#add-entry-of-type-online)
   - [Add entry of type article](#add-entry-of-type-article)
-  - [Add entry of type germanlaw](#add-entry-of-type-germanlaw)
+  - [Add entry of type law](#add-entry-of-type-law)
   - [Add entry of type verdict](#add-entry-of-type-verdict)
   - [Author field format](#author-field-format)
     - [Firstname lastname combinations](#firstname-lastname-combinations)
@@ -591,7 +591,7 @@ The example above will create an appendix with the title `Anhang I Roadmap`.
 
 When you're researching it is advised to store every source of information as an entry in your bibliography file. Biblatex will make sure to only print references you actually refered to in your bibliography at the end of the text. Biblatex will also sort entries by author, then by year, then by month, then by day and finally by title.
 
-⚠ The DHBW-VS bibliography style was only tested with the entires of type [article](#add-entry-of-type-article), [book](#add-entry-of-type-book) and [online](#add-entry-of-type-online). `germanlaw` and `verdict` are experimental. However [other types of entries](https://www.ctan.org/pkg/biblatex) should also work as long as they provide a `shorttitle` field!
+⚠ The DHBW-VS bibliography style was only tested with the entires of type [article](#add-entry-of-type-article), [book](#add-entry-of-type-book) and [online](#add-entry-of-type-online). `law` and `verdict` are experimental. However [other types of entries](https://www.ctan.org/pkg/biblatex) should also work as long as they provide a `shorttitle` field!
 
 ⚠ Make sure [to escape special characters](https://tex.stackexchange.com/a/34586) with `\`.
 
@@ -674,33 +674,33 @@ Valid example:
 }
 ```
 
-### Add entry of type germanlaw
+### Add entry of type law
 
-In order to satisfy the DHBW-VS requirements an bibliography entry of type `germanlaw` has to provide following fields:
+In order to satisfy the DHBW-VS requirements an bibliography entry of type `law` has to provide following fields:
 
-| Field           | Description                                              |
-| --------------- | -------------------------------------------------------- |
-| `author`        | Should always be `o.V.`.                                 |
-| `title`         | The title of the germanlaw entry                         |
-| `shorttitle`    | The shorttitle of the germanlaw entry. Has to be unique. |
-| `lawsource`     | Where the law was found. E.g. `Bundesgesetzblatt`.       |
-| `lawsourceyear` | The year the source of the law was published.            |
-| `lawvolume`     | The volume of the law. E.g. `I`.                         |
-| `lawfirstpage`  | The first page where the law was found in the source.    |
-| `lawdate`       | The date of the law.                                     |
+| Field        | Description                                           |
+| ------------ | ----------------------------------------------------- |
+| `author`     | Should always be `o.V.`.                              |
+| `title`      | The title of the law entry                            |
+| `shorttitle` | The shorttitle of the law entry. Has to be unique.    |
+| `src`        | Where the law was found. E.g. `Bundesgesetzblatt`.    |
+| `srcyear`    | The year the source of the law was published.         |
+| `srcvol`     | The volume of the law. E.g. `I`.                      |
+| `srcpage`    | The first page where the law was found in the source. |
+| `date`       | The date of the law.                                  |
 
 Valid example:
 
 ```tex
-@germanlaw{bgb,
-    title = {Bürgerliches Gesetzbuch},
-    author = {o.V.},
-    shorttitle = {BGB},
-    lawsource = {Bundesgesetzblatt},
-    lawsourceyear = {2002},
-    lawvolume = {I},
-    lawfirstpage = {42},
-    lawdate = {2020-03-19}
+@law{bgb,
+    title       = {Bürgerliches Gesetzbuch},
+    author      = {o.V.},
+    shorttitle  = {BGB},
+    src         = {Bundesgesetzblatt},
+    srcyear     = {2002},
+    srcvol      = {I},
+    srcpage     = {42},
+    date        = {2020-03-19}
 }
 ```
 
@@ -708,15 +708,15 @@ Valid example:
 
 In order to satisfy the DHBW-VS requirements an bibliography entry of type `verdict` has to provide following fields:
 
-| Field          | Description                                            |
-| -------------- | ------------------------------------------------------ |
-| `author`       | Should always be `o.V.`.                               |
-| `title`        | The title of the verdict entry                         |
-| `shorttitle`   | The shorttitle of the verdict entry. Has to be unique. |
-| `verdictcourt` | The name of the court.                                 |
-| `verdictdate`  | The date the verdict was announced.                    |
-| `url`          | Url to the source of the verdict.                      |
-| `urldate`      | Date the url to the verdict was visited.               |
+| Field        | Description                                            |
+| ------------ | ------------------------------------------------------ |
+| `author`     | Should always be `o.V.`.                               |
+| `title`      | The title of the verdict entry                         |
+| `shorttitle` | The shorttitle of the verdict entry. Has to be unique. |
+| `court`      | The name of the court.                                 |
+| `date`       | The date the verdict was announced.                    |
+| `url`        | Url to the source of the verdict.                      |
+| `urldate`    | Date the url to the verdict was visited.               |
 
 Valid example:
 
@@ -725,8 +725,8 @@ Valid example:
     author			= {o.V.},
     title			= {I ZR 138/99},
     shorttitle		= {Shell-Urteil},
-    verdictcourt	= {BGH},
-    verdictdate		= {2001-11-22},
+    court	        = {BGH},
+    date		    = {2001-11-22},
     url				= {http://juris.bundesgerichtshof.de/cgi-bin/rechtsprechung/document.py?Gericht=bgh&nr=23718},
     urldate			= {2020-06-03}
 }
