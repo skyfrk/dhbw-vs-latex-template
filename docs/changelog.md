@@ -1,3 +1,10 @@
+# [4.11.0](https://github.com/skyfrk/dhbw-vs-latex-template/compare/v4.10.0...v4.11.0) (2020-06-03)
+
+
+### Features
+
+* add verdict bib entry type ([b1823d8](https://github.com/skyfrk/dhbw-vs-latex-template/commit/b1823d81a763bfc88a5791f962d6ccaf50ea1752))
+
 # [4.10.0](https://github.com/skyfrk/dhbw-vs-latex-template/compare/v4.9.0...v4.10.0) (2020-06-03)
 
 
