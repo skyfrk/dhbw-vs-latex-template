@@ -35,6 +35,7 @@ Documentation and general tips and tricks on how to write an academic text assig
   - [Add entry of type book](#add-entry-of-type-book)
   - [Add entry of type online](#add-entry-of-type-online)
   - [Add entry of type article](#add-entry-of-type-article)
+  - [Add entry of type germanlaw](#add-entry-of-type-germanlaw)
   - [Author field format](#author-field-format)
     - [Firstname lastname combinations](#firstname-lastname-combinations)
     - [Author is just one word](#author-is-just-one-word)
@@ -650,14 +651,14 @@ Valid example:
 
 In order to satisfy the DHBW-VS requirements an bibliography entry of type `article` has to provide following fields:
 
-| Field        | Description                                                                             |
-| ------------ | --------------------------------------------------------------------------------------- |
-| `author`     | Author or authors of the online entry. See [author field format](#author-field-format). |
-| `title`      | The title of the online entry                                                           |
-| `shorttitle` | The shorttitle of the online entry. Has to be unique.                                   |
-| `year`       | Year of the publication of the article.                                                 |
-| `journal`    | The name of the journal. May be abbreviated.                                            |
-| `pages`      | The first and last page of the article in the journal separated by `--`.                |
+| Field        | Description                                                                              |
+| ------------ | ---------------------------------------------------------------------------------------- |
+| `author`     | Author or authors of the article entry. See [author field format](#author-field-format). |
+| `title`      | The title of the article entry                                                           |
+| `shorttitle` | The shorttitle of the article entry. Has to be unique.                                   |
+| `year`       | Year of the publication of the article.                                                  |
+| `journal`    | The name of the journal. May be abbreviated.                                             |
+| `pages`      | The first and last page of the article in the journal separated by `--`.                 |
 
 Valid example:
 
@@ -671,6 +672,35 @@ Valid example:
     pages       = {69--420}
 }
 ```
+
+### Add entry of type germanlaw
+
+In order to satisfy the DHBW-VS requirements an bibliography entry of type `germanlaw` has to provide following fields:
+
+| Field           | Description                                              |
+| --------------- | -------------------------------------------------------- |
+| `author`        | Should always be `o.A.`.                                 |
+| `title`         | The title of the germanlaw entry                         |
+| `shorttitle`    | The shorttitle of the germanlaw entry. Has to be unique. |
+| `lawsource`     | Where the law was found. E.g. `Bundesgesetzblatt`.       |
+| `lawsourceyear` | The year the source of the law was published.            |
+| `lawvolume`     | The volume of the law. E.g. `I`.                         |
+| `lawfirstpage`  | The first page where the law was found in the source.    |
+| `lawdate`       | The date of the law.                                     |
+
+Valid example:
+
+```tex
+@article{linklabs_zwave_vs_zigbee,
+    author      = {Brian Ray},
+    title       = {Z-Wave Vs. Zigbee},
+    shorttitle  = {LOL},
+    year        = {3000},
+    journal     = {Harvard Business Review},
+    pages       = {69--420}
+}
+```
+
 
 ### Author field format
 
