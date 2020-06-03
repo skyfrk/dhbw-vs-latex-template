@@ -201,6 +201,21 @@
 		"scope": "tex,latex,bibtex",
 		"description": "Adds a bibliography entry of type @book."
 	},
+	"bib entry article": {
+		"prefix": "@article",
+		"body": [
+			"@article{$1,",
+			"\tauthor\t\t= {$2},",
+			"\ttitle\t\t= {$3},",
+			"\tshorttitle\t= {$4},",
+			"\tyear\t\t= {${5:0000}},",
+			"\tjournal\t\t= {$6},",
+			"\tpages\t\t= {$7--$8}",
+			"}"
+		],
+		"scope": "tex,latex,bibtex",
+		"description": "Adds a bibliography entry of type @article."
+	},
 	"Command \\DeclareAcronym": {
 		"prefix": "\\decacro",
 		"body": [
