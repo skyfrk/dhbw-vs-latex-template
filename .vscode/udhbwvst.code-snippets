@@ -216,22 +216,22 @@
 		"scope": "tex,latex,bibtex",
 		"description": "Adds a bibliography entry of type @article."
 	},
-	"bib entry germanlaw": {
-		"prefix": "@germanlaw",
+	"bib entry law": {
+		"prefix": "@law",
 		"body": [
-			"@germanlaw{$1,",
-			"\tauthor\t\t\t= {o.V.},",
-			"\ttitle\t\t\t= {$2},",
-			"\tshorttitle\t\t= {$3},",
-			"\tlawsource\t\t= {$4},",
-			"\tlawsourceyear\t= {${5:0000}},",
-			"\tlawvolume\t\t= {$6},",
-			"\tlawfirstpage\t= {$7},",
-			"\tlawdate\t\t\t= {${8:${9:0000}-${10:00}-${11:00}}}",
+			"@law{$1,",
+			"\tauthor\t\t= {o.V.},",
+			"\ttitle\t\t= {$2},",
+			"\tshorttitle\t= {$3},",
+			"\tsrc\t\t\t= {$4},",
+			"\tsrcyear\t\t= {${5:0000}},",
+			"\tsrcvol\t\t= {$6},",
+			"\tsrcpage\t\t= {$7},",
+			"\tdate\t\t= {${8:${9:0000}-${10:00}-${11:00}}}",
 			"}"
 		],
 		"scope": "tex,latex,bibtex",
-		"description": "Adds a bibliography entry of type @germanlaw."
+		"description": "Adds a bibliography entry of type @law."
 	},
 	"bib entry verdict": {
 		"prefix": "@verdict",
@@ -240,8 +240,8 @@
 			"\tauthor\t\t\t= {o.V.},",
 			"\ttitle\t\t\t= {$2},",
 			"\tshorttitle\t\t= {$3},",
-			"\tverdictcourt\t= {$4},",
-			"\tverdictdate\t\t= {${5:${6:0000}-${7:00}-${8:00}}},",
+			"\t\t\tcourt\t= {$4},",
+			"\tdate\t\t\t= {${5:${6:0000}-${7:00}-${8:00}}},",
 			"\turl\t\t\t\t= {$9},",
 			"\turldate\t\t\t= {${10:${11:0000}-${12:00}-${13:00}}}",
 			"}"
