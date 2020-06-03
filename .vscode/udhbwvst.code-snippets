@@ -216,6 +216,23 @@
 		"scope": "tex,latex,bibtex",
 		"description": "Adds a bibliography entry of type @article."
 	},
+	"bib entry germanlaw": {
+		"prefix": "@germanlaw",
+		"body": [
+			"@germanlaw{$1,",
+			"\tauthor\t\t\t= {o.A.},",
+			"\ttitle\t\t\t= {$2},",
+			"\tshorttitle\t\t= {$3},",
+			"\tlawsource\t\t= {$4},",
+			"\tlawsourceyear\t= {${5:0000}},",
+			"\tlawvolume\t\t= {$6},",
+			"\tlawfirstpage\t= {$7},",
+			"\tlawdate\t\t\t= {${8:${9:0000}-${10:00}-${11:00}}}",
+			"}"
+		],
+		"scope": "tex,latex,bibtex",
+		"description": "Adds a bibliography entry of type @germanlaw."
+	},
 	"Command \\DeclareAcronym": {
 		"prefix": "\\decacro",
 		"body": [
