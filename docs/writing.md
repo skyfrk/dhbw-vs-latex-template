@@ -679,7 +679,7 @@ In order to satisfy the DHBW-VS requirements an bibliography entry of type `germ
 
 | Field           | Description                                              |
 | --------------- | -------------------------------------------------------- |
-| `author`        | Should always be `o.A.`.                                 |
+| `author`        | Should always be `o.V.`.                                 |
 | `title`         | The title of the germanlaw entry                         |
 | `shorttitle`    | The shorttitle of the germanlaw entry. Has to be unique. |
 | `lawsource`     | Where the law was found. E.g. `Bundesgesetzblatt`.       |
