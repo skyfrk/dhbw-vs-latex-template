@@ -392,7 +392,6 @@
   \driver{\usebibmacro{tabular:omitsortname}} \\}
 
 \DeclareBibliographyDriver{germanlaw}{
-  \usebibmacro{bibindex}
   \usebibmacro{begentry}
   \usebibmacro{germanlawmacro}
   \newunit\newblock
