@@ -327,46 +327,36 @@
 % biblatex package
 \addbibresource{\udhbwvst@var@bibfile}
 
-\DeclareLabeldate{%
-  \field{date}
-  \field{eventdate}
-  \field{origdate}
-  \field{lawdate} % add lawdate
-  \field{verdictdate} % add verdictdate
-  \field{urldate}
-  \literal{nodate}
-}
+\DeclareFieldFormat[law]{srcpage}{S.\ \normalfont{#1}}
+\DeclareFieldFormat[law]{srcvol}{Bd.\ \normalfont{#1}}
+\DeclareFieldFormat[law]{date}{i.d.F.\ vom\ \normalfont{#1}}
 
-\DeclareFieldFormat[germanlaw]{lawfirstpage}{S.\ \normalfont{#1}}
-\DeclareFieldFormat[germanlaw]{lawvolume}{Bd.\ \normalfont{#1}}
-\DeclareFieldFormat[germanlaw]{lawdate}{i.d.F.\ vom\ \normalfont{#1}}
-
-\newbibmacro*{germanlawmacro}{
+\newbibmacro*{lawmacro}{
     \printfield{title}
-    \printlawdate
-    \iffieldundef{lawsource}
+    \printdate
+    \iffieldundef{src}
       {}
       {\setunit{\addcomma\addspace}
-        \printfield{lawsource}}
-    \iffieldundef{lawsourceyear}
+        \printfield{src}}
+    \iffieldundef{srcyear}
       {}
       {\setunit{\addspace}
-        \printfield{lawsourceyear}}
-    \iffieldundef{lawvolume}
+        \printfield{srcyear}}
+    \iffieldundef{srcvol}
       {}
       {\setunit{\addspace}
-        \printfield{lawvolume}}
+        \printfield{srcvol}}
     \setunit{\addcomma\addspace\bibpagespunct}
-    \printfield{lawfirstpage}
+    \printfield{srcpage}
 }
 
 \DeclareFieldFormat[verdict]{title}{Az.\ \normalfont{#1}}
-\DeclareFieldFormat[verdict]{verdictdate}{Urteil\ vom\ \normalfont{#1}}
+\DeclareFieldFormat[verdict]{date}{Urteil\ vom\ \normalfont{#1}}
 
 \newbibmacro*{verdictmacro}{
-    \printfield{verdictcourt}
+    \printfield{court}
     \setunit{\addcomma\addspace}
-    \printverdictdate
+    \printdate
     \setunit{\addcomma\addspace}
     \printfield{title}
     \setunit{\addcomma\addspace}
@@ -404,9 +394,9 @@
   {\end{longtable}}{\anchorlang{\usebibmacro{tabular:sortname}} &
   \driver{\usebibmacro{tabular:omitsortname}} \\}
 
-\DeclareBibliographyDriver{germanlaw}{
+\DeclareBibliographyDriver{law}{
   \usebibmacro{begentry}
-  \usebibmacro{germanlawmacro}
+  \usebibmacro{lawmacro}
   \newunit\newblock
   \usebibmacro{finentry}
 }
