@@ -1,3 +1,10 @@
+# [4.9.0](https://github.com/skyfrk/dhbw-vs-latex-template/compare/v4.8.1...v4.9.0) (2020-06-03)
+
+
+### Features
+
+* add support for biblatex articles ([4db6dee](https://github.com/skyfrk/dhbw-vs-latex-template/commit/4db6dee48b93437ef7830c7f82e9f958e49fcd33))
+
 ## [4.8.1](https://github.com/skyfrk/dhbw-vs-latex-template/compare/v4.8.0...v4.8.1) (2020-05-30)
 
 
