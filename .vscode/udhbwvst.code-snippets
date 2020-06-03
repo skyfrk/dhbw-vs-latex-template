@@ -233,6 +233,22 @@
 		"scope": "tex,latex,bibtex",
 		"description": "Adds a bibliography entry of type @germanlaw."
 	},
+	"bib entry verdict": {
+		"prefix": "@verdict",
+		"body": [
+			"@verdict{$1,",
+			"\tauthor\t\t\t= {o.V.},",
+			"\ttitle\t\t\t= {$2},",
+			"\tshorttitle\t\t= {$3},",
+			"\tverdictcourt\t= {$4},",
+			"\tverdictdate\t\t= {${5:${6:0000}-${7:00}-${8:00}}},",
+			"\turl\t\t\t\t= {$9},",
+			"\turldate\t\t\t= {${10:${11:0000}-${12:00}-${13:00}}}",
+			"}"
+		],
+		"scope": "tex,latex,bibtex",
+		"description": "Adds a bibliography entry of type @verdict."
+	},
 	"Command \\DeclareAcronym": {
 		"prefix": "\\decacro",
 		"body": [
