@@ -12,8 +12,8 @@ on:
       - '*.sh'
       - 'CONTRIBUTING.md'
       - 'LICENSE'
-    branches:
-      - '!master'
+    branches-ignore:
+      - master
   pull_request:
     paths-ignore:
       - 'docs/**'
