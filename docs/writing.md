@@ -36,6 +36,7 @@ Documentation and general tips and tricks on how to write an academic text assig
   - [Add entry of type online](#add-entry-of-type-online)
   - [Add entry of type article](#add-entry-of-type-article)
   - [Add entry of type germanlaw](#add-entry-of-type-germanlaw)
+  - [Add entry of type verdict](#add-entry-of-type-verdict)
   - [Author field format](#author-field-format)
     - [Firstname lastname combinations](#firstname-lastname-combinations)
     - [Author is just one word](#author-is-just-one-word)
@@ -590,7 +591,7 @@ The example above will create an appendix with the title `Anhang I Roadmap`.
 
 When you're researching it is advised to store every source of information as an entry in your bibliography file. Biblatex will make sure to only print references you actually refered to in your bibliography at the end of the text. Biblatex will also sort entries by author, then by year, then by month, then by day and finally by title.
 
-⚠ The DHBW-VS bibliography style was only tested with the entires of type [article](#add-entry-of-type-article), [book](#add-entry-of-type-book) and [online](#add-entry-of-type-online). However [other types of entries](https://www.ctan.org/pkg/biblatex) should also work as long as they provide a `shorttitle` field!
+⚠ The DHBW-VS bibliography style was only tested with the entires of type [article](#add-entry-of-type-article), [book](#add-entry-of-type-book) and [online](#add-entry-of-type-online). `germanlaw` and `verdict` are experimental. However [other types of entries](https://www.ctan.org/pkg/biblatex) should also work as long as they provide a `shorttitle` field!
 
 ⚠ Make sure [to escape special characters](https://tex.stackexchange.com/a/34586) with `\`.
 
@@ -691,16 +692,45 @@ In order to satisfy the DHBW-VS requirements an bibliography entry of type `germ
 Valid example:
 
 ```tex
-@article{linklabs_zwave_vs_zigbee,
-    author      = {Brian Ray},
-    title       = {Z-Wave Vs. Zigbee},
-    shorttitle  = {LOL},
-    year        = {3000},
-    journal     = {Harvard Business Review},
-    pages       = {69--420}
+@germanlaw{bgb,
+    title = {Bürgerliches Gesetzbuch},
+    author = {o.V.},
+    shorttitle = {BGB},
+    lawsource = {Bundesgesetzblatt},
+    lawsourceyear = {2002},
+    lawvolume = {I},
+    lawfirstpage = {42},
+    lawdate = {2020-03-19}
 }
 ```
 
+### Add entry of type verdict
+
+In order to satisfy the DHBW-VS requirements an bibliography entry of type `verdict` has to provide following fields:
+
+| Field          | Description                                            |
+| -------------- | ------------------------------------------------------ |
+| `author`       | Should always be `o.V.`.                               |
+| `title`        | The title of the verdict entry                         |
+| `shorttitle`   | The shorttitle of the verdict entry. Has to be unique. |
+| `verdictcourt` | The name of the court.                                 |
+| `verdictdate`  | The date the verdict was announced.                    |
+| `url`          | Url to the source of the verdict.                      |
+| `urldate`      | Date the url to the verdict was visited.               |
+
+Valid example:
+
+```tex
+@verdict{shell,
+    author			= {o.V.},
+    title			= {I ZR 138/99},
+    shorttitle		= {Shell-Urteil},
+    verdictcourt	= {BGH},
+    verdictdate		= {2001-11-22},
+    url				= {http://juris.bundesgerichtshof.de/cgi-bin/rechtsprechung/document.py?Gericht=bgh&nr=23718},
+    urldate			= {2020-06-03}
+}
+```
 
 ### Author field format
 
