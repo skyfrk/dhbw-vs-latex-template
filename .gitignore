@@ -355,3 +355,6 @@ public/
 # plantuml package
 *-plantuml.latex
 *-plantuml.txt
+
+# vscode latex formatter
+*__latexindent_temp.tex
