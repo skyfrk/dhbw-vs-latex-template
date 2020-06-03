@@ -34,6 +34,7 @@ Documentation and general tips and tricks on how to write an academic text assig
 - [Bibliography](#bibliography)
   - [Add entry of type book](#add-entry-of-type-book)
   - [Add entry of type online](#add-entry-of-type-online)
+  - [Add entry of type article](#add-entry-of-type-article)
   - [Author field format](#author-field-format)
     - [Firstname lastname combinations](#firstname-lastname-combinations)
     - [Author is just one word](#author-is-just-one-word)
@@ -588,7 +589,7 @@ The example above will create an appendix with the title `Anhang I Roadmap`.
 
 When you're researching it is advised to store every source of information as an entry in your bibliography file. Biblatex will make sure to only print references you actually refered to in your bibliography at the end of the text. Biblatex will also sort entries by author, then by year, then by month, then by day and finally by title.
 
-⚠ The DHBW-VS bibliography style was only tested with the entires of type [book](#add-entry-of-type-book) and [online](#add-entry-of-type-online). However [other types of entries](https://www.ctan.org/pkg/biblatex) should also work as long as they provide a `shorttitle` field!
+⚠ The DHBW-VS bibliography style was only tested with the entires of type [article](#add-entry-of-type-article), [book](#add-entry-of-type-book) and [online](#add-entry-of-type-online). However [other types of entries](https://www.ctan.org/pkg/biblatex) should also work as long as they provide a `shorttitle` field!
 
 ⚠ Make sure [to escape special characters](https://tex.stackexchange.com/a/34586) with `\`.
 
@@ -642,6 +643,32 @@ Valid example:
     date        = {2019-03-14},
     urldate     = {2019-08-08},
     url         = {https://www.tapio.one/de/blog/hack-the-wood-2019}
+}
+```
+
+### Add entry of type article
+
+In order to satisfy the DHBW-VS requirements an bibliography entry of type `article` has to provide following fields:
+
+| Field        | Description                                                                             |
+| ------------ | --------------------------------------------------------------------------------------- |
+| `author`     | Author or authors of the online entry. See [author field format](#author-field-format). |
+| `title`      | The title of the online entry                                                           |
+| `shorttitle` | The shorttitle of the online entry. Has to be unique.                                   |
+| `year`       | Year of the publication of the article.                                                 |
+| `journal`    | The name of the journal. May be abbreviated.                                            |
+| `pages`      | The first and last page of the article in the journal separated by `--`.                |
+
+Valid example:
+
+```tex
+@article{linklabs_zwave_vs_zigbee,
+    author      = {Brian Ray},
+    title       = {Z-Wave Vs. Zigbee},
+    shorttitle  = {LOL},
+    year        = {3000},
+    journal     = {Harvard Business Review},
+    pages       = {69--420}
 }
 ```
 
