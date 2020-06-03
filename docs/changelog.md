@@ -1,3 +1,16 @@
+# [5.0.0](https://github.com/skyfrk/dhbw-vs-latex-template/compare/v4.11.0...v5.0.0) (2020-06-03)
+
+
+### Features
+
+* improve new bib entry types ([6cc737a](https://github.com/skyfrk/dhbw-vs-latex-template/commit/6cc737a6a114d2555f7425d3dcc8f76f7d8f5534))
+
+
+### BREAKING CHANGES
+
+* rename germanlaw to law (bib type) and update field names of verdict and law, see:
+https://github.com/skyfrk/dhbw-vs-latex-template/blob/master/docs/writing.md#bibliography
+
 # [4.11.0](https://github.com/skyfrk/dhbw-vs-latex-template/compare/v4.10.0...v4.11.0) (2020-06-03)
 
 
