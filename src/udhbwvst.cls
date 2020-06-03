@@ -332,6 +332,9 @@
 \DeclareNameAlias{sortname}{family-given} % authorlastname, authorfirstname
 \DeclareFieldFormat*{shorttitle}{\mkbibparens{#1}}
 \DeclareFieldFormat{title}{\normalfont{#1}}
+\DeclareFieldFormat[article]{title}{\normalfont{#1},}
+\DeclareFieldFormat{journaltitle}{\normalfont{#1}}
+\DeclareFieldFormat[article]{citetitle}{\normalfont{#1}}
 \DeclareFieldFormat{subtitle}{\normalfont{#1}}
 \DeclareFieldFormat{url}{\url{#1}} % Removes url prefix
 \newcommand{\noyear}{\addcomma \space o\adddot J\adddot}
