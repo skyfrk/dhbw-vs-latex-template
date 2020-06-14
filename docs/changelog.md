@@ -1,3 +1,10 @@
+# [5.1.0](https://github.com/skyfrk/dhbw-vs-latex-template/compare/v5.0.0...v5.1.0) (2020-06-14)
+
+
+### Features
+
+* **docker:** add git-latexdiff v1.6.0 ([471cc58](https://github.com/skyfrk/dhbw-vs-latex-template/commit/471cc58ff1ac92a98f21ef36b6a4c995418c51a3))
+
 # [5.0.0](https://github.com/skyfrk/dhbw-vs-latex-template/compare/v4.11.0...v5.0.0) (2020-06-03)
 
 
