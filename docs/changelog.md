@@ -1,3 +1,15 @@
+# [5.2.0](https://github.com/skyfrk/dhbw-vs-latex-template/compare/v5.1.0...v5.2.0) (2020-06-15)
+
+
+### Bug Fixes
+
+* explicitly use acro v2 ([a985ca4](https://github.com/skyfrk/dhbw-vs-latex-template/commit/a985ca4c73bd2ea1365436f472dd320007cc04c8))
+
+
+### Features
+
+* **docker:** pin base to "202006150204173dfee6" ([00cb122](https://github.com/skyfrk/dhbw-vs-latex-template/commit/00cb1222cf985058223f231bf082753431311da0))
+
 # [5.1.0](https://github.com/skyfrk/dhbw-vs-latex-template/compare/v5.0.0...v5.1.0) (2020-06-14)
 
 
