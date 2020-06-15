@@ -125,7 +125,7 @@
 \RequirePackage{xcolor}
 \RequirePackage{listings}
 \RequirePackage{xparse}
-\RequirePackage{acro}
+\RequirePackage[version=2]{acro}
 \RequirePackage[parfill]{parskip}
 \RequirePackage{titletoc}
 \RequirePackage{titlesec}
