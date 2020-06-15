@@ -28,6 +28,7 @@ on:
 
 jobs:
   test:
+    name: Test building examples
     runs-on: ubuntu-18.04
     container:
       image: danteev/texlive:202006150204173dfee6
