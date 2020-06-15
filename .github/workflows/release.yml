@@ -7,33 +7,14 @@ on:
 
 jobs:
   release:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
+    container:
+      image: danteev/texlive:202006150204173dfee6
     steps:
       - name: Clone repository
         uses: actions/checkout@v2
-      - name: Set up examples
-        run: |
-          cp -r ./src/* ./examples/full/
-          cp -r ./src/* ./examples/starter-advanced/
-          cp -r ./src/* ./examples/starter-recommended/
-      - name: Build test document full.tex
-        uses: dante-ev/latex-action@master
-        with:
-          root_file: full.tex
-          working_directory: ./examples/full
-          args: -pdf -latexoption=-file-line-error -latexoption=-interaction=nonstopmode -pdflatex=lualatex -latexoption=-shell-escape
-      - name: Build test document starter-advanced.tex
-        uses: dante-ev/latex-action@master
-        with:
-          root_file: starter-advanced.tex
-          working_directory: ./examples/starter-advanced
-          args: -pdf -latexoption=-file-line-error -latexoption=-interaction=nonstopmode -pdflatex=lualatex -latexoption=-shell-escape
-      - name: Build test document starter-recommended.tex
-        uses: dante-ev/latex-action@master
-        with:
-          root_file: starter-recommended.tex
-          working_directory: ./examples/starter-recommended
-          args: -pdf -latexoption=-file-line-error -latexoption=-interaction=nonstopmode -pdflatex=lualatex -latexoption=-shell-escape
+      - name: Run tests
+        run: chmod +x ./test.sh && ./test.sh
       - name: Upload build artifacts (examples)
         uses: actions/upload-artifact@v2
         with:
