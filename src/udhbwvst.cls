@@ -676,10 +676,10 @@
 }
 
 \newcommand{\dhbwPrintAbstract}{%
-  \ifdefined{\udhbwvst@var@abstractfile}{%
+  \ifdefined\udhbwvst@var@abstractfile
     \newpage
     \input{\udhbwvst@var@abstractfile}
-  }{}
+  \fi
 }
 
 \newcommand{\dhbwPrintTableOfContents}{%
