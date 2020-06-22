@@ -13,7 +13,8 @@
 			"\tbib-file\t\t= {${8:literature.bib}},\t% Path to the bibliography file.",
 			"\tplantuml\t\t= ${9|false,true|},\t% Loads the plantuml package.",
 			"\ttitle-style\t\t= ${10|default,modern|},\t% Sets the style of the title page.",
-			"\tfont-size\t\t= ${11:12pt}\t%Sets the font size.",
+			"\tfont-size\t\t= ${11:12pt}\t% Sets the font size.",
+			"\tabstract-file\t= $13\t % Path to an abstract file.",
 			"]{udhbwvst}"
 		],
 		"scope": "tex,latex",
