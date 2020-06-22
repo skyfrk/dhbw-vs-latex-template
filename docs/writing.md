@@ -31,6 +31,7 @@ Documentation and general tips and tricks on how to write an academic text assig
 - [Labels and referencing](#labels-and-referencing)
 - [Appendices](#appendices)
   - [Appendix with custom title](#appendix-with-custom-title)
+- [Abstract](#abstract)
 - [Bibliography](#bibliography)
   - [Add entry of type book](#add-entry-of-type-book)
   - [Add entry of type online](#add-entry-of-type-online)
@@ -62,6 +63,7 @@ The name of the class stands for ***Unofficial DHBW Villingen-Schwenningen*** La
 | `plantuml`      | `false`          | Loads the `plantuml` package.                                                 |
 | `title-style`   | `default`        | Loads the specified title page style. Available options: `default`, `modern`. |
 | `font-size`     | `12pt`           | Sets the base font size.                                                      |
+| `abstract-file` | -                | Path to an abstract tex file to be included.                                  |
 
 ### Required \dhbwSetup command
 
@@ -92,6 +94,7 @@ If you set the [class option](#class-options) `auto-generate` to `false` you can
 | `\dhbwSetFrontMatter`           | Sets up formatting for front pages.                                                                  |
 | `\dhbwPrintTitle`               | Prints the title page.                                                                               |
 | `\dhbwPrintNonDisclosureNotice` | Prints the non-disclosure notice if the [class option](#class-options) `print-ndn` is set to `true`. |
+| `\dhbwPrintAbstract`            | Prints the abstract if a file path was given to udhbwvst as a class option.                          |
 | `\dhbwPrintTableOfContents`     | Prints the table of content.                                                                         |
 | `\dhbwSetListMatter`            | Sets up formatting for the list pages.                                                               |
 | `\dhbwPrintListOfAcronyms`      | Prints the list of acronyms if the [class option](#class-options) `print-loa` is set to `true`.      |
@@ -586,6 +589,22 @@ You can create appendices with custom titles as shown below:
 ```
 
 The example above will create an appendix with the title `Anhang I Roadmap`.
+
+## Abstract
+
+If you want to add an abstract to your text simply use the `abstract-file` class option.
+
+Example abstract:
+
+```tex
+\section*{Abstract}
+
+It is a period of civil wars in the galaxy. A brave alliance of underground freedom fighters has challenged the tyranny and oppression of the awesome GALACTIC EMPIRE.
+
+Striking from a fortress hidden among the billion stars of the galaxy, rebel spaceships have won their first victory in a battle with the powerful Imperial Starfleet. The EMPIRE fears that another defeat could bring a thousand more solar systems into the rebellion, and Imperial control over the galaxy would be lost forever.
+
+To crush the rebellion once and for all, the EMPIRE is constructing a sinister new battle station. Powerful enough to destroy an entire planet, its completion spells certain doom for the champions of freedom.
+```
 
 ## Bibliography
 
