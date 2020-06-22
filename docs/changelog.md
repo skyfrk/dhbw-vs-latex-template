@@ -1,3 +1,15 @@
+# [5.3.0](https://github.com/skyfrk/dhbw-vs-latex-template/compare/v5.2.0...v5.3.0) (2020-06-22)
+
+
+### Bug Fixes
+
+* use correct \ifdefined syntax ([d20bc76](https://github.com/skyfrk/dhbw-vs-latex-template/commit/d20bc76580d9bf599f8d69aac3a685b2448e26df))
+
+
+### Features
+
+* add support for abstracts ([64464e1](https://github.com/skyfrk/dhbw-vs-latex-template/commit/64464e167d99921dc0df306b09b0075d9df92a8a))
+
 # [5.2.0](https://github.com/skyfrk/dhbw-vs-latex-template/compare/v5.1.0...v5.2.0) (2020-06-15)
 
 
