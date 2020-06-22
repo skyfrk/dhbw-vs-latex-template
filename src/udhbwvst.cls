@@ -47,7 +47,8 @@
     title-style/modern/.estyle  = {/udhbwvst/title-style-file = udhbwvst-title-modern.def},
     title-style/default/.estyle = {/udhbwvst/title-style-file = udhbwvst-title-default.def},
     font-size/.store in         = \udhbwvst@var@fontsize,
-    font-size                   = 12pt
+    font-size                   = 12pt,
+    abstract-file/.store in     = \udhbwvst@var@abstractfile
 }
 
 \ProcessPgfOptions{/udhbwvst}
@@ -674,6 +675,13 @@
   }{}
 }
 
+\newcommand{\dhbwPrintAbstract}{%
+  \ifdefined{\udhbwvst@var@abstractfile}{%
+    \newpage
+    \input{\udhbwvst@var@abstractfile}
+  }{}
+}
+
 \newcommand{\dhbwPrintTableOfContents}{%
   \newpage
   \onehalfspacing % there is enough space by default
@@ -754,6 +762,7 @@
   \dhbwSetFrontMatter
   \dhbwPrintTitle
   \dhbwPrintNonDisclosureNotice
+  \dhbwPrintAbstract
   \dhbwPrintTableOfContents
   \dhbwSetListMatter
   \dhbwPrintListOfAcronyms
