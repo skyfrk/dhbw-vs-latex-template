@@ -1,3 +1,10 @@
+## [5.3.1](https://github.com/skyfrk/dhbw-vs-latex-template/compare/v5.3.0...v5.3.1) (2020-06-23)
+
+
+### Bug Fixes
+
+* use better words in autoref ([34dbae1](https://github.com/skyfrk/dhbw-vs-latex-template/commit/34dbae1b142ffdfafec8b6701c45bf4928eb1594))
+
 # [5.3.0](https://github.com/skyfrk/dhbw-vs-latex-template/compare/v5.2.0...v5.3.0) (2020-06-22)
 
 
