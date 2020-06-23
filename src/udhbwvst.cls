@@ -82,6 +82,12 @@
       pdfencoding = {unicode},
       pdflang     = {de}
     }
+    \addto\extrasngerman{%
+      \renewcommand{\sectionautorefname}{Kapitel}%
+      \renewcommand{\subsectionautorefname}{Unterkapitel}%
+      \renewcommand{\subsubsectionautorefname}{Unterkapitel}%
+      \renewcommand{\paragraphautorefname}{Unterkapitel}%
+    }
 }
 
 \RequirePackage{fontspec}
