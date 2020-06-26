@@ -672,12 +672,14 @@
 }
 
 \newcommand{\dhbwPrintTitle}{%
+  \pdfbookmark[1]{Titelblatt}{mytitle}
   \input{\udhbwvst@var@titlestylefile}
 }
 
 \newcommand{\dhbwPrintNonDisclosureNotice}{%
   \ifbool{udhbwvst@if@print@ndn}{%
-    \newpage  
+    \newpage
+    \pdfbookmark[1]{Sperrvermerk}{myndn}
     \input{udhbwvst-non-disclosure-notice.def}
   }{}
 }
