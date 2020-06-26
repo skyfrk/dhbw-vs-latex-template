@@ -690,6 +690,7 @@
 
 \newcommand{\dhbwPrintTableOfContents}{%
   \newpage
+  \pdfbookmark[1]{Inhaltsverzeichnis}{mytoc}
   \onehalfspacing % there is enough space by default
   \pagenumbering{Roman}
   \addtocontents{toc}{\protect\thispagestyle{empty}} % no page number for multipage tocs
