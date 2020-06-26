@@ -80,7 +80,8 @@
       pdfcreator  = {Lua\LaTeX},
       pdfproducer = {Lua\LaTeX},
       pdfencoding = {unicode},
-      pdflang     = {de}
+      pdflang     = {de},
+      bookmarksnumbered
     }
     \addto\extrasngerman{%
       \renewcommand{\sectionautorefname}{Kapitel}%
