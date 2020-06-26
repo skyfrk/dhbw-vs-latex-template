@@ -1,3 +1,12 @@
+## [5.3.2](https://github.com/skyfrk/dhbw-vs-latex-template/compare/v5.3.1...v5.3.2) (2020-06-26)
+
+
+### Bug Fixes
+
+* add missing bookmark to toc in pdf outline ([b65a26b](https://github.com/skyfrk/dhbw-vs-latex-template/commit/b65a26bf875d3fac1d05ef15f049243f94724e0d))
+* add missing booksmarks to title and ndn ([8a64d6a](https://github.com/skyfrk/dhbw-vs-latex-template/commit/8a64d6a5726c832bf52fb13242c47c18287e1207))
+* enable numbering in pdf outline ([69f6f4b](https://github.com/skyfrk/dhbw-vs-latex-template/commit/69f6f4b1f001c727dae97c6ddab6245d7307d11a))
+
 ## [5.3.1](https://github.com/skyfrk/dhbw-vs-latex-template/compare/v5.3.0...v5.3.1) (2020-06-23)
 
 

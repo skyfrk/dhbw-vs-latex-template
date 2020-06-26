@@ -1,6 +1,6 @@
 {
     "name": "danteev/texlive with udhbwvst preinstalled",
-    "image": "skyfrk/udhbwvst:5.3.1",
+    "image": "skyfrk/udhbwvst:5.3.2",
     "extensions": [
         "James-Yu.latex-workshop",
         "streetsidesoftware.code-spell-checker",
