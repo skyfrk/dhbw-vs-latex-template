@@ -585,10 +585,10 @@
   \etable
     \centering
     \caption{\udhbwvst@cmd@dhbwtableenv@caption}
+    \label{\udhbwvst@cmd@dhbwtableenv@label}
 }{%
   \setlength\belowcaptionskip{4pt}
   \caption*{\footnotesize{\udhbwvst@var@shortreferenceprefix{}\udhbwvst@cmd@dhbwtableenv@source}}
-  \label{\udhbwvst@cmd@dhbwtableenv@label}
   \end{table}
 }
 
