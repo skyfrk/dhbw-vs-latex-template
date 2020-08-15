@@ -1,3 +1,10 @@
+## [5.3.3](https://github.com/skyfrk/dhbw-vs-latex-template/compare/v5.3.2...v5.3.3) (2020-08-15)
+
+
+### Bug Fixes
+
+* **dhbwtable:** autoref produces wrong output ([f842365](https://github.com/skyfrk/dhbw-vs-latex-template/commit/f842365121f3215091f14360c2ab2c1b7ab6c030))
+
 ## [5.3.2](https://github.com/skyfrk/dhbw-vs-latex-template/compare/v5.3.1...v5.3.2) (2020-06-26)
 
 
