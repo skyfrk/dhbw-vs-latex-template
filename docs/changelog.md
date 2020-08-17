@@ -1,3 +1,10 @@
+## [5.3.4](https://github.com/skyfrk/dhbw-vs-latex-template/compare/v5.3.3...v5.3.4) (2020-08-17)
+
+
+### Bug Fixes
+
+* **udhbwvst:** use correct spacing for ndn, loa, appendices and in ([cfbf539](https://github.com/skyfrk/dhbw-vs-latex-template/commit/cfbf539080d9aaf7f41bf399092cc68bb461926e)), closes [#118](https://github.com/skyfrk/dhbw-vs-latex-template/issues/118)
+
 ## [5.3.3](https://github.com/skyfrk/dhbw-vs-latex-template/compare/v5.3.2...v5.3.3) (2020-08-15)
 
 
