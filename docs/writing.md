@@ -20,6 +20,7 @@ Documentation and general tips and tricks on how to write an academic text assig
   - [Define a new acronym](#define-a-new-acronym)
     - [Define a custom plural](#define-a-custom-plural)
   - [Using acronyms in text](#using-acronyms-in-text)
+- [Using hyphens](#using-hyphens)
 - [Figures](#figures)
   - [The dhbwfigure environment](#the-dhbwfigure-environment)
   - [The \dhbwFigure command](#the-dhbwfigure-command)
@@ -332,6 +333,16 @@ to this, NiP is also an active shareholder in the clothing company DRKN.
 ```
 
 ⚠ You always have wrap your acronyms in one of the commands above in order for the `acro` package to work correctly.
+
+## Using hyphens
+
+There are different hyphens for different occasions:
+
+- `"=` Hyphen with automatic separation before and after.
+- `"-` Separation point, in case of separation, hyphen is inserted as usual.
+- `""` Separation point, nothing is inserted in case of separation.
+
+Read more about it [here](https://texwelt.de/fragen/467/was-muss-ich-tun-damit-silbentrennung-bei-wortern-mit-bindestrichen-funktioniert/492).
 
 ## Figures
 
