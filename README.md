@@ -6,6 +6,8 @@
 
 ---
 
+> This template is currently **unmaintained**! If you want to use LaTeX for an assignment at DHBW-VS consider creating you own template, as this template was created without any prior experience in LaTeX and is therefore somewhat shitty 🙈. It got the job done for 17' & 18' students however...
+
 This is a unofficial LaTeX template for academic text assignments at the [DBHW-VS](https://www.dhbw-vs.de/), especially for business computer science students created along [the specifications](docs/dhbw-text-requirements-2017.md) by Mrs. Heinrich. Using this template **speeds up the writing process** as you only have to **focus on writing actual content**. All weird formatting requirements are met automatically! 🍺😎✌
 
 Checkout [this example](./examples/full/full.pdf) featuring all the magic of this template!
