@@ -630,6 +630,7 @@
 
 \newcommand{\dhbwAppendix}[1]{
   \newpage
+  \vspace*{-1.65cm}
   \section{}\label{#1}
 }
 
@@ -679,6 +680,7 @@
 \newcommand{\dhbwPrintNonDisclosureNotice}{%
   \ifbool{udhbwvst@if@print@ndn}{%
     \newpage
+    \vspace*{-1.75cm}
     \pdfbookmark[1]{Sperrvermerk}{myndn}
     \input{udhbwvst-non-disclosure-notice.def}
   }{}
@@ -710,6 +712,7 @@
 \newcommand{\dhbwPrintListOfAcronyms}{%
   \ifbool{udhbwvst@if@print@loa}{%
     \newpage
+    \vspace*{-1.65cm}
     \phantomsection
     \addcontentsline{toc}{section}{Abkürzungsverzeichnis}
     \printacronyms[name=Abkürzungsverzeichnis]
@@ -762,6 +765,7 @@
 
 \newcommand{\dhbwPrintIndependenceNotice}{%
   \newpage
+  \vspace*{-1.75cm}
   \phantomsection
   \addcontentsline{toc}{section}{Selbstständigkeitserklärung}
   \section*{Selbstständigkeitserklärung}
